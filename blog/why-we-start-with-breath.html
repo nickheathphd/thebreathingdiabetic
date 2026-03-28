@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yogic Wisdom, Start with the Breath, and Will Smith’s 60/40 Rule | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>Yogic Wisdom, Start with the Breath, and Will Smith’s 60/40 Rule</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published November 22, 2021</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 Thoughts</div>
+<h2 ><strong>1. Start with the Breath (scientists agree)</strong></h2><blockquote><p >“<em>They [breathing patterns] thereby constitute an easy but potent avenue to manipulate the whole physiological state of the organism.</em>”</p><p style="text-align:right;" >- <a href="https://www.tandfonline.com/doi/abs/10.1080/02699930143000392" target="_blank">Respiratory Feedback in the Generation of Emotion</a></p></blockquote><p >Want to potently “<em>manipulate the whole physiological state of the organism</em>”?  Scientists start with the breath.  And that’s why, for overall health, we do too: <strong>It’s the quickest and most efficient way to positively impact every aspect of your life.</strong>  It’s actually quite absurd not to start there, in my humble opinion 😊</p><h2 ><strong>2. The Montessori Breathing Method</strong></h2><blockquote><p >“<em>The Montessori method emphasizes both intrinsic motivation and learning through doing. In fact, for this latter reason, it’s often called “embodied education.” Don’t just read about organic farming—go out and plant a garden.</em>”</p><p style="text-align:right;" >- Steven Kotler, <a href="https://www.amazon.com/Art-Impossible-Peak-Performance-Primer/dp/B087D7QC2Q/ref=sr_1_1?crid=3T61VOZDLYRP6&amp;keywords=the%20art%20of%20impossible&amp;qid=1636975426&amp;qsid=136-6593245-9854852&amp;sprefix=The%20art%20of%20impo%2Caps%2C196&amp;sr=8-1&amp;sres=0062977539%2C0880641959%2C0374175381%2CB09KN64R1K%2C1476782822%2C163758038X%2C0061227978%2C1642592676%2C0815738862%2C0735222355%2CB09L53TN5M%2C0692926437%2C163149256X%2CB093BC3K1X%2C1797200933%2C1682192695&amp;srpt=ABIS_BOOK" target="_blank"><em>The Art of Impossible</em></a></p></blockquote><p >Let’s apply the same principles of Montessori education (aka embodied education&lt;—<em>absolutely love that</em>) to our breathwork.</p><p >Read about the methods you’re interested in.  Read about how breathing affects the whole physiological state of the organism.  <strong>But then, most importantly, embody that education and learn through doing.</strong>  As Confucius says, “<em>What greater joy can there be than putting into practice what you have learned?</em>”</p><h2 ><strong>3. Ancient Yogic Wisdom Wins (again)</strong></h2><blockquote><p >“<em>One of the things that the yogis really seemed to understand was that this circuitry didn’t just happen in the brain, it happened globally, with messages going in both directions: TOP DOWN (brain to body) and BOTTOM UP (body to brain).&nbsp; The intrinsic link between prāna and citta accounts for why</em><strong><em> the yogis insisted on breathing practices as the primary means to pacify the mind.</em></strong><em> …Breathing can effectively modulate the reactive loop, and restore us to a more coherent frame of mind.</em>”</p><p style="text-align:right;" >- Robin Rothenberg, <a href="https://www.amazon.com/Restoring-Prana-Therapeutic-Therapists-Practitioners/dp/1848194013/ref=sr_1_1?keywords=Restoring%20Prana&amp;qid=1637059588&amp;qsid=136-6593245-9854852&amp;sr=8-1&amp;sres=1848194013%2C1787752585%2CB01MCUYRBO%2CB07FCVTSQL%2CB01DBTFO98%2CB00ZQEBYAU%2CB09318THFK%2CB08WHW6RJF%2CB07HNHC828%2CB00182ERTO%2CB01M4MCUAF%2CB00XZHWUXK%2CB00KI3Z2UW%2CB07TJWG7WJ%2CB087J3G213%2CB07MDSP4GS" target="_blank"><em>Restoring Prāna</em></a></p></blockquote><p >I have nothing to add, except for one of these 🤯 Oh, and to re-read Thought #1 on how modern science agrees with this global perspective on breathing…</p><h2 ><strong>4. How Breathing Makes You Prosper, Part II</strong></h2><blockquote><p >“<em>If man’s breath is prosperous, then the body prospers.</em>”</p><p style="text-align:right;" >- <a href="https://www.amazon.com/PRIMORDIAL-BREATH-I-Jane-Huang/dp/B094LC89CC/ref=sr_1_1?crid=22LLQH934010O&amp;keywords=the%20primordial%20breath&amp;qid=1637061898&amp;qsid=136-6593245-9854852&amp;sprefix=The%20Primordia%2Caps%2C183&amp;sr=8-1&amp;sres=B094LC89CC%2C0944558011%2CB000GLH3KI%2CB002BS8T6Q%2C0944558003%2CB0027M42OY%2CB07R1PG9K6%2CB07R1GG8F4%2CB07QZKBGZ9%2CB07QYGHCNZ%2CB07QVDWTJ3%2CB07QVDWM87%2CB07HCWBBFN%2CB08NG1F5NM%2CB07KTDX15X%2C9353510937" target="_blank"><em>The Primordial Breath, Volume I</em></a></p></blockquote><p >Pop quiz from <a href="https://www.thebreathingdiabetic.com/blog/start-by-starting-6040" target="_blank">last week</a>: Do you remember what prosper literally means?  </p><p ><em>To go forward with hope</em>.</p><p >So, if the breath is prosperous, then the body prospers (and I’ll add that the mind and spirit prosper, too).  Thus, we could argue that “<em>the whole physiological state of the organism</em>” goes forward with hope.  Sounds good to me : ) </p><h2 style="text-align:center;"><strong>Bonus Thought: Will Smith’s 60/40 Rule with His Mom</strong></h2><blockquote><p >“<em>When I say silly stuff, it makes the world lighter for her. But she needs me to say smart stuff too. That makes her feel safe. She thinks that the only way I'll be able to survive is if I'm intelligent. She likes about a 60/40 ratio of smart to silly.</em>”</p><p style="text-align:right;" >- Will Smith, <a href="https://www.amazon.com/Audible-Will/dp/B096MWJLNW/ref=sr_1_1?keywords=Will&amp;qid=1637145598&amp;qsid=136-6593245-9854852&amp;s=audible&amp;sr=1-1&amp;sres=B096MWJLNW%2CB09JPGN283%2CB07G3GLPZ8%2CB07XTQC88R%2CB07XTPSFPY%2CB07XTPT61Q%2CB08V7G5ZZL%2CB07QR7GYF7%2CB00RNF3U8E%2CB007ZT6RHY%2CB07XTQDM6Q%2CB07XTPNK9X%2CB08HSQ45VD%2CB01MYT9C60%2CB07XLNN7BT%2CB07XLNNL5C" target="_blank"><em>Will</em></a></p></blockquote><p >This has nothing to do with breathing, but since I shared a <a href="https://www.thebreathingdiabetic.com/blog/start-by-starting-6040" target="_blank">60/40 breathing rule</a> last week, this passage jumped out at me.  It’s an excellent approach to life : )  </p>
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+<blockquote><p >“Life begins with our first breath and will end after our last. To contemplate breathing is to contemplate life itself.”</p><p style="text-align:right;" >- Larry Rosenberg, <a href="https://www.amazon.com/Breath-By-Breath-audiobook/dp/B00NIXZ11O/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1637062767&amp;sr=8-1" target="_blank"><em>Breath by Breath</em></a></p></blockquote>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p ><strong>Category</strong>: Breathing 101</p><p ><strong>Answer:</strong> The matching of air and blood flow in the lungs is known as this.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p ><strong>Question: </strong><a href="https://www.ncbi.nlm.nih.gov/books/NBK539907/" target="_blank">What is ventilation-perfusion?</a></p>
+
+  <p style="margin-top:3rem;">In good breath,</p><p >Nick Heath, T1D, PhD<br><em>“Breathing is the compound interest of health &amp; wellness.”</em></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

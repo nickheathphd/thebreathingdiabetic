@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Breathing Sugar | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>Stop Breathing Sugar</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published November 16, 2020</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 THOUGHTS</div>
+<p ><strong>1.  Breathing is so Cliché</strong></p><blockquote><p ><em>"Defense wins championships // The best defense is a good offense.</em></p><p ><em>Birds of a feather flock together // Opposites attract.</em></p><p ><em>You get what you pay for // The best things in life are free"</em></p><p >- Neil Pasricha, <a href="https://www.amazon.com/Happiness-Equation-Nothing-Anything-Everything/dp/0425277984/ref=sr_1_1?dchild=1&amp;keywords=the%20happiness%20equation&amp;qid=1605091357&amp;sr=8-1" target="_blank">The Happiness Equation</a></p></blockquote><p >For any situation you’re in, you can find a cliché to help you through.  And as seen above, clichés are often contradictory.  Likewise, breathing clichés are also contradictory, as we saw <a href="https://www.thebreathingdiabetic.com/blog/understand-breathing" target="_blank">about a month ago</a>: </p><blockquote><p ><em>Wim Hof tells you to breathe more. // Patrick McKeown tells you to breathe less.</em></p><p ><em>Lung capacity determines longevity. // But you also shouldn’t take big breaths.</em></p><p ><em>Oxygen is your body’s most important energy source. // But the exhale is the most important part of the breath.</em></p></blockquote><p >For breathing, I suggested that we embrace these contradictions.  But from a practical perspective,  I like Neil Pasricha’s advice: "<em>Any cliché, quote, or piece of advice that resonates with you only confirms to your mind something you already know.</em>" </p><p >We’re all different.  So if you notice a specific breathing method standing out, it’s probably confirming something you already know to be right for you.  </p><p ><strong>2.  Stop Breathing Sugar</strong></p><blockquote><p >"<em>Cutting sugar-sweetened beverages from your diet is the single-biggest thing you can do to improve your health.</em>"</p><p >- Mark Hyman, <a href="https://www.amazon.com/Food-Fix-Economy-Communities-Planet-One/dp/031645317X/ref=sr_1_1?dchild=1&amp;keywords=food%20fix&amp;qid=1605091453&amp;refinements=p_85%3A2470955011&amp;rnid=2470954011&amp;rps=1&amp;sr=8-1" target="_blank">Food Fix</a></p></blockquote><p >Many different diets work for many different people.  But they all pretty much agree on one thing: remove processed sugar.  And Mark Hyman’s number one recommendation is even more straightforward: "<em>Don’t drink sugar.</em>"</p><p >Similarly, despite all the inconsistencies in breathing advice, there is one thing we can all agree on: <a href="https://www.thebreathingdiabetic.com/principle-1" target="_blank"><em>don’t breathe through your mouth</em>. </a> Mouth breathing is like drinking sugar.  It’s easy and it feels good, but it is detrimental to your health.</p><p >Let’s cut this processed "breathing sugar" from our diets.  It may very well be the most important thing we can do for our health.  </p><p ><em>Thanks (for the millionth time) to </em><a href="https://www.optimize.me" target="_blank">Brian Johnson</a><em> for inspiring this thought. </em></p><p ><strong>3. Nitric Oxide Reduces Alveolar Dead Space</strong></p><blockquote><p >"<em>Alveolar dead space…represents alveoli, typically in the apex of the lung in an upright person, that do not receive blood flow</em>"</p><p >- <a href="https://www.amazon.com/Respiratory-Physiology-Clinical-Approach-Integrated/dp/0781757487/ref=sr_1_2?dchild=1&amp;keywords=respiratory%20physiology%20a%20clinical%20approach&amp;qid=1605091508&amp;sr=8-2" target="_blank">Respiratory Physiology, A Clinical Approach</a>, pg. 96</p></blockquote><p >By redistributing blood flow in the lungs, inhaled nasal nitric oxide reduces the alveolar dead space described above.  Specifically, it allows more alveoli to receive blood flow, which allows more gas exchange to occur.  This is something <em>you won’t find in textbooks</em> because the science is just too new. </p><p >This remarkable effect has led some to postulate that nasal nitric oxide is an evolutionary adaptation that <a href="https://www.thebreathingdiabetic.com/science-library/sanchez-crespo-et-al-2010" target="_blank">helped allow us to walk upright</a>.  Pretty neat.</p><p ><strong>4. Slow Breathing is Better Than Social Media for Sleep</strong></p><blockquote><p >"<em>Slow-paced breathing appears a promising cost-effective technique to improve subjective sleep quality and cardiovascular function during sleep in young healthy individuals.</em>"</p><p >- <a href="https://www.mdpi.com/2077-0383/8/2/193/htm" target="_blank">Journal of Clinical Medicine (2019)</a></p></blockquote><p >This study found that 15 minutes of slow breathing (6 breaths/min) before bed led to better subjective sleep quality than 15 minutes of social media use.  Slow breathing also led to higher overnight vagal activity.</p><p >Although these results might seem like common sense, I thought they were still compelling nonetheless.  Here's to putting away our phones and focusing on our breath before bed.</p>
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+<blockquote><p >"<em>The hardest thing in the world is to simplify your life because everything is pulling you to be more and more complex.</em>"</p><p >- Yvon Chouinard</p></blockquote>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p >Answer:  This condition drops 21% two days after we gain an hour moving from Daylight Savings Time to Standard Time.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p >Question: <a href="https://healthblog.uofmhealth.org/heart-health/why-daylight-saving-time-could-increase-your-heart-attack-risk" target="_blank">What are heart attacks?</a></p>
+
+  <p style="margin-top:3rem;">In good breath,<br>Nick</p><p >P.S. <a href="https://www.instagram.com/p/CGaWkzeBo5u/" target="_blank">lmao ok fine.</a></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

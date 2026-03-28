@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied Elegance, a Gift of Breathing, and How to Practice Philosophy | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>Applied Elegance, a Gift of Breathing, and How to Practice Philosophy</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published June 13, 2022</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 Thoughts</div>
+<p ><br><br></p><h2 ><strong>1. Applying the Lung's Elegant Structure to All Aspects of Our Lives</strong></h2><blockquote><p >“<em>While the heart has dense striated muscle, and the brain its conglomerated networks of communicating neurons, the lung is a thin, graceful structure of interconnecting fibrous tissue that is beautifully held together with a foamy substance that lubricates its functions in a quiet and effortless manner.  It is an organ of elegance, not brute strength.</em>”</p><p style="text-align:right;" >- Michael J Stephen, <a href="https://www.amazon.com/Breath-Taking-Fragility-Future-Extraordinary/dp/0802149316" target="_blank"><em>Breath Taking</em></a></p></blockquote><p ><em>Our most important organ</em> is designed to be graceful and flexible, not rigid and strong.  To be of elegance, not strength.</p><p >Something for us to consider in all aspects of our lives… </p><h2 ><strong>2. Practical over Perfect: A Simple Way to Start a Breathing or Meditation Session</strong></h2><blockquote><p >“<em>Breath priming means that you take a few conscious breaths to set up the flow of breathing. … We prime our breath so it can function at a higher level.</em>”</p><p style="text-align:right;" >- Gurucharan Singh Khalsa, Ph.D., and Yogi Bhajan, Ph.D.</p><p style="text-align:right;" ><a href="https://www.amazon.com/Breathwalk-Breathing-Your-Revitalized-Spirit/dp/0767904931/" target="_blank"><em>Breathwalk</em></a></p></blockquote><p >I love this idea of “breath priming,” and I use it every day.</p><p >It’s pretty straightforward to do:</p><ol data-rte-list="default"><li><p >Pick a breath that will set you up for whatever you’re about to do (for example, I use alternate nostril breathing before meditating).</p></li><li><p >Other good options: breath of fire, humming, or a few physiological sighs.</p></li><li><p >Do this breath for 1-3 minutes.</p></li><li><p >Then start your session.</p></li></ol><p >And, in my opinion, we don’t need to add more time.  For a 10 min meditation, I use 2 min for priming and 8 min for meditation.  <strong>Practical over perfect.</strong></p><h2 ><strong>3. Breathing is Philosophy: Transforming Emotions and Living Better Lives</strong></h2><blockquote><p >“<em>That’s what the teachers depicted in The School of Athens once provided: they taught their students how to transform their emotions, how to cope with adversity, how to live the best possible lives.</em>”</p><p style="text-align:right;" >- Jules Evans,<em> </em><a href="https://www.amazon.com/Philosophy-Life-Other-Dangerous-Situations/dp/1608682293" target="_blank"><em>Philosophy for Life and Other Dangerous Situations</em></a></p></blockquote><p >That sentence is exactly why <a href="https://www.instagram.com/p/CdYSQUjLAIN/" target="_blank">I think</a> breathing is the most direct path to practicing philosophy in our lives.  With two added bonuses:</p><ol data-rte-list="default"><li><p ><strong>Breathing is also physiology.</strong>  It changes our body, allowing us to truly transform our emotions instead of just “thinking our way out of it.”</p></li><li><p ><strong>There is no abstraction. </strong> You just breathe in preset patterns (like 4:6 or 4:4:4:4), see what works for you, and ignore the rest.</p></li></ol><p >So here’s to being breathing philosophers, applying this stuff every day, and using our breath to help us become the best version of ourselves.</p><h2 ><strong>4. Internal vs External Stimuli, and a Gift of Breathing Exercises  </strong></h2><p >External stimuli cause <strong>opposite or similar</strong> <strong>internal</strong> <strong>reactions</strong>, for example:</p><ul data-rte-list="default"><li><p >Our body responds to a hot environment with internal cooling.</p></li><li><p >But it responds to a stressful environment with internal stress.</p></li></ul><p >Conversely, internal stimuli generally trigger <strong>similar external</strong> <strong>reactions</strong>:</p><ul data-rte-list="default"><li><p >Our body responds to slow breathing by interpreting the external environment as safe.</p></li><li><p >Our body responds to fast breathing by interpreting the external environment as dangerous.</p></li></ul><p >This reveals a gift of breathing exercises. They don’t change our situation, but they do change how we interpret it, which may be just as powerful.</p>
+
+  
+  
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+
+  
+  
+
+  
+  
+
+<blockquote><p>"The breath can command the brain, and the brain can regulate our moods. This gives us a way to practically direct moods."</p><p style="text-align:right;font-style:normal;margin-top:.5rem;">— &mdash; Breathwalk</p></blockquote>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p ><strong>Category</strong>: Drive to Breathe</p><p ><strong>Answer:</strong> Your drive to breathe comes from this portion of the brain, which monitors blood pH and sends a signal to breathe when CO2 rises too high.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p ><strong>Question: </strong><a href="https://link.springer.com/article/10.1007/s12576-016-0475-y" target="_blank">What is the medulla oblongata?</a></p>
+
+  
+  
+
+  <p style="margin-top:3rem;">In good breath,</p><p >Nick Heath, T1D, PhD<br><em>“Breathing is the compound interest of health &amp; wellness.”</em></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On Excellent Scientific Statements and Being Reasonable with Breathing | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>On Excellent Scientific Statements and Being Reasonable with Breathing</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published February 22, 2021</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 THOUGHTS</div>
+<h3 ><strong>1. 18 Excellent Statements from Scientific Papers</strong></h3><blockquote><p >"<em>With breathing interventions being relatively rapid interventions to implement and also demonstrating a wide range of positive clinical outcomes, breathing interventions warrant closer consideration from healthcare professionals.</em>"</p><p style="text-align:right;" >- <em>Psychophysiology (2017)</em></p></blockquote><p >Over the past few years, I have accumulated over 500 pages of notes on over 100 scientific articles on breathing. I’ve recently been going back through them as part of a project I’m working on.  </p><p >In this post, I share <a href="https://www.thebreathingdiabetic.com/blog/18-excellent-statements" target="_blank">18 of the best "one-liners"</a> I’ve come across. Enjoy!</p><h3 ><strong>2. Breathing, Autonomic Function, and Diabetes</strong></h3><p >One of the most significant benefits of slow breathing is its positive effects on autonomic function.  This is typically measured by heart rate variability (HRV) and baroreflex sensitivity (BRS)—higher HRV and BRS indicate better function.</p><p >Perhaps unsurprisingly, people with diabetes generally suffer from lower HRV (<a href="https://pubmed.ncbi.nlm.nih.gov/29608603/" target="_blank">Benichou et al. 2018</a>; <a href="https://journals.sagepub.com/doi/pdf/10.1177/147323000603400308" target="_blank">Kudat et al. 2006</a>) and BRS (<a href="https://www.thebreathingdiabetic.com/bernardi-et-al-2017" target="_blank">Bernardi et al. 2017</a>; <a href="https://www.thebreathingdiabetic.com/esposito-et-al-2016" target="_blank">Esposito et al. 2016</a>).  This is due to many factors, such as fluctuating blood sugars and resting tissue hypoxia, which cause autonomic imbalance (<a href="https://www.thebreathingdiabetic.com/bianchi-et-al-2017" target="_blank">Bianchi et al. 2017</a>).</p><p >Encouragingly, slow breathing at a rate of 4-6 breaths per minute is an effective way of increasing HRV (<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2021.624254/full" target="_blank">Steffen et al. 2021</a>; <a href="https://www.thebreathingdiabetic.com/russell-et-al-2017" target="_blank">Russell et al. 2017</a>; <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cpf.12347" target="_blank">Tavares et al. 2017</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/25924910/" target="_blank">Chen et al. 2016</a>; <a href="https://www.thebreathingdiabetic.com/lin-et-al-2014" target="_blank">Lin et al. 2014</a>; <a href="https://www.thebreathingdiabetic.com/van-diest-et-al-2014" target="_blank">Van Diest et al. 2014</a>; <a href="https://www.thebreathingdiabetic.com/vaschillo-et-al-2006" target="_blank">Vaschillo et al. 2006</a>) and BRS (<a href="https://www.thebreathingdiabetic.com/rosengard-barlund-et-al-2011" target="_blank">Rosengård-Bärlund et al. 2011</a>; <a href="https://www.thebreathingdiabetic.com/bernardi-et-al-2011" target="_blank">Bernardi et al. 2011</a>; <a href="https://www.thebreathingdiabetic.com/joseph-et-al-2005" target="_blank">Joseph et al. 2005</a>).</p><p >Slow breathing improves these markers by stimulating the vagus nerve, which activates the calming parasympathetic nervous system (<a href="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00397/full" target="_blank">Gerritsen and Band 2018</a>).  <strong>This helps people with diabetes restore autonomic balance.</strong> </p><p >It is simple and immediately useful, seeming too good to be true.  But alas, <a href="https://www.nature.com/articles/s41598-017-04947-4" target="_blank">science agrees</a>: <em>“Slow breathing could be a simple beneficial intervention in diabetes.</em>”</p><h3 ><strong>3. How Stuff Works: Why Breathing Through Your Nose Is Best</strong></h3><blockquote><p >"<em>But wait, there's more. Breathing through your nose also increases the amount of oxygen in your blood more than mouth breathing, which is essential to virtually every cell, organ and tissue in your body.</em>"</p><p style="text-align:right;" >- How Stuff Works<br><a href="https://health.howstuffworks.com/human-body/systems/respiratory/nose-breathing.htm" target="_blank"><em>Why Breathing Through Your Nose is Best</em></a></p></blockquote><p >This excellent article succinctly summarizes the benefits of nose breathing.  It’s short, sweet, and packed full of great information. Enjoy!</p><h3 ><strong>4. With Breathing, Be Reasonable Not Rational</strong></h3><blockquote><p >"<em>Do not aim to be coldly rational when making financial decisions. Aim to just be pretty reasonable. Reasonable is more realistic and you have a better chance of sticking with it for the long run, which is what matters most.</em>"</p><p style="text-align:right;" >- Morgan Housel, <a href="https://www.amazon.com/Psychology-Money-Timeless-Lessons-Happiness/dp/B08D9WJ9G8/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1613817623&amp;sr=8-1" target="_blank"><em>The Psychology of Money</em></a></p></blockquote><p >I find many parallels between health and wealth.  Here is another.  We often get too bogged down with doing everything rationally.  "This study said 20 minutes of slow breathing is best" or "That one said three times a day is needed."</p><p >Rather than following scientific studies exactly, I believe it’s better to aim for being "pretty reasonable."  Find the time of day that works best with your schedule.  Find the method that works best for you.  Two slow breaths are better than no slow breaths.  Four minutes a day is still better than zero minutes a day.</p><p >With breathing, be reasonable, not rational.</p>
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+<blockquote><p >“<em>But the nostrils, with their delicate and fibrous linings for purifying and warming the air in its passage, have been mysteriously constructed, and designed to stand guard over the lungs.</em>” </p><p style="text-align:right;" >– George Caitlin (1864), <a href="https://www.amazon.com/Breath-Life-Mal-respiration-effects-enjoyments/dp/3337182038/ref=sr_1_2?crid=IAUXK2SA5FPW&amp;dchild=1&amp;keywords=the%20breath%20of%20life%20george%20catlin&amp;qid=1613820917&amp;sprefix=the%20breath%20of%20life%20ge%2Caps%2C191&amp;sr=8-2" target="_blank"><em>The Breath of Life</em></a></p></blockquote>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p >Answer:  The internal surface area of these organs can be a great a 100 sq. meters, about half the size of a tennis court.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p >Question:  <a href="https://www.merckmanuals.com/home/lung-and-airway-disorders/biology-of-the-lungs-and-airways/overview-of-the-respiratory-system" target="_blank">What are the lungs?</a></p>
+
+  <p style="margin-top:3rem;">In good breath,<br>Nick</p><p >P.S. <a href="https://www.instagram.com/p/CLISi3whKfN/" target="_blank">No I need these</a></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use it or Lose it + Eating and Breathing | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>Use it or Lose it + Eating and Breathing</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published November 9, 2020</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 THOUGHTS</div>
+<p ><strong>1.  The Nose: Use it or Lose it</strong></p><blockquote><p >"<em>Machines: use it and lose it; organisms: use it or lose it.</em>"</p><p >- Frano Barovic, <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/1400067820/ref=tmm_hrd_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=8-2" target="_blank">Antifragile</a></p></blockquote><p >I had to get a new computer recently.  My Macbook Pro gave me 7 great years, but it was time to move on.  I decided to switch to a Macbook Air.  I thought, "air is my favorite subject; I should get a computer called an Air."  I’m that weird : )</p><p >So when I was recently re-reading <em>Antifragile</em>, the quote above (buried in a footnote) popped off the page.  We expect machines like my computer to break over time: use it and lose it.  But with our body, it’s the opposite: use it or lose it.</p><p >This is especially true for one particular organ, the nose.  Here’s how James Nestor puts it:</p><blockquote><p >"<em>For noses clogged, you need to find a way of unclogging it. You can do that by breathing more through your nose because it's really a use-it-or-lose-it organ. The more you breathe through it, the more you're going to be able to breathe through it.</em>" -  <a href="https://www.npr.org/transcripts/862963172" target="_blank">NPR Interview</a></p></blockquote><p ><a href="https://www.thebreathingdiabetic.com/blog/in-textbooks" target="_blank">We learned</a> some tricks for unblocking your nose a couple weeks ago.  But the ultimate nose-unblocking exercise is to simply use it or lose it.</p><p ><strong>2. Thinkr Review of Breath</strong></p><blockquote><p >"<em>Though it seems as simple as inhaling and exhaling, the act of breathing is an overlooked artform that can do much more than just sustain life.</em>" - <a href="https://thinkr.org/books/breath-the-new-science-of-a-lost-art" target="_blank">Thinkr Review of Breath</a></p></blockquote><p >Speaking of James Nestor, here’s an excellent summary of his book <em>Breath</em> that I recently came across.  It requires an email to sign-up, but you can unsubscribe afterward…although I’ve actually enjoyed the emails they’ve sent since.</p><p >If you haven’t read Breath or just need a refresher, this is a nice summary from a company with no vested interest in "breathing."</p><p ><strong>3.  Using Breathing Science to Change the World</strong></p><p >Changing our breathing is one of the simplest thing we can do to improve our health.  Tiny changes, like switching to nose breathing 24/7, can dramatically impact our health and wellness.  That’s why it is great to see researchers using breathing in practical ways that could really change the world.</p><p >For example, imagine having a web browser add-on that, without you knowing it, alters your breathing to be more relaxed and rhythmic (rather than e-mail-apnea).  That’s what "Breathing Edges" aims to do:</p><p ><a href="https://web.stanford.edu/~mattm401/docs/2020-Mauriello-CHI-TowardBreathingEdgesAPrototypeRespirationEntrainmentSystemForBrowser-basedComputingTasks-Workshop.pdf" target="_blank">Toward Breathing Edges: A Prototype Respiration Entrainment System for Browser-based Computing Tasks</a></p><p >Or how about audio tracks that slow down your breathing while driving:</p><p ><a href="https://dl.acm.org/doi/10.1145/3191760" target="_blank">Just Breathe: In-Car Interventions for Guided Slow Breathing</a></p><p >Or audio tracks that speed up your breathing to keep you awake when you’re driving late at night:</p><p ><a href="https://dl.acm.org/doi/10.1145/3240925.3240939" target="_blank">Breath Booster!: Exploring In-Car, Fast-Paced Breathing Interventions to Enhance Driver Arousal State</a></p><p >It’s awesome to see things like this being developed, and it’ll be exciting to see what the next few years of research and application bring.</p><p ><strong>4. Can Eating Affect Your Breathing?</strong></p><blockquote><p >"<em>One is able to compare the different fuel sources in this regard by examining the respiratory quotient (RQ), the ratio of carbon dioxide produced per unit of oxygen consumed in the production of energy…The RQ for carbohydrate is 1.0; for fats, it is 0.7; and for protein, it is 0.8.</em>" - <a href="https://www.amazon.com/Respiratory-Physiology-Clinical-Approach-Integrated/dp/0781757487/ref=sr_1_1?dchild=1&amp;keywords=respiratory%20physiology%20a%20clinical%20approach&amp;sr=8-1" target="_blank">Respiratory Physiology, A Clinical Approach</a></p></blockquote><p >The "respiratory quotient" shows how much CO2 is produced per unit of oxygen consumed for energy production.  For example, 30% less CO2 is generated when fat is used for energy compared to carbohydrates.  </p><p >Thus, what you eat might affect how you breathe.</p><p >This might help explain why some endurance athletes prefer fueling with fat vs. carbs. Or why we can often hold our breath longer in the morning when we are fasted and using fat for energy.  Less CO2 production means less breathlessness and extended breath holds.</p><p >This also explains why I start breathing heavily when I splurge on cheesecake : )</p><p >We often think about how breathing can help with digestion and <a href="https://www.thebreathingdiabetic.com/wilson-et-al-2013" target="_blank">post-meal blood sugar spikes</a>.  But I guess we should not forget the relationship goes both ways.</p>
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+<blockquote><p >"<em>Since we cannot know all that there is to be known about anything, we ought to know a little about everything.</em>"</p><p >- Blaise Pascal</p></blockquote><p >Thanks to new 411 reader T. V. for inspiring this quote.</p>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p ><em>This section of the newsletter was inspired by my favorite TV show of all time, Jeopardy!  With the passing of Alex Trebek yesterday morning, it feels impossible to make an answer about breathing this week.  Instead, let’s honor the legacy of this great man.</em></p><p ><strong>Answer</strong>:  From 1984 to 2020, Alex Trebek hosted more than this many episodes of <em>Jeopardy!</em>, earning him spot in the Guinness Book of World Records.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p ><strong>Question</strong>: What is 8,200?  </p><p ><a href="https://www.instagram.com/p/CHV775wDo0w/" target="_blank">We love you, Alex.</a></p>
+
+  <p style="margin-top:3rem;">In good breath,<br>Nick</p><p >P.S. <a href="https://www.instagram.com/p/CGf0lsGFbbs/" target="_blank">I (accidentally) held my breath the whole time.</a></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Bruce Lee Sees Methods, Full Lotus, and the Beauty of Red Blood Cells | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>How Bruce Lee Sees Methods, Full Lotus, and the Beauty of Red Blood Cells</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published August 30, 2021</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 Thoughts</div>
+<h2 ><strong>1. On Bruce Lee, “Methods,” and Becoming Mixed Breathing Artists</strong></h2><blockquote><p >“<em>The individual is of first importance, not the system.  Remember that man created method and not that method created man, and do not strain yourself in twisting into someone’s preconceived pattern, which unquestionably would be appropriate for him, but not necessarily for you.</em>”</p><p style="text-align:right;" >- Bruce Lee, <a href="https://www.amazon.com/Bruce-Lee-Striking-Thoughts-Library/dp/0804834717/ref=sr_1_1?dchild=1&amp;keywords=Striking%20Thoughts&amp;qid=1629890512&amp;sr=8-1" target="_blank">Striking Thoughts</a></p></blockquote><p >I think we can safely say Bruce Lee would be against using any one breathing “method.”  He didn’t even believe there were <a href="https://www.youtube.com/watch?v=0yCeduVJW9s" target="_blank">different forms of fighting</a>.</p><p >In fact, many consider Lee to be the original Mixed Martial Artist.  <strong>Let’s follow his lead and become the first Mixed Breathing Artists</strong>.</p><p >That means we become both methodical and flexible.  We focus on science and self-expression.  We don’t strain ourselves to fit into a specific method; instead, we use what’s appropriate for a given situation.</p><p >Here’s to using the mixed breathing arts to conquer life’s challenges, today.</p><p style="text-align:center;" >***</p><p ><strong>Related Quote:</strong> “<em>Any technique, however worthy and desirable, becomes a disease when the mind is obsessed with it.</em>” - Bruce Lee</p><p ><strong>Another:</strong> “<em>The more complicated and restricted the method, the lesser the opportunity for the expression of one’s original sense of freedom.</em>” - Bruce Lee</p><h2 ><strong>2. What Full Lotus Can Teach Us About Breathing</strong></h2><blockquote><p >“<em>Years after I had mastered the full Lotus, another teacher walked by while I was sitting, tapped on my shoulder, and gestured toward my full Lotus: ‘That is the whole problem for you.’ </em>”</p><p style="text-align:right;" >- Larry Rosenberg, <a href="https://www.amazon.com/Breath-By-Breath-audiobook/dp/B00NIXZ11O/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1629890553&amp;sr=8-1" target="_blank">Breath by Breath</a></p></blockquote><p >This is one of my new favorite stories.  Larry Rosenberg had a teacher who thought sitting in full Lotus was essential.  <strong>So, he practiced diligently and deliberately for 10 years</strong>.  Finally, he could sit comfortably in it.  </p><p >Then, a few years later, a different teacher saw him sitting in Lotus and told him, “<em>That is the whole problem for you.</em>”  What one teacher said was essential, another said was his problem.  His Lotus was perfect; that wasn’t the issue.  <em>It was his obvious attachment to it</em>.  </p><p >The lesson for us is that we cannot attach ourselves to any one approach to breathing (just like Bruce Lee didn’t attach himself to any single martial art).</p><p >Of course, we need to be grounded in <a href="https://www.thebreathingdiabetic.com/overview" target="_blank">science-based principles.</a>  But remember to be open.  The method you’ve perfected might be the one that’s holding you back the most.</p><h2 ><strong>3. From NPR: “Just Breathe: Body Has A Built-In Stress Reliever”</strong></h2><blockquote><p >“<em>The breath isn't something Western medicine should blow off. It's a powerful tool for influencing individual health and well-being. And the best part is all the ingredients are free and literally right under your nose.</em>”</p><p style="text-align:right;" >- NPR, <a href="https://www.npr.org/2010/12/06/131734718/just-breathe-body-has-a-built-in-stress-reliever" target="_blank">Just Breathe: Body Has a Built-In Stress Reliever</a></p></blockquote><p >NPR published this article over a decade ago, but it’s still relevant today.  Check it out to learn how we can use slow and fast breathing to stimulate the nervous system, and how slow breathing might change gene expression.</p><p >Enjoy the quick read!</p><h2 ><strong>4. The Beauty of Red Blood Cells</strong></h2><blockquote><p >“<em>These experiments revealed a novel activity of the RBC [red blood cell]: the RBC regulates its own principal function—that is, O2 delivery.</em>”</p><p style="text-align:right;" >- <a href="https://www.atsjournals.org/doi/full/10.1513/pats.200507-066BG" target="_blank">Extrapulmonary Effects of Inhaled Nitric Oxide</a></p></blockquote><p >There are about 1 billion oxygen molecules on each of the trillions of red blood cells in your body.  That’s a lot of oxygen.  As the red blood cells circulate, they deliver this oxygen where it is needed most.</p><p >And as it turns out, the red blood cells themselves help regulate this process.  Specifically, when they sense areas of low oxygen, they release a bioactive form of nitric oxide.  This expands the vessels, which allows more blood flow and, ultimately, more oxygen delivery. It’s quite complex, and quite beautiful.</p><p style="text-align:center;" >***</p><p ><strong>Related:</strong> <a href="https://www.thebreathingdiabetic.com/zhang-et-al-2015" target="_blank">Nitric oxide carried by the red blood cells is essential for blood flow regulation and whole-body oxygenation</a></p>
+
+  
+<div class="nl-section-header">1 Quote</div>
+<blockquote><p >“In this way, the breath is like a mirror that shows you the state you are in.”</p><p style="text-align:right;" >- <a href="https://www.amazon.com/Wim-Hof-Method-Activate-Potential/dp/B08KS7MS3F/ref=sr_1_1?dchild=1&amp;keywords=the%20Wim%20Hof%20method&amp;qid=1630058444&amp;sr=8-1" target="_blank">Wim Hof</a></p></blockquote>
+
+  
+<div class="nl-section-header">1 Answer</div>
+<p ><strong>Category</strong>: Oxygen in Your Body</p><p ><strong>Answer</strong>: In terms of atoms, oxygen makes up this percent of total body mass.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p ><strong>Question</strong>:  <a href="https://www.forbes.com/sites/startswithabang/2020/04/30/how-many-atoms-do-we-have-in-common-with-one-another/?sh=96829991b38e" target="_blank">What is 65%?</a></p>
+
+  <p style="margin-top:3rem;">In good breath,</p><p >Nick Heath, T1D, PhD<br><em>“Breathing is the compound interest of health &amp; wellness.”</em></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nerdy Warriors of the Breath, Investing, and a Useful Look at HRV | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>Nerdy Warriors of the Breath, Investing, and a Useful Look at HRV</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published July 5, 2021</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 Thoughts</div>
+<h3 ><strong>1. A Practical Look at HRV and Resiliency</strong></h3><blockquote><p >“<em>Resilience is the ability to return to normalcy, according to Jen Baker, director of athletics and recreation at John Hopkins University, a graduate of the US Naval Academy. It's your ability to bounce back and thrive, replace worry with objective things, to navigate and take steps forward.</em>”</p><p style="text-align:right;" >- Belisa Vranich &amp; Brian Sabin, <a href="https://www.amazon.com/Breathing-Warriors-Responders-Endurance-Unshakable/dp/B07TK4TJNM/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1625048513&amp;sr=8-1" target="_blank">Breathing for Warriors</a></p></blockquote><p >Slow breathing significantly <a href="https://www.thebreathingdiabetic.com/science-library/lehrer-et-al-2020" target="_blank">increases heart rate variability (HRV)</a> and, subsequently, increases <a href="https://pubmed.ncbi.nlm.nih.gov/31642481/" target="_blank">resiliency</a>.  This has been shown time and time again.  But, from a practical perspective, what does it mean to “increase resiliency?”</p><p >Does it mean you’ll never experience stress or anxiety again?  No, certainly not.  What it means is that the <a href="https://www.inc.com/mithu-storoni/this-2-minute-breathing-exercise-can-help-you-make-better-decisions-according-to-a-new-study.html" target="">stressors won’t feel</a><a href="https://www.inc.com/mithu-storoni/this-2-minute-breathing-exercise-can-help-you-make-better-decisions-according-to-a-new-study.html" target="_blank"> as severe</a> and, as Jen Baker says, that you’ll bounce back faster.  <em>The stress is the same.  You’re different</em>.<strong>  </strong></p><p >So here’s to not trying to escape the world and its stressors, but instead having the tools—one being slow breathing—to bounce back to normalcy faster.</p><p style="text-align:center;" >***</p><p ><strong>Related Quote:</strong> “<em>To say that learning breath control is the most important component to forging mental toughness would not be an overstatement.</em>” -Mark Divine, Retired U.S. Navy SEAL Commander</p><p ><strong>Related Quote:</strong> “<em>By modulating the stress response via vagal stimulation from conscious breathing exercises, people can bolster their resilience to all forms of negative stressors; diabetes is no exception.</em>” - Evan Soroka, <a href="https://www.amazon.com/Yoga-Therapy-Diabetes-Evan-Soroka/dp/1787752615/ref=sr_1_3?dchild=1&amp;keywords=yoga%20therapy%20for%20diabetes&amp;qid=1625309803&amp;sr=8-3" target="_blank">Yoga Therapy for Diabetes</a></p><h3 ><strong>2. Where Are You Investing Your Breathing: GameStop or Real Estate?</strong></h3><p >Slow breathing methods can be “<em>life-changing,</em>” <a href="https://www.amazon.com/Breath-New-Science-Lost-Art/dp/0735213615/ref=sr_1_1?dchild=1&amp;keywords=Breath&amp;qid=1625052222&amp;sr=8-1" target="_blank">according to James Nestor</a>.  But, “<em>they can also take a while, especially for those with…chronic conditions.</em>”  On the other end of the spectrum, he says methods like Tummo restore balance with a “<em>violent shove,</em>” which can also be helpful for some.</p><p >So how do you know which is right for you?</p><p >I liken it to investing.  Slow, nasal breathing is like putting your money in real estate or an index fund.  It’s pretty safe.  There will be fewer ups and downs, and you’re almost guaranteed a positive return.</p><p >The “<em>violent shove</em>” techniques, on the other hand, are like investing in GameStop or crypto. You might see some incredible benefits in just one day. But, you also risk a significant loss the next if you're not diligent with it.</p><p >So the question is: Are you looking for short-term gains or long-term compounding?  Are you timing the market or playing the long game?  Maybe you want to have a “<em>diversified portfolio</em>”  : )  <strong>There’s no right or wrong answer.</strong>  Only you know which approach is right for you. </p><h3 ><strong>3. “'Email Apnea' Is a Real Thing-Here's How to Stop Holding Your Breath While Working (and Feel Less Stressed)”</strong></h3><blockquote><p >“<em>Learning (and really practicing) basic breathing techniques can also help reverse the effects of email apnea; it'll help you improve awareness of your own breath and breathing habits and teach you how to breathe more easily during times of stress.</em>”</p><p style="text-align:right;" >- Real Simple, <a href="https://www.realsimple.com/health/preventative-health/email-apnea-holding-breath-while-working" target="_blank">‘Email Apnea’ is a Real Thing</a></p></blockquote><p >This article provides an excellent summary of email apnea and some practical things you can do to reduce how often it occurs.  Or, at the very least, to help reverse some of its harmful effects.</p><p >As someone who still (after years of a daily breathing practice) occasionally experiences this, I thoroughly enjoyed the read.  I hope you do too!</p><h3 ><strong>4. Nerdy Warriors of the Breath</strong></h3><blockquote><p >“<em>The old-school philosophers knew it was really hard to live in integrity with our highest ideals. They told us we needed to be WARRIORS of the mind, not mere librarians of the mind.</em>” </p><p style="text-align:right;" >- <a href="https://www.optimize.me/plus-one/warriors-vs-librarians/" target="_blank">Brian Johnson</a></p></blockquote><p >Meaning we have to live our philosophy, not simply recite it to other people.  The same is true with breathing.  But, with breathing, both are critical.  </p><p >We have to be warriors of the breath.  We have to live it and practice it, in easy and difficult circumstances. But, we also need to be librarians of the breath.</p><p >We need to have the science ready in our back pocket.  We need to intrigue people with the experience, then back it up with the science, or vice-versa.</p><p >So here’s to being nerdy warriors of the breath, accomplishing great things with our practice, and then explaining the physiology of how it worked : )</p><p style="text-align:center;" >***</p><p ><strong>Related:</strong> <a href="https://www.thebreathingdiabetic.com/science-highlights" target="_blank">Breathing Science Library</a></p><p ><strong>Related: </strong><a href="https://black-sand-yoga.com/learn-1/2020/6/7/walking-100-miles-a-story-of-how-chronic-disease-makes-us-stronger" target="_blank">Rucking 100 Miles for Breathing</a></p><h3 ><strong>Extra Thought: Breathing I’m Exploring</strong></h3><p >I try my best to be a breathing warrior, and I practice every single day.  I don’t share too much about it because everyone’s practice is their own.  But, here are a couple of new things I’ve tried recently:</p><p ><a href="https://www.breathwrk.com/" target="_blank">Breathwrk App</a>: I’ve been having fun doing 1-3 min of each breath they offer.  I use it sporadically throughout the day just to try something different.  My three favorite breaths so far are:</p><ol data-rte-list="default"><li><p >No Worries</p></li><li><p >Clear Mind</p></li><li><p >Calm</p></li></ol><p ><a href="https://o-p-e-n.com/" target="_blank">Open</a>: I’ve also taken a few on-demand breathwork classes through Open.  I usually enjoy being in control, but I have genuinely loved these classes.  Here are my two favorites (thanks Crussen!):</p><ul data-rte-list="default"><li><p >Heart Coherence (this one was truly incredible)</p></li><li><p >Symmetry (box breathing w/music—an excellent mix)</p></li></ul><p >Here’s to never-ending growth, learning, and exploration of the breath.</p>
+
+  
+<div class="nl-section-header">1 Quote</div>
+<p >“<em>There is another side of Kanchenjunga and of every mountain—the side that has never been photographed and turned into postcards. That is the only side worth seeing.</em>”</p><p style="text-align:right;" >- Thomas Merton</p>
+
+  
+<div class="nl-section-header">1 Answer</div>
+<p ><strong>Category</strong>: Breathing in Libraries</p><p ><strong>Answer</strong>: One of the first mentions of nasal breathing in a medical text occurred in this year and document.</p><p >…</p><p ><em>(Cue the Jeopardy! music.)</em></p><p >…</p><p ><strong>Question</strong>: <a href="https://www.sciencedirect.com/science/article/pii/S0004951414610850" target="_blank">What is 1500 BCE, in the Ebers Papyrus?</a> </p><p >P.S. I found this in <a href="https://www.amazon.com/Breath-New-Science-Lost-Art/dp/0735213615/ref=sr_1_1?dchild=1&amp;keywords=Breath&amp;qid=1625052222&amp;sr=8-1" target="_blank">Breath</a><em>.</em></p>
+
+  <p style="margin-top:3rem;">In good breath,</p><p >Nick Heath, T1D, PhD<br><em>Diabetes is Tiny.  You are Mighty.</em></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

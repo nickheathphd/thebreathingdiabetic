@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Breathing 411 - There Are No Quick Fixes, Except This One | The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#1A202C;background:#fff;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+    .article-body{max-width:720px;margin:0 auto}
+    .btn{display:inline-block;font-size:1rem;font-weight:600;padding:.9rem 2.125rem;border-radius:6px;text-decoration:none;border:none;transition:background .18s ease,box-shadow .18s ease,transform .14s ease}
+    .btn-primary{background:#2B6CB0;color:#fff!important}
+    .btn-primary:hover{background:#245d9a;box-shadow:0 6px 20px rgba(43,108,176,.35);transform:translateY(-1px)}
+    .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8EDF3;transition:box-shadow .2s ease}
+    .nav.scrolled{box-shadow:0 1px 16px rgba(0,0,0,.07)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .nav__logo{font-size:1rem;font-weight:700;text-decoration:none;color:#0D1B2E;white-space:nowrap}
+    .nav__logo em{font-style:normal;color:#2B6CB0}
+    .nav__links{display:flex;align-items:center;gap:2.25rem;list-style:none}
+    .nav__links a{font-size:.9375rem;font-weight:500;color:#4A5568;text-decoration:none;transition:color .15s ease}
+    .nav__links a:hover,.nav__links a.active{color:#2B6CB0}
+    .nav__burger{display:none;background:none;border:none;cursor:pointer;padding:.375rem;color:#1A202C;flex-direction:column;gap:5px}
+    .nav__burger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav__drawer{display:none;position:fixed;inset:66px 0 0;background:#fff;z-index:199;padding:1.5rem 2rem 2rem;flex-direction:column;border-top:1px solid #E8EDF3;overflow-y:auto}
+    .nav__drawer.open{display:flex}
+    .nav__drawer a{display:block;font-size:1.125rem;font-weight:500;color:#1A202C;text-decoration:none;padding:1rem 0;border-bottom:1px solid #F0F4F8}
+    .nav__drawer a:hover{color:#2B6CB0}
+    .article-hero{padding:5rem 0 4rem;background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);border-bottom:1px solid #E8EDF3}
+    .article-hero__back{display:block;width:fit-content;font-size:.875rem;font-weight:600;color:#2B6CB0;text-decoration:none;margin-bottom:1.75rem}
+    .article-hero__label{display:inline-flex;align-items:center;gap:.625rem;font-size:.8125rem;font-weight:600;color:#2B6CB0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .article-hero__label::before,.article-hero__label::after{content:'';display:block;width:26px;height:1px;background:#2B6CB0;opacity:.45}
+    .article-hero h1{font-size:clamp(1.875rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:#0D1B2E;margin-bottom:1.25rem}
+    .article-hero__byline{font-size:.9375rem;font-weight:500;color:#2B6CB0;margin-bottom:.5rem}
+    .article-hero__date{font-size:.875rem;color:#718096;margin-bottom:.25rem}
+    .article-content{padding:4rem 0 5rem}
+    .article-body h2{font-size:clamp(1.375rem,2.5vw,1.875rem);font-weight:700;line-height:1.25;letter-spacing:-.018em;color:#0D1B2E;margin-top:3.5rem;margin-bottom:1.25rem}
+    .article-body h3{font-size:1.125rem;font-weight:700;line-height:1.35;color:#0D1B2E;margin-top:2.25rem;margin-bottom:.75rem}
+    .article-body p{font-size:1.0625rem;line-height:1.82;color:#374151;margin-bottom:1.375rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem}
+    .article-body li{font-size:1.0625rem;line-height:1.75;color:#374151;margin-bottom:.5rem}
+    .article-body strong{color:#1A202C;font-weight:600}
+    .article-body em{font-style:italic}
+    .article-body a{color:#2B6CB0;border-bottom:1px solid rgba(43,108,176,.3)}
+    .article-body a:hover{border-color:#2B6CB0}
+    .article-body blockquote{border-left:4px solid #2B6CB0;padding:1.125rem 1.5rem;margin:2rem 0;background:#F7FAFF;border-radius:0 6px 6px 0}
+    .article-body blockquote p{color:#1A365D;font-style:italic;margin:0}
+    .nl-section-header{font-size:1.875rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#2B6CB0;background:#EBF4FF;border-radius:8px;padding:.6rem 1.4rem;display:inline-block;margin:3rem 0 1.5rem}
+    .cta-box{background:#EBF4FF;border-radius:10px;padding:2rem 2.25rem;margin:3rem 0;text-align:center}
+    .cta-box__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.75rem}
+    .cta-box p{font-size:1rem;line-height:1.72;color:#2D4A6A;margin-bottom:1.5rem;font-weight:500}
+    .footer{background:#0D1B2E;padding:2.25rem 0}
+    .footer__inner{display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
+    .footer__copy{font-size:.875rem;color:#718096}
+    .footer__links{display:flex;align-items:center;gap:.375rem;list-style:none;flex-wrap:wrap;justify-content:center}
+    .footer__links a{font-size:.875rem;color:#718096;text-decoration:none;padding:0 .25rem;transition:color .15s ease}
+    .footer__links a:hover{color:#A0AEC0}
+    .footer__links .sep{color:#2D3748;font-size:.875rem}
+    @media(max-width:700px){.nav__links{display:none}.nav__burger{display:flex}.article-hero{padding:3.5rem 0 3rem}.article-content{padding:3rem 0 4rem}.cta-box{padding:1.75rem 1.5rem}}
+    @media(max-width:480px){.container{padding:0 1.25rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="nav__inner">
+      <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div></div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+  <main>
+    <header class="article-hero">
+      <div class="container"><div class="article-body">
+        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
+        <span class="article-hero__label">The Breathing 411</span>
+        <h1>The Breathing 411 - There Are No Quick Fixes, Except This One</h1>
+        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
+        <p class="article-hero__date">Published September 7, 2020</p>
+      </div></div>
+    </header>
+    <article class="article-content">
+      <div class="container"><div class="article-body">
+<div class="nl-section-header">4 THOUGHTS</div>
+<p ><strong>1.  There Are No Quick Fixes, Except This One</strong></p><blockquote><p >"<em>You won’t find many quick fixes in this book, but there is one way to immediately boost willpower: Slow your breathing down to four to six breaths per minute [...] Slowing the breath down activates the prefrontal cortex and increases heart rate variability, which helps shift the brain and body from a state of stress to self-control mode. A few minutes of this technique will make you feel calm, in control, and capable of handling cravings or challenges.</em>"<br>-Kelly McGonigal, <a href="https://www.amazon.com/Willpower-Instinct-Self-Control-Works-Matters/dp/1583335080/ref=tmm_pap_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=" target="_blank">The Willpower Instinct</a></p></blockquote><p >Beautifully said.  Thank you, Kelly.</p><p ><strong>2.  The #1 Breathing Fundamental</strong></p><p >I’ve referred to it <a href="https://www.thebreathingdiabetic.com/blog/2020/4/14/the-one-percent-rule-of-breathing" target="_blank">as the 1% rule</a> (an idea I borrowed from James Clear and Dan Pink), but it is also the #1 fundamental: Breathe through your nose.  </p><p >If you’re reading this, you’re probably aware of the importance of nose breathing.  But, did you know that a 2018 study, which has been viewed over 93,000 times and cited 26 times, concluded that the benefits of breath control might be linked back to the nose?  </p><blockquote><p >"<em>Taken together, these results confirm that nasal stimulation represents the fundamental link between slow breathing techniques, brain and autonomic activities and psychological/behavioral outputs.</em>" - <a href="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00353/full#h5" target="_blank">Zaccaro et al. (2018)</a></p></blockquote><p >That’s a powerful conclusion.  So, to add on to what Kelly McGongical said above, breathe slowly and through your nose<em>.</em></p><p ><strong>3.  Breathing as Active Rest</strong></p><p >"Active rest" has become a popular topic among athletes (and people who just enjoy exercising).  It’s hard to take a day off when you love your workout, but it’s also necessary to give your body the rest it needs to recover.  Enter: active rest.</p><p >There are several popular approaches.  The sauna, an ice bath, or a long walk.  But one of the most powerful is breathing…I’m not biased or anything : )</p><p >And the best part is that restful breathing doesn’t require any fancy equipment or money.  It can be done anywhere, anytime.  </p><p >In <a href="https://www.amazon.com/Power-Rest-Sleep-Enough-30-Day/dp/0061862770/ref=sr_1_1?dchild=1&amp;keywords=the%20power%20of%20rest&amp;qid=1599212380&amp;s=books&amp;sr=1-1" target="_blank">The Power of Rest</a>, Dr. Matthew Edlund puts it this way:</p><blockquote><p ><em>“We want to learn to rest anywhere, anytime, in ways that restore us, calm us, relax us, and make us alert. That means we have to learn how to breathe.”</em></p></blockquote><p >Agreed.  See Kelly McGonigal’s advice above for the best way to "<em>learn how to breathe.</em>"</p><p ><strong>4.  Science Guides the Macro, Practice Guides the Micro</strong></p><p >When studies show that something works, it doesn’t necessarily mean it’ll work for everyone.</p><p >We’re all different.  We have different bodies, different environments, and different day-to-day stressors and stimuli that we’re exposed to.  Although scientific studies try to be as general as possible, their results cannot be expected to work the same in everyone.</p><p >This gets to my thought:  <em>Science guides the macro, practice guides the micro</em>.  </p><p >For example, "<em>get 8 hours of sleep</em>" is a great macro statement.  It sets a good target that will be beneficial for most people.</p><p >However, if you performed an in-depth sleep study on yourself, you might find that you need 7 h 37 min or 8 h 11 min to be fully rested.  And that might vary from day-to-day, season-to-season.</p><p >The same goes for all of this "<em>breathing</em>" stuff.  Guidance such as "<em>breathe at 4-6 breaths per minute</em>" is excellent general advice that will be beneficial for almost everyone.  However, it is a macro statement.  It will take personal practice to find what’s right for you.</p>
+
+  
+<div class="nl-section-header">1 QUOTE</div>
+<blockquote><p >"<em>Breathing, like most forms of physical rest, improves as you practice. It takes a little time. But it’s a technique you’ll be able to do for the rest of your life, so it’s worthwhile getting good at it now.</em>"</p><p >- Matthew Edlund, <a href="https://www.amazon.com/Power-Rest-Sleep-Enough-30-Day/dp/0061862770/ref=sr_1_1?dchild=1&amp;keywords=the%20power%20of%20rest&amp;qid=1599212380&amp;s=books&amp;sr=1-1" target="_blank">The Power of Rest</a></p></blockquote>
+
+  
+<div class="nl-section-header">1 ANSWER</div>
+<p >Answer:  This mammal, weighing in at only 2 g, has the smallest lungs.</p><p >…</p><p ><em>(Cue the Jeopardy music.)</em></p><p >…</p><p >Question:  <a href="https://northamericannature.com/how-do-mammals-breathe/#Common_Respiratory_Issues:~:text=issues.-,Which%20Mammals%20Have%20the%20Smallest%20and%20Largest%20Lungs%3F" target="_blank">What is the bumblebee bat?</a></p>
+
+  <p >If you enjoy my work, check out a guest blog post I recently did for <em>BreathWrk</em>:</p><p ><a href="https://www.breathwrk.com/post/pilot-your-breathing-the-unexpected-goal-of-a-breathing-practice" target="_blank">Pilot Your Breathing: The Unexpected Goal of a Breathing Practice</a></p><p style="margin-top:3rem;">In good breath,<br>Nick</p><p >P.S. <a href="https://www.instagram.com/p/CEVJdUNjkU8/" target="_blank">The Ultimate COVID-19 Sport.</a></p>
+        <div class="cta-box">
+          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
+          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+        </div>
+        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="container"><div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+      <ul class="footer__links">
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><span class="sep" aria-hidden="true">|</span></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div></div>
+  </footer>
+  <script>
+    const siteNav=document.getElementById('site-nav');
+    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
+    burger.addEventListener('click',()=>{
+      const isOpen=drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded',isOpen);
+      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
+      document.body.style.overflow=isOpen?'hidden':'';
+    });
+    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
+    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Science-based deep dives on breathing, anxiety, and the nervous system — written by Nick Heath, Ph.D. Peer-reviewed research explained in plain English." />
+  <title>Blog — The Breathing Diabetic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1A202C;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ─── Buttons ─────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2.125rem;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.14s ease;
+    }
+    .btn-primary { background: #2B6CB0; color: #ffffff; }
+    .btn-primary:hover {
+      background: #245d9a;
+      box-shadow: 0 6px 20px rgba(43,108,176,0.35);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #2B6CB0;
+      border: 2px solid #2B6CB0;
+    }
+    .btn-outline:hover {
+      background: #EBF4FF;
+      transform: translateY(-1px);
+    }
+
+    /* ─── Navigation ──────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E8EDF3;
+      transition: box-shadow 0.2s ease;
+    }
+    .nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .nav__logo {
+      font-size: 1rem; font-weight: 700; letter-spacing: -0.01em;
+      text-decoration: none; color: #0D1B2E; white-space: nowrap;
+    }
+    .nav__logo em { font-style: normal; color: #2B6CB0; }
+    .nav__links { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
+    .nav__links a {
+      font-size: 0.9375rem; font-weight: 500; color: #4A5568;
+      text-decoration: none; transition: color 0.15s ease;
+    }
+    .nav__links a:hover { color: #2B6CB0; }
+    .nav__links a.active { color: #2B6CB0; font-weight: 600; }
+    .nav__burger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 0.375rem; color: #1A202C; flex-direction: column; gap: 5px;
+    }
+    .nav__burger span {
+      display: block; width: 22px; height: 2px;
+      background: currentColor; border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__drawer {
+      display: none; position: fixed; inset: 66px 0 0;
+      background: #ffffff; z-index: 199;
+      padding: 1.5rem 2rem 2rem; flex-direction: column; gap: 0;
+      border-top: 1px solid #E8EDF3; overflow-y: auto;
+    }
+    .nav__drawer.open { display: flex; }
+    .nav__drawer a {
+      display: block; font-size: 1.125rem; font-weight: 500; color: #1A202C;
+      text-decoration: none; padding: 1rem 0; border-bottom: 1px solid #F0F4F8;
+    }
+    .nav__drawer a:hover { color: #2B6CB0; }
+
+    /* ─── Page Hero ───────────────────────────────────────── */
+    .page-hero {
+      padding: 4.5rem 0 3.5rem;
+      background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%);
+      border-bottom: 1px solid #E8EDF3;
+    }
+    .page-hero__label {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-size: 0.8125rem; font-weight: 600; color: #2B6CB0;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .page-hero__label::before, .page-hero__label::after {
+      content: ''; display: block; width: 26px; height: 1px;
+      background: #2B6CB0; opacity: 0.45;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.875rem);
+      font-weight: 800; line-height: 1.12;
+      letter-spacing: -0.025em; color: #0D1B2E;
+      margin-bottom: 1rem;
+    }
+    .page-hero__sub {
+      font-size: 1.125rem; line-height: 1.75;
+      color: #506070; max-width: 560px;
+    }
+
+    /* ─── Main Content ────────────────────────────────────── */
+    .blog-main { padding: 4rem 0 6rem; }
+
+    /* Featured article ─── */
+    .featured-label {
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: #2B6CB0; margin-bottom: 1.5rem;
+    }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 0;
+      border: 1px solid #E8EDF3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      margin-bottom: 4rem;
+    }
+    .featured-card:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.11);
+      transform: translateY(-2px);
+    }
+    .featured-card__body {
+      padding: 3rem 3rem 3rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .featured-card__top {}
+    .featured-card__tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tag--blue { background: #EBF4FF; color: #2B6CB0; }
+    .tag--green { background: #E6FFFA; color: #276749; }
+    .tag--purple { background: #FAF5FF; color: #6B46C1; }
+    .featured-card__title {
+      font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+      font-weight: 700; line-height: 1.25;
+      letter-spacing: -0.018em; color: #0D1B2E;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      display: block;
+    }
+    .featured-card__title:hover { color: #2B6CB0; }
+    .featured-card__excerpt {
+      font-size: 1.0625rem; line-height: 1.78;
+      color: #4A5568; margin-bottom: 0;
+    }
+    .featured-card__meta {
+      display: flex; align-items: center; gap: 1rem;
+      margin-top: 2rem; padding-top: 1.5rem;
+      border-top: 1px solid #E8EDF3;
+      flex-wrap: wrap;
+    }
+    .featured-card__byline {
+      font-size: 0.875rem; font-weight: 500; color: #4A5568;
+    }
+    .featured-card__byline strong { color: #1A202C; }
+    .featured-card__studies {
+      font-size: 0.875rem; color: #718096;
+      padding-left: 1rem; border-left: 1px solid #E8EDF3;
+    }
+    .featured-card__visual {
+      background: linear-gradient(135deg, #1A365D 0%, #2B6CB0 50%, #3182CE 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2.5rem 2rem; position: relative; overflow: hidden;
+    }
+    .featured-card__visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+    .featured-card__visual-stat {
+      position: relative; text-align: center; margin-bottom: 1.75rem;
+    }
+    .featured-card__visual-stat:last-child { margin-bottom: 0; }
+    .featured-card__stat-number {
+      font-size: 3rem; font-weight: 800; color: #ffffff;
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .featured-card__stat-label {
+      font-size: 0.8125rem; font-weight: 500;
+      color: rgba(255,255,255,0.65); margin-top: 0.375rem;
+      letter-spacing: 0.03em;
+    }
+    .featured-card__stat-divider {
+      width: 32px; height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 1.25rem auto;
+    }
+    .featured-card__read-link {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.9375rem; font-weight: 600;
+      color: #2B6CB0; text-decoration: none;
+      transition: gap 0.18s ease, color 0.15s ease;
+      margin-top: 2rem;
+    }
+    .featured-card__read-link:hover { color: #1E4E8C; gap: 0.75rem; }
+    .featured-card__read-link svg {
+      width: 16px; height: 16px;
+      stroke: currentColor; fill: none; flex-shrink: 0;
+    }
+
+    /* Article grid ─── */
+    .posts-section-label {
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: #718096; margin-bottom: 1.75rem;
+      display: flex; align-items: center; gap: 0.875rem;
+    }
+    .posts-section-label::after {
+      content: ''; flex: 1; height: 1px; background: #E8EDF3;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .post-card {
+      border: 1px solid #E8EDF3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #ffffff;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .post-card:hover {
+      box-shadow: 0 6px 28px rgba(0,0,0,0.09);
+      transform: translateY(-2px);
+    }
+    .post-card__accent {
+      height: 4px;
+      background: linear-gradient(90deg, #2B6CB0, #63B3ED);
+    }
+    .post-card__body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .post-card__tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .post-card__title {
+      font-size: 1.0625rem; font-weight: 700; line-height: 1.35;
+      letter-spacing: -0.01em; color: #0D1B2E; margin-bottom: 0.75rem;
+      text-decoration: none; display: block;
+    }
+    .post-card__title:hover { color: #2B6CB0; }
+    .post-card__excerpt {
+      font-size: 0.9375rem; line-height: 1.72; color: #4A5568;
+      flex: 1; margin-bottom: 1.375rem;
+    }
+    .post-card__footer {
+      padding-top: 1.125rem; border-top: 1px solid #F0F4F8;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .post-card__meta { font-size: 0.8125rem; color: #718096; }
+    .post-card__arrow {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.875rem; font-weight: 600; color: #2B6CB0;
+      text-decoration: none; transition: gap 0.18s ease;
+    }
+    .post-card__arrow:hover { gap: 0.5rem; }
+    .post-card__arrow svg {
+      width: 14px; height: 14px; stroke: currentColor;
+      fill: none; flex-shrink: 0;
+    }
+
+    /* Coming-soon placeholder card */
+    .post-card--coming {
+      border-style: dashed;
+      background: #FAFBFC;
+    }
+    .post-card--coming .post-card__body {
+      align-items: center; justify-content: center;
+      text-align: center; padding: 2.5rem 1.75rem;
+    }
+    .post-card--coming .post-card__coming-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #EBF4FF;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .post-card--coming .post-card__coming-icon svg {
+      width: 20px; height: 20px; stroke: #2B6CB0; fill: none;
+    }
+    .post-card--coming .post-card__coming-title {
+      font-size: 0.9375rem; font-weight: 600; color: #4A5568;
+      margin-bottom: 0.5rem;
+    }
+    .post-card--coming .post-card__coming-sub {
+      font-size: 0.875rem; color: #A0AEC0; line-height: 1.6;
+    }
+
+    /* Newsletter CTA strip ─── */
+    .newsletter-strip {
+      background: #0D1B2E;
+      border-radius: 12px;
+      padding: 3rem 3.5rem;
+      margin-top: 4.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .newsletter-strip__text h2 {
+      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+      font-weight: 700; letter-spacing: -0.018em;
+      color: #ffffff; margin-bottom: 0.5rem;
+    }
+    .newsletter-strip__text p {
+      font-size: 1rem; color: rgba(255,255,255,0.62); line-height: 1.65;
+    }
+    .newsletter-strip__action { flex-shrink: 0; }
+
+    /* ─── Footer ──────────────────────────────────────────── */
+    .footer { background: #0D1B2E; padding: 2.25rem 0; }
+    .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer__copy { font-size: 0.875rem; color: #718096; }
+    .footer__links { display: flex; align-items: center; gap: 0.375rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer__links a { font-size: 0.875rem; color: #718096; text-decoration: none; padding: 0 0.25rem; transition: color 0.15s ease; }
+    .footer__links a:hover { color: #A0AEC0; }
+    .footer__links .sep { color: #2D3748; font-size: 0.875rem; }
+
+    /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-card__visual {
+        min-height: 200px;
+        flex-direction: row; gap: 2.5rem;
+        justify-content: center;
+      }
+      .featured-card__stat-divider { width: 1px; height: 48px; margin: 0; }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .nav__links { display: none; }
+      .nav__burger { display: flex; }
+      .featured-card__body { padding: 2rem; }
+      .featured-card__visual { padding: 1.75rem; gap: 1.5rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .newsletter-strip { padding: 2.25rem; flex-direction: column; }
+      .blog-main { padding: 3rem 0 5rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+      .featured-card__visual { flex-direction: column; gap: 1.25rem; }
+      .featured-card__stat-divider { width: 32px; height: 1px; margin: 0 auto; }
+    }
+
+    /* ─── Archive section ──────────────────────────────────── */
+    .archive-section { padding: 4rem 0 5rem; background: #F7F9FC; border-top: 1px solid #E8EDF3; }
+    .archive-section__header {
+      font-size: 0.6875rem; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: #718096; margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 0.875rem;
+    }
+    .archive-section__header::after { content: ''; flex: 1; height: 1px; background: #E8EDF3; }
+    .archive-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700;
+      letter-spacing: -0.018em; color: #0D1B2E; margin-bottom: 0.625rem;
+    }
+    .archive-section__sub { font-size: 1rem; color: #718096; margin-bottom: 2.5rem; }
+    .archive-list { display: flex; flex-direction: column; gap: 0; }
+    .archive-entry {
+      display: grid; grid-template-columns: 130px 1fr;
+      gap: 1.5rem; align-items: baseline;
+      padding: 1.25rem 0; border-bottom: 1px solid #E8EDF3;
+    }
+    .archive-entry:last-child { border-bottom: none; }
+    .archive-entry__date { font-size: 0.8125rem; color: #A0AEC0; font-weight: 500; white-space: nowrap; }
+    .archive-entry__title {
+      font-size: 1rem; font-weight: 600; color: #0D1B2E;
+      text-decoration: none; line-height: 1.4; display: block;
+      transition: color 0.15s ease;
+    }
+    .archive-entry__title:hover { color: #2B6CB0; }
+    .archive-entry__preview { font-size: 0.875rem; line-height: 1.6; color: #718096; margin-top: 0.25rem; }
+    @media(max-width:600px) {
+      .archive-entry { grid-template-columns: 1fr; gap: 0.25rem; }
+      .archive-entry__date { font-size: 0.75rem; }
+    }
+
+    /* ─── Quote Collection Cards ──────────────────────────── */
+    .quote-cards-section { margin-bottom: 3rem; }
+    .quote-cards-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #718096; margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .quote-cards-label::after { content: ''; flex: 1; height: 1px; background: #E8EDF3; }
+    .quote-cards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    .quote-card {
+      background: #F7FAFF; border: 1px solid #BEE3F8; border-radius: 10px;
+      padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;
+      transition: box-shadow 0.18s ease, transform 0.14s ease;
+    }
+    .quote-card:hover { box-shadow: 0 4px 16px rgba(43,108,176,0.12); transform: translateY(-2px); }
+    .quote-card__tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: #2B6CB0; color: #fff; border-radius: 999px;
+      padding: 0.2rem 0.65rem; width: fit-content;
+    }
+    .quote-card__title {
+      font-size: 1rem; font-weight: 700; color: #0D1B2E;
+      text-decoration: none; line-height: 1.35; display: block;
+    }
+    .quote-card__title:hover { color: #2B6CB0; }
+    .quote-card__desc { font-size: 0.875rem; color: #4A5568; line-height: 1.6; flex: 1; }
+    .quote-card__link {
+      font-size: 0.875rem; font-weight: 600; color: #2B6CB0;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.15s ease;
+    }
+    .quote-card__link:hover { gap: 0.65rem; }
+    @media(max-width:700px) { .quote-cards-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ NAVIGATION -->
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+        <ul class="nav__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="../books.html">Books</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="index.html" onclick="closeDrawer()">Blog</a>
+    <a href="#" onclick="closeDrawer()">About</a>
+    <a href="#" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PAGE HERO -->
+    <header class="page-hero">
+      <div class="container">
+        <span class="page-hero__label">The Breathing Diabetic</span>
+        <h1>The Blog</h1>
+        <p class="page-hero__sub">Peer-reviewed research on breathing, anxiety, and the nervous system — synthesized into plain English by Nick Heath, Ph.D.</p>
+      </div>
+    </header>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BLOG CONTENT -->
+    <div class="blog-main">
+      <div class="container">
+
+        <!-- ── Featured Post ─── -->
+        <p class="featured-label">Featured Article</p>
+
+        <article class="featured-card">
+          <div class="featured-card__body">
+            <div class="featured-card__top">
+              <div class="featured-card__tags">
+                <span class="tag tag--blue">Nasal Breathing</span>
+                <span class="tag tag--green">Anxiety</span>
+                <span class="tag tag--purple">Brain Science</span>
+              </div>
+              <a href="nasal-breathing-science.html" class="featured-card__title">
+                The Science of Nasal Breathing: What Research Says About Your Brain and Anxiety
+              </a>
+              <p class="featured-card__excerpt">
+                Peer-reviewed research shows that nasal breathing produces measurably different brain states than mouth breathing — less anxiety, more joy, and a deeply relaxed yet fully aware state of mind. This pillar post walks through 12 studies explaining exactly why, and what to do about it.
+              </p>
+            </div>
+            <div class="featured-card__meta">
+              <span class="featured-card__byline">By <strong>Nick Heath, Ph.D.</strong></span>
+              <span class="featured-card__studies">12 peer-reviewed studies</span>
+            </div>
+            <a href="nasal-breathing-science.html" class="featured-card__read-link">
+              Read the Article
+              <svg viewBox="0 0 16 16" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/>
+              </svg>
+            </a>
+          </div>
+          <div class="featured-card__visual" aria-hidden="true">
+            <div class="featured-card__visual-stat">
+              <div class="featured-card__stat-number">12</div>
+              <div class="featured-card__stat-label">Studies Covered</div>
+            </div>
+            <div class="featured-card__stat-divider"></div>
+            <div class="featured-card__visual-stat">
+              <div class="featured-card__stat-number">2.5×</div>
+              <div class="featured-card__stat-label">More Joy vs. Mouth Breathing</div>
+            </div>
+            <div class="featured-card__stat-divider"></div>
+            <div class="featured-card__visual-stat">
+              <div class="featured-card__stat-number">30s</div>
+              <div class="featured-card__stat-label">All It Takes Before Stress</div>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ── Quote & Wisdom Collection ─── -->
+        <div class="quote-cards-section">
+          <p class="quote-cards-label">Quotes &amp; Wisdom</p>
+          <div class="quote-cards-grid">
+
+            <div class="quote-card">
+              <span class="quote-card__tag">Quotes</span>
+              <a href="breath-as-life-spirit.html" class="quote-card__title">18 Quotes on Breath as Life &amp; Spirit</a>
+              <p class="quote-card__desc">Ancient sages, scientists, and sacred texts all converge on one truth: breath is life itself.</p>
+              <a href="breath-as-life-spirit.html" class="quote-card__link">Read Article &#8594;</a>
+            </div>
+
+            <div class="quote-card">
+              <span class="quote-card__tag">Quotes</span>
+              <a href="breath-is-mind-quotes.html" class="quote-card__title">Breath is Mind: 25 Quotes on the Breath-Mind Connection</a>
+              <p class="quote-card__desc">From Thich Nhat Hanh to William James — 25 thinkers on why the breath and mind are inseparable.</p>
+              <a href="breath-is-mind-quotes.html" class="quote-card__link">Read Article &#8594;</a>
+            </div>
+
+            <div class="quote-card">
+              <span class="quote-card__tag">Quotes</span>
+              <a href="number-100.html" class="quote-card__title">100 Inspiring Breathing Quotes</a>
+              <p class="quote-card__desc">Scientists, sages, athletes, and poets — 100 of the most powerful things ever said about the breath.</p>
+              <a href="number-100.html" class="quote-card__link">Read Article &#8594;</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── All Posts Grid ─── -->
+        <p class="posts-section-label">All Articles</p>
+
+        <div class="posts-grid">
+
+          <!-- Post 1 -->
+          <article class="post-card">
+            <div class="post-card__accent"></div>
+            <div class="post-card__body">
+              <div class="post-card__tags">
+                <span class="tag tag--blue">Nasal Breathing</span>
+                <span class="tag tag--green">Anxiety</span>
+              </div>
+              <a href="nasal-breathing-science.html" class="post-card__title">
+                The Science of Nasal Breathing: What Research Says About Your Brain and Anxiety
+              </a>
+              <p class="post-card__excerpt">Nasal breathing synchronizes your amygdala, raises joy, and lowers anxiety — in ways slow mouth breathing cannot. Here's the research.</p>
+              <div class="post-card__footer">
+                <span class="post-card__meta">Nick Heath, Ph.D. · 12 studies</span>
+                <a href="nasal-breathing-science.html" class="post-card__arrow">
+                  Read
+                  <svg viewBox="0 0 16 16" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coming soon 1 -->
+          <article class="post-card post-card--coming" aria-hidden="true">
+            <div class="post-card__body">
+              <div class="post-card__coming-icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <p class="post-card__coming-title">Coming Soon</p>
+              <p class="post-card__coming-sub">The next deep dive is in progress. Subscribe to get it first.</p>
+            </div>
+          </article>
+
+          <!-- Coming soon 2 -->
+          <article class="post-card post-card--coming" aria-hidden="true">
+            <div class="post-card__body">
+              <div class="post-card__coming-icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <p class="post-card__coming-title">Coming Soon</p>
+              <p class="post-card__coming-sub">More research-based articles on their way. Stay tuned.</p>
+            </div>
+          </article>
+
+        </div><!-- /posts-grid -->
+
+        <!-- ── Newsletter strip ─── -->
+        <div class="newsletter-strip">
+          <div class="newsletter-strip__text">
+            <h2>Get New Articles First</h2>
+            <p>Each week: one study, one insight, one practice. Free, evidence-based, no hype.</p>
+          </div>
+          <div class="newsletter-strip__action">
+            <a href="https://breathlearning.kit.com/7-day-breath-reset" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join the Free Newsletter</a>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </div>
+
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━ THE BREATHING 411 ARCHIVE -->
+  <section class="archive-section" id="archive">
+    <div class="container">
+      <p class="archive-section__header">Newsletter Archive</p>
+      <h2>The Breathing 411 Archive</h2>
+      <p class="archive-section__sub">Every weekly edition, newest first. 299 editions (all 298 complete).</p>
+      <div class="archive-list">
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 16, 2026</div>
+        <div class="archive-entry__content">
+          <a href="exciting-announcement-all-systems-relax-the-2nd-best-practice.html" class="archive-entry__title">Exciting Announcement, All Systems Relax, and the 2nd Best Practice</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 28 sec I hope the next 18-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 09, 2026</div>
+        <div class="archive-entry__content">
+          <a href="new-breath-brain-study-coffee-jokes-how-to-induce-creativity.html" class="archive-entry__title">New Breath-Brain Study, Coffee Jokes, and How to Induce Creativity</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 51 sec I hope the next 22-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 02, 2026</div>
+        <div class="archive-entry__content">
+          <a href="stolen-focus-3-ingredients-a-fascinating-aspect-of-slow-breathing.html" class="archive-entry__title">Stolen Focus, 3 Ingredients, and a Fascinating Aspect of Slow Breathing</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 30 sec I hope the next 18-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 23, 2026</div>
+        <div class="archive-entry__content">
+          <a href="is-anxiety-overbreathing-breathbodymind-the-walking-diabetic.html" class="archive-entry__title">Is Anxiety Overbreathing?, Breath→Body→Mind, and The Walking Diabetic</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 47 sec I hope the next 22-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 16, 2026</div>
+        <div class="archive-entry__content">
+          <a href="how-to-accomplish-more-gaining-control-doing-brooklyn-yoga.html" class="archive-entry__title">How to Accomplish More, Gaining Control, and Doing Brooklyn Yoga</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 6 sec I hope the next 25-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 09, 2026</div>
+        <div class="archive-entry__content">
+          <a href="dissolve-your-problems-slow-breathings-healing-the-joy-of-meditation.html" class="archive-entry__title">Dissolve Your Problems, Slow Breathing’s Healing, &amp;amp;amp; the Joy of Meditation</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 44 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 02, 2026</div>
+        <div class="archive-entry__content">
+          <a href="a-trained-mind-created-by-the-breath-how-to-be-better-at-anything.html" class="archive-entry__title">A Trained Mind, Created By the Breath, and How To Be Better At Anything</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 45 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 26, 2026</div>
+        <div class="archive-entry__content">
+          <a href="a-better-life-30-second-science-tibetan-yoga-of-breath.html" class="archive-entry__title">A Better Life, 30-Second Science, and the Tibetan Yoga of Breath</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 45 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 19, 2026</div>
+        <div class="archive-entry__content">
+          <a href="glimmers-over-triggers-more-from-your-mind-a-celebration-of-life.html" class="archive-entry__title">Glimmers over Triggers, More from Your Mind, and a Celebration of Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 12, 2026</div>
+        <div class="archive-entry__content">
+          <a href="universal-stress-reduction-feeling-at-ease-no-need-to-worry.html" class="archive-entry__title">Universal Stress Reduction, Feeling at Ease, and No Need to Worry</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 36 sec I hope the next 19-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 05, 2026</div>
+        <div class="archive-entry__content">
+          <a href="why-we-want-high-hrv-monk-brains-how-to-make-decisions.html" class="archive-entry__title">Why We Want High HRV, Monk Brains, and How to Make Decisions</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 0 sec I hope the next 24-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 29, 2025</div>
+        <div class="archive-entry__content">
+          <a href="hum-for-stress-less-negative-emotions-find-your-life-flow.html" class="archive-entry__title">Hum for Stress, Less Negative Emotions, and Find Your Life Flow</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 37 sec I hope the next 19-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 22, 2025</div>
+        <div class="archive-entry__content">
+          <a href="humming-making-life-2-3x-better-our-unique-self-regulation-powers.html" class="archive-entry__title">Humming, Making Life 2-3x Better, and Our Unique Self-Regulation Powers</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 15, 2025</div>
+        <div class="archive-entry__content">
+          <a href="invisible-benefits-achieving-goals-how-to-improve-problem-solving.html" class="archive-entry__title">Invisible Benefits, Achieving Goals, and How to Improve Problem-Solving</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 47 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 08, 2025</div>
+        <div class="archive-entry__content">
+          <a href="free-app-better-aging-how-meditation-affects-the-breath.html" class="archive-entry__title">Free App, Better Aging, and How Meditation Affects the Breath</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 47 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 01, 2025</div>
+        <div class="archive-entry__content">
+          <a href="better-decisions-health-happiness-why-we-train-the-mind.html" class="archive-entry__title">Better Decisions, Health &amp;amp;amp; Happiness, and Why We Train the Mind</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 41 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 24, 2025</div>
+        <div class="archive-entry__content">
+          <a href="brain-mind-simplicity-how-to-improve-everyones-wellness.html" class="archive-entry__title">Brain &amp;amp;amp; Mind, Simplicity, and How to Improve Everyone’s Wellness</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 50 sec I hope the next 22-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 17, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-signal-calm-nirvana-increasing-your-odds-of-happiness.html" class="archive-entry__title">How to Signal Calm, Nirvana, and Increasing Your Odds of Happiness</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 45 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 10, 2025</div>
+        <div class="archive-entry__content">
+          <a href="grow-the-good-speech-2-ways-to-practice-slow-breathing.html" class="archive-entry__title">Grow the Good, Speech, and 2 Ways to Practice Slow Breathing</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 03, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-deal-with-emotions-1-thing-to-avoid-and-good-intoxication.html" class="archive-entry__title">How to Deal with Emotions, #1 Thing to Avoid, and Good Intoxication</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 27, 2025</div>
+        <div class="archive-entry__content">
+          <a href="life-energy-laughter-4-elements-of-an-effective-breath-practice.html" class="archive-entry__title">Life Energy, Laughter, and the 4 Elements of an Effective Breath Practice</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 7 sec I hope the next 25-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 20, 2025</div>
+        <div class="archive-entry__content">
+          <a href="two-influential-studies-235-hours-and-my-favorite-story.html" class="archive-entry__title">Two Influential Studies, 23.5 Hours, and My Favorite Story</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 41 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 13, 2025</div>
+        <div class="archive-entry__content">
+          <a href="this-is-astonishing-heart-brain-and-your-mind-can-change-your-life.html" class="archive-entry__title">This is Astonishing, Heart &amp;amp;amp; Brain, and Your Mind Can Change Your Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 06, 2025</div>
+        <div class="archive-entry__content">
+          <a href="10-zen-seconds-breathe-it-out-and-the-power-of-recreation.html" class="archive-entry__title">10 Zen Seconds, Breathe It Out, and the Power of Recreation</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 22-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 29, 2025</div>
+        <div class="archive-entry__content">
+          <a href="the-surprising-benefits-of-yawning.html" class="archive-entry__title">The Surprising Benefits of Yawning</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 55 sec I hope the next 23-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 22, 2025</div>
+        <div class="archive-entry__content">
+          <a href="rest-your-brain-deal-with-problems-less-is-more.html" class="archive-entry__title">How to Rest Your Brain, How to Deal with Problems, and Less is More</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 15, 2025</div>
+        <div class="archive-entry__content">
+          <a href="the-science-is-in-why-breathing-is-first-and-a-better-metric-of-success.html" class="archive-entry__title">The Science Is In, Why Breathing is First, and a Better Metric of Success</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 34 sec I hope the next 19’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 08, 2025</div>
+        <div class="archive-entry__content">
+          <a href="feeling-better-thoughts-and-the-most-reliable-rhythm-in-our-lives.html" class="archive-entry__title">Feeling Better, Thoughts, and the Most Reliable Rhythm in Our Lives</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 5 sec I hope the next 25’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 01, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-get-the-most-benefits-slow-breathing-and-joy-is-our-gravity.html" class="archive-entry__title">How to Get the Most Benefits, Slow Breathing, and Joy is Our Gravity</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 53 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 25, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-concentrate-better-meditation-brain-and-this-is-never-selfish.html" class="archive-entry__title">How to Concentrate Better, Meditation &amp;amp;amp; Brain, and This Is Never Selfish</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 57 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 18, 2025</div>
+        <div class="archive-entry__content">
+          <a href="new-breath-paper-how-to-live-well-and-positive-forces-of-the-mind.html" class="archive-entry__title">New Breath Paper, How to Live Well, and Positive Forces of the Mind</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 56 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 11, 2025</div>
+        <div class="archive-entry__content">
+          <a href="breathwalking-coffee-beans-and-the-positive-impact-of-celebration.html" class="archive-entry__title">Breathwalking, Coffee Beans, and the Positive Impact of Celebration</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 18 sec I hope the next 28’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 04, 2025</div>
+        <div class="archive-entry__content">
+          <a href="you-can-do-this-today-a-new-2025-study-and-positive-reinforcement.html" class="archive-entry__title">You Can Do This Today, a New 2025 Study, and Positive Reinforcement</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 58 sec I hope the next 24’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 28, 2025</div>
+        <div class="archive-entry__content">
+          <a href="the-power-of-proper-breathing-the-1st-step-and-a-huge-morale-booster.html" class="archive-entry__title">The Power of Proper Breathing, the 1st Step, and a Huge Morale Booster</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 22’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 21, 2025</div>
+        <div class="archive-entry__content">
+          <a href="the-1-most-important-skill-activation-ritual-and-vitality-and-resilience.html" class="archive-entry__title">The #1 Most Important Skill, Activation Ritual, and Vitality and Resilience</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 53 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 14, 2025</div>
+        <div class="archive-entry__content">
+          <a href="conscious-breathing-for-body-mind-truth-and-how-to-save-your-own-life.html" class="archive-entry__title">Conscious Breathing for Body &amp;amp;amp; Mind, Truth, and How to Save Your Own Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 07, 2025</div>
+        <div class="archive-entry__content">
+          <a href="3-great-science-quotes-slowing-down-and-finding-beauty-in-imperfection.html" class="archive-entry__title">3 Great Science Quotes, Slowing Down, and Finding Beauty in Imperfection</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 45 sec I hope the next 21’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 30, 2025</div>
+        <div class="archive-entry__content">
+          <a href="helping-the-mind-body-system-give-yourself-a-break-share-what-you-learn.html" class="archive-entry__title">Helping the Mind-Body System, Give Yourself a Break, &amp;amp;amp; Share What You Learn</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 2 sec I hope the next 24’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 23, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-dissolve-problems-breathing-for-anxiety-and-as-i-breathe-i-hope.html" class="archive-entry__title">How to Dissolve Problems, Breathing for Anxiety, and As I Breathe, I Hope</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 55 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 16, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-measure-progress-cognitive-regulator-and-awareness-awareness.html" class="archive-entry__title">How to Measure Progress, Cognitive Regulator, and Awareness, Awareness…</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 9 sec I hope the next 26’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 09, 2025</div>
+        <div class="archive-entry__content">
+          <a href="brain-syncing-study-mind-rhythms-and-being-inspired-by-spirit.html" class="archive-entry__title">Brain Syncing Study, Mind Rhythms, and Being Inspired by Spirit</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 56 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 02, 2025</div>
+        <div class="archive-entry__content">
+          <a href="breath-body-brain-easily-plant-trees-and-the-heroic-heart.html" class="archive-entry__title">Breath-Body-Brain, Easily Plant Trees, and the Heroic Heart</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 11 sec I hope the next 26’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 26, 2025</div>
+        <div class="archive-entry__content">
+          <a href="breathing-201-a-better-form-of-meditation-and-what-wisdom-actually-is.html" class="archive-entry__title">Breathing 201, A Better Form of Meditation, and What Wisdom Actually Is</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 6 sec I hope the next 25’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 19, 2025</div>
+        <div class="archive-entry__content">
+          <a href="nose-vs-vagus-meditation-for-a-meaningful-life-and-trust-brings-calm.html" class="archive-entry__title">Nose vs. Vagus, Meditation for a Meaningful Life, and Trust Brings Calm</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 0 sec I hope the next 24’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 12, 2025</div>
+        <div class="archive-entry__content">
+          <a href="brain-blood-flow-humming-bee-breathing-and-an-unhurried-life.html" class="archive-entry__title">Brain Blood Flow, Humming Bee Breathing, and an Unhurried Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 58 sec I hope the next 24’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 05, 2025</div>
+        <div class="archive-entry__content">
+          <a href="co2-breath-regulation-a-fulfilling-life-and-a-great-book-on-movement.html" class="archive-entry__title">CO2 &amp;amp;amp; Breath Regulation, a Fulfilling Life, and a Great Book on Movement</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 11 sec I hope the next 26’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 28, 2025</div>
+        <div class="archive-entry__content">
+          <a href="breathing-101-feel-good-hormones-and-a-book-i-really-loved.html" class="archive-entry__title">Breathing 101, Feel-Good Hormones, and A Book I Really Loved</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 21, 2025</div>
+        <div class="archive-entry__content">
+          <a href="healing-through-breathing-breath-and-e-motions-and-how-to-go-east.html" class="archive-entry__title">Healing Through Breathing, Breath and E-motions, and How to Go East</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 14, 2025</div>
+        <div class="archive-entry__content">
+          <a href="art-of-being-wise-not-most-people-and-deep-psycho-physical-changes.html" class="archive-entry__title">Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 41 sec I hope the next 20’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 07, 2025</div>
+        <div class="archive-entry__content">
+          <a href="your-quiet-center-being-better-and-the-great-secret-of-long-life.html" class="archive-entry__title">Your Quiet Center, Being Better, and the Great Secret of Long Life</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 5 sec I hope the next 25’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 31, 2025</div>
+        <div class="archive-entry__content">
+          <a href="mbsr-course-reducing-anxiety-a-funny-quote-about-negative-feelings.html" class="archive-entry__title">MBSR Course, Reducing Anxiety, and a Funny Quote about Negative Feelings</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 24, 2025</div>
+        <div class="archive-entry__content">
+          <a href="i-had-no-idea-14-more-endurance-and-breathing-to-help-yourself.html" class="archive-entry__title">I Had No Idea, 14% More Endurance, and Breathing to Help Yourself</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 19 sec I hope the next 28’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 17, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-breathing-helps-the-brain-csf-and-better-retention-of-motor-skills.html" class="archive-entry__title">How Breathing Helps the Brain: CSF and Better Retention of Motor Skills</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 10, 2025</div>
+        <div class="archive-entry__content">
+          <a href="a-funny-1-minute-story-instant-calm-and-creating-hope-contentment.html" class="archive-entry__title">A Funny 1-Minute Story, Instant Calm, and Creating Hope &amp;amp;amp; Contentment</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 03, 2025</div>
+        <div class="archive-entry__content">
+          <a href="sky-breath-course-tend-to-your-wellbeing-and-the-key-to-longevity.html" class="archive-entry__title">SKY Breath Course, Tend to Your Wellbeing, and the Key to Longevity</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 53 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 24, 2025</div>
+        <div class="archive-entry__content">
+          <a href="great-books-on-breathing-mindfulness-and-better-living.html" class="archive-entry__title">Great Books on Breathing, Mindfulness, and Better Living</a>
+          <p class="archive-entry__preview">Today, we have a special 411 full of good books I’ve read in the past year or so.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 17, 2025</div>
+        <div class="archive-entry__content">
+          <a href="intelligent-control-of-breathing-humming-stopping-to-think.html" class="archive-entry__title">Intelligent Control of Breathing, Humming, and Stopping to Think</a>
+          <p class="archive-entry__preview">1. Intelligent Control of Breathing “An intelligent control of our breathing power will lengthen our days upon earth by giving us increased vitality a</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 10, 2025</div>
+        <div class="archive-entry__content">
+          <a href="on-breathing-moving-stillness-taking-an-instant-vacation.html" class="archive-entry__title">On Breathing, Moving &amp;amp;amp; Stillness, and Taking an Instant Vacation</a>
+          <p class="archive-entry__preview">Donate to support this newsletter &amp;amp; podcast.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 03, 2025</div>
+        <div class="archive-entry__content">
+          <a href="how-to-solve-complex-problems-your-path-focusing-on-joy.html" class="archive-entry__title">How to Solve Complex Problems, Your Path, and Focusing on Joy</a>
+          <p class="archive-entry__preview">No Audio this Week  Donate to support this newsletter &amp;amp; podcast.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 27, 2025</div>
+        <div class="archive-entry__content">
+          <a href="free-5-day-course-less-inflammation-3-breath-focused-quotes.html" class="archive-entry__title">Free 5-Day Course, Less Inflammation, and 3 Breath-Focused Quotes</a>
+          <p class="archive-entry__preview">Audio Block Double-click here to upload or link to a .mp3.</p>
+        </div>
+      </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 20, 2025</div>
+            <div class="archive-entry__content">
+              <a href="one-second-meditation-being-breathed-why-slow-breathing-works.html" class="archive-entry__title">One-Second Meditation, Being Breathed, and Why Slow Breathing Works</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 30 sec I hope the next 18’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 13, 2025</div>
+            <div class="archive-entry__content">
+              <a href="inspiration-recharging-our-batteries-how-to-float-through-life.html" class="archive-entry__title">Inspiration, Recharging Our Batteries, and How to Float Through Life</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 33 sec I hope the next 19’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 6, 2025</div>
+            <div class="archive-entry__content">
+              <a href="intention-25-breath-ideas-sincere-but-never-serious.html" class="archive-entry__title">Intention, 25 Breath Ideas, and Sincere but Never Serious</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 37 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. 25 One-Sentence Breathing Ideas for 2025 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 30, 2024</div>
+            <div class="archive-entry__content">
+              <a href="new-mouth-tape-study-universal-rhythm-the-ego-hates-this.html" class="archive-entry__title">New Mouth Tape Study, Universal Rhythm, and the Ego Hates This</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 44 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 23, 2024</div>
+            <div class="archive-entry__content">
+              <a href="after-8-years-how-to-be-like-water-our-bodys-love-language.html" class="archive-entry__title">After 8 Years, How to Be Like Water, and Our Body’s Love Language</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 36 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 16, 2024</div>
+            <div class="archive-entry__content">
+              <a href="breath-curious-a-moving-museum-the-necessary-path.html" class="archive-entry__title">Breath Curious, a Moving Museum, and the Necessary Path</a>
+              <p class="archive-entry__preview">Sorry, No Audio This Week Sorry, I was traveling last week and couldn’t record audio. On the plus side, Thought #3 and the humor in the P.S. link were inspired by this travel 😊.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 9, 2024</div>
+            <div class="archive-entry__content">
+              <a href="common-breath-currency-3-of-the-best-overlooked-exercise.html" class="archive-entry__title">Common Breath Currency, 3 of the Best, and an Overlooked Exercise</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 2, 2024</div>
+            <div class="archive-entry__content">
+              <a href="ten-breaths-the-power-of-intention-prescription-for-a-good-life.html" class="archive-entry__title">Ten Breaths, the Power of Intention, and a Prescription for a Good Life</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 57 sec I hope the next 24’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 25, 2024</div>
+            <div class="archive-entry__content">
+              <a href="whole-brain-breathing-nexus-point-life-is-far-too-important.html" class="archive-entry__title">Whole-Brain Breathing, Nexus Point, and Life is Far Too Important</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 18, 2024</div>
+            <div class="archive-entry__content">
+              <a href="a-mini-life-breath-brain-helping-everyone-else-relax.html" class="archive-entry__title">A Mini Life, Breath-Brain, and Helping Everyone Else Relax</a>
+              <p class="archive-entry__preview">mp3. Learn more Enjoy These Posts? Donate to support this newsletter podcast. Reading Time: 1 min 32 sec I hope the next 19’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 11, 2024</div>
+            <div class="archive-entry__content">
+              <a href="learning-to-live-3-random-thoughts-going-on-an-internal-jog.html" class="archive-entry__title">Learning to Live, 3 Random Thoughts, and Going on an Internal Jog</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 33 sec I hope the next 19’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 4, 2024</div>
+            <div class="archive-entry__content">
+              <a href="a-10-15-75-formula-laughter-menu-of-benefits.html" class="archive-entry__title">A 10-15-75 Formula, Laughter, and a Menu of Mind-Body Benefits</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 38 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 28, 2024</div>
+            <div class="archive-entry__content">
+              <a href="focus-on-joy-physics-how-to-overcome-obstacles.html" class="archive-entry__title">Purely for Joy, Physics, and How to Overcome Obstacles</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 21, 2024</div>
+            <div class="archive-entry__content">
+              <a href="how-to-not-get-upset-robust-science-the-great-synchrony.html" class="archive-entry__title">How to Not Get Upset, Robust Science, and the Great Synchrony</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 42 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 14, 2024</div>
+            <div class="archive-entry__content">
+              <a href="best-place-to-start-self-regulation-how-to-move-forward.html" class="archive-entry__title">Best Place to Start, Self-Regulation, and How to Move Forward</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 42 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 7, 2024</div>
+            <div class="archive-entry__content">
+              <a href="a-clearer-life-quiet-joy-3-random-thoughts.html" class="archive-entry__title">A Clearer Life, Quiet Joy, and 3 Random Thoughts</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 38 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. A Clearer and More Vivid Life “Think about a digital photograph.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 30, 2024</div>
+            <div class="archive-entry__content">
+              <a href="how-to-walk-farther-mind-roots-and-breath-gratitude.html" class="archive-entry__title">How to Walk Farther, Mind Roots, and Breath &amp;amp;amp; Gratitude</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 41 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 23, 2024</div>
+            <div class="archive-entry__content">
+              <a href="one-of-my-new-favorites-inhale-3-reminders-to-exhale.html" class="archive-entry__title">One of My New Favorites, Inhale, and 3 Reminders to Exhale</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 43 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 16, 2024</div>
+            <div class="archive-entry__content">
+              <a href="nasal-breathing-belly-laughing-my-favorite-signs-of-progress.html" class="archive-entry__title">Nasal Breathing, Belly Laughing, and My Favorite Signs of Progress</a>
+              <p class="archive-entry__preview">Reading Time: 2 min 4 sec I hope the next 25’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. My New Favorite Signs of Progress “ I look for changes in character and conduct.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 9, 2024</div>
+            <div class="archive-entry__content">
+              <a href="nasal-minded-three-quotes-and-making-your-own-path.html" class="archive-entry__title">Nasal Minded, Three Quotes, And Making Your Own Path</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 2, 2024</div>
+            <div class="archive-entry__content">
+              <a href="its-possible-movement-for-mindfulness-breath-is-life.html" class="archive-entry__title">It&#x27;s Possible, Movement for Mindfulness, and Breath is Life</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 39 sec I hope the next 20’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 26, 2024</div>
+            <div class="archive-entry__content">
+              <a href="breath-and-wine-simplest-movement-4-reminders-on-connection.html" class="archive-entry__title">Breath and Wine, Simplest Movement, and 4 Reminders on Connection</a>
+              <p class="archive-entry__preview">Announcement I am excited to be giving a 1-hr virtual workshop tomorrow, August 27th, at 5:30 p.m. Eastern for the nonprofit BeWell in School.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 19, 2024</div>
+            <div class="archive-entry__content">
+              <a href="flourishing-four-reminders-get-more-brain-power.html" class="archive-entry__title">Flourishing, Four (more) Reminders, and Get More Brain Power</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 47 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 12, 2024</div>
+            <div class="archive-entry__content">
+              <a href="four-reminders-alternate-nostril-tapping-into-life-force.html" class="archive-entry__title">Four Reminders, Alternate Nostril, and Tapping into the Life Force</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 45 sec I hope the next 26’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 5, 2024</div>
+            <div class="archive-entry__content">
+              <a href="more-alive-surprising-lung-expansion-long-life.html" class="archive-entry__title">More Alive, Surprising, and the Key to Lung Expansion (and a long life)</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 30 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 29, 2024</div>
+            <div class="archive-entry__content">
+              <a href="going-inward-a-new-practice-remembering-oneself.html" class="archive-entry__title">Going Inward, a New Practice, and Remembering Oneself</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 22, 2024</div>
+            <div class="archive-entry__content">
+              <a href="become-more-you-deep-changes-benefiting-those-we-encounter.html" class="archive-entry__title">Become More You, Deep Changes, and Benefiting Those We Encounter</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 39 sec I hope the next 25’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 15, 2024</div>
+            <div class="archive-entry__content">
+              <a href="humor-how-to-live-well-first-step-toward-self-regulation.html" class="archive-entry__title">Humor, How to Live Well, and the First Step Toward Self-Regulation</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 8, 2024</div>
+            <div class="archive-entry__content">
+              <a href="breath-anxiety-one-person-how-to-ease-your-troubles.html" class="archive-entry__title">Breath &amp;amp;amp; Anxiety, One Person, and How to Ease Your Troubles</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 31 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 1, 2024</div>
+            <div class="archive-entry__content">
+              <a href="smell-the-flowers-a-test-how-to-pacify-the-mind.html" class="archive-entry__title">Smell the Flowers, a Test, and How to Pacify the Mind</a>
+              <p class="archive-entry__preview">mp3. Learn more Enjoy These Posts? Donate to support this newsletter podcast. Reading Time: 1 min 33 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 24, 2024</div>
+            <div class="archive-entry__content">
+              <a href="blue-mindfulness-worry-hurry-a-natural-way-to-the-heart.html" class="archive-entry__title">Blue Mindfulness, Worry &amp;amp;amp; Hurry, and a Natural Way to the Heart</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 49 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 17, 2024</div>
+            <div class="archive-entry__content">
+              <a href="positive-stress-open-heart-poor-host-for-disease.html" class="archive-entry__title">Positive Stress, Open Heart, and a Poor Host for Disease</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 29 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 10, 2024</div>
+            <div class="archive-entry__content">
+              <a href="five-minutes-how-to-heal-the-mind-15-versus-300.html" class="archive-entry__title">Five Minutes, How to Heal the Mind, and 15 versus 300</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 29 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 3, 2024</div>
+            <div class="archive-entry__content">
+              <a href="breathing-guidelines-free-sci-411-how-to-make-tomorrow-good.html" class="archive-entry__title">Breathing Guidelines, Free Sci 411, and How to Make Tomorrow Good</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 31 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 27, 2024</div>
+            <div class="archive-entry__content">
+              <a href="my-ghostwriter-cost-free-the-best-gift-we-can-give-others.html" class="archive-entry__title">My Ghostwriter, Cost-Free, and the Best Gift We Can Give Others</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 32 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 20, 2024</div>
+            <div class="archive-entry__content">
+              <a href="movement-heart-lung-vacation-my-teacher-is-best.html" class="archive-entry__title">Movement, Heart and Lung Vacation, and My Teacher is Best</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 34 sec I hope the next 24’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 13, 2024</div>
+            <div class="archive-entry__content">
+              <a href="soul-physiology-laughter-heals-great-zen-master.html" class="archive-entry__title">Soul Physiology, Laughter Heals, and a Great Zen Master</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 41 sec I hope the next 25’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. Nurturing Our Body and Soul’s Physiology 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 6, 2024</div>
+            <div class="archive-entry__content">
+              <a href="see-the-world-deep-rest-a-simple-step-for-profound-effects.html" class="archive-entry__title">See the World, Deep Rest, and a Simple Step for Profound Effects</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. A Lens Through Which We See the World “How do emotions guide our actions?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 29, 2024</div>
+            <div class="archive-entry__content">
+              <a href="connection-wordless-mantra-4-thoughts-nose-breathing.html" class="archive-entry__title">Connection, a Wordless Mantra, and 4 Thoughts on Nose Breathing</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. A Wordless Mantra A wordless mantra you can always come back to is your breath. 2.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 22, 2024</div>
+            <div class="archive-entry__content">
+              <a href="breathing-heals-memory-4-thoughts-on-gratitude-love.html" class="archive-entry__title">Breathing Heals, Memory, and 4 Thoughts on Gratitude and Love</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 31 sec I hope the next 23’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 15, 2024</div>
+            <div class="archive-entry__content">
+              <a href="living-better-loving-kindness-4-reminders-to-laugh.html" class="archive-entry__title">Living Better, Loving-Kindness, and 4 Reminders to Laugh</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 37 sec I hope the next 24’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 8, 2024</div>
+            <div class="archive-entry__content">
+              <a href="science-talk-stress-3-exercises-to-heal-any-ailment.html" class="archive-entry__title">Science Talk, Stress, and 3 Exercises to Heal Any Ailment</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 49 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 1, 2024</div>
+            <div class="archive-entry__content">
+              <a href="4-tiny-thoughts-3-ways-to-success-what-the-buddha-lost.html" class="archive-entry__title">4 Tiny Thoughts, 3 Ways to Success, and What the Buddha Lost</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 49 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 25, 2024</div>
+            <div class="archive-entry__content">
+              <a href="how-breathing-heals-lifes-storms-power-of-love.html" class="archive-entry__title">How Breathing Heals, Life’s Storms, and the Power of Love</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 38 sec I hope the next 25’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 18, 2024</div>
+            <div class="archive-entry__content">
+              <a href="better-results-seeds-of-joy-what-it-truly-means-to-be-alive.html" class="archive-entry__title">Better Results, Seeds of Joy, and What it Truly Means to be Alive</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 35 sec I hope the next 24’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 11, 2024</div>
+            <div class="archive-entry__content">
+              <a href="aging-wonderful-outcomes-secret-of-an-unhurried-mind.html" class="archive-entry__title">Aging, Wonderful Outcomes, and the Secret of an Unhurried Mind</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 48 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 4, 2024</div>
+            <div class="archive-entry__content">
+              <a href="why-we-suffer-power-of-humming-celebration-of-life.html" class="archive-entry__title">Why We Suffer, Power of Humming, and a Celebration of Life</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 49 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. Why We Suffer from Pain In The Mindfulness Solution , Ronald Siegel, Psy.D.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 26, 2024</div>
+            <div class="archive-entry__content">
+              <a href="how-to-get-true-health-extended-release-calm-a-new-personality.html" class="archive-entry__title">How to Get True Health, Extended-Release Calm, and a New Personality</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 44 sec I hope the next 26’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 19, 2024</div>
+            <div class="archive-entry__content">
+              <a href="a-fulfilling-life-how-to-end-how-to-meditate-without-meditating.html" class="archive-entry__title">A Fulfilling Life, How to End, and How to Meditate without Meditating</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 56 sec I hope the next 29’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 12, 2024</div>
+            <div class="archive-entry__content">
+              <a href="clouds-humming-under-water-two-practices-for-today.html" class="archive-entry__title">Clouds, Humming Under Water, and Two Practices for Today</a>
+              <p class="archive-entry__preview">Reading Time: 2 min 1 sec I hope the next 30’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. Breathing, Clouds, and Connection “Clouds never truly disappear. They change form.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 5, 2024</div>
+            <div class="archive-entry__content">
+              <a href="self-expression-sending-messages-of-calm-how-to-live-well.html" class="archive-entry__title">Self-Expression, Sending Messages of Calm, and How to Live Well</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 51 sec I hope the next 28’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 29, 2024</div>
+            <div class="archive-entry__content">
+              <a href="cheapest-medicine-a-new-breath-book-students-of-life.html" class="archive-entry__title">Cheap Medicine, New Breath Book, and Becoming Students of Life</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 38 sec I hope the next 24’ish breaths are the most nourishing of your day. (P.S. This time doesn’t include the longer bonus thought at the end.) 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 22, 2024</div>
+            <div class="archive-entry__content">
+              <a href="smiling-heart-at-ease-life-changing-shift-perspective.html" class="archive-entry__title">Smiling, Heart at Ease, and a Life-Changing Shift in Perspective</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 43 sec I hope the next 25’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 15, 2024</div>
+            <div class="archive-entry__content">
+              <a href="tickle-your-adrenals-superhuman-is-sleep-all-in-your-head.html" class="archive-entry__title">A Wild Sleep Study, Becoming Great, and Being More Human</a>
+              <p class="archive-entry__preview">Reading Time: 2 min 2 sec I hope the next 30’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 8, 2024</div>
+            <div class="archive-entry__content">
+              <a href="catch-shoot-20-50-years-slow-breathing-doesnt-work.html" class="archive-entry__title">Catch &amp;amp;amp; Shoot, 20 or 50 Years, and Slow Breathing Doesn’t Work Now</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 49 sec I hope the next 27’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. Slow Breathing Doesn’t Work?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 1, 2024</div>
+            <div class="archive-entry__content">
+              <a href="24-ideas-best-books-of-2023-the-secret-to-healing.html" class="archive-entry__title">24 Ideas, Favorite Books of 2023, and the Secret to Healing</a>
+              <p class="archive-entry__preview">Reading Time: 1 min 27 sec I hope the next 22’ish breaths are the most nourishing of your day. 4 THOUGHTS 1. 24 One-Sentence Breathing Ideas for 2024 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 25, 2023</div>
+            <div class="archive-entry__content">
+              <a href="love-the-gift-of-giving-how-life-gets-measured.html" class="archive-entry__title">Love, the Gift of Giving, and How Life Gets Measured</a>
+              <p class="archive-entry__preview">I got sick on Saturday and couldn’t record. I hope to have it up by Tuesday or Wednesday.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 18, 2023</div>
+            <div class="archive-entry__content">
+              <a href="health-happiness-how-to-align-with-your-life-force.html" class="archive-entry__title">Health &amp;amp;amp; Happiness, and How to Align with Your Life Force</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. You Will Receive All Benefits in Due Course “If we commit to a twice-daily practice and give it some time to work, the benefits will be there.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 11, 2023</div>
+            <div class="archive-entry__content">
+              <a href="life-humor-a-great-truth-about-yourself.html" class="archive-entry__title">Life, Humor, and a Great Truth You Should Know about Yourself</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. An Affirmation of Life “Breath is life. It sustains us and it is an expression of the life force within us. The fact that we are breathing is an affirmation of life.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 4, 2023</div>
+            <div class="archive-entry__content">
+              <a href="cry-more-full-victory-three-gift-ideas-for-breathers.html" class="archive-entry__title">Cry More, Full Victory, and Three Gift Ideas for Breathers</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. Full Effort is Full Victory “The result is not the point; it is the effort to improve ourselves that is valuable. There is no end to this practice.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 27, 2023</div>
+            <div class="archive-entry__content">
+              <a href="free-5-star-resort-transferring-passion-rainy-breath.html" class="archive-entry__title">Free 5-Star Resort, Transferring Passion, and Breathing in the Rain</a>
+              <p class="archive-entry__preview">4 THOUGHTS 4 THOUGHTS 1. A Rainy, Effortless Breathing Exercise “Importantly, rain washes away the vestiges of pollution.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 20, 2023</div>
+            <div class="archive-entry__content">
+              <a href="meaningful-change-incredible-study-gratitude-now.html" class="archive-entry__title">An Incredible Study, Meaningful Change, and Gratitude Right Now</a>
+              <p class="archive-entry__preview">nyon: How to Produce Meaningful Changes with Breathing “Rather, I think the power of breathwork to change the function of the nervous system can be compared to the way water cuts a canyon through rock.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 13, 2023</div>
+            <div class="archive-entry__content">
+              <a href="mindful-sauna-focus-on-you-singing-better-breathing.html" class="archive-entry__title">Mindful Sauna, Focus on You, and Singing for Better Breathing</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. How Jon Kabat-Zinn Got Introduced to Mindfulness (it’s not what you might think) “I would actually say that the sauna at MIT was probably my first and most powerful meditation teacher.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 6, 2023</div>
+            <div class="archive-entry__content">
+              <a href="how-to-increase-well-being-waves-power-of-breathwalk.html" class="archive-entry__title">How to Actually Increase Well-Being, Waves, and the Power of Breathwalk</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. Without Wind, There Would Be No Waves Imagine if we tried to understand ocean waves by studying the internal makeup of the water (without first examining the winds).</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 30, 2023</div>
+            <div class="archive-entry__content">
+              <a href="heroes-the-healing-power-of-breathing-key-living-longer.html" class="archive-entry__title">Heroes, the Healing Power of Breathing, and the Key to Living Longer</a>
+              <p class="archive-entry__preview">Slightly Improves HbA1c in Diabetes “Previous systematic reviews and meta-analyses have shown that mindfulness interventions are effective in improving glycemic control in people with type 2 diabetes.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 23, 2023</div>
+            <div class="archive-entry__content">
+              <a href="when-laughter-occurs-choosing-joy-a-new-favorite-passage.html" class="archive-entry__title">When Laughter Occurs, Choosing Joy, and a New Favorite Passage</a>
+              <p class="archive-entry__preview">eady right with you, what is already whole , as a complement to, not a substitute for, whatever help and support and treatments you may be receiving or need—if you need any at all—and see what happens.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 16, 2023</div>
+            <div class="archive-entry__content">
+              <a href="one-solution-stress-getting-more-best-99-ive-spent.html" class="archive-entry__title">One Solution to Stress, Getting More, and the Best $0.99 I’ve Spent</a>
+              <p class="archive-entry__preview">OUGHTS 1. The Most Ubiquitous Form of Stress (and one solution to it) “Our bodies get worn down more quickly under chronic stress, and chronic uncertainty is the most ubiquitous form of chronic stress.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 9, 2023</div>
+            <div class="archive-entry__content">
+              <a href="mind-body-unity-power-of-breath-beautiful-resilience.html" class="archive-entry__title">Mind-Body Unity, the Real Power of Breath, and a Beautiful Resilience</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. After a Breathing, Mindfulness, Yoga/etc. Session, Ask Yourself this: “How does it feel to be like this? Does it feel natural? Is this a way you would want to continue to be in your life?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 2, 2023</div>
+            <div class="archive-entry__content">
+              <a href="3-lessons-why-we-practice-most-important-determinant.html" class="archive-entry__title">3 Simple Lessons, Why We Practice, and the Most Important Determinant</a>
+              <p class="archive-entry__preview">the main biological indicators of OS [oxidative stress] toward the direction of antioxidation and improve the OS state by increasing the levels of antioxidants and reducing those of oxidative markers.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 25, 2023</div>
+            <div class="archive-entry__content">
+              <a href="mindful-vs-slow-how-to-know-nature-of-all-beings.html" class="archive-entry__title">Mindful vs. Slow Breathing, and How to Know the Nature of All Beings</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. How to Become Mindful of the Nature of All Beings “Moreover, breathing is not exclusive. Living beings differ in appearance and behavior. They eat various kinds of food.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 18, 2023</div>
+            <div class="archive-entry__content">
+              <a href="laugh-more-buddhas-breathwork-how-to-find-silence.html" class="archive-entry__title">Laugh More, Buddha’s Breathwork, and How to Find Inner Silence</a>
+              <p class="archive-entry__preview">apeutic role of laughter-inducing interventions as a complementary strategy to improve everyone’s well-being and highlight the need for further research aiming to improve our collective sense of humor.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 11, 2023</div>
+            <div class="archive-entry__content">
+              <a href="smile-perfect-on-methods-happy-until-this-moment.html" class="archive-entry__title">A Smile, Perfect Advice on Methods, and I Was Happy Until this Moment</a>
+              <p class="archive-entry__preview">4 THOUGHTS 1. Science of Breath: A Practical Guide “There is no such thing as an involuntary system if the student learns to regulate the motion of the lungs.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 4, 2023</div>
+            <div class="archive-entry__content">
+              <a href="amazing-or-dangerous-longevity-how-to-create-more-time.html" class="archive-entry__title">Is this Amazing or Dangerous, Longevity, and How to Create More Time</a>
+              <p class="archive-entry__preview">Yoga Breathing, Meditation, and Longevity “By inducing stress resilience, breath work enables us to rapidly and compassionately relieve many forms of suffering.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 28, 2023</div>
+            <div class="archive-entry__content">
+              <a href="hiib-a-trick-for-present-becoming-more-joyous.html" class="archive-entry__title">HIIB?, a Trick for Being Present, and Becoming More Joyous</a>
+              <p class="archive-entry__preview">High-Intensity Interval…Breathing?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 21, 2023</div>
+            <div class="archive-entry__content">
+              <a href="how-gratitude-works-fast-breathing-coming-home-loving-way.html" class="archive-entry__title">How Gratitude Works, Fast Breathing, and Coming Home in a Loving Way</a>
+              <p class="archive-entry__preview">Brain Dynamics “In sum, we show that a relatively short period of mindfulness practice…significantly changes brain dynamics related to the internal monitoring of response conflicts and related errors.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 14, 2023</div>
+            <div class="archive-entry__content">
+              <a href="element-of-choice-less-effort-enjoyment-better-results.html" class="archive-entry__title">Element of Choice, Less Effort, and Focus on Enjoyment for Better Results</a>
+              <p class="archive-entry__preview">Focus On Enjoyment (but only if you want better results) “Literally anything you can do to augment your enjoyment of training will facilitate a process focus and lead to better performance.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 7, 2023</div>
+            <div class="archive-entry__content">
+              <a href="finding-answers-within-tree-tops-how-to-breathe-for-joy.html" class="archive-entry__title">Finding Answers Within, Tree Tops, and How to Breathe for Joy</a>
+              <p class="archive-entry__preview">How to Breathe for Joy “To our knowledge, this is the first demonstration that the alteration of respiration is sufficient to induce emotion.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 31, 2023</div>
+            <div class="archive-entry__content">
+              <a href="better-mental-health-letting-go-gratitude-healing.html" class="archive-entry__title">Better Mental Health, Letting Go with Gratitude, and Is This Healing?</a>
+              <p class="archive-entry__preview">Breathing for Better Mental and Emotional Health “The information presented is interesting and inspiring. The power of conscious breathing can&#x27;t be overstated.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 24, 2023</div>
+            <div class="archive-entry__content">
+              <a href="two-simple-things-a-better-brain-you-already-knew-this.html" class="archive-entry__title">Two Simple Things, a Better Brain, and You Already Knew This, But…</a>
+              <p class="archive-entry__preview">e object, such as the sensation of one’s own breath, combined with a non-reactive and accepting awareness of concurrently arising mental phenomena, can have far-reaching effects on cognitive functions.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 17, 2023</div>
+            <div class="archive-entry__content">
+              <a href="a-helpful-breathing-tip-two-ways-how-to-build-a-stronger-mind.html" class="archive-entry__title">A Helpful Breathing Tip, Two Ways, and How to Build a Stronger Mind</a>
+              <p class="archive-entry__preview">The Most Helpful Breathing Tip I’ve Found (it’s embarrassingly cliché simple) Don’t take ten breaths. Take one breath, ten times. Don’t do 5 minutes of breathing.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 10, 2023</div>
+            <div class="archive-entry__content">
+              <a href="10-fun-thoughts-meditation-bottle-whole-life-slow-breathing.html" class="archive-entry__title">10 Fun Thoughts, Meditation in a Bottle, and Whole-Life Slow Breathing</a>
+              <p class="archive-entry__preview">The Greatest Skill in Breathing (plus 9 more random thoughts) The greatest skill in breathing (like in life) is knowing when to go with the flow, and when to deliberately change it.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 3, 2023</div>
+            <div class="archive-entry__content">
+              <a href="better-learning-life-lifeline-how-we-breathe-is-who-we-are.html" class="archive-entry__title">Better Learning, Life&#x27;s Lifeline, and How We Breathe is Who We Are</a>
+              <p class="archive-entry__preview">How We Breathe is Who We Are “Breathing is about much more than simple gas exchange or even cardiorespiratory fitness.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 26, 2023</div>
+            <div class="archive-entry__content">
+              <a href="10-thoughts-blissful-states-breathing-brain-health.html" class="archive-entry__title">4 Thoughts, Reaching Blissful States, and Breathing and Brain Health</a>
+              <p class="archive-entry__preview">In my Brain: 4 Random One-Sentence Breathing Thoughts Slow breathing is air appreciation. Fast breathing is air intoxication. Breath holding is air imagination. And all breathing is air medicine. P.S.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 19, 2023</div>
+            <div class="archive-entry__content">
+              <a href="breath-learning-more-joy-how-to-change-our-reality.html" class="archive-entry__title">Breath Learning, More Joy, and How to Change Our Reality</a>
+              <p class="archive-entry__preview">Introducing… www.breathlearning.com Now open. Check it out. 2.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 12, 2023</div>
+            <div class="archive-entry__content">
+              <a href="gratitude-brain-change-2-quotes-bring-retreat-to-you.html" class="archive-entry__title">Gratitude Brain Change, 2 Quotes, and You Can Bring Retreat to You</a>
+              <p class="archive-entry__preview">The Passion Paradox I love breathing and lose sleep thinking about it. 2.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 5, 2023</div>
+            <div class="archive-entry__content">
+              <a href="my-top-5-breath-books-love-life-changing-outro.html" class="archive-entry__title">My Top 5 Breath Books, Unconditional Love, and a Life Changing Outro</a>
+              <p class="archive-entry__preview">My 5 Favorite Breathing Books the Order I’d Read Them if I Started Over Full Catastrophe Living : Teaches the power of mindful breathing, which is the starting point of all breathing practices.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 29, 2023</div>
+            <div class="archive-entry__content">
+              <a href="all-3-at-once-laughing-monks-naturally-arising-compassion.html" class="archive-entry__title">All 3 at Once, Laughing Monks, and Naturally Arising Compassion</a>
+              <p class="archive-entry__preview">Breathing Does All Three at Once A body scan focuses on your physical being. Observing your thoughts focuses on your mental being. Observing your beliefs focuses on your spiritual being.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 22, 2023</div>
+            <div class="archive-entry__content">
+              <a href="slow-gratitude-breath-pole-vaulting-calm-mind.html" class="archive-entry__title">Slow Gratitude, Breath Pole Vaulting, and Two Ways It Calms the Mind</a>
+              <p class="archive-entry__preview">The Gratitude of Breathing Slow breathing is to meditation what gratitude is to journaling. 2.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 15, 2023</div>
+            <div class="archive-entry__content">
+              <a href="alzheimers-nose-mouth-how-to-find-the-perfect-practice.html" class="archive-entry__title">Alzheimer’s, Nose vs. Mouth, and How to Find the Perfect Practice</a>
+              <p class="archive-entry__preview">The Smiling of Breathing Slow breathing is to breath exercises what smiling is to facial expressions. 2.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 8, 2023</div>
+            <div class="archive-entry__content">
+              <a href="best-morning-breathing-air-candy-calmness.html" class="archive-entry__title">The Best Morning Breathing Exercise, Air Candy, and Greater Calmness</a>
+              <p class="archive-entry__preview">Air Candy Gratitude turns an ordinary breath into air candy. 2. The Best Morning Breathing Exercise The best morning breathing exercise is a good night’s sleep. P.S.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 1, 2023</div>
+            <div class="archive-entry__content">
+              <a href="more-joy-long-beards-new-type-of-gravity.html" class="archive-entry__title">More Joy, Long Beards, and Beating a New Type of Gravity</a>
+              <p class="archive-entry__preview">Words can’t adequately express my gratitude and excitement 🙏 It begins this Sunday, May 7 , so it’s not too late to join if interested. Learn more and enroll here. Hope to see a few more of you there!</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 24, 2023</div>
+            <div class="archive-entry__content">
+              <a href="5-apps-less-work-laugh-more.html" class="archive-entry__title">5 Great Apps, Less Work, and a Simple Way to Laugh More</a>
+              <p class="archive-entry__preview">Learn more about the course and enroll here. The course is centered around a super simple yet extremely powerful protocol combining breathing, mindfulness, and remembered wellness. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 17, 2023</div>
+            <div class="archive-entry__content">
+              <a href="most-effective-stress-remedy-one-breath.html" class="archive-entry__title">One Breath, Three Components, and the Most Effective Stress Remedy</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you!</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 10, 2023</div>
+            <div class="archive-entry__content">
+              <a href="breathing-products-newsletters-presence.html" class="archive-entry__title">5 Favorite Breathing Products, 4 Favorite Newsletters, and the Here and Now</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 3, 2023</div>
+            <div class="archive-entry__content">
+              <a href="top-5-ig-embreathment-emotional-health.html" class="archive-entry__title">Top 5 IG Accounts, “Embreathment”, and Breathing for Emotional Health</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 27, 2023</div>
+            <div class="archive-entry__content">
+              <a href="emotional-balance-mindfulness-calm.html" class="archive-entry__title">Emotional Balance, Why Mindfulness, and Moving Beyond a Calm Mind</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 20, 2023</div>
+            <div class="archive-entry__content">
+              <a href="letting-go-better-emotions-loving-life.html" class="archive-entry__title">How to Let Go, Breathing for Better Emotions, and Loving Life</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 13, 2023</div>
+            <div class="archive-entry__content">
+              <a href="build-a-breath-great-power-mouth-tape.html" class="archive-entry__title">Build-a-Breath, How to Work with Emotions, and Carrying Great Power</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 6, 2023</div>
+            <div class="archive-entry__content">
+              <a href="breath-control-airways-engaging-fully.html" class="archive-entry__title">Why Breath Control Matters, -148°F, and Engaging Fully in Life</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 27, 2023</div>
+            <div class="archive-entry__content">
+              <a href="good-stress-self-love-wisdom.html" class="archive-entry__title">Good Stress, Self Love, and Breathing for Happiness and Wisdom</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 20, 2023</div>
+            <div class="archive-entry__content">
+              <a href="free-app-60-seconds-joy-cognition.html" class="archive-entry__title">Free OA App, 60 Seconds of Joy, and Breathing Improves Cognition</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 13, 2023</div>
+            <div class="archive-entry__content">
+              <a href="tech-gandhi-love.html" class="archive-entry__title">Big Tech vs. Gandhi, Breathing is Self-Love, and Syncing w/ the Heart</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 6, 2023</div>
+            <div class="archive-entry__content">
+              <a href="5-day-yoga-breathing-heart.html" class="archive-entry__title">Free 5-day Course, an Inspiring Study, and the Heart of Life</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 30, 2023</div>
+            <div class="archive-entry__content">
+              <a href="4-lessons-inner-calm.html" class="archive-entry__title">4 Lessons in 4 Years, Behind the Scenes, and Establishing Inner Calm</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! A Special Week + Behind the Scenes Today marks 4 years of sending this newsletter every week. That blows my mind.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 23, 2023</div>
+            <div class="archive-entry__content">
+              <a href="irreplaceable-coffee-breathwork.html" class="archive-entry__title">How to Be Irreplaceable, Coffee or Breath, and the Most Important Study Yet</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 16, 2023</div>
+            <div class="archive-entry__content">
+              <a href="bibliotherapy-love-relax.html" class="archive-entry__title">My New Favorite Therapy, Self Love, and Your Breathing Headphones</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 9, 2023</div>
+            <div class="archive-entry__content">
+              <a href="loving-potential-cold-mind.html" class="archive-entry__title">More Loving Potential, Cold Showers, and the Healing Power of Mind</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. How to Improve Your Loving Potential “ High vagal tone, then, can be taken as high loving potential .</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 2, 2023</div>
+            <div class="archive-entry__content">
+              <a href="30-seconds-wim-hof-wisdom.html" class="archive-entry__title">30 Seconds, Wim Hof Wisdom, and 23 One-Sentence Breathing Ideas</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Warm Up Your Mind Spirit with the Wim Hof Wisdom Bundle “There’s nothing mystical or abstract about it.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 26, 2022</div>
+            <div class="archive-entry__content">
+              <a href="goggins-healing-power.html" class="archive-entry__title">3 Breaths Changed David Goggins’ Life (+ a free gift)</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 19, 2022</div>
+            <div class="archive-entry__content">
+              <a href="3-healing-breaths-thought-experiment.html" class="archive-entry__title">3 Healing Breaths, a Celebration, and a Thought Experiment</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! A Celebration (sort of) Today marks 24 years with type-1 diabetes. Not exactly the present I wanted from Santa.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 12, 2022</div>
+            <div class="archive-entry__content">
+              <a href="10-percent-equanimity.html" class="archive-entry__title">10 Percent More, Rich Inner Core, and My Kind of Equanimity</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 5, 2022</div>
+            <div class="archive-entry__content">
+              <a href="antioxidant-panacea-3-sentences.html" class="archive-entry__title">Neat Breath Science, 3 Sentences to Live By, and it is a Panacea</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 28, 2022</div>
+            <div class="archive-entry__content">
+              <a href="hail-mary-holotropic.html" class="archive-entry__title">Holotropic Breathing, a 6 bpm Prayer, and the Power of PNS</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Study: Prayer and Mantra Lead to ~5.5-6.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 21, 2022</div>
+            <div class="archive-entry__content">
+              <a href="wim-1-min-soup.html" class="archive-entry__title">One Minute Stress Relief, Taste the Soup, and Positive Feelings</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 14, 2022</div>
+            <div class="archive-entry__content">
+              <a href="wim-ocean-presencing.html" class="archive-entry__title">Wim Hof &amp;amp;amp; the Ocean, Presencing, and a Long, Good Life</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. A Borrowed Rule from Nutrition that Applies to Breathing What you remove is far more valuable than what you add.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 7, 2022</div>
+            <div class="archive-entry__content">
+              <a href="equanimity-8-breaths.html" class="archive-entry__title">Effective Non-Breathing Tool, Equanimity, and an 8 Breath Protocol</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! If You Have Diabetes… Would you mind taking a quick survey?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 31, 2022</div>
+            <div class="archive-entry__content">
+              <a href="resonance-breathing30-emotional.html" class="archive-entry__title">Is Resonance Overrated, Breathing 3.0, and Feeling More this Week</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 24, 2022</div>
+            <div class="archive-entry__content">
+              <a href="live-longer-point-a.html" class="archive-entry__title">How to (actually) Live Longer, Point A to B, and Breathing for Spirit</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 17, 2022</div>
+            <div class="archive-entry__content">
+              <a href="4-qualities-panacea.html" class="archive-entry__title">Four Qualities to Develop, and Why Breathing Might Be a Panacea</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 10, 2022</div>
+            <div class="archive-entry__content">
+              <a href="spiritual-progress-nose-mouth.html" class="archive-entry__title">Nose or Mouth, 23 Years Ago, and How to Make Spiritual Progress</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. How to Make Spiritual Progress “ [B]reath is the animated, nonphysical aspect of your being.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 3, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breath-heart-art-science.html" class="archive-entry__title">Breath is Heart, How it Should Be, and the Breathing Benefits of Water</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 26, 2022</div>
+            <div class="archive-entry__content">
+              <a href="nutritious-indirect-resonance.html" class="archive-entry__title">Nutritious Breathing, a Touch of Mindfulness, and Why Resonance Works</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Nutritious Breathing Practicing low slow nasal breathing is like eating a nutrient-dense, whole-food meal.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 19, 2022</div>
+            <div class="archive-entry__content">
+              <a href="head-heart-best-advice.html" class="archive-entry__title">Head and Heart, Best Advice, and Why All Breathwork Works</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 12, 2022</div>
+            <div class="archive-entry__content">
+              <a href="eloquent-exhales-water-sounds.html" class="archive-entry__title">Eloquent Exhales, 3 Books, and Adding Sound for More Benefit</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 5, 2022</div>
+            <div class="archive-entry__content">
+              <a href="water-resistance-counting.html" class="archive-entry__title">Easy &amp;amp;amp; Natural Resistance Breathing, Flow, and How to Fall Back Asleep</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 29, 2022</div>
+            <div class="archive-entry__content">
+              <a href="mouth-breathing-parable.html" class="archive-entry__title">Therapeutic Mouth Breathing, Focus, and My Favorite Breathing Parable</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 22, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breath-energy-unseen-wind.html" class="archive-entry__title">Elevated Mood, Tremendous Breath Energy, and How to Move a Ship</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. State vs. Trait Breathing State Breathing: How your breathing changes during and immediately after an experience (e.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 15, 2022</div>
+            <div class="archive-entry__content">
+              <a href="focus-better-sleep.html" class="archive-entry__title">5 Breaths for Focus, Better Sleep, and Your Own Finely Crafted Program</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 8, 2022</div>
+            <div class="archive-entry__content">
+              <a href="vagal-tone-perfect-advice.html" class="archive-entry__title">Vagal Tone, Perfect Advice, and How to Experience More Joy</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 1, 2022</div>
+            <div class="archive-entry__content">
+              <a href="progress-heart-happiness.html" class="archive-entry__title">Progress, Heart &amp;amp;amp; Happiness, and How to Become a Breath Coach</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Another Excellent Quote on Breathing from Another Doctor Last week , I shared a great quote from Andrew Weil, MD.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 25, 2022</div>
+            <div class="archive-entry__content">
+              <a href="learned-hope-weil-quote.html" class="archive-entry__title">Learned Hope, Suffering vs. Peace, and a Perfect Quote on Breathwork</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. A Perfect Quote on Breathing from Dr.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 18, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breath-medicine-meta-analysis.html" class="archive-entry__title">Breath is Medicine, Slow Breathing in 223 Studies, and &quot;Yes, This Is It&quot;</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 11, 2022</div>
+            <div class="archive-entry__content">
+              <a href="mindful-breathing-ai.html" class="archive-entry__title">3 Easy Mindful Breaths, Breathing&#x27;s Version of AI, and 7/11 for 7/11</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 4, 2022</div>
+            <div class="archive-entry__content">
+              <a href="one-on-ones-less-more.html" class="archive-entry__title">Free 1-on-1 Sessions, Less is More, and How to Life a Long &amp;amp;amp; Healthy Life</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Less is More When you breathe less, you almost always get more. More blood flow. More oxygen delivery.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 27, 2022</div>
+            <div class="archive-entry__content">
+              <a href="yoga-prozac-heart.html" class="archive-entry__title">Yoga vs. Prozac, Deep Insight, and 4 Breaths for a Better Heart</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 20, 2022</div>
+            <div class="archive-entry__content">
+              <a href="heart-breath-hidden-life.html" class="archive-entry__title">Heart &amp;amp;amp; Breath Harmony, Hidden Life, and Two Places to Put Your Breath</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. Two Places to Put Your Breath For thinking: Put your breath where your mind wants to be.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 13, 2022</div>
+            <div class="archive-entry__content">
+              <a href="elegance-philosophy.html" class="archive-entry__title">Applied Elegance, a Gift of Breathing, and How to Practice Philosophy</a>
+              <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 6, 2022</div>
+            <div class="archive-entry__content">
+              <a href="top-5-coherence-purpose.html" class="archive-entry__title">Top 5 Daily Breaths, a Guide to Wim Hof, and Coherence Fuels Purpose</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 30, 2022</div>
+            <div class="archive-entry__content">
+              <a href="nose-stress-73.html" class="archive-entry__title">Nose versus Mouth, 800000 and 73 days, and Our Best Weapon for Stress</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 23, 2022</div>
+            <div class="archive-entry__content">
+              <a href="life-force-mind-wander.html" class="archive-entry__title">Life Force in Action, 3 Studies, and the Power of Mind-Wandering</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 16, 2022</div>
+            <div class="archive-entry__content">
+              <a href="biases-meaningful-tasks.html" class="archive-entry__title">Beating Biases, a Simple Truth, and How to Engage in Meaningful Tasks</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 9, 2022</div>
+            <div class="archive-entry__content">
+              <a href="attention-joy-aging.html" class="archive-entry__title">Better Attention, Lasting Joy, and How to Age Successfully (in 5 min)</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 2, 2022</div>
+            <div class="archive-entry__content">
+              <a href="confidence-self-regulation.html" class="archive-entry__title">Diverse Tactics (part 2), Less Relaxation, and How to Feel Confident</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 25, 2022</div>
+            <div class="archive-entry__content">
+              <a href="values-goals-methods.html" class="archive-entry__title">Values and Goals, Diverse Tactics, and 3 Shared Benefits of 15 Studies</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 18, 2022</div>
+            <div class="archive-entry__content">
+              <a href="stress-29-studies.html" class="archive-entry__title">Better Under Stress, Wim Hof’s Joy, and a Protocol based on 29 Studies</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 11, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breathing-to-change-world.html" class="archive-entry__title">Learn Better, 4 Gifts, and How Breathing Can Actually Change the World</a>
+              <p class="archive-entry__preview">Today is a special edition of The Breathing 411. Because today is 4/11. It’s also World Breathing Day.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 4, 2022</div>
+            <div class="archive-entry__content">
+              <a href="mental-posture-metabolism.html" class="archive-entry__title">How to Use Less, Accomplish More, and Feel More Cognitive Power</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 28, 2022</div>
+            <div class="archive-entry__content">
+              <a href="long-term-6-hr-bh.html" class="archive-entry__title">More Time, Long-Term Benefits, and How to Hold Your Breath for 6 Hours</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 21, 2022</div>
+            <div class="archive-entry__content">
+              <a href="timeless-healing-2-rules.html" class="archive-entry__title">Timeless Healing, Anti-Harley, and 2 Rules to Improve Your Breathing</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 14, 2022</div>
+            <div class="archive-entry__content">
+              <a href="posture-lean-into-practice.html" class="archive-entry__title">Sit Up Straight, a Language of Energy, and Two Hours instead of One?</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 7, 2022</div>
+            <div class="archive-entry__content">
+              <a href="shared-theme-tony-robbins.html" class="archive-entry__title">A Shared Theme, Heal the Body, and Tony Robbins&#x27;s 3 Breathing Practices</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 28, 2022</div>
+            <div class="archive-entry__content">
+              <a href="mystics-ideal-state.html" class="archive-entry__title">Breathing for Diabetes Class, Mystics, and How to Reach the Ideal State</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 21, 2022</div>
+            <div class="archive-entry__content">
+              <a href="stress-growth-superhuman.html" class="archive-entry__title">Rock Climbing, Stress &amp;amp;amp; Growth, and How to be Present (not just breathing)</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 14, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breath-heart-advice.html" class="archive-entry__title">Heart and Breath, plus the Best Breathing (and life) Advice I’ve Read</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 7, 2022</div>
+            <div class="archive-entry__content">
+              <a href="breath-mind-residue.html" class="archive-entry__title">25 Thoughtful Quotes on Breath &amp;amp;amp; Mind, and How to Make Meditation Fun</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 31, 2022</div>
+            <div class="archive-entry__content">
+              <a href="3ps-whm-vs-whm.html" class="archive-entry__title">Wim Hof vs. Wim Hof, the Three P&#x27;s, and Breathing like Journalists</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 24, 2022</div>
+            <div class="archive-entry__content">
+              <a href="whm-slow-part2.html" class="archive-entry__title">Wim Hof vs. Slow Breathing, Part 2: The Famous Endotoxin Challenge</a>
+              <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 17, 2022</div>
+            <div class="archive-entry__content">
+              <a href="whm-hrvb-meaningful.html" class="archive-entry__title">Wim Hof vs. Slow Breathing, and How to Start Something Meaningful</a>
+              <p class="archive-entry__preview">k you! 🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 10, 2022</div>
+            <div class="archive-entry__content">
+              <a href="inner-blood-flow.html" class="archive-entry__title">Inner Resources, Better Blood Flow, and How to Focus on a Fuller Life</a>
+              <p class="archive-entry__preview">k you! 🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 3, 2022</div>
+            <div class="archive-entry__content">
+              <a href="use-heart-22-one.html" class="archive-entry__title">An Unexpected Truth, 22 One-Sentence Ideas, and the Best Part of Breathing</a>
+              <p class="archive-entry__preview">k you! 🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 27, 2021</div>
+            <div class="archive-entry__content">
+              <a href="chronic-disease-books.html" class="archive-entry__title">&quot;Promising Prospects in Chronic Diseases,&quot; plus My Top 3 Books of 2021</a>
+              <p class="archive-entry__preview">🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 20, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breath-spirit-overbreathing.html" class="archive-entry__title">Breath as Spirit, Body and Mind, and 2 Opposing Views on Overbreathing</a>
+              <p class="archive-entry__preview">🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can now subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 13, 2021</div>
+            <div class="archive-entry__content">
+              <a href="love-rising-buddha.html" class="archive-entry__title">Breathing &amp;amp;amp; Love, Rising Above the Clouds, and 4 Years in 4 Points</a>
+              <p class="archive-entry__preview">Demonstrations of Breathing Love “ Demonstrations of love are small, compared with the great thing that is hidden behind them.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 6, 2021</div>
+            <div class="archive-entry__content">
+              <a href="loud-breathing-effortless.html" class="archive-entry__title">Effortless Inhales, Deepak on Smiling, and Maybe Loud Breathing is OK?</a>
+              <p class="archive-entry__preview">The Breath Should Enter Very Subtly “ ‘Very subtly’ means that when the nose draws in the outside air, it should draw it very subtly so that the ear should not hear it.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 29, 2021</div>
+            <div class="archive-entry__content">
+              <a href="anb-70-percent.html" class="archive-entry__title">Alternate Nostril Breathing, 70% Exhales, and How to be &quot;Happy Right Away&quot;</a>
+              <p class="archive-entry__preview">Friendly Reminder to Exhale More than 70% In Heart Breath Mind , Leah Lagos discusses a fascinating study where a group of people were instructed to only exhale about 70% of their air with each breath.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 22, 2021</div>
+            <div class="archive-entry__content">
+              <a href="why-we-start-with-breath.html" class="archive-entry__title">Yogic Wisdom, Start with the Breath, and Will Smith’s 60/40 Rule</a>
+              <p class="archive-entry__preview">Start with the Breath (scientists agree) “ They [breathing patterns] thereby constitute an easy but potent avenue to manipulate the whole physiological state of the organism.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 15, 2021</div>
+            <div class="archive-entry__content">
+              <a href="start-by-starting-6040.html" class="archive-entry__title">Light and Calm, Start by Starting, and the 60/40 Rule of Slow Breathing</a>
+              <p class="archive-entry__preview">How to Get Started with Breathwork “ But this doesn’t have to be all at once. Start by starting.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 8, 2021</div>
+            <div class="archive-entry__content">
+              <a href="5-exhales-pause.html" class="archive-entry__title">The 5 Exhales, Spirit, and How One Word Makes Breath Holds Easier</a>
+              <p class="archive-entry__preview">The 5 Exhales of Slow Breathing Here are 5 different exhales you can try during your slow breathing practice. Give them a shot and see which one brings you the most relaxation.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 1, 2021</div>
+            <div class="archive-entry__content">
+              <a href="mindless-breathing-boost.html" class="archive-entry__title">Why Mindless Breathing is Good, and a 5-10 sec Boost to Any Breathwork</a>
+              <p class="archive-entry__preview">A 5-10 Second Boost for Any Breathing Practice Here’s a quick way to improve any breathing practice you do: Take 5-10 seconds to notice how you feel afterward. Sounds pretty freakin obvious, right?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 25, 2021</div>
+            <div class="archive-entry__content">
+              <a href="joy-of-breathwork-consistency.html" class="archive-entry__title">The Joy of Breathwork is _________, and The 3 Best Ways to be Consistent</a>
+              <p class="archive-entry__preview">The Joy of Breathwork is _________ If you’ve read any books on breathwork, or heard any podcasts, or taken any classes, you’ve inevitably heard some incredible stories of healing.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 18, 2021</div>
+            <div class="archive-entry__content">
+              <a href="fast-haiku-wim.html" class="archive-entry__title">Fast Breathing, Positive Emotions, and the 3 Stages of Wim Hof</a>
+              <p class="archive-entry__preview">ng … [But] The emotional and neurological changes that arise during pranayama and meditation illustrate the effects that feedback from the body can have on emotions, the ANS, and neurological activity.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 11, 2021</div>
+            <div class="archive-entry__content">
+              <a href="frustrated-creativity.html" class="archive-entry__title">How Breathing Helps You Get and Stay Frustrated (and why it’s a good thing)</a>
+              <p class="archive-entry__preview">Why You Need to be Frustrated, and How Breathing Can Help “ Long-haul creativity, Robinson believes, requires a low-level, near-constant sense of frustration.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">October 4, 2021</div>
+            <div class="archive-entry__content">
+              <a href="creativity-rumi.html" class="archive-entry__title">How Breathing Boosts Creativity, Why We Sigh, and Where Rumi’s Soul Lives</a>
+              <p class="archive-entry__preview">Let’s jump straight in… 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 27, 2021</div>
+            <div class="archive-entry__content">
+              <a href="complex-compounding.html" class="archive-entry__title">How Breathing Compounds, 2000+ Years, and a Remarkable Fact of Existence</a>
+              <p class="archive-entry__preview">This is my adaptation, The Breathing Manifesto . (I literally just copied their format. I’m not that creative, lol). Print it, hang it, and enjoy it! Alright, on to this week’s 411… 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 20, 2021</div>
+            <div class="archive-entry__content">
+              <a href="ujjayi-brooklyn-yoga.html" class="archive-entry__title">Ujjayi isn’t Ocean, Well-Being, and Why You Should Teach “Brooklyn” Yoga</a>
+              <p class="archive-entry__preview">tis and breathing with a whispering sound and then exhaling out of either the left or right nostril, stimulates the vagus through massaging the larynx and downregulating the sympathetic nervous system.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 13, 2021</div>
+            <div class="archive-entry__content">
+              <a href="altitude-and-breath-training.html" class="archive-entry__title">How I Trained for Altitude and Why We All Benefit from Breath Training</a>
+              <p class="archive-entry__preview">Harvard Medical School says yogic breathing is for stress. And Tibetan Yoga says breath training is for everyone. Let’s see how… 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">September 6, 2021</div>
+            <div class="archive-entry__content">
+              <a href="modern-sci-ancient-yoga.html" class="archive-entry__title">How Modern Science Supports Ancient Yoga, plus Comfort in Breathwalking</a>
+              <p class="archive-entry__preview">And the way you walk definitely affects your ability to withstand discomfort. Let’s find out how… 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 30, 2021</div>
+            <div class="archive-entry__content">
+              <a href="bruce-lee-mixed-artists.html" class="archive-entry__title">How Bruce Lee Sees Methods, Full Lotus, and the Beauty of Red Blood Cells</a>
+              <p class="archive-entry__preview">Enjoy! 4 Thoughts 1. On Bruce Lee, “Methods,” and Becoming Mixed Breathing Artists “ The individual is of first importance, not the system.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 23, 2021</div>
+            <div class="archive-entry__content">
+              <a href="box-breathing-heroes.html" class="archive-entry__title">Box Breathing for Stress, and the Ancients’ Code to Becoming a Hero</a>
+              <p class="archive-entry__preview">Enjoy! 4 Thoughts 1. Breathing as the XX% Solution “ Consider what life would be like if we gave up the idea of healthy or sick, zero versus one, and replaced it with the idea of multiple continuum.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 16, 2021</div>
+            <div class="archive-entry__content">
+              <a href="presence-pro-sleeping.html" class="archive-entry__title">The Science of Presence, Beating Gravity, and How to Sleep Like a Pro</a>
+              <p class="archive-entry__preview">I hope you enjoy it! 4 Thoughts 1. How to Sleep Like a Pro: Nose, 4-4-6-2, Repeat “ Breathe deeply and regularly…Try to breathe through your nose, keeping your mouth closed if at all possible.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 9, 2021</div>
+            <div class="archive-entry__content">
+              <a href="easy-fixes-stardust.html" class="archive-entry__title">Breathing For Better Health, Easy Fixes, and How to Breathe with Stardust</a>
+              <p class="archive-entry__preview">Here are 4 thoughts, 1 quote, and 1 answer for this week. I hope you enjoy it! 4 Thoughts 1. Posture is Easier with the Breath “ Question: Do I start with breathing correctly or addressing my posture?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 2, 2021</div>
+            <div class="archive-entry__content">
+              <a href="delightful-practice.html" class="archive-entry__title">Delightful Practice, Reverse Arambhashura, and The Buddha’s Take on Science</a>
+              <p class="archive-entry__preview">I hope you enjoy it! 4 Thoughts 1. What Science Has in Common with The Buddha “ Research in general tells us something about most people.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 26, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-longevity.html" class="archive-entry__title">How To Breathe To Live Longer, plus a New Take on &quot;Breathe Light&quot;</a>
+              <p class="archive-entry__preview">I hope you enjoy! 4 Thoughts 1. How To Breathe To Live Longer Let’s synthesize some ideas on breathing for longevity and see how we can apply this knowledge in our own life today.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 19, 2021</div>
+            <div class="archive-entry__content">
+              <a href="lucid-breathing-feedback.html" class="archive-entry__title">Lucid Breathing, Positive Feedback Loops, and Wim Hof’s Breath Mastery</a>
+              <p class="archive-entry__preview">I hope you enjoy! 4 Thoughts 1. Why We Should (and Should Not) Care About HRV “ Over the years we&#x27;ve experimented with many different types of physiological and psychological measures.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 12, 2021</div>
+            <div class="archive-entry__content">
+              <a href="hrv-sleep-keep-breathing.html" class="archive-entry__title">How Breathing Improves HRV, Sleep, and “Keep Breathing. That’s the Key”</a>
+              <p class="archive-entry__preview">5 years of sending a weekly breathing newsletter. 🤯 Writing this newsletter is my favorite thing in the world to do, so thank you for reading, sharing, and practicing these ideas.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 5, 2021</div>
+            <div class="archive-entry__content">
+              <a href="nerdy-warriors-investing.html" class="archive-entry__title">Nerdy Warriors of the Breath, Investing, and a Useful Look at HRV</a>
+              <p class="archive-entry__preview">ook at HRV and Resiliency “ Resilience is the ability to return to normalcy, according to Jen Baker, director of athletics and recreation at John Hopkins University, a graduate of the US Naval Academy.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 28, 2021</div>
+            <div class="archive-entry__content">
+              <a href="phil-mickelson-ancient-wisdom.html" class="archive-entry__title">Phil Mickelson, and How Modern Science Helps Explain 2000-Year-Old Wisdom</a>
+              <p class="archive-entry__preview">Enjoy! 4 Thoughts 1. The Real Lesson from Phil Mickelson: For Diabetes, and Life in General Phil Mickelson used controlled breathing throughout the PGA Championship.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 21, 2021</div>
+            <div class="archive-entry__content">
+              <a href="phil-jackson-nature-trick.html" class="archive-entry__title">Phil Jackson on Focused Breathing, Nature’s CO2 Trick, and Wisdom of Yoga</a>
+              <p class="archive-entry__preview">Enjoy! 4 Thoughts 1. Don’t Let Your Breathing Get Featured to Death “ The answer starts with the noble intentions of engineers.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 14, 2021</div>
+            <div class="archive-entry__content">
+              <a href="gandhi-and-learning-science.html" class="archive-entry__title">Applying Gandhi&#x27;s Wisdom, The Science of Learning, and $100 to Your Breath</a>
+              <p class="archive-entry__preview">Here are 4 thoughts, 1 quote, and 1 answer that I hope you enjoy this week! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">June 7, 2021</div>
+            <div class="archive-entry__content">
+              <a href="treadmills-and-metronomes.html" class="archive-entry__title">Treadmills, Metronomes, and Breathing Graffiti on 28 Famous Quotes &amp;amp;amp; Idioms</a>
+              <p class="archive-entry__preview">Listen to this post: Hello fellow breathing nerds, Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 31, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-know-how.html" class="archive-entry__title">Breathing Know-How, and Why Trampolines Are Better than Science</a>
+              <p class="archive-entry__preview">Listen to this post: Happy Monday, Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 24, 2021</div>
+            <div class="archive-entry__content">
+              <a href="the-4-best-ways.html" class="archive-entry__title">A Mystical Organ, and The 4 Best Ways to Keep Your Breathing Interesting</a>
+              <p class="archive-entry__preview">Listen to this post: Greetings, Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 17, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-gives-us-control.html" class="archive-entry__title">Breathing Gives Us What Babies Want, 0.1 Hz, and The Miracle of the Nose</a>
+              <p class="archive-entry__preview">Listen to this post: Hey, Here’s your weekly dose of breathing and diabetes fun. Plus, a letter I wrote 10 years ago… I hope you enjoy reading! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 10, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-helps-everything.html" class="archive-entry__title">Slow Breathing Really Does Help Everything, According to a 2020 Study</a>
+              <p class="archive-entry__preview">Listen to this post: Hey, It’s a fun post this week. Lots of good info, plus one of the best real-life breathing videos you’ll ever see. I hope you enjoy it! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">May 3, 2021</div>
+            <div class="archive-entry__content">
+              <a href="top-performers.html" class="archive-entry__title">Coherent Breathing, Diabetes, and How All Top Performers Use The Breath</a>
+              <p class="archive-entry__preview">Listen to this post: Thanks for clicking on another issue of The Breathing 411. Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 26, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-buffet.html" class="archive-entry__title">A Buffet of 13 Interesting Breathing Articles</a>
+              <p class="archive-entry__preview">I’ve been out of town, with less time than normal to work on the newsletter. So, I decided to share a buffet of interesting breathing articles this week. I hope there are a few you enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 19, 2021</div>
+            <div class="archive-entry__content">
+              <a href="epiphenomena.html" class="archive-entry__title">Breathing Through Negative Feedback Loops, and the WHM in 2.5 Minutes</a>
+              <p class="archive-entry__preview">Listen to this post: Welcome back to another issue of The Breathing 411. Here are 4 thoughts, 1 quote, and 1 answer for the week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 12, 2021</div>
+            <div class="archive-entry__content">
+              <a href="straight-a-student.html" class="archive-entry__title">How To Be a Straight-A Breathing Student, and Why Diabetics “Get It”</a>
+              <p class="archive-entry__preview">Listen to this post in 5 min 51 sec: Yesterday was 4-11. Yesterday was World Breathing Day. Yesterday was also my birthday.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">April 5, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathwalking-danger.html" class="archive-entry__title">A Danger of Breathwalking, and How I Almost Stepped on It</a>
+              <p class="archive-entry__preview">Listen to this post in 6 min 28 sec: Welcome to another issue of The Breathing 411, Here are four thoughts, one quote, and one answer to consider this week.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 29, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-possible.html" class="archive-entry__title">How Breathing Makes Everything Possible</a>
+              <p class="archive-entry__preview">Listen to this post in 5 minutes: Greetings, Here are four thoughts, one quote, and one answer for this week. Enjoy! 4 Thoughts 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 22, 2021</div>
+            <div class="archive-entry__content">
+              <a href="oxidative-stress-wild-breathing.html" class="archive-entry__title">Oxidative Stress and Civilized vs. Wild Breathing</a>
+              <p class="archive-entry__preview">Listen to this Post as a 5-min Podcast: &quot; You cannot breathe your way out of a Big Mac .&quot; But apparently, slow breathing might help it taste better (see #3 below). Ok, let’s get to it.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 15, 2021</div>
+            <div class="archive-entry__content">
+              <a href="biggest-antioxidant.html" class="archive-entry__title">Oxygen and The Most Effective Antioxidant</a>
+              <p class="archive-entry__preview">Most of my friends make fun of my bedtime (7:45 or 8:00 p.m.).</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 8, 2021</div>
+            <div class="archive-entry__content">
+              <a href="investing-sleep-rest.html" class="archive-entry__title">Investing, Sleep, and the Most Important Rest in a Day</a>
+              <p class="archive-entry__preview">Greetings, Here are four thoughts, one quote, and one answer (like &quot;Jeopardy!&quot;) to consider this week. Enjoy!</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">March 1, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breath-walking-gandhi.html" class="archive-entry__title">Breath Walking with Gandhi</a>
+              <p class="archive-entry__preview">Today marks one year since I walked 100 miles for breathing and chronic disease. In that spirit, this week’s newsletter celebrates breathing and walking. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 22, 2021</div>
+            <div class="archive-entry__content">
+              <a href="excellent-and-reasonable.html" class="archive-entry__title">On Excellent Scientific Statements and Being Reasonable with Breathing</a>
+              <p class="archive-entry__preview">Greetings, Here are 4 thoughts, 1 quote, and 1 answer related to breathing. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 15, 2021</div>
+            <div class="archive-entry__content">
+              <a href="breathing-indirect-benefits.html" class="archive-entry__title">Breathing’s Indirect and Unseen Benefits</a>
+              <p class="archive-entry__preview">Welcome to another edition of The Breathing 411 : Here are 4 thoughts, 1 quote, and 1 answer for you to consider this week. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 8, 2021</div>
+            <div class="archive-entry__content">
+              <a href="smiling-buffets-breathing.html" class="archive-entry__title">Smiling and the Warren Buffets of Breathing</a>
+              <p class="archive-entry__preview">Greetings, Here are 4 thoughts, 1 quote, and 1 answer to consider this week. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">February 1, 2021</div>
+            <div class="archive-entry__content">
+              <a href="draft-sraza.html" class="archive-entry__title">Become A World-Class Breather</a>
+              <p class="archive-entry__preview">Greetings, Here are four thoughts, one quote, and one answer to start off February. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 25, 2021</div>
+            <div class="archive-entry__content">
+              <a href="more-breathing-less-time.html" class="archive-entry__title">More Breathing in Less Time</a>
+              <p class="archive-entry__preview">Greetings, This week’s 411 is brought to you by espresso, curiosity, my appreciation for your readership, and espresso. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 18, 2021</div>
+            <div class="archive-entry__content">
+              <a href="whm-one-sentence-411.html" class="archive-entry__title">Wim Hof in One Sentence, and A Calming Breath</a>
+              <p class="archive-entry__preview">Greetings everyone, Here are four thoughts, one quote, and one answer for you to ponder this week. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 11, 2021</div>
+            <div class="archive-entry__content">
+              <a href="intravenous-oxygen.html" class="archive-entry__title">Intravenous Oxygen Delivery and The River of Breath</a>
+              <p class="archive-entry__preview">Welcome to another edition of the 411 newsletter. Here are 4 thoughts, 1 quote, and 1 answer for you to consider this week. Enjoy! 4 THOUGHTS 1. Intravenous Oxygen Delivery?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">January 4, 2021</div>
+            <div class="archive-entry__content">
+              <a href="one-sentence-and-identity.html" class="archive-entry__title">One-Sentence Ideas and Your Breathing Identity</a>
+              <p class="archive-entry__preview">Happy New Year! Thanks for joining me for the first 411 of the year. Here are 4 thoughts, 1 quote, and 1 answer for you to consider this week. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 28, 2020</div>
+            <div class="archive-entry__content">
+              <a href="breakthrough-physiology.html" class="archive-entry__title">A Breakthrough in Respiratory Physiology</a>
+              <p class="archive-entry__preview">Happy End of the Year, Thank you for sharing part of your Mondays with me during 2020. Here are 4 more thoughts, 1 quote, and 1 answer to reflect on as we wrap up the year. Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 21, 2020</div>
+            <div class="archive-entry__content">
+              <a href="skill-of-breath.html" class="archive-entry__title">The Skill of Breath and Pillars of Health</a>
+              <p class="archive-entry__preview">Greetings, Here are 4 thoughts, 1 quote, and 1 answer to reflect on this holiday week. 4 THOUGHTS 1. Breathing is a Universal Skill Most skills you learn in soccer don’t make you better at baseball.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 14, 2020</div>
+            <div class="archive-entry__content">
+              <a href="breathing-4-min-mile.html" class="archive-entry__title">A Breathing 4-Minute Mile, plus Inhaled Nitric Oxide</a>
+              <p class="archive-entry__preview">TGIM. Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 THOUGHTS 1. The Breathing 4-Minute Mile The Wim Hof endotoxin study is breathing’s equivalent to a &quot; 4-minute mile.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">December 7, 2020</div>
+            <div class="archive-entry__content">
+              <a href="wim-hof-slow-breathing.html" class="archive-entry__title">Patch Your Breath, and Wim Hof’s Slow Breathing Method?</a>
+              <p class="archive-entry__preview">Happy Monday, and welcome back to another issue of The Breathing 411. Here are four thoughts, one quote, and one answer for you to reflect on this week. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 30, 2020</div>
+            <div class="archive-entry__content">
+              <a href="recover-better-breathing-budget.html" class="archive-entry__title">On Recovering Better and Setting A Breathing Budget</a>
+              <p class="archive-entry__preview">Welcome back to another issue of The Breathing 411. Here are 4 thoughts, 1 quote, and 1 answer to end November with. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 23, 2020</div>
+            <div class="archive-entry__content">
+              <a href="alcohol-and-forget.html" class="archive-entry__title">Alcohol, and Why You’ll Forget About Breathing</a>
+              <p class="archive-entry__preview">Hello, and Happy Monday. Here are 4 thoughts, 1 quote, and 1 answer that I hope you enjoy this week. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 16, 2020</div>
+            <div class="archive-entry__content">
+              <a href="stop-breathing-sugar.html" class="archive-entry__title">Stop Breathing Sugar</a>
+              <p class="archive-entry__preview">Happy Monday! Let’s get right to it. Here are 4 thoughts, 1 quote, and 1 answer for this week. 4 THOUGHTS 1. Breathing is so Cliché &quot;Defense wins championships // The best defense is a good offense.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">November 9, 2020</div>
+            <div class="archive-entry__content">
+              <a href="use-it-or-lose-it.html" class="archive-entry__title">Use it or Lose it + Eating and Breathing</a>
+              <p class="archive-entry__preview">Happy Monday! I hope you all have a great week ahead. Here are 4 thoughts, 1 quote, and 1 answer for you to consider this week. 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 17, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-8-10-slow-or-controlled-7rx33.html" class="archive-entry__title">The Breathing 4.1.1. - The Best Breathing Class You Haven’t Heard Of</a>
+              <p class="archive-entry__preview">Hello, and Happy Monday! Welcome to another edition of The Breathing 4.1.1. Thank you for reading this.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 10, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-8-10-slow-or-controlled.html" class="archive-entry__title">The Breathing 4.1.1. - Slow or Control? (+ Seneca on Walking &amp;amp;amp; Breathing)</a>
+              <p class="archive-entry__preview">Happy Monday to you! Welcome to a new edition of The Breathing 4.1.1. Below you’ll find 4 thoughts, 1 quote, and 1 answer (think &quot;Jeopardy&quot;). Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">August 3, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-8-3-breathing-acids.html" class="archive-entry__title">The Breathing 4.1.1. - Can This Acid Help You Digest Oxygen Better?</a>
+              <p class="archive-entry__preview">I hope this edition of &quot;The Breathing 4.1.1&quot; helps start your week off right. Below you’ll find 4 thoughts, 1 quote, and 1 answer (think &quot;Jeopardy&quot;). Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 27, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-6-27-smarter-breathing.html" class="archive-entry__title">The Breathing 4.1.1. - Breathing That Makes You Smarter</a>
+              <p class="archive-entry__preview">Happy Monday and welcome to another edition of &quot;The Breathing 4.1.1.&quot; Below, I share 4 thoughts, 1 quote, and 1 answer (think &quot;Jeopardy&quot;). Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 20, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-6-27-d3cspv3t9k8oy2t28e12yn5flsyjn0-k9j6l-7bz2h.html" class="archive-entry__title">The Breathing 4.1.1. - Are Type 1 Diabetics Protected from COVID-19?</a>
+              <p class="archive-entry__preview">Welcome to the &quot;The Breathing 4.1.1.&quot; Below, I share 4 thoughts, 1 quote, and 1 answer (think &quot;Jeopardy&quot;). Enjoy! 4 THOUGHTS 1. Are Type-1 Diabetics Protected from Serious COVID-19 Complications?</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 13, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-6-27-d3cspv3t9k8oy2t28e12yn5flsyjn0-k9j6l.html" class="archive-entry__title">The Breathing 4.1.1. - Harder Breathing Techniques and Molecules of Air</a>
+              <p class="archive-entry__preview">Welcome to the second edition of &quot;The Breathing 4.1.1.&quot; Below, I share 4 thoughts, 1 quote, and 1 answer (think &quot;Jeopardy&quot;). Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+          <div class="archive-entry">
+            <div class="archive-entry__date">July 6, 2020</div>
+            <div class="archive-entry__content">
+              <a href="2020-6-27-d3cspv3t9k8oy2t28e12yn5flsyjn0.html" class="archive-entry__title">The Breathing 4.1.1.</a>
+              <p class="archive-entry__preview">I am trying a new format this week. I’m calling it “The Breathing 4.1.1.” Below, I share 4 thoughts, 1 quote, and 1 answer (think “Jeopardy”). Enjoy! 4 THOUGHTS 1.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>

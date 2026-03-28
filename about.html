@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nick Heath, Ph.D. studies breathing at the intersection of physiology, neuroscience, and practical life. Author of The Anxious Person's Breath Manual." />
+  <title>About Nick Heath, Ph.D. — The Breathing Diabetic</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1A202C;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* ─── Typography ─────────────────────────────────────── */
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: #0D1B2E;
+    }
+    h2 {
+      font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.018em;
+      color: #0D1B2E;
+    }
+    p {
+      font-size: 1.0625rem;
+      line-height: 1.82;
+      color: #4A5568;
+    }
+
+    /* ─── Layout ─────────────────────────────────────────── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .prose {
+      max-width: 680px;
+    }
+    .prose p + p { margin-top: 1.375rem; }
+
+    /* ─── Utilities ──────────────────────────────────────── */
+    .label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #2B6CB0;
+      margin-bottom: 0.875rem;
+    }
+    .rule {
+      width: 40px;
+      height: 3px;
+      background: #2B6CB0;
+      border-radius: 2px;
+      margin: 1.5rem 0 2.25rem;
+    }
+
+    /* ─── Buttons ────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2.125rem;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.14s ease;
+    }
+    .btn-primary {
+      background: #2B6CB0;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #245d9a;
+      box-shadow: 0 6px 20px rgba(43, 108, 176, 0.35);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+    .btn-outline {
+      background: transparent;
+      color: #2B6CB0;
+      border: 1.5px solid #2B6CB0;
+    }
+    .btn-outline:hover {
+      background: #EBF4FF;
+      transform: translateY(-1px);
+    }
+    .btn-outline:active { transform: translateY(0); }
+    .btn-white {
+      background: #ffffff;
+      color: #2B6CB0;
+    }
+    .btn-white:hover {
+      background: #EBF4FF;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+
+    /* ─── NAVIGATION ─────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E8EDF3;
+      transition: box-shadow 0.2s ease;
+    }
+    .nav.scrolled { box-shadow: 0 1px 16px rgba(0, 0, 0, 0.07); }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+    }
+    .nav__logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: #0D1B2E;
+      white-space: nowrap;
+    }
+    .nav__logo em { font-style: normal; color: #2B6CB0; }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+    .nav__links a {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #4A5568;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nav__links a:hover,
+    .nav__links a.active { color: #2B6CB0; }
+    .nav__burger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.375rem;
+      color: #1A202C;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav__burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__drawer {
+      display: none;
+      position: fixed;
+      inset: 66px 0 0;
+      background: #ffffff;
+      z-index: 199;
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column;
+      border-top: 1px solid #E8EDF3;
+      overflow-y: auto;
+    }
+    .nav__drawer.open { display: flex; }
+    .nav__drawer a {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: #1A202C;
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid #F0F4F8;
+    }
+    .nav__drawer a:hover { color: #2B6CB0; }
+
+    /* ─── PAGE HERO ──────────────────────────────────────── */
+    .page-hero {
+      padding: 5.5rem 0 5rem;
+      background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%);
+      border-bottom: 1px solid #E8EDF3;
+    }
+    .page-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 5rem;
+      align-items: center;
+    }
+    .page-hero__text { max-width: 620px; }
+    .page-hero__name {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #0D1B2E;
+      line-height: 1.1;
+      margin-bottom: 0.375rem;
+    }
+    .page-hero__title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2B6CB0;
+      margin-bottom: 2rem;
+    }
+    .page-hero__lead {
+      font-size: 1.1875rem;
+      line-height: 1.72;
+      color: #4A5568;
+      margin-bottom: 2.25rem;
+    }
+    .page-hero__lead strong {
+      color: #0D1B2E;
+      font-weight: 600;
+    }
+    .page-hero__photo {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.14);
+    }
+    .page-hero__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* ─── SECTIONS ───────────────────────────────────────── */
+    .section { padding: 5rem 0; }
+    .section--gray { background: #F7F9FC; }
+    .section--dark { background: #0D1B2E; }
+    .section--dark h2 { color: #ffffff; }
+    .section--dark p { color: rgba(255,255,255,0.72); }
+    .section--dark .label { color: #63B3ED; }
+
+    /* ─── STORY ──────────────────────────────────────────── */
+    .story__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .story__col p + p { margin-top: 1.375rem; }
+
+    /* ─── PULLQUOTE ──────────────────────────────────────── */
+    .pullquote {
+      border-left: 4px solid #2B6CB0;
+      padding: 1.25rem 1.625rem;
+      margin: 2rem 0;
+      background: #EBF4FF;
+      border-radius: 0 8px 8px 0;
+    }
+    .pullquote p {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: #1A365D;
+      line-height: 1.6;
+    }
+
+    /* ─── BELIEFS ────────────────────────────────────────── */
+    .beliefs__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .beliefs__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+      border: 1px solid #E8EDF3;
+      border-radius: 8px;
+    }
+    .beliefs__icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: #EBF4FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.125rem;
+    }
+    .beliefs__icon svg {
+      width: 11px;
+      height: 11px;
+      stroke: #2B6CB0;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .beliefs__item p {
+      font-size: 1rem;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+
+    /* ─── CREDENTIALS ────────────────────────────────────── */
+    .credentials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .credential-card {
+      padding: 1.625rem;
+      background: #ffffff;
+      border: 1px solid #E8EDF3;
+      border-radius: 10px;
+    }
+    .credential-card__num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2B6CB0;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+    .credential-card__label {
+      font-size: 0.9375rem;
+      color: #4A5568;
+      line-height: 1.5;
+    }
+
+    /* ─── WHAT I DO ──────────────────────────────────────── */
+    .work__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin-top: 2rem;
+    }
+    .work__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #2D3748;
+    }
+    .work__dot {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: #2B6CB0;
+      border-radius: 50%;
+      margin-top: 0.55rem;
+    }
+
+    /* ─── CTA ────────────────────────────────────────────── */
+    .about-cta {
+      background: #2B6CB0;
+      padding: 5.5rem 0;
+      text-align: center;
+    }
+    .about-cta h2 { color: #ffffff; margin-bottom: 0.75rem; }
+    .about-cta p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+      font-size: 1.0625rem;
+    }
+    .about-cta__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      background: #0D1B2E;
+      padding: 2.25rem 0;
+    }
+    .footer__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    .footer__copy { font-size: 0.875rem; color: #718096; }
+    .footer__links {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer__links a {
+      font-size: 0.875rem;
+      color: #718096;
+      text-decoration: none;
+      padding: 0 0.25rem;
+      transition: color 0.15s ease;
+    }
+    .footer__links a:hover { color: #A0AEC0; }
+    .footer__links .sep { color: #2D3748; font-size: 0.875rem; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .page-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .page-hero__photo {
+        aspect-ratio: 4 / 3;
+        max-width: 280px;
+        order: -1;
+      }
+      .story__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .credentials__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav__links { display: none; }
+      .nav__burger { display: flex; }
+      .section { padding: 4rem 0; }
+      .page-hero { padding: 4rem 0 3.5rem; }
+      .about-cta { padding: 4rem 0; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+      .credentials__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ NAVIGATION -->
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="books.html" onclick="closeDrawer()">Books</a>
+    <a href="blog/index.html" onclick="closeDrawer()">Blog</a>
+    <a href="about.html" onclick="closeDrawer()">About</a>
+    <a href="#" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__grid">
+          <div class="page-hero__text">
+            <span class="label">About</span>
+            <h1 class="page-hero__name">Nick Heath, Ph.D.</h1>
+            <p class="page-hero__title">Author of <em>The Anxious Person's Breath Manual</em> &nbsp;·&nbsp; The Breathing Diabetic</p>
+            <p class="page-hero__lead">I study breathing at the intersection of <strong>physiology, neuroscience, and practical life</strong> — not as a wellness trend, but as a measurable physiological process with real consequences for how you feel, think, and function.</p>
+            <p class="page-hero__lead">Breathing is not magic. But it is one of the most direct levers we have for influencing how the nervous system works. And it's remarkably powerful at that.</p>
+          </div>
+          <div class="page-hero__photo">
+            <img src="images/nick-headshot.webp" alt="Nick Heath, Ph.D.">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ STORY -->
+    <section class="section" id="story">
+      <div class="container">
+        <div class="story__grid">
+          <div class="story__col">
+            <span class="label">How I Got Here</span>
+            <h2>It started with Type 1 diabetes</h2>
+            <div class="rule"></div>
+            <p>Living with diabetes makes you acutely aware of stress. Blood sugar isn't influenced only by food and insulin — it's also shaped by the nervous system and emotional state. That connection sent me looking for practical tools.</p>
+            <p>I began experimenting with structured breathing and found it helped me manage both the physiological and psychological weight of the disease. That led me into the research literature, where I found consistent patterns across study after study.</p>
+            <p>Slow breathing shifts autonomic balance. It increases heart rate variability. It alters brain activity. And across virtually every study, one of the most reliable outcomes was stress and anxiety reduction.</p>
+            <div class="pullquote">
+              <p>Over time, it became clear: while breathing influences many systems, the strongest and most consistent evidence is about stress and anxiety regulation.</p>
+            </div>
+          </div>
+          <div class="story__col">
+            <span class="label">Why I Focus on Anxiety</span>
+            <h2>It's physiological, not just mental</h2>
+            <div class="rule"></div>
+            <p>Stress and anxiety affect essentially everyone — and they affect almost every system in the body. Most approaches focus only on thoughts. But anxiety is also a body problem.</p>
+            <p>When the nervous system stays activated, the body reinforces the experience even when the mind wants calm. The two systems aren't separate; they're in constant conversation.</p>
+            <p>Breathing gives us a structured way to interrupt that loop — not as a cure-all, and not as a replacement for therapy, but as a lever. A direct, practical, physiologically grounded one.</p>
+            <p>My goal isn't to promise that breathing will fix everything. It's to help people understand how their brains and bodies actually work — and give them tools that work with that reality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ WHAT I DO -->
+    <section class="section section--gray" id="work">
+      <div class="container">
+        <span class="label">What I Do</span>
+        <h2>Translating research into tools people actually use</h2>
+        <div class="rule"></div>
+
+        <div class="story__grid">
+          <div class="prose">
+            <p>I spend my time reading, synthesizing, and translating peer-reviewed research — then turning it into practical information that real people can apply in real schedules. No fluff, no overclaiming.</p>
+            <ul class="work__list">
+              <li class="work__item"><span class="work__dot"></span><span>Reviewing and synthesizing hundreds of scientific studies on breath, nervous system function, and anxiety</span></li>
+              <li class="work__item"><span class="work__dot"></span><span>Writing the <strong>Breathing 411 newsletter</strong> — running consistently for over seven years</span></li>
+              <li class="work__item"><span class="work__dot"></span><span>Publishing weekly on <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" style="color:#2B6CB0; text-decoration:none; border-bottom:1px solid rgba(43,108,176,0.3);">YouTube</a>, breaking down individual studies in plain English</span></li>
+              <li class="work__item"><span class="work__dot"></span><span>Building structured breath protocols grounded in the actual mechanisms the research identifies</span></li>
+              <li class="work__item"><span class="work__dot"></span><span>Writing <em>The Anxious Person's Breath Manual</em> — synthesizing 454 studies into one practical system</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="credentials__grid" style="grid-template-columns: 1fr 1fr; margin-top: 0;">
+              <div class="credential-card">
+                <div class="credential-card__num">454</div>
+                <div class="credential-card__label">peer-reviewed studies synthesized in the Manual</div>
+              </div>
+              <div class="credential-card">
+                <div class="credential-card__num">8+</div>
+                <div class="credential-card__label">years studying breath and nervous system physiology</div>
+              </div>
+              <div class="credential-card">
+                <div class="credential-card__num">7+</div>
+                <div class="credential-card__label">years of the Breathing 411 weekly newsletter</div>
+              </div>
+              <div class="credential-card">
+                <div class="credential-card__num">Ph.D.</div>
+                <div class="credential-card__label">researcher, educator, and author</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BELIEFS -->
+    <section class="section" id="beliefs">
+      <div class="container">
+        <span class="label">What I Believe</span>
+        <h2>The principles behind everything I publish</h2>
+        <div class="rule"></div>
+
+        <div style="max-width: 680px;">
+          <ul class="beliefs__list">
+            <li class="beliefs__item">
+              <span class="beliefs__icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+              <p>Science should be grounded in real life — not used to make things sound more important than they are.</p>
+            </li>
+            <li class="beliefs__item">
+              <span class="beliefs__icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+              <p>Practices should fit into people's actual schedules — a 5-minute daily habit done consistently beats a complex protocol done twice.</p>
+            </li>
+            <li class="beliefs__item">
+              <span class="beliefs__icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+              <p>Nothing fixes everything. Breathing is a powerful lever — but it's one tool among many, not a miracle cure.</p>
+            </li>
+            <li class="beliefs__item">
+              <span class="beliefs__icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+              <p>Understanding your own physiology changes how you approach your life — not by promising transformation, but by giving you better maps.</p>
+            </li>
+          </ul>
+
+          <div style="margin-top: 3rem;" class="pullquote">
+            <p>If you're looking for hype, there are louder voices. If you're looking for a calm, research-based approach to breathing, stress, and anxiety — you're in the right place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CTA -->
+    <section class="about-cta">
+      <div class="container">
+        <h2>Ready to start?</h2>
+        <p>Pick up where the research leaves off — a practical system built specifically for anxious minds.</p>
+        <div class="about-cta__actions">
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-white" target="_blank" rel="noopener noreferrer">Get the Breath Manual — $27</a>
+          <a href="https://breathlearning.kit.com/7-day-breath-reset" class="btn btn-outline" style="color:#ffffff; border-color:rgba(255,255,255,0.5);" target="_blank" rel="noopener noreferrer">Start Free: 7-Day Calm Reset</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>
