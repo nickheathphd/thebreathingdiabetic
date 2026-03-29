@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Day 3 of the 7-Day Calm Reset. Three minutes of slow breathing plus your first evening practice." />
+  <title>Day 3: Three Minutes + Your First Evening Practice — 7-Day Calm Reset</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.6; color: #1A202C; background: #ffffff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1 { font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; color: #0D1B2E; }
+    h2 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.015em; color: #0D1B2E; }
+    h3 { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #0D1B2E; }
+    p { font-size: 1.0625rem; line-height: 1.8; color: #4A5568; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .content-wrap { max-width: 720px; margin: 0 auto; }
+    .label { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #2B6CB0; margin-bottom: 0.875rem; }
+    .btn { display: inline-block; font-size: 1rem; font-weight: 600; padding: 0.9rem 2.125rem; border-radius: 6px; text-decoration: none; cursor: pointer; border: none; transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.14s ease; }
+    .btn-primary { background: #2B6CB0; color: #ffffff; }
+    .btn-primary:hover { background: #245d9a; box-shadow: 0 6px 20px rgba(43,108,176,0.35); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+    .btn-lg { font-size: 1.0625rem; padding: 1.05rem 2.5rem; }
+    .nav { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #E8EDF3; transition: box-shadow 0.2s ease; }
+    .nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .nav__logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; color: #0D1B2E; white-space: nowrap; }
+    .nav__logo em { font-style: normal; color: #2B6CB0; }
+    .nav__links { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
+    .nav__links a { font-size: 0.9375rem; font-weight: 500; color: #4A5568; text-decoration: none; transition: color 0.15s ease; }
+    .nav__links a:hover { color: #2B6CB0; }
+    .nav__burger { display: none; background: none; border: none; cursor: pointer; padding: 0.375rem; color: #1A202C; flex-direction: column; gap: 5px; }
+    .nav__burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__drawer { display: none; position: fixed; inset: 66px 0 0; background: #ffffff; z-index: 199; padding: 1.5rem 2rem 2rem; flex-direction: column; gap: 0; border-top: 1px solid #E8EDF3; overflow-y: auto; }
+    .nav__drawer.open { display: flex; }
+    .nav__drawer a { display: block; font-size: 1.125rem; font-weight: 500; color: #1A202C; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid #F0F4F8; }
+    .nav__drawer a:hover { color: #2B6CB0; }
+    .page-hero { padding: 4rem 0 3.5rem; text-align: center; background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%); border-bottom: 1px solid #E8EDF3; }
+    .page-hero .label { font-size: 0.75rem; letter-spacing: 0.12em; margin-bottom: 1.5rem; }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero .subtitle { font-size: 1.125rem; color: #506070; line-height: 1.65; max-width: 540px; margin: 0 auto; }
+    .progress { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 2rem 0 0; }
+    .progress__dot { width: 10px; height: 10px; border-radius: 50%; background: #CBD5E0; }
+    .progress__dot.active { background: #2B6CB0; width: 12px; height: 12px; }
+    .progress__dot.completed { background: #63B3ED; }
+    .progress__label { font-size: 0.8125rem; font-weight: 500; color: #8898A8; text-align: center; margin-top: 0.625rem; }
+    .page-body { padding: 4rem 0 5rem; }
+    .intro { margin-bottom: 3rem; }
+    .intro p + p { margin-top: 1.125rem; }
+    .section-rule { width: 40px; height: 3px; background: #2B6CB0; border-radius: 2px; margin: 2.5rem 0; }
+    .audio-section { margin-bottom: 2.5rem; }
+    .audio-section h2 { margin-bottom: 1.5rem; }
+    .audio-card { background: #F7F9FC; border: 1px solid #E8EDF3; border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+    .audio-card__label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2B6CB0; margin-bottom: 0.5rem; }
+    .audio-card__title { font-size: 1rem; font-weight: 600; color: #0D1B2E; margin-bottom: 0.875rem; }
+    .audio-card audio { width: 100%; border-radius: 6px; }
+    .audio-card__note { font-size: 0.875rem; color: #718096; margin-top: 0.625rem; line-height: 1.6; }
+    .audio-card--alt { background: #ffffff; border-color: #BEE3F8; }
+    .audio-or { text-align: center; font-size: 0.875rem; font-weight: 600; color: #8898A8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0.5rem 0; }
+    .evening-section { background: #EBF4FF; border: 1px solid #BEE3F8; border-radius: 10px; padding: 1.75rem 2rem; margin-bottom: 2.5rem; }
+    .evening-section h2 { margin-bottom: 0.5rem; }
+    .evening-subtitle { font-size: 0.9375rem; color: #4A5568; margin-bottom: 1.25rem; line-height: 1.6; }
+    .evening-steps { list-style: none; margin: 1rem 0 0; }
+    .evening-steps li { display: flex; align-items: flex-start; gap: 0.875rem; padding: 0.625rem 0; font-size: 1rem; color: #2D3748; line-height: 1.55; }
+    .evening-steps li + li { border-top: 1px solid #BEE3F8; }
+    .step-num { flex-shrink: 0; width: 24px; height: 24px; background: #2B6CB0; color: #fff; border-radius: 50%; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem; }
+    .evening-note { font-size: 0.9rem; color: #506070; font-style: italic; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #BEE3F8; line-height: 1.65; }
+    .day-nav { display: flex; align-items: center; justify-content: space-between; margin: 3rem 0 0; gap: 1rem; }
+    .day-nav__prev { font-size: 0.9375rem; font-weight: 500; color: #8898A8; text-decoration: none; display: flex; align-items: center; gap: 0.375rem; }
+    .day-nav__prev:hover { color: #4A5568; }
+    .cta-box { background: #0D1B2E; border-radius: 12px; padding: 2.5rem 2rem; text-align: center; margin-top: 4rem; }
+    .cta-box h3 { color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .cta-box p { color: rgba(255,255,255,0.72); font-size: 1rem; line-height: 1.7; max-width: 500px; margin: 0 auto 1.5rem; }
+    .footer { background: #0D1B2E; padding: 2.25rem 0; }
+    .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer__copy { font-size: 0.875rem; color: #718096; }
+    .footer__links { display: flex; align-items: center; gap: 0.375rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer__links a { font-size: 0.875rem; color: #718096; text-decoration: none; padding: 0 0.25rem; transition: color 0.15s ease; }
+    .footer__links a:hover { color: #A0AEC0; }
+    .footer__links .sep { color: #2D3748; font-size: 0.875rem; }
+    @media (max-width: 700px) { .nav__links { display: none; } .nav__burger { display: flex; } .page-hero { padding: 3rem 0 2.5rem; } .page-body { padding: 3rem 0 4rem; } .audio-card { padding: 1.25rem; } .evening-section { padding: 1.25rem; } .cta-box { padding: 2rem 1.25rem; } }
+    @media (max-width: 480px) { .container { padding: 0 1.25rem; } .day-nav { flex-direction: column-reverse; align-items: stretch; text-align: center; } .day-nav__prev { justify-content: center; } }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKKJYEET06');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+        <ul class="nav__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="../books.html">Books</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../shop.html">Shop</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="../books.html" onclick="closeDrawer()">Books</a>
+    <a href="../blog/index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../about.html" onclick="closeDrawer()">About</a>
+    <a href="../shop.html" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <span class="label">7-Day Calm Reset</span>
+        <h1>Day 3: Three Minutes + Your First Evening Practice</h1>
+        <p class="subtitle">Three minutes of daytime breathing, plus a bedtime technique to wind down your nervous system.</p>
+        <div class="progress">
+          <div class="progress__dot completed" title="Day 1"></div>
+          <div class="progress__dot completed" title="Day 2"></div>
+          <div class="progress__dot active" title="Day 3"></div>
+          <div class="progress__dot" title="Day 4"></div>
+          <div class="progress__dot" title="Day 5"></div>
+          <div class="progress__dot" title="Day 6"></div>
+          <div class="progress__dot" title="Day 7"></div>
+        </div>
+        <p class="progress__label">Day 3 of 7</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="container">
+        <div class="content-wrap">
+
+          <div class="intro">
+            <p>Today marks the halfway point of your first week. Three minutes of slow breathing in the morning, and tonight we add something new: 4–4–6–2 breathing before bed.</p>
+            <p>The evening practice uses a breath hold pattern — inhale, hold, long exhale, hold empty — that nudges your nervous system toward deeper rest. You don't need audio for this one. Just count in your head.</p>
+          </div>
+
+          <div class="section-rule"></div>
+
+          <div class="audio-section">
+            <h2>Morning Practice — 3 Minutes</h2>
+
+            <div class="audio-card">
+              <div class="audio-card__label">4-6 Breathing Pattern</div>
+              <div class="audio-card__title">Day 3 — Three Minutes of 4-6 Breathing</div>
+              <audio controls preload="metadata">
+                <source src="/audio/Day_3_Three_Minutes.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+              </audio>
+              <p class="audio-card__note">4-second inhale &bull; 6-second exhale &bull; 3 minutes total</p>
+            </div>
+
+            <div class="audio-or">— or —</div>
+
+            <div class="audio-card audio-card--alt">
+              <div class="audio-card__label">5-5 Breathing Pattern</div>
+              <div class="audio-card__title">Day 3 Alternate — Three Minutes of 5-5 Breathing</div>
+              <audio controls preload="metadata">
+                <source src="/audio/Day_3_Three_Minutes_Alternate5-5.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+              </audio>
+              <p class="audio-card__note">5-second inhale &bull; 5-second exhale &bull; 3 minutes total</p>
+            </div>
+          </div>
+
+          <div class="section-rule"></div>
+
+          <div class="evening-section">
+            <h2>Tonight's Practice</h2>
+            <p class="evening-subtitle">Two minutes of 4–4–6–2 breathing before bed.</p>
+            <ul class="evening-steps">
+              <li>
+                <span class="step-num">1</span>
+                <span>Inhale for <strong>4 seconds</strong></span>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <span>Hold for <strong>4 seconds</strong></span>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <span>Exhale slowly for <strong>6 seconds</strong></span>
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <span>Hold empty for <strong>2 seconds</strong></span>
+              </li>
+            </ul>
+            <p class="evening-note">No tones for this one — count in your head and adjust the speed of your counts to match your comfort level.</p>
+          </div>
+
+          <div class="day-nav">
+            <a href="day-2.html" class="day-nav__prev">← Day 2</a>
+            <a href="day-4.html" class="btn btn-primary btn-lg">Day 4 →</a>
+          </div>
+
+          <div class="cta-box">
+            <h3>Ready to go deeper?</h3>
+            <p>The Anxious Person's Breath Manual synthesizes 454 studies into a complete breathing system for anxiety.</p>
+            <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get the Manual for $27</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../shop.html">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => { siteNav.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+  </script>
+
+</body>
+</html>
