@@ -1,0 +1,22 @@
+# Force HTTPS
+[[redirects]]
+  from   = "http://*"
+  to     = "https://:splat"
+  status = 301
+  force  = true
+
+# Remove .html extension from core pages
+[[redirects]]
+  from   = "/about"
+  to     = "/about.html"
+  status = 301
+
+[[redirects]]
+  from   = "/books"
+  to     = "/books.html"
+  status = 301
+
+[[redirects]]
+  from   = "/shop"
+  to     = "/shop.html"
+  status = 301
