@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Blocked scrapers
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# Allowed AI crawlers (explicit)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://thebreathingdiabetic.com/sitemap.xml

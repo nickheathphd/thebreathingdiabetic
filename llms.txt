@@ -1,0 +1,14 @@
+# The Breathing Diabetic
+> Science-based breathing for anxiety and diabetes management. By Nick Heath, Ph.D.
+
+## About
+Nick Heath, Ph.D. — breathing researcher, Type 1 diabetic, Certified Advanced Oxygen Advantage Instructor, Level I Pranayama Teacher. Author of "The Anxious Person's Breath Manual" (454 peer-reviewed studies synthesized). Publisher of The Breathing 411 newsletter for 7+ years.
+
+## Key Resources
+- /about: Author credentials and background
+- /blog/: Research-backed breathing articles
+- /blog/nasal-breathing-science.html: Pillar post on nasal breathing
+- /books.html: The Anxious Person's Breath Manual
+
+## Licensing
+Content may be cited with attribution. Not licensed for AI training datasets.
