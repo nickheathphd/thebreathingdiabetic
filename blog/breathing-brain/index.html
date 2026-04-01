@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://thebreathingdiabetic.com/blog/breathing-brain/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thebreathingdiabetic.com/blog/breathing-brain/" />
+  <meta property="og:title" content="Breathing &amp; the Brain — The Breathing Diabetic" />
+  <meta property="og:description" content="How breathing patterns shape cognition, creativity, memory, focus, and the brain's electrical rhythms." />
+  <meta property="og:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Breathing &amp; the Brain — The Breathing Diabetic" />
+  <meta name="twitter:description" content="How breathing patterns shape cognition, creativity, memory, focus, and the brain's electrical rhythms." />
+  <meta name="twitter:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="description" content="How breathing patterns shape cognition, creativity, memory, focus, and the brain's electrical rhythms." />
+  <title>Breathing &amp; the Brain — The Breathing Diabetic</title>
+  <link rel="stylesheet" href="/fonts/inter.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.6; color: #1A202C; background: #ffffff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .nav { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #E8EDF3; transition: box-shadow 0.2s ease; }
+    .nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .nav__logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; color: #0D1B2E; white-space: nowrap; }
+    .nav__logo em { font-style: normal; color: #2B6CB0; }
+    .nav__links { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
+    .nav__links a { font-size: 0.9375rem; font-weight: 500; color: #4A5568; text-decoration: none; transition: color 0.15s ease; }
+    .nav__links a:hover { color: #2B6CB0; }
+    .nav__links a.active { color: #2B6CB0; font-weight: 600; }
+    .nav__burger { display: none; background: none; border: none; cursor: pointer; padding: 0.375rem; color: #1A202C; flex-direction: column; gap: 5px; }
+    .nav__burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__drawer { display: none; position: fixed; inset: 66px 0 0; background: #ffffff; z-index: 199; padding: 1.5rem 2rem 2rem; flex-direction: column; gap: 0; border-top: 1px solid #E8EDF3; overflow-y: auto; }
+    .nav__drawer.open { display: flex; }
+    .nav__drawer a { display: block; font-size: 1.125rem; font-weight: 500; color: #1A202C; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid #F0F4F8; }
+    .nav__drawer a:hover { color: #2B6CB0; }
+    .page-hero { padding: 4.5rem 0 3.5rem; background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%); border-bottom: 1px solid #E8EDF3; }
+    .page-hero__label { display: inline-flex; align-items: center; gap: 0.625rem; font-size: 0.8125rem; font-weight: 600; color: #2B6CB0; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .page-hero__label::before, .page-hero__label::after { content: ''; display: block; width: 26px; height: 1px; background: #2B6CB0; opacity: 0.45; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 2.875rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: #0D1B2E; margin-bottom: 1rem; }
+    .page-hero__sub { font-size: 1.125rem; line-height: 1.75; color: #506070; max-width: 560px; }
+    .page-hero__intro { font-size: 1rem; line-height: 1.8; color: #4A5568; max-width: 680px; margin-top: 1.25rem; }
+    .archive-section { padding: 4rem 0 5rem; background: #F7F9FC; border-top: 1px solid #E8EDF3; }
+    .archive-section__header { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #718096; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.875rem; }
+    .archive-section__header::after { content: ''; flex: 1; height: 1px; background: #E8EDF3; }
+    .archive-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.018em; color: #0D1B2E; margin-bottom: 0.625rem; }
+    .archive-section__sub { font-size: 1rem; color: #718096; margin-bottom: 2.5rem; }
+    .archive-list { display: flex; flex-direction: column; gap: 0; }
+    .archive-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid #E8EDF3; }
+    .archive-entry:last-child { border-bottom: none; }
+    .archive-entry__date { font-size: 0.8125rem; color: #A0AEC0; font-weight: 500; white-space: nowrap; }
+    .archive-entry__date--pillar { color: #2B6CB0; font-weight: 600; }
+    .archive-entry__title { font-size: 1rem; font-weight: 600; color: #0D1B2E; text-decoration: none; line-height: 1.4; display: block; transition: color 0.15s ease; }
+    .archive-entry__title:hover { color: #2B6CB0; }
+    .archive-entry__preview { font-size: 0.875rem; line-height: 1.6; color: #718096; margin-top: 0.25rem; }
+    .footer { background: #0D1B2E; padding: 2.25rem 0; }
+    .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer__copy { font-size: 0.875rem; color: #718096; }
+    .footer__links { display: flex; align-items: center; gap: 0.375rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer__links a { font-size: 0.875rem; color: #718096; text-decoration: none; padding: 0 0.25rem; transition: color 0.15s ease; }
+    .footer__links a:hover { color: #A0AEC0; }
+    .footer__links .sep { color: #2D3748; font-size: 0.875rem; }
+    @media (max-width: 700px) { .nav__links { display: none; } .nav__burger { display: flex; } }
+    @media(max-width:600px) { .archive-entry { grid-template-columns: 1fr; gap: 0.25rem; } .archive-entry__date { font-size: 0.75rem; } }
+    @media (max-width: 480px) { .container { padding: 0 1.25rem; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKKJYEET06');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The Breathing <em>Diabetic</em></a>
+        <ul class="nav__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="/blog/index.html" class="active">Blog</a></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/shop.html" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="/" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="/blog/index.html" onclick="closeDrawer()">Blog</a>
+    <a href="/books.html" onclick="closeDrawer()">Books</a>
+    <a href="/about.html" onclick="closeDrawer()">About</a>
+    <a href="/shop.html" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+
+    <header class="page-hero">
+      <div class="container">
+        <span class="page-hero__label">Topic Collection</span>
+        <h1>Breathing &amp; the Brain</h1>
+        <p class="page-hero__sub">How breathing patterns shape cognition, creativity, memory, focus, and the brain's electrical rhythms.</p>
+        <p class="page-hero__intro">Breathing and brain function are more tightly coupled than most people realize. Respiratory rhythm entrains neural oscillations, modulates the amygdala, and drives cerebrospinal fluid flow. Practical upshots: nasal breathing sharpens memory, slow breathing reduces fear responses, and even a few deep breaths can shift you into a more focused state. These articles trace the research.</p>
+      </div>
+    </header>
+
+    <section class="archive-section">
+      <div class="container">
+        <p class="archive-section__header">Articles in this collection</p>
+        <h2>Breathing &amp; the Brain</h2>
+        <p class="archive-section__sub">25 articles — pillar posts listed first, then newsletter editions.</p>
+        <div class="archive-list">
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 17, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/how-breathing-helps-the-brain-csf-and-better-retention-of-motor-skills.html" class="archive-entry__title">How Breathing Helps the Brain: CSF and Better Retention of Motor Skills</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 54 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date archive-entry__date--pillar">Pillar Post</div>
+        <div class="archive-entry__content">
+          <a href="/blog/breath-is-mind-quotes.html" class="archive-entry__title">Breath is Mind: 25 Quotes on the Breath-Mind Connection</a>
+          <p class="archive-entry__preview">Twenty-five thinkers — from Thich Nhat Hanh to William James — on why the breath and mind are inseparable.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 09, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/brain-syncing-study-mind-rhythms-and-being-inspired-by-spirit.html" class="archive-entry__title">Brain Syncing Study, Mind Rhythms, and Being Inspired by Spirit</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 56 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 12, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/brain-blood-flow-humming-bee-breathing-and-an-unhurried-life.html" class="archive-entry__title">Brain Blood Flow, Humming Bee Breathing, and an Unhurried Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 58 sec I hope the next 24’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 09, 2026</div>
+        <div class="archive-entry__content">
+          <a href="/blog/new-breath-brain-study-coffee-jokes-how-to-induce-creativity.html" class="archive-entry__title">New Breath-Brain Study, Coffee Jokes, and How to Induce Creativity</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 51 sec I hope the next 22-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 4, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/creativity-rumi.html" class="archive-entry__title">How Breathing Boosts Creativity, Why We Sigh, and Where Rumi’s Soul Lives</a>
+          <p class="archive-entry__preview">Let’s jump straight in… 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">March 30, 2026</div>
+        <div class="archive-entry__content">
+          <a href="/blog/nasal-breathing-brain-relaxed-creative-act.html" class="archive-entry__title">Nasal Breathing &amp; Brain, How to Feel Relaxed, and the Creative Act</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 34 sec &mdash; I hope the next 19-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 7, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/breath-mind-residue.html" class="archive-entry__title">25 Thoughtful Quotes on Breath &amp;amp;amp; Mind, and How to Make Meditation Fun</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 15, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/focus-better-sleep.html" class="archive-entry__title">5 Breaths for Focus, Better Sleep, and Your Own Finely Crafted Program</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 25, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/how-to-concentrate-better-meditation-brain-and-this-is-never-selfish.html" class="archive-entry__title">How to Concentrate Better, Meditation &amp;amp;amp; Brain, and This Is Never Selfish</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 57 sec I hope the next 23’ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 3, 2023</div>
+        <div class="archive-entry__content">
+          <a href="/blog/better-learning-life-lifeline-how-we-breathe-is-who-we-are.html" class="archive-entry__title">Better Learning, Life&#x27;s Lifeline, and How We Breathe is Who We Are</a>
+          <p class="archive-entry__preview">How We Breathe is Who We Are “Breathing is about much more than simple gas exchange or even cardiorespiratory fitness.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">May 9, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/attention-joy-aging.html" class="archive-entry__title">Better Attention, Lasting Joy, and How to Age Successfully (in 5 min)</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 4, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/mental-posture-metabolism.html" class="archive-entry__title">How to Use Less, Accomplish More, and Feel More Cognitive Power</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 17, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/intelligent-control-of-breathing-humming-stopping-to-think.html" class="archive-entry__title">Intelligent Control of Breathing, Humming, and Stopping to Think</a>
+          <p class="archive-entry__preview">1. Intelligent Control of Breathing “An intelligent control of our breathing power will lengthen our days upon earth by giving us increased vitality a</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 25, 2024</div>
+        <div class="archive-entry__content">
+          <a href="/blog/whole-brain-breathing-nexus-point-life-is-far-too-important.html" class="archive-entry__title">Whole-Brain Breathing, Nexus Point, and Life is Far Too Important</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 46 sec I hope the next 21’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 13, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/this-is-astonishing-heart-brain-and-your-mind-can-change-your-life.html" class="archive-entry__title">This is Astonishing, Heart &amp;amp;amp; Brain, and Your Mind Can Change Your Life</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 19, 2023</div>
+        <div class="archive-entry__content">
+          <a href="/blog/breath-learning-more-joy-how-to-change-our-reality.html" class="archive-entry__title">Breath Learning, More Joy, and How to Change Our Reality</a>
+          <p class="archive-entry__preview">Introducing… www.breathlearning.com Now open. Check it out. 2.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">August 16, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/presence-pro-sleeping.html" class="archive-entry__title">The Science of Presence, Beating Gravity, and How to Sleep Like a Pro</a>
+          <p class="archive-entry__preview">I hope you enjoy it! 4 Thoughts 1. How to Sleep Like a Pro: Nose, 4-4-6-2, Repeat “ Breathe deeply and regularly…Try to breathe through your nose, keeping your mouth closed if at all possible.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">September 22, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/rest-your-brain-deal-with-problems-less-is-more.html" class="archive-entry__title">How to Rest Your Brain, How to Deal with Problems, and Less is More</a>
+          <p class="archive-entry__preview">Reading Time: 1 min 40 sec I hope the next 20-ish breaths are the most nourishing of your day.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 18, 2024</div>
+        <div class="archive-entry__content">
+          <a href="/blog/a-mini-life-breath-brain-helping-everyone-else-relax.html" class="archive-entry__title">A Mini Life, Breath-Brain, and Helping Everyone Else Relax</a>
+          <p class="archive-entry__preview">mp3. Learn more Enjoy These Posts? Donate to support this newsletter podcast. Reading Time: 1 min 32 sec I hope the next 19’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 03, 2025</div>
+        <div class="archive-entry__content">
+          <a href="/blog/how-to-solve-complex-problems-your-path-focusing-on-joy.html" class="archive-entry__title">How to Solve Complex Problems, Your Path, and Focusing on Joy</a>
+          <p class="archive-entry__preview">No Audio this Week  Donate to support this newsletter &amp;amp; podcast.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 28, 2020</div>
+        <div class="archive-entry__content">
+          <a href="/blog/breakthrough-physiology.html" class="archive-entry__title">A Breakthrough in Respiratory Physiology</a>
+          <p class="archive-entry__preview">Happy End of the Year, Thank you for sharing part of your Mondays with me during 2020. Here are 4 more thoughts, 1 quote, and 1 answer to reflect on as we wrap up the year. Enjoy! 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 11, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/mindful-breathing-ai.html" class="archive-entry__title">3 Easy Mindful Breaths, Breathing&#x27;s Version of AI, and 7/11 for 7/11</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">February 20, 2023</div>
+        <div class="archive-entry__content">
+          <a href="/blog/free-app-60-seconds-joy-cognition.html" class="archive-entry__title">Free OA App, 60 Seconds of Joy, and Breathing Improves Cognition</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 14, 2020</div>
+        <div class="archive-entry__content">
+          <a href="/blog/breathing-4-min-mile.html" class="archive-entry__title">A Breathing 4-Minute Mile, plus Inhaled Nitric Oxide</a>
+          <p class="archive-entry__preview">TGIM. Here are 4 thoughts, 1 quote, and 1 answer for this week. Enjoy! 4 THOUGHTS 1. The Breathing 4-Minute Mile The Wim Hof endotoxin study is breathing’s equivalent to a &quot; 4-minute mile.</p>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  <p style="text-align:center;font-size:.8125rem;color:#718096;padding:1.25rem 2rem 0;line-height:1.6;">This content is for informational purposes only and does not constitute medical advice. Always consult your healthcare provider before making changes to your health or wellness routine.</p>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>

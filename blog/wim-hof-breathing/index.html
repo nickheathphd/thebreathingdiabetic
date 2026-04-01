@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://thebreathingdiabetic.com/blog/wim-hof-breathing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thebreathingdiabetic.com/blog/wim-hof-breathing/" />
+  <meta property="og:title" content="Wim Hof Breathing — The Breathing Diabetic" />
+  <meta property="og:description" content="The science, the practice, and the honest tradeoffs of the Wim Hof Method — compared to slow breathing." />
+  <meta property="og:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wim Hof Breathing — The Breathing Diabetic" />
+  <meta name="twitter:description" content="The science, the practice, and the honest tradeoffs of the Wim Hof Method — compared to slow breathing." />
+  <meta name="twitter:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="description" content="The science, the practice, and the honest tradeoffs of the Wim Hof Method — compared to slow breathing." />
+  <title>Wim Hof Breathing — The Breathing Diabetic</title>
+  <link rel="stylesheet" href="/fonts/inter.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.6; color: #1A202C; background: #ffffff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .nav { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #E8EDF3; transition: box-shadow 0.2s ease; }
+    .nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .nav__logo { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; color: #0D1B2E; white-space: nowrap; }
+    .nav__logo em { font-style: normal; color: #2B6CB0; }
+    .nav__links { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
+    .nav__links a { font-size: 0.9375rem; font-weight: 500; color: #4A5568; text-decoration: none; transition: color 0.15s ease; }
+    .nav__links a:hover { color: #2B6CB0; }
+    .nav__links a.active { color: #2B6CB0; font-weight: 600; }
+    .nav__burger { display: none; background: none; border: none; cursor: pointer; padding: 0.375rem; color: #1A202C; flex-direction: column; gap: 5px; }
+    .nav__burger span { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__drawer { display: none; position: fixed; inset: 66px 0 0; background: #ffffff; z-index: 199; padding: 1.5rem 2rem 2rem; flex-direction: column; gap: 0; border-top: 1px solid #E8EDF3; overflow-y: auto; }
+    .nav__drawer.open { display: flex; }
+    .nav__drawer a { display: block; font-size: 1.125rem; font-weight: 500; color: #1A202C; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid #F0F4F8; }
+    .nav__drawer a:hover { color: #2B6CB0; }
+    .page-hero { padding: 4.5rem 0 3.5rem; background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%); border-bottom: 1px solid #E8EDF3; }
+    .page-hero__label { display: inline-flex; align-items: center; gap: 0.625rem; font-size: 0.8125rem; font-weight: 600; color: #2B6CB0; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .page-hero__label::before, .page-hero__label::after { content: ''; display: block; width: 26px; height: 1px; background: #2B6CB0; opacity: 0.45; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 2.875rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: #0D1B2E; margin-bottom: 1rem; }
+    .page-hero__sub { font-size: 1.125rem; line-height: 1.75; color: #506070; max-width: 560px; }
+    .page-hero__intro { font-size: 1rem; line-height: 1.8; color: #4A5568; max-width: 680px; margin-top: 1.25rem; }
+    .archive-section { padding: 4rem 0 5rem; background: #F7F9FC; border-top: 1px solid #E8EDF3; }
+    .archive-section__header { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #718096; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.875rem; }
+    .archive-section__header::after { content: ''; flex: 1; height: 1px; background: #E8EDF3; }
+    .archive-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.018em; color: #0D1B2E; margin-bottom: 0.625rem; }
+    .archive-section__sub { font-size: 1rem; color: #718096; margin-bottom: 2.5rem; }
+    .archive-list { display: flex; flex-direction: column; gap: 0; }
+    .archive-entry { display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid #E8EDF3; }
+    .archive-entry:last-child { border-bottom: none; }
+    .archive-entry__date { font-size: 0.8125rem; color: #A0AEC0; font-weight: 500; white-space: nowrap; }
+    .archive-entry__date--pillar { color: #2B6CB0; font-weight: 600; }
+    .archive-entry__title { font-size: 1rem; font-weight: 600; color: #0D1B2E; text-decoration: none; line-height: 1.4; display: block; transition: color 0.15s ease; }
+    .archive-entry__title:hover { color: #2B6CB0; }
+    .archive-entry__preview { font-size: 0.875rem; line-height: 1.6; color: #718096; margin-top: 0.25rem; }
+    .footer { background: #0D1B2E; padding: 2.25rem 0; }
+    .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer__copy { font-size: 0.875rem; color: #718096; }
+    .footer__links { display: flex; align-items: center; gap: 0.375rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer__links a { font-size: 0.875rem; color: #718096; text-decoration: none; padding: 0 0.25rem; transition: color 0.15s ease; }
+    .footer__links a:hover { color: #A0AEC0; }
+    .footer__links .sep { color: #2D3748; font-size: 0.875rem; }
+    @media (max-width: 700px) { .nav__links { display: none; } .nav__burger { display: flex; } }
+    @media(max-width:600px) { .archive-entry { grid-template-columns: 1fr; gap: 0.25rem; } .archive-entry__date { font-size: 0.75rem; } }
+    @media (max-width: 480px) { .container { padding: 0 1.25rem; } }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKKJYEET06');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">The Breathing <em>Diabetic</em></a>
+        <ul class="nav__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="/blog/index.html" class="active">Blog</a></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/shop.html" target="_blank" rel="noopener noreferrer">Shop</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="/" onclick="closeDrawer()">Home</a>
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">YouTube</a>
+    <a href="/blog/index.html" onclick="closeDrawer()">Blog</a>
+    <a href="/books.html" onclick="closeDrawer()">Books</a>
+    <a href="/about.html" onclick="closeDrawer()">About</a>
+    <a href="/shop.html" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+
+    <header class="page-hero">
+      <div class="container">
+        <span class="page-hero__label">Topic Collection</span>
+        <h1>Wim Hof Breathing</h1>
+        <p class="page-hero__sub">The science, the practice, and the honest tradeoffs of the Wim Hof Method — compared to slow breathing.</p>
+        <p class="page-hero__intro">The Wim Hof Method is one of the most studied breathwork practices of the last decade. The famous endotoxin experiment, the immune system research, and the cold exposure science have all attracted serious scientific attention. These articles look at what the research actually shows — including how WHM compares to slow resonance breathing, and what the real risks are for people with conditions like diabetes.</p>
+      </div>
+    </header>
+
+    <section class="archive-section">
+      <div class="container">
+        <p class="archive-section__header">Articles in this collection</p>
+        <h2>Wim Hof Breathing</h2>
+        <p class="archive-section__sub">17 articles — pillar posts listed first, then newsletter editions.</p>
+        <div class="archive-list">
+      <div class="archive-entry">
+        <div class="archive-entry__date archive-entry__date--pillar">Pillar Post</div>
+        <div class="archive-entry__content">
+          <a href="/blog/wim-hof-endotoxin-study.html" class="archive-entry__title">The Wim Hof Endotoxin Study: What It Found and What It Actually Means</a>
+          <p class="archive-entry__preview">A deep look at the famous 2014 Radboud University study — what was actually measured, what it proves, and what it does not.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date archive-entry__date--pillar">Pillar Post</div>
+        <div class="archive-entry__content">
+          <a href="/blog/wim-hof-vs-slow-breathing.html" class="archive-entry__title">Wim Hof vs. Slow Breathing: The Famous Endotoxin Experiment</a>
+          <p class="archive-entry__preview">Comparing the physiological effects of Wim Hof hyperventilation and slow resonance breathing on the immune and stress response.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date archive-entry__date--pillar">Pillar Post</div>
+        <div class="archive-entry__content">
+          <a href="/blog/slow-breathing-vs-wim-hof.html" class="archive-entry__title">Slow Breathing vs. Wim Hof: What the Science Says About Each</a>
+          <p class="archive-entry__preview">A direct comparison of slow resonance breathing and the Wim Hof Method across stress, HRV, immune function, and real-world usability.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">December 7, 2020</div>
+        <div class="archive-entry__content">
+          <a href="/blog/wim-hof-slow-breathing.html" class="archive-entry__title">Patch Your Breath, and Wim Hof’s Slow Breathing Method?</a>
+          <p class="archive-entry__preview">Happy Monday, and welcome back to another issue of The Breathing 411. Here are four thoughts, one quote, and one answer for you to reflect on this week. 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 24, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/whm-slow-part2.html" class="archive-entry__title">Wim Hof vs. Slow Breathing, Part 2: The Famous Endotoxin Challenge</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 17, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/whm-hrvb-meaningful.html" class="archive-entry__title">Wim Hof vs. Slow Breathing, and How to Start Something Meaningful</a>
+          <p class="archive-entry__preview">k you! 🎧 Listen Instead of Reading 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 18, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/whm-one-sentence-411.html" class="archive-entry__title">Wim Hof in One Sentence, and A Calming Breath</a>
+          <p class="archive-entry__preview">Greetings everyone, Here are four thoughts, one quote, and one answer for you to ponder this week. Enjoy! 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 31, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/3ps-whm-vs-whm.html" class="archive-entry__title">Wim Hof vs. Wim Hof, the Three P&#x27;s, and Breathing like Journalists</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">October 18, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/fast-haiku-wim.html" class="archive-entry__title">Fast Breathing, Positive Emotions, and the 3 Stages of Wim Hof</a>
+          <p class="archive-entry__preview">ng … [But] The emotional and neurological changes that arise during pranayama and meditation illustrate the effects that feedback from the body can have on emotions, the ANS, and neurological activity.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 18, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/stress-29-studies.html" class="archive-entry__title">Better Under Stress, Wim Hof’s Joy, and a Protocol based on 29 Studies</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">April 19, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/epiphenomena.html" class="archive-entry__title">Breathing Through Negative Feedback Loops, and the WHM in 2.5 Minutes</a>
+          <p class="archive-entry__preview">Listen to this post: Welcome back to another issue of The Breathing 411. Here are 4 thoughts, 1 quote, and 1 answer for the week. Enjoy! 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">July 19, 2021</div>
+        <div class="archive-entry__content">
+          <a href="/blog/lucid-breathing-feedback.html" class="archive-entry__title">Lucid Breathing, Positive Feedback Loops, and Wim Hof’s Breath Mastery</a>
+          <p class="archive-entry__preview">I hope you enjoy! 4 Thoughts 1. Why We Should (and Should Not) Care About HRV “ Over the years we&#x27;ve experimented with many different types of physiological and psychological measures.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 9, 2023</div>
+        <div class="archive-entry__content">
+          <a href="/blog/loving-potential-cold-mind.html" class="archive-entry__title">More Loving Potential, Cold Showers, and the Healing Power of Mind</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. How to Improve Your Loving Potential “ High vagal tone, then, can be taken as high loving potential .</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 21, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/wim-1-min-soup.html" class="archive-entry__title">One Minute Stress Relief, Taste the Soup, and Positive Feelings</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">November 14, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/wim-ocean-presencing.html" class="archive-entry__title">Wim Hof &amp;amp;amp; the Ocean, Presencing, and a Long, Good Life</a>
+          <p class="archive-entry__preview">m. Eastern. Email Address Sign Up We respect your privacy. Thank you! 4 Thoughts 1. A Borrowed Rule from Nutrition that Applies to Breathing What you remove is far more valuable than what you add.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">June 6, 2022</div>
+        <div class="archive-entry__content">
+          <a href="/blog/top-5-coherence-purpose.html" class="archive-entry__title">Top 5 Daily Breaths, a Guide to Wim Hof, and Coherence Fuels Purpose</a>
+          <p class="archive-entry__preview">g 🎧 If you enjoy listening, you can subscribe to the audio version on Spotify , Apple Podcasts , and Audible so you don’t even have to look at the email 😊 Get this in your inbox every Monday at 6:30 a.</p>
+        </div>
+      </div>
+      <div class="archive-entry">
+        <div class="archive-entry__date">January 15, 2024</div>
+        <div class="archive-entry__content">
+          <a href="/blog/tickle-your-adrenals-superhuman-is-sleep-all-in-your-head.html" class="archive-entry__title">A Wild Sleep Study, Becoming Great, and Being More Human</a>
+          <p class="archive-entry__preview">Reading Time: 2 min 2 sec I hope the next 30’ish breaths are the most nourishing of your day. 4 THOUGHTS 1.</p>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  <p style="text-align:center;font-size:.8125rem;color:#718096;padding:1.25rem 2rem 0;line-height:1.6;">This content is for informational purposes only and does not constitute medical advice. Always consult your healthcare provider before making changes to your health or wellness routine.</p>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>
