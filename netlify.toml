@@ -5,6 +5,7 @@
   status = 301
   force  = true
 
+
 # Remove .html extension from core pages
 [[redirects]]
   from   = "/about"
@@ -19,4 +20,128 @@
 [[redirects]]
   from   = "/shop"
   to     = "/shop.html"
+  status = 301
+
+# ── Old Squarespace URL redirects ────────────────────────────
+[[redirects]]
+  from   = "/slow-breathing-doesnt-work"
+  to     = "/blog/slow-breathing-anxiety/"
+  status = 301
+
+[[redirects]]
+  from   = "/monthly-wrapups/january-2023"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/monthly-wrapups/march-2023"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/the-breathing-1/number-141"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/members-home-sample"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/secret-santa"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/coachingPurchase"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/8-week-coaching-setbacksPurchase"
+  to     = "/"
+  status = 301
+
+# ── Squarespace tag/taxonomy wildcards ───────────────────────
+[[redirects]]
+  from   = "/blog/tag/*"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/science-411s/tag/*"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/book-411s/tag/*"
+  to     = "/blog/"
+  status = 301
+
+# ── High-traffic Science 411 study URLs ──────────────────────
+[[redirects]]
+  from   = "/science-411s/fincham-et-al-2023"
+  to     = "/blog/slow-breathing-anxiety/"
+  status = 301
+
+[[redirects]]
+  from   = "/zaccaro-et-al-2018"
+  to     = "/blog/slow-breathing-anxiety/"
+  status = 301
+
+[[redirects]]
+  from   = "/kulur-et-al-2009"
+  to     = "/blog/nasal-breathing/"
+  status = 301
+
+[[redirects]]
+  from   = "/science-411s/laborde-et-al-2022"
+  to     = "/blog/hrv-breathing/"
+  status = 301
+
+[[redirects]]
+  from   = "/science-411s/yau-and-loke-2021"
+  to     = "/blog/hrv-breathing/"
+  status = 301
+
+[[redirects]]
+  from   = "/lin-et-al-2014"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/zelano-et-al-2016"
+  to     = "/blog/nasal-breathing/"
+  status = 301
+
+[[redirects]]
+  from   = "/wim-hof-vs-slow-breathing"
+  to     = "/blog/wim-hof-vs-slow-breathing.html"
+  status = 301
+
+[[redirects]]
+  from   = "/principle-1"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/principle-2"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/principle-3"
+  to     = "/blog/"
+  status = 301
+
+# ── Squarespace section wildcards ────────────────────────────
+[[redirects]]
+  from   = "/science-library/*"
+  to     = "/blog/"
+  status = 301
+
+[[redirects]]
+  from   = "/science-411s/*"
+  to     = "/blog/"
   status = 301
