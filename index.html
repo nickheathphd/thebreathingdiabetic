@@ -7,13 +7,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thebreathingdiabetic.com/" />
   <meta property="og:title" content="The Breathing Diabetic — Science-Based Breathing for Anxious Minds" />
-  <meta property="og:description" content="You&#x27;ve tried everything for anxiety. But your body still feels wired. Learn why — and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <meta property="og:description" content="You&#x27;ve tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
   <meta property="og:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Breathing Diabetic — Science-Based Breathing for Anxious Minds" />
-  <meta name="twitter:description" content="You&#x27;ve tried everything for anxiety. But your body still feels wired. Learn why — and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <meta name="twitter:description" content="You&#x27;ve tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
   <meta name="twitter:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
-  <meta name="description" content="You've tried everything for anxiety. But your body still feels wired. Learn why — and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <meta name="description" content="You've tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
   <title>The Breathing Diabetic — Science-Based Breathing for Anxious Minds</title>
 
   <link rel="preload" as="image" href="images/ebook-banner-800.webp" fetchpriority="high" />
@@ -291,6 +291,37 @@
       letter-spacing: 0.025em;
       margin-top: 0.25rem;
     }
+    .hero__stats {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      background: #F7F9FC;
+      border: 1px solid #E8EDF3;
+      border-radius: 100px;
+      padding: 0.75rem 2rem;
+      margin-bottom: 2.75rem;
+    }
+    .hero__stat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+    .hero__stat-num {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #2B6CB0;
+      letter-spacing: -0.02em;
+    }
+    .hero__stat-label {
+      font-weight: 500;
+      color: #718096;
+    }
+    .hero__stat-divider {
+      width: 1px;
+      height: 20px;
+      background: #E2E8F0;
+    }
     .hero__byline {
       display: inline-flex;
       align-items: center;
@@ -464,6 +495,92 @@
     }
     .science__body { max-width: 680px; }
     .science__body p + p { margin-top: 1.375rem; }
+
+    /* ─── MECHANISM FLOW ────────────────────────────────── */
+    .mechanism__wrap {
+      background: #ffffff;
+      border: 1px solid #E8EDF3;
+      border-radius: 14px;
+      padding: 2.25rem 2rem 2rem;
+      margin: 2.75rem 0 3.25rem;
+    }
+    .mechanism__heading {
+      font-size: 1.375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #0D1B2E;
+      margin-bottom: 1.625rem;
+    }
+    .mechanism {
+      display: flex;
+      align-items: stretch;
+    }
+    .mechanism__step {
+      flex: 1;
+      min-width: 0;
+      background: #ffffff;
+      border: 1px solid #E8EDF3;
+      border-radius: 10px;
+      padding: 1.375rem 0.875rem;
+      text-align: center;
+    }
+    .mechanism__step--highlight {
+      border-color: #2B6CB0;
+      background: #EBF4FF;
+      box-shadow: 0 4px 20px rgba(43,108,176,0.13);
+      position: relative;
+      z-index: 1;
+    }
+    .mechanism__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #2B6CB0;
+      background: #EBF4FF;
+      margin-bottom: 0.625rem;
+    }
+    .mechanism__step--highlight .mechanism__num {
+      background: #2B6CB0;
+      color: #ffffff;
+    }
+    .mechanism__name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0D1B2E;
+      line-height: 1.3;
+      margin-bottom: 0.375rem;
+    }
+    .mechanism__sub {
+      font-size: 0.75rem;
+      color: #718096;
+      line-height: 1.45;
+    }
+    .mechanism__step--highlight .mechanism__sub {
+      color: #2B6CB0;
+      font-weight: 500;
+    }
+    .mechanism__connector {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      color: #CBD5E0;
+    }
+    .mechanism__connector svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
     /* ─── MANUAL SELL ────────────────────────────────────── */
     .manual-sell__grid {
@@ -773,6 +890,16 @@
     }
 
     @media (max-width: 860px) {
+      .mechanism__wrap { padding: 1.5rem 1.25rem; }
+      .mechanism {
+        flex-direction: column;
+        max-width: 380px;
+      }
+      .mechanism__connector {
+        width: auto;
+        height: 20px;
+        transform: rotate(90deg);
+      }
       .ity__grid { grid-template-columns: 1fr; }
       .blog-card--featured { grid-template-columns: 1fr; }
       .blog-card--featured .blog-card__stat-panel {
@@ -792,7 +919,13 @@
       .section { padding: 4rem 0; }
       .final-cta { padding: 4rem 0; }
 
-      .hero__sub { font-size: 1.0625rem; }
+      .hero__stats {
+        flex-direction: column;
+        border-radius: 12px;
+        gap: 0.75rem;
+        padding: 1.25rem 1.5rem;
+      }
+      .hero__stat-divider { width: 40px; height: 1px; }
       .stat-block__num { font-size: 2rem; }
     }
 
@@ -849,16 +982,30 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO -->
     <section class="hero" id="home">
       <div class="container">
-        <span class="hero__eyebrow">Nick Heath, Ph.D.</span>
-        <h1>Anxiety lives in your brain and your body. So does calm.<br>Breathing is the most direct path between them.</h1>
-        <p class="hero__proof">454 studies document exactly how.</p>
-        <p class="hero__sub">Most breathing advice is vague. This is a structured system. Specific techniques for specific situations, built from peer-reviewed research. I've spent 8 years reading this literature so you don't have to. Works in as little as 60 seconds. $27.</p>
+        <span class="hero__eyebrow">Nick Heath, Ph.D.&ensp;&bull;&ensp;Breathing Researcher</span>
+        <h1>Breathing Is the Fastest Science-Backed Path from Anxious to Calm</h1>
+        <p class="hero__proof">Starts working in 60 seconds. Makes measurable change with just 5 minutes daily.</p>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-num">454</span>
+            <span class="hero__stat-label">peer-reviewed studies</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">60s</span>
+            <span class="hero__stat-label">to feel the difference</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">8 yrs</span>
+            <span class="hero__stat-label">of research distilled</span>
+          </div>
+        </div>
         <div class="hero__actions">
-          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_click', 'page_location': window.location.href});" >Get the Breath Manual ($27)</a>
-          <p class="hero__trust">Synthesizing 454 peer-reviewed studies. No hype.</p>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_click', 'page_location': window.location.href});">Get the Breath Manual ($27)</a>
+          <p class="hero__trust">No hype. No subscriptions. Just the research.</p>
           <p class="hero__secondary">Not ready? <a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Start the free 7-Day Calm Reset instead →</a></p>
         </div>
-        <p class="hero__byline">Nick Heath, Ph.D.&ensp;&bull;&ensp;Breathing Researcher</p>
       </div>
     </section>
 
@@ -892,7 +1039,7 @@
             <div class="ity__check">
               <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
             </div>
-            <p>You want a science-based explanation — not just "take a deep breath"</p>
+            <p>You want a science-based explanation. Not just "take a deep breath."</p>
           </div>
         </div>
 
@@ -910,7 +1057,7 @@
             <span class="label">The Real Problem</span>
             <h2>"I've tried breathing before. It didn't work."</h2>
             <div class="rule"></div>
-            <p>I hear this constantly. It's almost always true — because most breathing advice is vague, generic, or just wrong for anxiety.</p>
+            <p>I hear this constantly. It's almost always true: most breathing advice is vague, generic, or just wrong for anxiety.</p>
             <p>"Just take a few deep breaths" doesn't work when your nervous system is stuck in overdrive. The science is clear on why: breathing at the wrong rate, the wrong time, or without the right physiological target does very little for anxious minds.</p>
             <p>What does work is specific: breathing patterns that directly increase heart rate variability, activate the prefrontal cortex, and shift brainwave patterns away from threat-detection mode.</p>
             <div class="objection__pullquote">
@@ -923,19 +1070,19 @@
               <ul class="objection__list">
                 <li>
                   <span class="objection__num">1</span>
-                  <span>A specific target rate — not just "slow down." Research points to roughly 4.5–6 breaths per minute for maximum vagal activation.</span>
+                  <span>A specific target rate: not just "slow down." Research points to roughly 4.5–6 breaths per minute for maximum vagal activation.</span>
                 </li>
                 <li>
                   <span class="objection__num">2</span>
-                  <span>Nasal mechanics — mouth breathing at any rate keeps the nervous system primed for threat. The nose changes the signal.</span>
+                  <span>Nasal mechanics: mouth breathing at any rate keeps the nervous system primed for threat. The nose changes the signal.</span>
                 </li>
                 <li>
                   <span class="objection__num">3</span>
-                  <span>Timing — 30 seconds of slow breathing before a stressor measurably changes how your brain responds. Most people try it during the spiral, not before.</span>
+                  <span>Timing: 30 seconds of slow breathing before a stressor measurably changes how your brain responds. Most people try it during the spiral, not before.</span>
                 </li>
                 <li>
                   <span class="objection__num">4</span>
-                  <span>Consistency — a 5-minute daily practice changes your baseline. One-off sessions give one-off relief.</span>
+                  <span>Consistency: a 5-minute daily practice changes your baseline. One-off sessions give one-off relief.</span>
                 </li>
               </ul>
             </div>
@@ -966,6 +1113,49 @@
           </div>
         </div>
 
+        <div class="mechanism__wrap">
+          <div class="mechanism__heading">How It Works</div>
+        <div class="mechanism">
+          <div class="mechanism__step">
+            <div class="mechanism__num">1</div>
+            <div class="mechanism__name">Slow Nasal Breathing</div>
+            <div class="mechanism__sub">3–7 breaths per minute</div>
+          </div>
+          <div class="mechanism__connector">
+            <svg viewBox="0 0 14 14"><polyline points="3,2 11,7 3,12"/></svg>
+          </div>
+          <div class="mechanism__step mechanism__step--highlight">
+            <div class="mechanism__num">2</div>
+            <div class="mechanism__name">Brain Waves Calm</div>
+            <div class="mechanism__sub">Brain connectivity increases; positive emotions go up</div>
+          </div>
+          <div class="mechanism__connector">
+            <svg viewBox="0 0 14 14"><polyline points="3,2 11,7 3,12"/></svg>
+          </div>
+          <div class="mechanism__step">
+            <div class="mechanism__num">3</div>
+            <div class="mechanism__name">Nervous System Relaxes</div>
+            <div class="mechanism__sub">Heart, breath, and brain synchronize</div>
+          </div>
+          <div class="mechanism__connector">
+            <svg viewBox="0 0 14 14"><polyline points="3,2 11,7 3,12"/></svg>
+          </div>
+          <div class="mechanism__step">
+            <div class="mechanism__num">4</div>
+            <div class="mechanism__name">Mind Stops Racing</div>
+            <div class="mechanism__sub">Calm and joyful feelings arise naturally</div>
+          </div>
+          <div class="mechanism__connector">
+            <svg viewBox="0 0 14 14"><polyline points="3,2 11,7 3,12"/></svg>
+          </div>
+          <div class="mechanism__step">
+            <div class="mechanism__num">5</div>
+            <div class="mechanism__name">Anxiety Quiets</div>
+            <div class="mechanism__sub">Measurably. In as little as 30 seconds.</div>
+          </div>
+        </div>
+        </div>
+
         <div class="science__body">
           <p>Breathing research has advanced dramatically in the last decade. We now have peer-reviewed studies showing that slow, structured breathing alters communication across brain regions, increases parasympathetic activity, and shifts brainwave patterns away from threat-detection. Measurably. In as little as 30 seconds.</p>
           <p>This isn't wellness marketing. These are controlled studies published in journals like <em>Brain Sciences</em>, <em>Nature Scientific Reports</em>, and <em>Frontiers in Neuroscience</em>. I've spent 8 years reading this literature, filtering out the noise, and turning it into something you can actually use.</p>
@@ -981,7 +1171,7 @@
             <span class="label">The Anxious Person's Breath Manual</span>
             <h2>Everything the research says works. Nothing that doesn't.</h2>
             <div class="rule"></div>
-            <p>This is not a general breathwork guide. It's a structured system built from 454 peer-reviewed studies — written for people who want their brain and body working for them, not against them.</p>
+            <p>This is not a general breathwork guide. It's a structured system built from 454 peer-reviewed studies, written for people who want their brain and body working for them, not against them.</p>
             <ul class="manual-sell__features">
               <li>
                 <span class="manual-sell__check"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></span>
@@ -1001,7 +1191,7 @@
               </li>
               <li>
                 <span class="manual-sell__check"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></span>
-                <span>The physiology behind every recommendation — so you understand what you're doing and why it works</span>
+                <span>The physiology behind every recommendation: so you understand what you're doing and why it works</span>
               </li>
             </ul>
             <div class="manual-sell__cta">
@@ -1027,7 +1217,7 @@
             <span class="label">About</span>
             <h2>Eight years. One obsession.</h2>
             <div class="rule"></div>
-            <p>I have Type 1 diabetes. That's what put me in the rabbit hole. I started reading the research on breathing and the nervous system because I needed it — and I've spent the last eight years there.</p>
+            <p>I have Type 1 diabetes. That's what put me in the rabbit hole. I started reading the research on breathing and the nervous system because I needed it, and I've spent the last eight years there.</p>
             <p>My approach is simple: take the best of what the peer-reviewed literature actually says, filter out the hype, and turn it into something practical. No wellness jargon. No pseudoscience. Just the research, translated into plain English, with clear instructions on what to do.</p>
             <p>I publish a weekly newsletter and a YouTube channel, both focused on translating peer-reviewed breath science into something you can actually use. Patrick McKeown cited my work in <em>The Breathing Cure</em>.</p>
           </div>
@@ -1084,7 +1274,7 @@
                 <span class="blog-tag blog-tag--purple">Brain Science</span>
               </div>
               <h3 class="blog-card__title">The Science of Nasal Breathing: What Research Says About Your Brain and Anxiety</h3>
-              <p class="blog-card__excerpt">Peer-reviewed research shows that nasal breathing produces measurably different brain states than mouth breathing — less anxiety, more joy, and a deeply relaxed yet fully aware state of consciousness. Here's exactly what the science says and what to do about it.</p>
+              <p class="blog-card__excerpt">Peer-reviewed research shows that nasal breathing produces measurably different brain states than mouth breathing: less anxiety, more joy, and a deeply relaxed yet fully aware state of consciousness. Here's exactly what the science says and what to do about it.</p>
               <div class="blog-card__footer">
                 <span class="blog-card__meta">Nick Heath, Ph.D. · 12 peer-reviewed studies</span>
                 <span class="blog-card__arrow">
