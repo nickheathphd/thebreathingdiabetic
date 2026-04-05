@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Preview — Option A vs Option B</title>
+  <link rel="stylesheet" href="/fonts/inter.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1A202C;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    h1 {
+      font-size: clamp(2.125rem, 5vw, 3.375rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: #0D1B2E;
+    }
+    p { font-size: 1.0625rem; line-height: 1.8; color: #4A5568; }
+
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+    .btn {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2.125rem;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.14s ease;
+    }
+    .btn-primary { background: #2B6CB0; color: #ffffff; }
+    .btn-primary:hover {
+      background: #245d9a;
+      box-shadow: 0 6px 20px rgba(43,108,176,0.35);
+      transform: translateY(-1px);
+    }
+    .btn-lg { font-size: 1.0625rem; padding: 1.05rem 2.5rem; }
+
+    /* ─── PREVIEW LABELS ──────────────────────────────── */
+    .preview-label {
+      background: #0D1B2E;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .preview-label span {
+      background: #2B6CB0;
+      color: #fff;
+      font-size: 0.6875rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+    }
+    .preview-note {
+      background: #EBF4FF;
+      border-left: 3px solid #2B6CB0;
+      padding: 0.75rem 2rem;
+      font-size: 0.875rem;
+      color: #1A365D;
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════════════════════════════════
+       OPTION A — SPLIT HERO
+    ══════════════════════════════════════════════════ */
+    .hero-a {
+      padding: 6.5rem 0 6rem;
+      background: linear-gradient(160deg, #F0F7FF 0%, #ffffff 55%);
+      border-bottom: 1px solid #E8EDF3;
+    }
+    .hero-a__grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-a__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #2B6CB0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .hero-a__eyebrow-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #2B6CB0;
+      opacity: 0.4;
+    }
+    .hero-a h1 { margin-bottom: 1.25rem; }
+    .hero-a__proof {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: #2B6CB0;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+    .hero-a__sub {
+      font-size: 1.0625rem;
+      line-height: 1.78;
+      color: #506070;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-a__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .hero-a__trust {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #8898A8;
+      letter-spacing: 0.025em;
+    }
+    .hero-a__secondary {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #4A5568;
+    }
+    .hero-a__secondary a {
+      color: #2B6CB0;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(43,108,176,0.3);
+      transition: border-color 0.15s ease;
+    }
+    .hero-a__secondary a:hover { border-color: #2B6CB0; }
+
+    /* Photo side */
+    .hero-a__photo-wrap {
+      position: relative;
+    }
+    .hero-a__photo {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .hero-a__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    /* Floating stat badge */
+    .hero-a__badge {
+      position: absolute;
+      bottom: -1.25rem;
+      left: -1.25rem;
+      background: #ffffff;
+      border: 1px solid #E8EDF3;
+      border-radius: 10px;
+      padding: 0.875rem 1.25rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      min-width: 160px;
+    }
+    .hero-a__badge-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #2B6CB0;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .hero-a__badge-label {
+      font-size: 0.75rem;
+      color: #718096;
+      font-weight: 500;
+      margin-top: 0.2rem;
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════════════
+       OPTION B — CENTERED, STRIPPED DOWN
+    ══════════════════════════════════════════════════ */
+    .hero-b {
+      padding: 7rem 0 6.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, #F0F7FF 0%, #ffffff 100%);
+      border-bottom: 1px solid #E8EDF3;
+    }
+    .hero-b__byline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #8898A8;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2.25rem;
+    }
+    .hero-b__byline-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #CBD5E0;
+    }
+    .hero-b h1 {
+      max-width: 780px;
+      margin: 0 auto 1.25rem;
+    }
+    /* Stat row inline */
+    .hero-b__stats {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      background: #F7F9FC;
+      border: 1px solid #E8EDF3;
+      border-radius: 100px;
+      padding: 0.75rem 2rem;
+      margin-bottom: 2.75rem;
+    }
+    .hero-b__stat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #2B6CB0;
+    }
+    .hero-b__stat-num {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .hero-b__stat-label {
+      color: #718096;
+      font-weight: 500;
+    }
+    .hero-b__divider {
+      width: 1px;
+      height: 20px;
+      background: #E2E8F0;
+    }
+    .hero-b__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-b__trust {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #8898A8;
+      letter-spacing: 0.025em;
+    }
+    .hero-b__secondary {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #4A5568;
+    }
+    .hero-b__secondary a {
+      color: #2B6CB0;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(43,108,176,0.3);
+      transition: border-color 0.15s ease;
+    }
+    .hero-b__secondary a:hover { border-color: #2B6CB0; }
+
+    /* ─── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero-a__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-a__actions { align-items: flex-start; }
+      .hero-a__photo {
+        aspect-ratio: 4 / 3;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .hero-a__photo img { object-position: center 15%; }
+      .hero-a__badge { left: auto; right: -0.5rem; bottom: -1rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-b__stats {
+        flex-direction: column;
+        border-radius: 12px;
+        gap: 0.75rem;
+        padding: 1.25rem 1.5rem;
+      }
+      .hero-b__divider { width: 40px; height: 1px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ OPTION A ══════════════════════════════════════ -->
+  <div class="preview-label">
+    Option A — Split Hero with Headshot
+    <span>Recommended</span>
+  </div>
+  <div class="preview-note">
+    Left: copy + CTA. Right: Nick's photo with a floating "454 studies" badge. Adds warmth, face = credibility, visual anchor. No new photography needed.
+  </div>
+
+  <section class="hero-a">
+    <div class="container">
+      <div class="hero-a__grid">
+
+        <div class="hero-a__text">
+          <div class="hero-a__eyebrow">
+            Nick Heath, Ph.D.
+            <span class="hero-a__eyebrow-dot"></span>
+            Breathing Researcher
+          </div>
+
+          <h1>Anxiety lives in your brain and body.<br>Breathing changes both.</h1>
+
+          <p class="hero-a__proof">454 peer-reviewed studies say exactly how.</p>
+
+          <p class="hero-a__sub">Most breathing advice is vague. This is a structured system — specific techniques for specific situations, built from the research. Works in as little as 60 seconds.</p>
+
+          <div class="hero-a__actions">
+            <a href="#" class="btn btn-primary btn-lg">Get the Breath Manual ($27)</a>
+            <p class="hero-a__trust">One-time payment &nbsp;·&nbsp; Instant PDF &nbsp;·&nbsp; No subscriptions</p>
+            <p class="hero-a__secondary">Not ready? <a href="#">Start the free 7-Day Calm Reset →</a></p>
+          </div>
+        </div>
+
+        <div class="hero-a__photo-wrap">
+          <div class="hero-a__photo">
+            <img src="images/nick-headshot.webp" alt="Nick Heath PhD — Breathing Researcher">
+          </div>
+          <div class="hero-a__badge">
+            <div class="hero-a__badge-num">454</div>
+            <div class="hero-a__badge-label">peer-reviewed studies synthesized</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ OPTION B ══════════════════════════════════════ -->
+  <div class="preview-label" style="margin-top: 3px;">
+    Option B — Centered, Stripped Down
+    <span style="background:#718096;">Minimal</span>
+  </div>
+  <div class="preview-note">
+    Same centered layout, radically less copy. Stats pill replaces the wall of proof text. One job per element. Cleaner — but no face.
+  </div>
+
+  <section class="hero-b">
+    <div class="container">
+
+      <div class="hero-b__byline">
+        Nick Heath, Ph.D.
+        <span class="hero-b__byline-dot"></span>
+        Breathing Researcher
+      </div>
+
+      <h1>Breathing Is the Fastest Science-Backed Path from Anxious to Calm</h1>
+
+      <p style="font-size:1.25rem;font-weight:600;color:#2B6CB0;letter-spacing:0.01em;margin-bottom:1.75rem;">Works in 60 seconds. The minimum effective dose is 5 minutes a day.</p>
+
+      <div class="hero-b__stats">
+        <div class="hero-b__stat">
+          <span class="hero-b__stat-num">454</span>
+          <span class="hero-b__stat-label">peer-reviewed studies</span>
+        </div>
+        <div class="hero-b__divider"></div>
+        <div class="hero-b__stat">
+          <span class="hero-b__stat-num">60s</span>
+          <span class="hero-b__stat-label">to feel the difference</span>
+        </div>
+        <div class="hero-b__divider"></div>
+        <div class="hero-b__stat">
+          <span class="hero-b__stat-num">8 yrs</span>
+          <span class="hero-b__stat-label">of research distilled</span>
+        </div>
+      </div>
+
+      <div class="hero-b__actions">
+        <a href="#" class="btn btn-primary btn-lg">Get the Breath Manual ($27)</a>
+        <p class="hero-b__trust">No hype. No subscriptions. Just the research.</p>
+        <p class="hero-b__secondary">Not ready? <a href="#">Start the free 7-Day Calm Reset →</a></p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
