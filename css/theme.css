@@ -338,3 +338,22 @@ p {
   .container        { padding: 0 1.25rem; }
   .container--narrow { padding: 0 1.25rem; }
 }
+
+/* ── Kit / ConvertKit embed overrides ─────────────────────────── */
+/* Override the default blue button Kit injects */
+.formkit-submit,
+[data-uid] .formkit-submit {
+  background-color: var(--forest) !important;
+  border-color: var(--forest) !important;
+  font-family: var(--ff-body) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  border-radius: 100px !important;
+  transition: background 0.2s ease, box-shadow 0.2s ease !important;
+}
+.formkit-submit:hover,
+[data-uid] .formkit-submit:hover {
+  background-color: var(--forest-mid) !important;
+  border-color: var(--forest-mid) !important;
+  box-shadow: 0 6px 24px rgba(27, 46, 35, 0.28) !important;
+}
