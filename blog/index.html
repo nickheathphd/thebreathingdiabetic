@@ -52,13 +52,13 @@
 
     /* ── Featured label ─────────────────────────────── */
     .featured-label {
-      font-family: var(--ff-body);
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 1.25rem;
+      font-family: var(--ff-display);
+      font-size: clamp(1.75rem, 2.75vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--forest);
+      margin-bottom: 1.5rem;
+      display: block;
     }
 
     /* ── Featured card ──────────────────────────────── */
@@ -177,15 +177,15 @@
 
     /* ── Posts section ──────────────────────────────── */
     .posts-section-label {
-      font-family: var(--ff-body);
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sage);
+      font-family: var(--ff-display);
+      font-size: clamp(1.75rem, 2.75vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--forest);
       margin-bottom: 1.75rem;
-      padding-bottom: 1rem;
+      padding-bottom: 1.25rem;
       border-bottom: 1px solid var(--border);
+      display: block;
     }
     .posts-grid {
       display: grid;
@@ -299,12 +299,11 @@
     .quote-cards-section { margin: 4rem 0; }
     .quote-cards-label {
       display: block;
-      font-family: var(--ff-body);
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sage);
+      font-family: var(--ff-display);
+      font-size: clamp(1.75rem, 2.75vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--forest);
       margin-bottom: 1.5rem;
     }
     .quote-cards-grid {
@@ -324,6 +323,7 @@
     }
     .quote-card:hover { background: var(--forest-mid); }
     .quote-card__tag {
+      display: block;
       font-family: var(--ff-body);
       font-size: 0.6875rem;
       font-weight: 600;
@@ -332,24 +332,32 @@
       color: var(--sage-mid);
     }
     .quote-card__title {
+      display: block;
       font-family: var(--ff-display);
-      font-size: 1rem;
+      font-size: 1.0625rem;
       font-style: italic;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.82);
+      line-height: 1.45;
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
       flex: 1;
     }
+    .quote-card__title:hover { color: var(--white); }
     .quote-card__desc {
+      display: block;
       font-family: var(--ff-body);
       font-size: 0.8125rem;
-      color: rgba(255,255,255,0.32);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.38);
     }
     .quote-card__link {
+      display: block;
       font-family: var(--ff-body);
       font-size: 0.8125rem;
       font-weight: 500;
       color: var(--sage-mid);
+      text-decoration: none;
     }
+    .quote-card:hover .quote-card__link { color: rgba(255,255,255,0.6); }
 
     /* ── Newsletter strip ───────────────────────────── */
     .newsletter-strip {
