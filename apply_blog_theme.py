@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://thebreathingdiabetic.com/blog/art-of-being-wise-not-most-people-and-deep-psycho-physical-changes.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://thebreathingdiabetic.com/blog/art-of-being-wise-not-most-people-and-deep-psycho-physical-changes.html" />
-  <meta property="og:title" content="Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic" />
-  <meta property="og:description" content="Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic" />
-  <meta property="og:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic" />
-  <meta name="twitter:description" content="Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic" />
-  <meta name="twitter:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
-  <title>Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic</title>
-  <style>
+#!/usr/bin/env python3
+"""
+Replace the inline <style> block in all blog post HTML files with
+the new redesign CSS. Base styles (body, nav, footer, typography,
+containers, buttons) come from /css/theme.css — this block only
+covers blog-specific components.
+
+Targets: blog/*.html   (excludes blog/index.html)
+"""
+import re
+from pathlib import Path
+
+ROOT = Path('/Users/nheath411/thebreathingdiabetic')
+
+NEW_BLOG_CSS = """\
     /* ── Blog-specific styles
        Base: body, nav, footer, h1-h4, p, .container, .btn-*
        all come from /css/theme.css loaded after this block.
@@ -481,157 +479,40 @@
       .compare-table  { font-size: 0.8125rem; }
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
-    }
-  </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/theme.css">
+    }\
+"""
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZKKJYEET06');
-  </script>
-  <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic",
-    "url": "https://thebreathingdiabetic.com/blog/art-of-being-wise-not-most-people-and-deep-psycho-physical-changes.html",
-    "description": "Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes | The Breathing Diabetic",
-    "author": {
-        "@type": "Person",
-        "@id": "https://thebreathingdiabetic.com/about",
-        "name": "Nick Heath"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "The Breathing Diabetic"
-    }
-}
-  </script>
-</head>
-<body>
-  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
-    <div class="container"><div class="nav__inner">
-      <a href="/" class="nav__logo">The Breathing <em>Diabetic</em></a>
-      <ul class="nav__links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog/index.html">Blog</a></li>
-          <li><a href="/books.html">Books</a></li>
-          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Science Videos</a></li>
-          <li><a href="/shop.html" target="_blank" rel="noopener noreferrer">Shop</a></li>
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div></div>
-  </nav>
-  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
-    <a href="/" onclick="closeDrawer()">Home</a>
-    <a href="/blog/index.html" onclick="closeDrawer()">Blog</a>
-    <a href="/books.html" onclick="closeDrawer()">Books</a>
-    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Science Videos</a>
-    <a href="/shop.html" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Shop</a>
-    <a href="/about.html" onclick="closeDrawer()">About</a>
-  </div>
-  <main>
-    <header class="article-hero">
-      <div class="container"><div class="article-body">
-        <a href="index.html" class="article-hero__back">&#8592; Back to all articles</a>
-        <span class="article-hero__label">The Breathing 411</span>
-        <h1>Art Of Being Wise, Not Most People, and Deep Psycho-Physical Changes</h1>
-        <p class="article-hero__byline">Nick Heath, Ph.D.</p>
-        <p class="article-hero__date">Published April 14, 2025</p>
-        <p class="article-hero__date">Reading Time: 1 min 41 sec</p>
-        <p class="article-hero__date"><em>I hope the next 20’ish breaths are the most nourishing of your day.</em></p>
-      </div></div>
-    </header>
-    <article class="article-content">
-      <div class="container"><div class="article-body">
-<div class="nl-section-header">4 THOUGHTS</div>
-<h2 ><strong>1. Most People Don’t Realize This</strong></h2><blockquote><p >“…most people don’t realize the profound potential the breath has for mental health.</p><p >How we breathe impacts our heart rate, blood pressure, emotions, and memory. Our breathing patterns influence the function of many critical areas of the brain. <strong>Breathing influences how we perceive the world, think, pay attention, remember, and feel.</strong></p><p >Our neurons respond to the rhythm of our breath: When we alter our breathing, we can control the activity of our brain cells. Research shows you can rapidly change your emotions using just your breath.” </p><p style="text-align:right;" >– Emma Seppälä, Ph.D., <a href="https://amzn.to/43M4GkG" target="_blank"><em>Sovereign</em></a></p></blockquote><p >Of course, if you’re reading this, you’re not <em>most people</em>—and you probably know most of this. But it’s always refreshing to read it from a slightly different perspective 👏</p><h2 ><strong>2. Try to Be Better?</strong></h2><blockquote><p >“It is easier to try to be better than you are than to be who you are.” </p><p style="text-align:right;" >– Marion Woodman, found in <a href="https://amzn.to/4jvEGP6" target="_blank"><em>Meditations for Mortals</em></a></p></blockquote><p >What a perfect reminder: Instead of always striving to <em>improve ourselves</em>, we can instead seek to simply <em>be ourselves</em>. That is, after all, what breathing, meditation, and mindfulness are all about 🙏</p><h2 ><strong>3. Deep Physical and Psychological Changes</strong></h2><blockquote><p >“As the breath is the link between the body and mind, it can intervene in the activities of either level. With increased awareness and control of the subtle aspects of breathing, these interventions can affect deep physical and psychological changes.” </p><p style="text-align:right;" >– John Clarke, MD, <a href="https://amzn.to/3YxGwqv" target="_blank"><em>Science of Breath</em></a></p></blockquote><p >I’ve shared this one before, but it’s an excellent reminder: Because the breath connects body and mind, it can elicit powerful changes in both.</p><h2 ><strong>4. Enjoying the Symphony</strong></h2><blockquote><p >“Do you want to enjoy a melody? Do you want to enjoy a symphony? Don’t hold on to a few bars of the music. Don’t hold on to a couple of notes. Let them pass, let them flow. The whole enjoyment of a symphony lies in your readiness to allow the notes to pass.” </p><p style="text-align:right;" >– Anthony de Mello, <a href="https://amzn.to/4jvpEJ2" target="_blank"><em>Awareness</em></a></p></blockquote><p >Same with life 🎵</p>
+STYLE_RE = re.compile(r'<style>.*?</style>', re.DOTALL)
 
-  
-  
 
-  
-<div class="nl-section-header">1 Quote</div>
+def process(path: Path) -> bool:
+    text = path.read_text(encoding='utf-8')
 
-  
-  
+    new_style = f'<style>\n{NEW_BLOG_CSS}\n  </style>'
+    new_text, n = STYLE_RE.subn(new_style, text, count=1)
 
-  
-  
+    if n == 0 or new_text == text:
+        return False
 
-<blockquote><p>"The art of being wise is knowing what to overlook."</p><p style="text-align:right;font-style:normal;margin-top:.5rem;">— &mdash; William James</p></blockquote>
+    path.write_text(new_text, encoding='utf-8')
+    return True
 
-  
-<div class="nl-section-header">1 GOOD BOOK</div>
-<p ><a href="https://amzn.to/3Ta9j1H" target="_blank"><em>Passage Meditation</em></a> by Eknath Easwaran</p><p >If you’re tired of reading the same old things about meditation, here’s an approach I can almost promise you haven’t encountered. And even if you don’t adopt Easwaran’s 8-point program, his profound yet practical wisdom is sure to change how you think and live 🙏 </p>
 
-  
-  
+def main():
+    blog_dir = ROOT / 'blog'
+    targets = [
+        p for p in sorted(blog_dir.glob('*.html'))
+        if p.name != 'index.html'
+    ]
 
-  
-      
-  
+    updated = 0
+    for path in targets:
+        if process(path):
+            updated += 1
+            print(f'  UPDATED  {path.relative_to(ROOT)}')
 
-  <p style="margin-top:3rem;">In good breath,</p><p >Nick Heath, T1D, PhD<br><em>“Breathing is the compound interest of health &amp; wellness.”</em></p><p >Enjoy these posts? <a href="https://www.paypal.com/donate/?hosted_button_id=4M9RW4ML5WYZ8" target="_blank">Donate</a> to say thanks! </p><p ><strong>P.S.</strong> <a href="https://www.instagram.com/p/DHhS9GbPurj/" target="_blank">Imagine hating on me and…</a></p>
-        <div class="cta-box">
-          <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
-          <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
-          <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn-primary" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_click'})" >Get the Manual for $27</a>
-        </div>
-        <p style="font-size:.75rem;color:#A0AEC0;text-align:center;margin-top:1.5rem;">As an Amazon Associate I earn from qualifying purchases.</p>
-      </div></div>
-    </article>
+    print(f'\nDone: {updated} / {len(targets)} blog posts updated')
 
-  <!-- ── Newsletter signup ── -->
-  <section style="background:#F0F7FF;border-top:1px solid #E8EDF3;padding:3rem 0;">
-    <div style="max-width:720px;margin:0 auto;padding:0 2rem;text-align:center;">
-      <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2B6CB0;margin-bottom:.5rem;">The Breathing 411</p>
-      <h2 style="font-size:1.375rem;font-weight:700;color:#0D1B2E;margin-bottom:.625rem;line-height:1.25;">Get the Free Weekly Newsletter</h2>
-      <p style="font-size:1rem;line-height:1.7;color:#4A5568;margin-bottom:1.5rem;">Weekly breath science, wisdom, and practical tools.</p>
-      <script async data-uid="b0db7b731a" src="https://breathlearning.kit.com/b0db7b731a/index.js"></script>
-    </div>
-  </section>
-  </main>
-  <footer class="footer">
-    <div class="container"><div class="footer__inner">
-      <p class="footer__copy">&copy; 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
-      <ul class="footer__links">
-        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Science Videos</a></li>
-        <li><span class="sep" aria-hidden="true">|</span></li>
-        <li><a href="../books.html">Books</a></li>
-        <li><span class="sep" aria-hidden="true">|</span></li>
-        <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
-        <li><span class="sep" aria-hidden="true">|</span></li>
-        <li><a href="../shop.html">Shop</a></li>
-        <li><span class="sep" aria-hidden="true">|</span></li>
-        <li><a href="../about.html">About</a></li>
-      </ul>
-    </div></div>
-  <p style="text-align:center;font-size:.8125rem;color:#718096;padding:1.25rem 2rem 0;line-height:1.6;">This content is for informational purposes only and does not constitute medical advice. Always consult your healthcare provider before making changes to your health or wellness routine.</p>
-  </footer>
-  <script>
-    const siteNav=document.getElementById('site-nav');
-    window.addEventListener('scroll',()=>{siteNav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
-    const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
-    burger.addEventListener('click',()=>{
-      const isOpen=drawer.classList.toggle('open');
-      burger.setAttribute('aria-expanded',isOpen);
-      burger.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');
-      document.body.style.overflow=isOpen?'hidden':'';
-    });
-    function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open navigation');document.body.style.overflow='';}
-    document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
-    document.querySelectorAll('.article-body a,.cta-box a').forEach(a=>{if(!a.getAttribute('target')){a.setAttribute('target','_blank');a.setAttribute('rel','noopener noreferrer');}});
-  </script>
-</body>
-</html>
+
+if __name__ == '__main__':
+    main()
