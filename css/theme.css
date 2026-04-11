@@ -1,0 +1,340 @@
+/* ================================================================
+   The Breathing Diabetic — Shared Design System
+   Loaded on all inner pages after the page's inline <style> block,
+   so these rules take priority over same-specificity inline styles.
+   The homepage (index.html / index-redesign.html) uses its own
+   self-contained inline styles and does NOT load this file.
+   ================================================================ */
+
+/* ── TOKENS ────────────────────────────────────────────────────── */
+:root {
+  --cream:        #F8F5EF;
+  --cream-deep:   #EDE8DC;
+  --cream-card:   #F2EFE8;
+  --forest:       #1B2E23;
+  --forest-mid:   #243A2D;
+  --sage:         #4A7759;
+  --sage-mid:     #6A9B7B;
+  --sage-light:   #E5EDDF;
+  --sage-pale:    #F0F5EE;
+  --sand:         #B8885A;
+  --sand-light:   #EDE0CE;
+  --text:         #1C1A14;
+  --text-mid:     #3D3A30;
+  --text-muted:   #7A7060;
+  --white:        #FFFFFF;
+  --border:       rgba(74, 119, 89, 0.18);
+
+  --ff-display: 'Cormorant Garant', Georgia, 'Times New Roman', serif;
+  --ff-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+/* ── RESET ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; }
+
+/* ── TYPOGRAPHY ────────────────────────────────────────────────── */
+h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  color: var(--forest);
+}
+h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.625rem, 2.75vw, 2.625rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  color: var(--forest);
+}
+h3 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.25rem, 1.75vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--forest);
+}
+h4 {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--forest);
+}
+p {
+  font-family: var(--ff-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+
+/* ── LAYOUT UTILITIES ──────────────────────────────────────────── */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.container--narrow {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ── EYEBROW / LABEL ───────────────────────────────────────────── */
+.eyebrow,
+.label {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.eyebrow--light { color: var(--sage-mid); }
+
+/* ── BUTTONS ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 2.25rem;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.22s var(--ease-out),
+              box-shadow 0.22s var(--ease-out),
+              transform 0.18s var(--ease-out);
+}
+.btn-primary {
+  background: var(--forest);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--forest-mid);
+  box-shadow: 0 8px 32px rgba(27, 46, 35, 0.28);
+  transform: translateY(-2px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid rgba(27, 46, 35, 0.35);
+}
+.btn-outline:hover {
+  background: rgba(27, 46, 35, 0.06);
+  border-color: var(--forest);
+  transform: translateY(-1px);
+}
+
+.btn-sage {
+  background: var(--sage);
+  color: var(--white);
+}
+.btn-sage:hover {
+  background: var(--forest);
+  box-shadow: 0 8px 28px rgba(74, 119, 89, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-lg { padding: 1.075rem 2.75rem; font-size: 1rem; }
+
+.btn-white {
+  background: var(--white);
+  color: var(--forest);
+}
+.btn-white:hover {
+  background: var(--cream);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+/* ── NAVIGATION ────────────────────────────────────────────────── */
+/* Inner pages: always-solid cream. No transparent-hero behavior. */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(248, 245, 239, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cream-deep);
+  transition: box-shadow 0.25s ease;
+}
+.nav.scrolled {
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav__logo {
+  font-family: var(--ff-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--forest);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.nav__logo:hover { color: var(--sage); }
+.nav__logo em { font-style: italic; font-weight: 400; color: inherit; }
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav__links a {
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav__links a:hover,
+.nav__links a.active { color: var(--sage); }
+
+/* Hamburger */
+.nav__burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  color: var(--forest);
+  flex-direction: column;
+  gap: 5px;
+}
+.nav__burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile drawer */
+.nav__drawer {
+  display: none;
+  position: fixed;
+  inset: 72px 0 0;
+  background: var(--cream);
+  z-index: 199;
+  padding: 2rem 2.5rem 3rem;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+}
+.nav__drawer.open { display: flex; }
+.nav__drawer a {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--forest);
+  text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cream-deep);
+  transition: color 0.15s ease;
+}
+.nav__drawer a:hover { color: var(--sage); }
+
+/* ── FOOTER ────────────────────────────────────────────────────── */
+.footer {
+  background: var(--text);
+  padding: 2.75rem 0;
+}
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.125rem;
+  text-align: center;
+}
+.footer__logo {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+.footer__logo em { font-style: italic; color: rgba(255, 255, 255, 0.3); }
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer__links a {
+  font-family: var(--ff-body);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  padding: 0 0.375rem;
+  transition: color 0.15s ease;
+}
+.footer__links a:hover { color: rgba(255, 255, 255, 0.65); }
+.footer__links .sep {
+  color: rgba(255, 255, 255, 0.12);
+  font-size: 0.8125rem;
+}
+.footer__copy {
+  font-family: var(--ff-body);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .nav__links  { display: none; }
+  .nav__burger { display: flex; }
+
+  .container        { padding: 0 1.5rem; }
+  .container--narrow { padding: 0 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .container        { padding: 0 1.25rem; }
+  .container--narrow { padding: 0 1.25rem; }
+}

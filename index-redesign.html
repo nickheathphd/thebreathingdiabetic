@@ -353,55 +353,27 @@
       overflow: hidden;
     }
 
-    /* Breath orb layers */
+    /* Breathing orb — ambient glow, 6 BPM. Large + low opacity so it's atmosphere, not focal point */
     .hero__orb {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    .orb-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      width: min(75vmin, 580px);
+      height: min(75vmin, 580px);
       border-radius: 50%;
-      border: 1px solid rgba(106,155,123,0.25);
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle at 40% 38%,
+        rgba(175, 220, 195, 0.28) 0%,
+        rgba(115, 180, 150, 0.15) 38%,
+        rgba(65,  140, 108, 0.06) 65%,
+        transparent 85%
+      );
+      animation: orb-breathe 10s ease-in-out infinite;
     }
-    .orb-ring--1 {
-      width: min(90vmin, 680px);
-      height: min(90vmin, 680px);
-      animation: breathe 10s var(--ease-in-out) infinite;
-    }
-    .orb-ring--2 {
-      width: min(70vmin, 520px);
-      height: min(70vmin, 520px);
-      border-color: rgba(106,155,123,0.35);
-      animation: breathe 10s var(--ease-in-out) infinite;
-      animation-delay: -0.8s;
-    }
-    .orb-ring--3 {
-      width: min(50vmin, 370px);
-      height: min(50vmin, 370px);
-      border-color: rgba(106,155,123,0.5);
-      background: radial-gradient(ellipse at center, rgba(74,119,89,0.12) 0%, transparent 70%);
-      animation: breathe 10s var(--ease-in-out) infinite;
-      animation-delay: -1.6s;
-    }
-    .orb-ring--4 {
-      width: min(30vmin, 220px);
-      height: min(30vmin, 220px);
-      border-color: rgba(106,155,123,0.7);
-      background: radial-gradient(ellipse at center, rgba(74,119,89,0.25) 0%, transparent 70%);
-      animation: breathe 10s var(--ease-in-out) infinite;
-      animation-delay: -2.4s;
-    }
-    @keyframes breathe {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50%       { transform: translate(-50%, -50%) scale(1.12); }
+    @keyframes orb-breathe {
+      0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.7; }
+      50%       { transform: translate(-50%, -50%) scale(1.18); opacity: 1;   }
     }
 
     /* Hero content */
@@ -439,7 +411,7 @@
     }
     .hero h1 em {
       font-style: italic;
-      color: var(--sage-mid);
+      color: #E2B97A;
     }
     .hero__sub {
       font-size: 1.125rem;
@@ -1195,6 +1167,36 @@
     }
 
     /* ─────────────────────────────────────────────────────────
+       PULLQUOTE BREAK
+    ───────────────────────────────────────────────────────── */
+    .pullquote-break {
+      padding: 5.5rem 0;
+      background: var(--forest);
+      text-align: center;
+    }
+    .pullquote-break__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    .pullquote-break__quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.5;
+      letter-spacing: -0.005em;
+    }
+    .pullquote-break__rule {
+      width: 36px;
+      height: 1px;
+      background: var(--sage-mid);
+      margin: 2rem auto 0;
+      opacity: 0.55;
+    }
+
+    /* ─────────────────────────────────────────────────────────
        FOOTER
     ───────────────────────────────────────────────────────── */
     .footer {
@@ -1337,13 +1339,8 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO -->
     <section class="hero" id="home" aria-label="Hero">
 
-      <!-- Animated breath orb -->
-      <div class="hero__orb" aria-hidden="true">
-        <div class="orb-ring orb-ring--1"></div>
-        <div class="orb-ring orb-ring--2"></div>
-        <div class="orb-ring orb-ring--3"></div>
-        <div class="orb-ring orb-ring--4"></div>
-      </div>
+      <!-- Ambient breathing orb — atmospheric glow, 6 BPM -->
+      <div class="hero__orb" aria-hidden="true"></div>
 
       <div class="hero__content">
         <span class="hero__eyebrow">Nick Heath, Ph.D.&ensp;&bull;&ensp;Breathing Researcher</span>
@@ -1370,11 +1367,10 @@
         <div class="hero__actions">
           <div class="hero__actions-row">
             <a href="https://nickheathphd.gumroad.com/l/breathmanual"
-               class="btn btn-primary btn-lg"
+               class="btn btn-ghost-light btn-lg"
                target="_blank" rel="noopener noreferrer"
                onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_hero', 'page_location': window.location.href});">
               Get the Breath Manual ($27)
-              <svg viewBox="0 0 16 16"><path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/></svg>
             </a>
             <a href="https://breathlearning.kit.com/7-day-breath-reset"
                class="btn btn-ghost-light btn-lg"
@@ -1400,7 +1396,6 @@
         <div class="ity__intro reveal">
           <span class="eyebrow">Does This Sound Familiar?</span>
           <h2>This is for you if.</h2>
-          <p style="margin-top:1.25rem;">Your body is doing its job — staying alert, staying ready. The problem is it won't turn off. That gap between what you know and what you feel is exactly what breathing science is designed to close.</p>
         </div>
 
         <div class="ity__grid">
@@ -1422,52 +1417,46 @@
           </div>
         </div>
 
-        <div class="ity__close reveal reveal-delay-2">
-          <p>That's exactly what this is built for.</p>
-        </div>
 
       </div>
     </section>
 
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ THE PROBLEM -->
-    <section class="section section--white" id="problem">
-      <div class="container">
-        <div class="objection__layout">
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PULLQUOTE BREAK -->
+    <section class="pullquote-break">
+      <div class="pullquote-break__inner reveal">
+        <p class="pullquote-break__quote">"Anxiety is not a mindset problem. It's a brain and body state. Breathing is the most direct way to change it."</p>
+        <div class="pullquote-break__rule"></div>
+      </div>
+    </section>
 
-          <div class="objection__left reveal">
-            <span class="eyebrow">The Real Problem</span>
-            <h2>"I've tried breathing before. It didn't work."</h2>
-            <div class="deco-rule"></div>
-            <p>I hear this constantly. And it's almost always true: most breathing advice is vague, generic, or simply wrong for anxiety.</p>
-            <p>"Just take a few deep breaths" doesn't work when your nervous system is stuck in overdrive. The science is clear on why — breathing at the wrong rate, the wrong time, or without the right physiological target does very little for anxious minds.</p>
-            <p>What does work is specific: patterns that directly increase heart rate variability, activate the prefrontal cortex, and shift brainwave patterns away from threat-detection mode.</p>
-            <div class="objection__pullquote">
-              <p>Anxiety is not a mindset problem. It's a brain and body state. Breathing is the most direct way to change it.</p>
-            </div>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ABOUT -->
+    <section class="section section--sage" id="about">
+      <div class="container">
+        <div class="about__layout">
+
+          <div class="about__photo reveal">
+            <img src="images/nick-headshot.webp" alt="Nick Heath PhD" loading="lazy">
           </div>
 
-          <div class="objection__right reveal reveal-delay-2">
-            <div class="objection__card">
-              <p class="objection__card-title">What most breathing advice is missing</p>
-              <ul class="objection__list">
-                <li>
-                  <span class="objection__num">01</span>
-                  <span>A specific target rate — not just "slow down." Research points to roughly 4.5–6 breaths per minute for maximum vagal activation.</span>
-                </li>
-                <li>
-                  <span class="objection__num">02</span>
-                  <span>Nasal mechanics — mouth breathing at any rate keeps the nervous system primed for threat. The nose changes the signal.</span>
-                </li>
-                <li>
-                  <span class="objection__num">03</span>
-                  <span>Timing — 30 seconds of slow breathing before a stressor measurably changes how your brain responds. Most people try it during the spiral.</span>
-                </li>
-                <li>
-                  <span class="objection__num">04</span>
-                  <span>Consistency — a 5-minute daily practice changes your baseline. One-off sessions give one-off relief.</span>
-                </li>
-              </ul>
+          <div class="about__text reveal reveal-delay-2">
+            <span class="eyebrow">About Nick</span>
+            <h2>Eight years.<br>One obsession.</h2>
+            <div class="deco-rule"></div>
+            <p>I became interested in breathing because I have Type 1 diabetes, which causes a lot of stress and anxiety. I've spent eight years in the peer-reviewed literature learning how breathing influences the brain, nervous system, and stress. I filter through the noise and turn it into something you can actually use.</p>
+            <p>No wellness jargon or crazy claims. Just the research, translated into plain English.</p>
+            <div class="about__credentials">
+              <span class="about__badge">Ph.D.</span>
+              <span class="about__badge">8 Years Research</span>
+              <span class="about__badge">454+ Studies</span>
+              <span class="about__badge">Weekly Newsletter</span>
+            </div>
+            <div style="margin-top:2rem;">
+              <a href="/about.html" class="btn btn-outline">
+                Read More
+                <svg viewBox="0 0 16 16"><path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/></svg>
+              </a>
             </div>
           </div>
 
@@ -1500,8 +1489,8 @@
             <span class="eyebrow eyebrow--light">The Research</span>
             <h2>The science on this is further along than most people realize.</h2>
             <div style="width:32px;height:1px;background:rgba(74,119,89,0.6);margin:1.75rem 0 2rem;"></div>
-            <p>Breathing research has advanced dramatically in the last decade. We now have peer-reviewed studies showing that slow, structured breathing alters communication across brain regions, increases parasympathetic activity, and shifts brainwave patterns away from threat-detection. Measurably. In as little as 30 seconds.</p>
-            <p>This isn't wellness marketing. These are controlled studies published in <em>Brain Sciences</em>, <em>Nature Scientific Reports</em>, and <em>Frontiers in Neuroscience</em>. I've spent eight years reading this literature — filtering out the noise and turning it into something you can actually use.</p>
+            <p>Slow, structured breathing measurably alters brain connectivity, increases parasympathetic activity, and shifts brainwave patterns away from threat-detection...all in as little as 30 seconds.</p>
+            <p>These are controlled studies published in journals like <em>Brain Sciences, Nature Scientific Reports, and Frontiers in Neuroscience.</em> I've spent 8 years reading this literature, filtering out the noise, and turning it into something you can actually use.</p>
             <div style="margin-top:2.5rem;">
               <a href="/blog/index.html" class="btn btn-ghost-light">
                 Read the Research Breakdowns
@@ -1600,12 +1589,12 @@
             <span class="eyebrow">The Anxious Person's Breath Manual</span>
             <h2>Everything the research says works. Nothing that doesn't.</h2>
             <div class="deco-rule"></div>
-            <p>This is not a general breathwork guide. It's a structured system built from 454 peer-reviewed studies — written for people who want their brain and body working for them, not against them.</p>
+            <p>454 peer-reviewed studies. One structured system. Built specifically for anxious minds — not a general breathwork guide.</p>
 
             <ul class="manual__features">
               <li>
                 <span class="manual__check"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,7 7.5,2"/></svg></span>
-                <span>The specific breath rates and patterns the research says work best for anxiety</span>
+                <span>Exact breath rates and patterns that work best for anxiety</span>
               </li>
               <li>
                 <span class="manual__check"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,7 7.5,2"/></svg></span>
@@ -1613,15 +1602,15 @@
               </li>
               <li>
                 <span class="manual__check"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,7 7.5,2"/></svg></span>
-                <span>How to build a 5-minute daily practice that changes your baseline over time</span>
+                <span>A 5-minute daily practice that shifts your baseline — not just one-off relief</span>
               </li>
               <li>
                 <span class="manual__check"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,7 7.5,2"/></svg></span>
-                <span>The 30-second pre-stress technique (backed by a 2025 study in <em>Nature Mental Health</em>)</span>
+                <span>The 30-second pre-stress technique from a 2025 <em>Nature Mental Health</em> study</span>
               </li>
               <li>
                 <span class="manual__check"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,7 7.5,2"/></svg></span>
-                <span>The physiology behind every recommendation — so you understand what you're doing and why it works</span>
+                <span>The physiology behind every recommendation — understand it, not just follow it</span>
               </li>
             </ul>
 
@@ -1657,48 +1646,12 @@
     </section>
 
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ABOUT -->
-    <section class="section section--sage" id="about">
-      <div class="container">
-        <div class="about__layout">
-
-          <div class="about__photo reveal">
-            <img src="images/nick-headshot.webp" alt="Nick Heath PhD" loading="lazy">
-          </div>
-
-          <div class="about__text reveal reveal-delay-2">
-            <span class="eyebrow">About</span>
-            <h2>Eight years.<br>One obsession.</h2>
-            <div class="deco-rule"></div>
-            <p>I have Type 1 diabetes. That's what started it. I went looking for tools that could help regulate my nervous system — and ended up deep in the peer-reviewed literature on breathing, the autonomic nervous system, and HRV.</p>
-            <p>My approach is simple: take what the research actually says, filter out the hype, and turn it into something you can use. No wellness jargon. No pseudoscience. Just the science, in plain English, with clear instructions.</p>
-            <p>I publish a weekly newsletter and a YouTube channel, both focused on making breath science genuinely practical. <em>Patrick McKeown cited my work in The Breathing Cure.</em></p>
-            <div class="about__credentials">
-              <span class="about__badge">Ph.D.</span>
-              <span class="about__badge">8 Years Research</span>
-              <span class="about__badge">454+ Studies</span>
-              <span class="about__badge">Weekly Newsletter</span>
-            </div>
-            <div style="margin-top:2rem;">
-              <a href="/about.html" class="btn btn-outline">
-                Read More
-                <svg viewBox="0 0 16 16"><path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/></svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SCIENCE VIDEO -->
     <section class="section section--white video-section" id="videos">
       <div class="container--narrow">
         <div class="reveal">
           <span class="eyebrow">From YouTube</span>
           <h2>Real studies. Plain English.<br>One thing to try today.</h2>
-          <p class="video__sub">I break down peer-reviewed breathing research into simple, actionable videos — no fluff, no pseudoscience.</p>
         </div>
 
         <div class="video__frame reveal reveal-delay-1">
