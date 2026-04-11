@@ -1,0 +1,896 @@
+#!/usr/bin/env python3
+"""
+Replace the inline <style> block in the 4 remaining inner pages
+with new redesign CSS. Base styles (body, nav, footer, h1-h4, p,
+.container, .btn-*) come from /css/theme.css.
+
+Pages: blog/index.html, about.html, books.html, shop.html
+"""
+import re
+from pathlib import Path
+
+ROOT = Path('/Users/nheath411/thebreathingdiabetic')
+STYLE_RE = re.compile(r'<style>.*?</style>', re.DOTALL)
+
+# ══════════════════════════════════════════════════════════════════
+#  BLOG INDEX
+# ══════════════════════════════════════════════════════════════════
+BLOG_INDEX_CSS = """\
+    /* Blog index — page-specific styles.
+       Base: body, nav, footer, typography, .container, .btn
+       all come from /css/theme.css.
+    ─────────────────────────────────────────────────── */
+
+    /* ── Page hero ─────────────────────────────────── */
+    .page-hero {
+      padding: 5rem 0 4rem;
+      background: var(--cream-deep);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero__label {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero__sub {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-mid);
+      max-width: 640px;
+    }
+
+    /* ── Blog main ──────────────────────────────────── */
+    .blog-main { padding: 5rem 0 6rem; }
+
+    /* ── Featured label ─────────────────────────────── */
+    .featured-label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Featured card ──────────────────────────────── */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      background: var(--forest);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .featured-card__body {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .featured-card__top { display: flex; flex-direction: column; gap: 1rem; }
+    .featured-card__tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .featured-card__title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.375rem, 2.25vw, 1.875rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--white);
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+    .featured-card__title:hover { opacity: 0.8; }
+    .featured-card__excerpt {
+      font-family: var(--ff-body);
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.6);
+    }
+    .featured-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .featured-card__byline {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .featured-card__byline strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+    .featured-card__studies {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      color: var(--sage-mid);
+    }
+    .featured-card__read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--sage-mid);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .featured-card__read-link svg {
+      width: 14px; height: 14px;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+    .featured-card__read-link:hover { color: var(--white); }
+    .featured-card__read-link:hover svg { transform: translateX(3px); }
+
+    .featured-card__visual {
+      background: var(--forest-mid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      gap: 1.5rem;
+    }
+    .featured-card__visual-stat { text-align: center; }
+    .featured-card__stat-number {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+    .featured-card__stat-label {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.375rem;
+      line-height: 1.4;
+    }
+    .featured-card__stat-divider {
+      width: 32px; height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── Tags ───────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+    }
+    .featured-card .tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); }
+    .post-card .tag { background: var(--sage-pale); color: var(--sage); }
+
+    /* ── Posts section ──────────────────────────────── */
+    .posts-section-label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .post-card {
+      background: var(--cream-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(27,46,35,0.09);
+    }
+    .post-card__accent {
+      width: 32px; height: 2px;
+      background: var(--sage);
+      border-radius: 2px;
+      margin-bottom: 1.125rem;
+      opacity: 0.5;
+    }
+    .post-card__tags { display: flex; gap: 0.5rem; margin-bottom: 0.875rem; }
+    .post-card__title {
+      font-family: var(--ff-display);
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--forest);
+      margin-bottom: 0.75rem;
+      flex: 1;
+    }
+    .post-card__excerpt {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .post-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .post-card__meta {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .post-card__arrow {
+      width: 18px; height: 18px;
+      stroke: var(--sage); fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover .post-card__arrow { transform: translateX(3px); }
+
+    /* ── Topic clusters ─────────────────────────────── */
+    .topic-clusters { margin: 4rem 0; }
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .topic-tile {
+      background: var(--cream-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      transition: background 0.18s ease, transform 0.18s ease;
+      cursor: default;
+    }
+    .topic-tile:hover { background: var(--sage-pale); transform: translateY(-2px); }
+    .topic-tile__title {
+      font-family: var(--ff-display);
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 0.375rem;
+    }
+    .topic-tile__desc {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .topic-tile__count {
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--sage);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Quote cards ────────────────────────────────── */
+    .quote-cards-section { margin: 4rem 0; }
+    .quote-cards-label {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+    .quote-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .quote-card {
+      background: var(--forest);
+      border-radius: 10px;
+      padding: 1.75rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 0.2s ease;
+    }
+    .quote-card:hover { background: var(--forest-mid); }
+    .quote-card__tag {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-mid);
+    }
+    .quote-card__title {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.82);
+      flex: 1;
+    }
+    .quote-card__desc {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.32);
+    }
+    .quote-card__link {
+      font-family: var(--ff-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--sage-mid);
+    }
+
+    /* ── Newsletter strip ───────────────────────────── */
+    .newsletter-strip {
+      background: var(--cream-deep);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      border-radius: 10px;
+      margin: 4rem 0;
+    }
+    .newsletter-strip__text { flex: 1; }
+    .newsletter-strip__text h2 { margin-bottom: 0.5rem; }
+    .newsletter-strip__action { flex-shrink: 0; }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .topic-grid { grid-template-columns: repeat(2, 1fr); }
+      .quote-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-card__visual { display: none; }
+    }
+    @media (max-width: 700px) {
+      .blog-main { padding: 3rem 0 4rem; }
+      .page-hero { padding: 3.5rem 0 3rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .quote-cards-grid { grid-template-columns: 1fr; }
+      .newsletter-strip { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .topic-grid { grid-template-columns: 1fr 1fr; }
+    }\
+"""
+
+# ══════════════════════════════════════════════════════════════════
+#  ABOUT
+# ══════════════════════════════════════════════════════════════════
+ABOUT_CSS = """\
+    /* About page — page-specific styles.
+       Base: body, nav, footer, typography, .container, .btn
+       all come from /css/theme.css.
+    ─────────────────────────────────────────────────── */
+
+    /* ── Page hero ─────────────────────────────────── */
+    .page-hero {
+      padding: 5.5rem 0 5rem;
+      background: var(--cream-deep);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 5rem;
+      align-items: center;
+    }
+    .page-hero__text { max-width: 620px; }
+    .page-hero__name { margin-bottom: 0.375rem; }
+    .page-hero__title {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--sage-mid);
+      margin-bottom: 2rem;
+    }
+    .page-hero__lead { margin-bottom: 1.75rem; }
+    .page-hero__lead strong { color: var(--text); font-weight: 600; }
+    .page-hero__photo {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 16px 48px rgba(27,46,35,0.16);
+    }
+    .page-hero__photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .section { padding: 5rem 0; }
+    .section--gray { background: var(--cream-card); }
+    .section--dark { background: var(--forest); }
+    .section--dark h2 { color: var(--white); }
+    .section--dark p  { color: rgba(255,255,255,0.68); }
+    .section--dark .label { color: var(--sage-mid); }
+
+    /* ── Story grid ────────────────────────────────── */
+    .story__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    .prose p + p { margin-top: 1.375rem; }
+
+    /* ── Label + rule ──────────────────────────────── */
+    .label {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.875rem;
+    }
+    .rule {
+      width: 40px; height: 2px;
+      background: var(--sage);
+      border-radius: 2px;
+      margin: 1.5rem 0 2.25rem;
+      opacity: 0.55;
+    }
+
+    /* ── Pullquote ─────────────────────────────────── */
+    .pullquote {
+      border-left: 3px solid var(--sage);
+      padding: 1.125rem 1.5rem;
+      margin: 2rem 0;
+      background: var(--sage-pale);
+      border-radius: 0 6px 6px 0;
+    }
+    .pullquote p {
+      font-family: var(--ff-display);
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--forest);
+      margin: 0;
+    }
+
+    /* ── Stat blocks ───────────────────────────────── */
+    .stat-block { text-align: center; }
+    .stat-block__num {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-block__label {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.375rem;
+    }
+    .stat-divider {
+      width: 1px; height: 48px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── Credential cards ──────────────────────────── */
+    .credentials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .credential-card {
+      background: var(--cream-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .credential-card__num {
+      font-family: var(--ff-display);
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+    .credential-card__label {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── Beliefs list ──────────────────────────────── */
+    .beliefs__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin: 1.5rem 0;
+    }
+    .beliefs__item {
+      font-family: var(--ff-body);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .beliefs__item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+    }
+    .beliefs__icon { display: none; }
+
+    /* ── About CTA ─────────────────────────────────── */
+    .about-cta {
+      background: var(--sage-pale);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .about-cta h2 { margin-bottom: 0.75rem; }
+    .about-cta p  { margin-bottom: 1.75rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .about-cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Final CTA ─────────────────────────────────── */
+    .final-cta { background: var(--forest); padding: 5rem 0; text-align: center; }
+    .final-cta h2 { color: var(--white); margin-bottom: 1rem; }
+    .final-cta p,
+    .final-cta__sub {
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 860px) {
+      .page-hero__grid { grid-template-columns: 1fr; gap: 3rem; }
+      .page-hero__photo { max-width: 240px; }
+      .story__grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .credentials__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .page-hero { padding: 3.5rem 0 3rem; }
+      .section { padding: 3.5rem 0; }
+    }
+    @media (max-width: 480px) {
+      .credentials__grid { grid-template-columns: 1fr; }
+      .about-cta { padding: 2rem 1.5rem; }
+      .final-cta { padding: 3.5rem 0; }
+    }\
+"""
+
+# ══════════════════════════════════════════════════════════════════
+#  BOOKS
+# ══════════════════════════════════════════════════════════════════
+BOOKS_CSS = """\
+    /* Books page — page-specific styles.
+       Base: body, nav, footer, typography, .container, .btn
+       all come from /css/theme.css.
+    ─────────────────────────────────────────────────── */
+
+    /* ── Page hero ─────────────────────────────────── */
+    .page-hero {
+      padding: 5rem 0 4.5rem;
+      background: var(--cream-deep);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero__badge {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero__sub {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-mid);
+      max-width: 640px;
+    }
+
+    /* ── Books section ──────────────────────────────── */
+    .books-section { padding: 5rem 0; }
+    .books-grid { display: grid; gap: 1.75rem; }
+
+    /* ── Book card ──────────────────────────────────── */
+    .book-card {
+      background: var(--cream-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+    .book-card__meta { margin-bottom: 0.5rem; }
+    .book-card__author {
+      font-family: var(--ff-body);
+      font-size: 0.9375rem;
+      font-style: italic;
+      color: var(--sage-mid);
+    }
+    .book-card__title {
+      font-size: clamp(1.375rem, 2.5vw, 2rem);
+      margin-bottom: 0;
+    }
+    .book-card__divider {
+      width: 100%; height: 1px;
+      background: var(--border);
+      margin: 1.5rem 0;
+    }
+    .book-card__blurb { margin-bottom: 1.75rem; }
+
+    /* ── Books link section ─────────────────────────── */
+    .books-link-section {
+      background: var(--cream-deep);
+      border-top: 1px solid var(--border);
+      padding: 5rem 0;
+    }
+    .books-link-section h2 { margin-bottom: 0.75rem; }
+    .books-link-section > .container > p { margin-bottom: 2.5rem; }
+
+    .books-link-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .books-link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(27,46,35,0.09);
+    }
+    .books-link-card__eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+    .books-link-card__title {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+    .books-link-card__desc {
+      font-family: var(--ff-body);
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 700px) {
+      .page-hero   { padding: 3.5rem 0 3rem; }
+      .books-section { padding: 3.5rem 0; }
+      .book-card   { padding: 1.75rem; }
+    }\
+"""
+
+# ══════════════════════════════════════════════════════════════════
+#  SHOP
+# ══════════════════════════════════════════════════════════════════
+SHOP_CSS = """\
+    /* Shop page — page-specific styles.
+       Base: body, nav, footer, typography, .container, .btn
+       all come from /css/theme.css.
+    ─────────────────────────────────────────────────── */
+
+    /* ── Page hero ─────────────────────────────────── */
+    .page-hero {
+      padding: 5rem 0 4rem;
+      background: var(--cream-deep);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero__badge {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero__sub {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--text-mid);
+      max-width: 620px;
+    }
+
+    /* ── Product section ────────────────────────────── */
+    .product-section { padding: 5rem 0 6rem; }
+
+    /* ── Product card ───────────────────────────────── */
+    .product-card {
+      background: var(--forest);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .product-card__body { padding: 3rem 3.5rem; }
+    .product-card__eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-mid);
+      margin-bottom: 1rem;
+    }
+    .product-card__title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .product-card__desc {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1.75rem;
+    }
+    .product-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      margin-bottom: 2rem;
+    }
+    .product-bullets li {
+      font-family: var(--ff-body);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.68);
+      padding-left: 1.375rem;
+      position: relative;
+    }
+    .product-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--sage-mid);
+      font-size: 0.875rem;
+    }
+    .product-card__quote {
+      font-family: var(--ff-display);
+      font-size: 1.0625rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.55;
+      margin-bottom: 2rem;
+      padding: 1rem 1.25rem;
+      border-left: 2px solid rgba(255,255,255,0.12);
+    }
+    .product-card__cta { display: flex; flex-direction: column; gap: 0.875rem; }
+    .product-card__cta .btn-primary {
+      background: var(--sage);
+      color: var(--white);
+      align-self: flex-start;
+    }
+    .product-card__cta .btn-primary:hover {
+      background: var(--sage-mid);
+      box-shadow: 0 8px 24px rgba(74,119,89,0.4);
+    }
+    .product-card__price {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.32);
+      line-height: 1.5;
+    }
+    .product-card__price strong { color: rgba(255,255,255,0.48); font-weight: 500; }
+
+    .product-card__panel {
+      background: var(--forest-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+    }
+    .product-card__panel img {
+      max-width: 240px;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 860px) {
+      .product-card { grid-template-columns: 1fr; }
+      .product-card__panel { padding: 2rem; }
+      .product-card__panel img { max-width: 200px; }
+    }
+    @media (max-width: 700px) {
+      .page-hero { padding: 3.5rem 0 3rem; }
+      .product-section { padding: 3.5rem 0; }
+      .product-card__body { padding: 2rem; }
+    }\
+"""
+
+# ══════════════════════════════════════════════════════════════════
+#  APPLY
+# ══════════════════════════════════════════════════════════════════
+PAGES = {
+    'blog/index.html': BLOG_INDEX_CSS,
+    'about.html':      ABOUT_CSS,
+    'books.html':      BOOKS_CSS,
+    'shop.html':       SHOP_CSS,
+}
+
+
+def process(path: Path, css: str) -> bool:
+    text = path.read_text(encoding='utf-8')
+    new_style = f'<style>\n{css}\n  </style>'
+    new_text, n = STYLE_RE.subn(new_style, text, count=1)
+    if n == 0 or new_text == text:
+        print(f'  SKIPPED (no change): {path.name}')
+        return False
+    path.write_text(new_text, encoding='utf-8')
+    return True
+
+
+def main():
+    updated = 0
+    for rel_path, css in PAGES.items():
+        path = ROOT / rel_path
+        if process(path, css):
+            print(f'  UPDATED  {rel_path}')
+            updated += 1
+    print(f'\nDone: {updated} / {len(PAGES)} pages updated')
+
+
+if __name__ == '__main__':
+    main()
