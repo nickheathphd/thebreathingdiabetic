@@ -346,23 +346,28 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10rem 2.5rem 7rem;
+      align-items: flex-start;
+      padding: 12rem max(2.5rem, calc((100vw - 1120px) / 2 + 2.5rem)) 9rem max(2.5rem, calc((100vw - 1120px) / 2 + 2.5rem));
       background: var(--forest);
       overflow: hidden;
     }
 
-    /* Breathing orb — ambient glow, 6 BPM. Large + low opacity so it's atmosphere, not focal point */
-    .hero__orb {
+    /* Breathing visual — orb, concentric rings, floating particles */
+    .hero__visual {
       position: absolute;
       top: 50%;
-      left: 50%;
-      width: min(75vmin, 580px);
-      height: min(75vmin, 580px);
-      border-radius: 50%;
+      right: 15%;
+      width: min(32vw, 360px);
+      height: min(32vw, 360px);
+      transform: translateY(-50%);
       pointer-events: none;
       z-index: 1;
+    }
+
+    .hero__orb {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
       background: radial-gradient(circle at 40% 38%,
         rgba(175, 220, 195, 0.28) 0%,
         rgba(115, 180, 150, 0.15) 38%,
@@ -372,15 +377,31 @@
       animation: orb-breathe 10s ease-in-out infinite;
     }
     @keyframes orb-breathe {
-      0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.7; }
-      50%       { transform: translate(-50%, -50%) scale(1.18); opacity: 1;   }
+      0%, 100% { transform: scale(1);    opacity: 0.7; }
+      50%       { transform: scale(1.18); opacity: 1;   }
+    }
+
+    /* Concentric rings — exactly in phase with the orb */
+    .hero__ring {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .hero__ring--1 {
+      inset: -10%;
+      border: 1px solid rgba(175, 220, 195, 0.2);
+      animation: orb-breathe 10s ease-in-out infinite;
+    }
+    .hero__ring--2 {
+      inset: -24%;
+      border: 1px solid rgba(175, 220, 195, 0.09);
+      animation: orb-breathe 10s ease-in-out infinite;
     }
 
     /* Hero content */
     .hero__content {
       position: relative;
       z-index: 2;
-      max-width: 860px;
+      max-width: 580px;
     }
     .hero__eyebrow {
       display: inline-flex;
@@ -405,6 +426,7 @@
       opacity: 0.6;
     }
     .hero h1 {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
       color: var(--white);
       margin-bottom: 1.75rem;
       animation: fadeUp 0.9s var(--ease-out) 0.1s both;
@@ -417,8 +439,8 @@
       font-size: 1.125rem;
       line-height: 1.72;
       color: rgba(255,255,255,0.65);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
+      max-width: 520px;
+      margin: 0 0 2.75rem;
       animation: fadeUp 0.9s var(--ease-out) 0.2s both;
     }
     .hero__stats {
@@ -456,7 +478,7 @@
     .hero__actions {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 1.25rem;
       animation: fadeUp 0.9s var(--ease-out) 0.4s both;
     }
@@ -465,7 +487,7 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .hero__nudge {
       font-size: 0.875rem;
@@ -535,7 +557,8 @@
     /* ─────────────────────────────────────────────────────────
        SECTION BASE
     ───────────────────────────────────────────────────────── */
-    .section { padding: 7rem 0; }
+    .section { padding: 8rem 0; }
+
     .section--cream  { background: var(--cream); }
     .section--white  { background: var(--white); }
     .section--sage   { background: var(--sage-pale); }
@@ -709,99 +732,9 @@
     /* ─────────────────────────────────────────────────────────
        MECHANISM / HOW IT WORKS
     ───────────────────────────────────────────────────────── */
-    .mechanism-section { background: var(--cream); }
-    .mechanism__header {
-      max-width: 600px;
-      margin-bottom: 4rem;
-    }
-    .mechanism__flow {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      position: relative;
-      max-width: 960px;
-    }
-    /* Connecting line */
-    .mechanism__flow::before {
-      content: '';
-      position: absolute;
-      top: 2.5rem;
-      left: 5%;
-      right: 5%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--sage) 20%, var(--sage) 80%, transparent);
-      opacity: 0.25;
-    }
-    .mech-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 0.75rem;
-      position: relative;
-    }
-    .mech-step__orb {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background: var(--white);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-    .mech-step:hover .mech-step__orb {
-      background: var(--sage);
-      border-color: var(--sage);
-      box-shadow: 0 8px 24px rgba(74,119,89,0.25);
-    }
-    .mech-step__orb svg {
-      width: 1.75rem;
-      height: 1.75rem;
-      stroke: var(--sage);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke 0.3s ease;
-    }
-    .mech-step:hover .mech-step__orb svg { stroke: var(--white); }
-    .mech-step--center .mech-step__orb {
-      background: var(--sage);
-      border-color: var(--sage);
-      box-shadow: 0 8px 32px rgba(74,119,89,0.3);
-    }
-    .mech-step--center .mech-step__orb svg { stroke: var(--white); }
-    .mech-step__num {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--sage);
-      margin-bottom: 0.5rem;
-    }
-    .mech-step--center .mech-step__num { color: var(--sage); }
-    .mech-step__name {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--forest);
-      line-height: 1.3;
-      margin-bottom: 0.375rem;
-    }
-    .mech-step__sub {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .mech-step--center .mech-step__sub {
-      color: var(--sage);
-      font-weight: 500;
-    }
-
+    /* ─────────────────────────────────────────────────────────
+       MECHANISM — research-protocol flow diagram
+    ───────────────────────────────────────────────────────── */
     /* ─────────────────────────────────────────────────────────
        MANUAL SELL
     ───────────────────────────────────────────────────────── */
@@ -1253,6 +1186,13 @@
       .manual__image { max-width: 420px; margin: 0 auto; }
       .about__layout { grid-template-columns: 1fr; gap: 3rem; }
       .about__photo { position: static; max-width: 260px; aspect-ratio: 3/4; }
+
+      .hero { align-items: center; text-align: center; padding: 10rem 2.5rem 7rem; }
+      .hero__content { max-width: 640px; }
+      .hero__sub { margin: 0 auto 2.75rem; }
+      .hero__actions { align-items: center; }
+      .hero__actions-row { justify-content: center; }
+      .hero__visual { right: auto; left: 50%; transform: translate(-50%, -50%); }
     }
 
     @media (max-width: 860px) {
@@ -1261,11 +1201,6 @@
       .blog-card--featured .blog-stat-panel { width: 100%; flex-direction: row; padding: 1.5rem 2rem; }
       .blog-stat__rule { width: 1px; height: 36px; }
       .ity__grid { grid-template-columns: 1fr; }
-      .mechanism__flow { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
-      .mechanism__flow::before { display: none; }
-      .mech-step { flex-direction: row; text-align: left; gap: 1.25rem; padding: 0; }
-      .mech-step__orb { flex-shrink: 0; margin-bottom: 0; }
-      .mech-step__content {}
     }
 
     @media (max-width: 700px) {
@@ -1274,8 +1209,18 @@
       .nav__burger { display: flex; }
 
       .section { padding: 5rem 0; }
-      .hero { padding: 8rem 1.5rem 6rem; }
+      .hero {
+        padding: 9rem 1.75rem 6rem;
+        align-items: center;
+        text-align: center;
+      }
+      .hero__content { max-width: 100%; }
+      .hero__sub { margin: 0 auto 2.5rem; }
+      .hero__actions { align-items: center; }
+      .hero__actions-row { justify-content: center; }
       .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+
+      .hero__visual { right: auto; left: 50%; transform: translate(-50%, -50%); }
 
       .blog__grid { grid-template-columns: 1fr; }
       .blog-card--featured { grid-column: 1; }
@@ -1285,8 +1230,6 @@
     @media (max-width: 480px) {
       .container { padding: 0 1.25rem; }
       .container--narrow { padding: 0 1.25rem; }
-      .hero__stats { flex-direction: column; gap: 1.25rem; }
-      .hero__stat + .hero__stat { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem; }
     }
   </style>
 
@@ -1339,8 +1282,12 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO -->
     <section class="hero" id="home" aria-label="Hero">
 
-      <!-- Ambient breathing orb — atmospheric glow, 6 BPM -->
-      <div class="hero__orb" aria-hidden="true"></div>
+      <!-- Breathing visual: orb + concentric rings -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__orb"></div>
+        <div class="hero__ring hero__ring--1"></div>
+        <div class="hero__ring hero__ring--2"></div>
+      </div>
 
       <div class="hero__content">
         <span class="hero__eyebrow">Nick Heath, Ph.D.&ensp;&bull;&ensp;Breathing Researcher</span>
@@ -1348,21 +1295,6 @@
         <h1>Breathing Is the<br>Fastest Path from<br><em>Anxious to Calm</em></h1>
 
         <p class="hero__sub">Backed by hundreds of peer-reviewed studies. Starts in 60 seconds. Changes your baseline in 5 minutes a day.</p>
-
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <span class="hero__stat-num">454</span>
-            <span class="hero__stat-label">Studies Synthesized</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">60s</span>
-            <span class="hero__stat-label">To Feel the Shift</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">8&thinsp;yrs</span>
-            <span class="hero__stat-label">Of Research Distilled</span>
-          </div>
-        </div>
 
         <div class="hero__actions">
           <div class="hero__actions-row">
@@ -1378,16 +1310,13 @@
               Free 7-Day Reset
             </a>
           </div>
-          <p class="hero__nudge">No hype. No subscriptions. Just the research. &mdash; <a href="/about.html">About Nick</a></p>
         </div>
       </div>
 
       <div class="hero__scroll" aria-hidden="true">
         <div class="hero__scroll-line"></div>
-        <span>Scroll</span>
       </div>
     </section>
-
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ IS THIS YOU -->
     <section class="section section--cream" id="is-this-you" aria-label="Is this you?">
@@ -1496,82 +1425,6 @@
                 Read the Research Breakdowns
                 <svg viewBox="0 0 16 16"><path d="M2.5 8h11M8.5 3L13.5 8l-5 5"/></svg>
               </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HOW IT WORKS -->
-    <section class="section section--cream mechanism-section" id="mechanism">
-      <div class="container">
-
-        <div class="mechanism__header reveal">
-          <span class="eyebrow">The Mechanism</span>
-          <h2>Five steps. Ten seconds each.</h2>
-        </div>
-
-        <div class="mechanism__flow reveal reveal-delay-1">
-
-          <div class="mech-step">
-            <div class="mech-step__orb">
-              <!-- Nose icon -->
-              <svg viewBox="0 0 28 28"><path d="M14 4v12M10 16c-3 0-5 2-5 4s2 4 5 4h8c3 0 5-2 5-4s-2-4-5-4"/></svg>
-            </div>
-            <div class="mech-step__content">
-              <div class="mech-step__num">01</div>
-              <div class="mech-step__name">Slow Nasal Breathing</div>
-              <div class="mech-step__sub">4.5–6 breaths per minute</div>
-            </div>
-          </div>
-
-          <div class="mech-step mech-step--center">
-            <div class="mech-step__orb">
-              <!-- Wave/brain icon -->
-              <svg viewBox="0 0 28 28"><path d="M4 14 Q7 8 10 14 Q13 20 16 14 Q19 8 22 14 Q24 18 25 14"/></svg>
-            </div>
-            <div class="mech-step__content">
-              <div class="mech-step__num">02</div>
-              <div class="mech-step__name">Brain Waves Calm</div>
-              <div class="mech-step__sub">Brain connectivity increases</div>
-            </div>
-          </div>
-
-          <div class="mech-step">
-            <div class="mech-step__orb">
-              <!-- Heart icon -->
-              <svg viewBox="0 0 28 28"><path d="M14 21s-8-5.5-8-11a5 5 0 0110 0 5 5 0 0110 0c0 5.5-8 11-8 11"/></svg>
-            </div>
-            <div class="mech-step__content">
-              <div class="mech-step__num">03</div>
-              <div class="mech-step__name">Nervous System Relaxes</div>
-              <div class="mech-step__sub">Heart, breath, and brain sync</div>
-            </div>
-          </div>
-
-          <div class="mech-step">
-            <div class="mech-step__orb">
-              <!-- Mind icon -->
-              <svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="8"/><path d="M10 12c0-2 1.5-3 4-3s4 1 4 3M10 16c0 2 1.5 3 4 3s4-1 4-3"/></svg>
-            </div>
-            <div class="mech-step__content">
-              <div class="mech-step__num">04</div>
-              <div class="mech-step__name">Mind Stops Racing</div>
-              <div class="mech-step__sub">Calm feelings arise naturally</div>
-            </div>
-          </div>
-
-          <div class="mech-step">
-            <div class="mech-step__orb">
-              <!-- Sun/peace icon -->
-              <svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="5"/><path d="M14 4v3M14 21v3M4 14H7M21 14h3M7.05 7.05l2.12 2.12M18.83 18.83l2.12 2.12M7.05 20.95l2.12-2.12M18.83 9.17l2.12-2.12"/></svg>
-            </div>
-            <div class="mech-step__content">
-              <div class="mech-step__num">05</div>
-              <div class="mech-step__name">Anxiety Quiets</div>
-              <div class="mech-step__sub">Measurably, in 30 seconds</div>
             </div>
           </div>
 
