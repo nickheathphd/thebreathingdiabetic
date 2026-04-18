@@ -78,31 +78,26 @@
     }
     .book-card__blurb { margin-bottom: 1.75rem; }
 
-    /* ── Book groups ─────────────────────────────────── */
-    .book-group { margin-bottom: 5rem; }
-    .book-group:last-child { margin-bottom: 0; }
-    .book-group__header { margin-bottom: 2.25rem; }
-    .book-group__label {
+    /* ── Book group headers ─────────────────────────── */
+    .book-group-header {
+      margin: 4rem 0 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .books-grid + .book-group-header { margin-top: 5rem; }
+    .book-group-header:first-child   { margin-top: 0; }
+    .book-group-header__label {
+      display: block;
       font-family: var(--ff-body);
       font-size: 0.6875rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--sage);
-      display: block;
       margin-bottom: 0.5rem;
     }
-    .book-group__title {
-      font-family: var(--ff-display);
-      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-      font-weight: 500;
-      color: var(--forest);
-      margin: 0 0 1.25rem;
-      line-height: 1.2;
-    }
-    .book-group__rule {
-      width: 100%; height: 1px;
-      background: var(--border);
+    .book-group-header h2 {
+      font-size: clamp(1.375rem, 2vw, 1.875rem);
       margin: 0;
     }
 
@@ -235,675 +230,695 @@
     </section>
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BOOKS GRID -->
-    <section class=”books-section”>
-      <div class=”container”>
+    <section class="books-section">
+      <div class="container">
 
-        <!-- ── Group 1: Breathing & Mindfulness ─────────── -->
-        <div class=”book-group”>
-          <div class=”book-group__header”>
-            <span class=”book-group__label”>Category</span>
-            <h2 class=”book-group__title”>Breathing &amp; Mindfulness</h2>
-            <hr class=”book-group__rule”>
-          </div>
-          <div class=”books-grid”>
+        <!-- ── Group 1: Breathing &amp; Mindfulness ─── -->
+        <div class="book-group-header">
+          <span class="book-group-header__label">Category</span>
+          <h2>Breathing &amp; Mindfulness</h2>
+        </div>
+        <div class="books-grid">
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Eddie Stern</p>
-              </div>
-              <h2 class=”book-card__title”>Healing Through Breathing: Four Lessons for Lasting Health and Happiness</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Stern writes with a warmth that’s rare in breath books, and his central point is that conscious breathing isn’t a stress-management trick — it shifts your nervous system into a genuine healing state. What kept coming back to me: the pace of your breath is the pace of your life, and slowing one down tends to slow the other.</p>
-              <a href=”https://www.amazon.com/dp/B0CSH9JNQS?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Eddie Stern</p>
+            </div>
+            <h2 class="book-card__title">Healing Through Breathing: Four Lessons for Lasting Health and Happiness</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Stern writes with a warmth that's rare in breath books, and his central point is that conscious breathing isn't a stress-management trick — it shifts your nervous system into a genuine healing state. What kept coming back to me: the pace of your breath is the pace of your life, and slowing one down tends to slow the other.</p>
+            <a href="https://www.amazon.com/dp/B0CSH9JNQS?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Bhante Henepola Gunaratana</p>
-              </div>
-              <h2 class=”book-card__title”>Mindfulness in Plain English</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Gunaratana strips meditation down to its simplest form — see things clearly, without the distortion of craving or aversion — and makes it feel genuinely accessible. His description of the nasal nexus point, that precise location where you feel the breath enter and leave, is the most grounded instruction I’ve encountered for actually staying with the breath.</p>
-              <a href=”https://www.amazon.com/dp/0861719069?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Bhante Henepola Gunaratana</p>
+            </div>
+            <h2 class="book-card__title">Mindfulness in Plain English</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Gunaratana strips meditation down to its simplest form — see things clearly, without the distortion of craving or aversion — and makes it feel genuinely accessible. His description of the nasal nexus point, that precise location where you feel the breath enter and leave, is the most grounded instruction I've encountered for actually staying with the breath.</p>
+            <a href="https://www.amazon.com/dp/0861719069?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Culadasa (John Yates, Ph.D.), Matthew Immergut, Jeremy Graves</p>
-              </div>
-              <h2 class=”book-card__title”>The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Yates integrates Buddhist meditation theory with modern neuroscience in a way that’s unusually rigorous — it’s the most comprehensive and systematic meditation guide I’ve encountered. The key insight is deceptively simple: mind wandering isn’t a failure, it’s precisely the moment you get to practice, and what you do with that moment is everything.</p>
-              <a href=”https://www.amazon.com/dp/1501156985?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Culadasa (John Yates, Ph.D.), Matthew Immergut, Jeremy Graves</p>
+            </div>
+            <h2 class="book-card__title">The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Yates integrates Buddhist meditation theory with modern neuroscience in a way that's unusually rigorous — it's the most comprehensive and systematic meditation guide I've encountered. The key insight is deceptively simple: mind wandering isn't a failure, it's precisely the moment you get to practice, and what you do with that moment is everything.</p>
+            <a href="https://www.amazon.com/dp/1501156985?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Ronald Siegel, Psy.D.</p>
-              </div>
-              <h2 class=”book-card__title”>The Mindfulness Solution: Everyday Practices for Everyday Problems</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Siegel writes clearly and with real clinical warmth about using mindfulness to interrupt everyday psychological suffering, and his explanation of how pain works — and why mindfulness breaks the feedback loop — is the clearest I’ve read. His chapter on loving-kindness is worth the price of the book alone: not soft or vague, just a straightforward account of what happens in the brain when you practice directing goodwill toward yourself and others.</p>
-              <a href=”https://www.amazon.com/dp/1606232940?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Ronald Siegel, Psy.D.</p>
+            </div>
+            <h2 class="book-card__title">The Mindfulness Solution: Everyday Practices for Everyday Problems</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Siegel writes clearly and with real clinical warmth about using mindfulness to interrupt everyday psychological suffering, and his explanation of how pain works — and why mindfulness breaks the feedback loop — is the clearest I've read. His chapter on loving-kindness is worth the price of the book alone: not soft or vague, just a straightforward account of what happens in the brain when you practice directing goodwill toward yourself and others.</p>
+            <a href="https://www.amazon.com/dp/1606232940?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-          </div>
         </div>
 
-        <!-- ── Group 2: Movement ─────────────────────────── -->
-        <div class=”book-group”>
-          <div class=”book-group__header”>
-            <span class=”book-group__label”>Category</span>
-            <h2 class=”book-group__title”>Movement</h2>
-            <hr class=”book-group__rule”>
-          </div>
-          <div class=”books-grid”>
+        <!-- ── Group 2: Movement ──────────────────────── -->
+        <div class="book-group-header">
+          <span class="book-group-header__label">Category</span>
+          <h2>Movement</h2>
+        </div>
+        <div class="books-grid">
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Caroline Williams</p>
-              </div>
-              <h2 class=”book-card__title”>Move: How the New Science of Body Movement Can Set Your Mind Free</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Williams synthesizes the research on body movement and brain health, and her conclusion is that movement and mindfulness are less separate than we tend to think — one shapes the other. What stood out: of all forms of movement, breathing is identified as the most powerful because it’s the one that directly and immediately changes how the nervous system responds.</p>
-              <a href=”https://www.amazon.com/dp/1335914048?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Caroline Williams</p>
+            </div>
+            <h2 class="book-card__title">Move: How the New Science of Body Movement Can Set Your Mind Free</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Williams synthesizes the research on body movement and brain health, and her conclusion is that movement and mindfulness are less separate than we tend to think — one shapes the other. What stood out: of all forms of movement, breathing is identified as the most powerful because it's the one that directly and immediately changes how the nervous system responds.</p>
+            <a href="https://www.amazon.com/dp/1335914048?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Libby DeLana</p>
-              </div>
-              <h2 class=”book-card__title”>Do Walk</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This one instantly became my favorite book on walking. It’s short, easy to read, and overflowing with wisdom on the power of walking. I can’t recommend it enough, and I hope it inspires you to walk more like it did me.</p>
-              <a href=”https://www.amazon.com/dp/1907974962?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Libby DeLana</p>
+            </div>
+            <h2 class="book-card__title">Do Walk</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This one instantly became my favorite book on walking. It's short, easy to read, and overflowing with wisdom on the power of walking. I can't recommend it enough, and I hope it inspires you to walk more like it did me.</p>
+            <a href="https://www.amazon.com/dp/1907974962?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Annabel Streets</p>
-              </div>
-              <h2 class=”book-card__title”>52 Ways to Walk</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I loved this book. It’s a perfect blend of science and practical wisdom on all aspects of walking. Several chapters even discuss the benefits of controlled, nasal breathing while out on a stroll. It’s definitely an excellent read if you enjoy a good walk.</p>
-              <a href=”https://www.amazon.com/dp/0593419952?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Annabel Streets</p>
+            </div>
+            <h2 class="book-card__title">52 Ways to Walk</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I loved this book. It's a perfect blend of science and practical wisdom on all aspects of walking. Several chapters even discuss the benefits of controlled, nasal breathing while out on a stroll. It's definitely an excellent read if you enjoy a good walk.</p>
+            <a href="https://www.amazon.com/dp/0593419952?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-          </div>
         </div>
 
-        <!-- ── Group 3: Better Living in General ───────── -->
-        <div class=”book-group”>
-          <div class=”book-group__header”>
-            <span class=”book-group__label”>Category</span>
-            <h2 class=”book-group__title”>Better Living in General</h2>
-            <hr class=”book-group__rule”>
-          </div>
-          <div class=”books-grid”>
+        <!-- ── Group 3: Better Living in General ──────── -->
+        <div class="book-group-header">
+          <span class="book-group-header__label">Category</span>
+          <h2>Better Living in General</h2>
+        </div>
+        <div class="books-grid">
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Anthony de Mello</p>
-              </div>
-              <h2 class=”book-card__title”>Awareness</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is one of my favorites in the recent past. De Mello’s wisdom was genuinely life-changing for me. Also, I highly recommend the audiobook version— he’s hilarious, and reading the words doesn’t do it justice. (I often randomly put it on while walking because it’s so funny and full of wisdom that it never gets old.) I hope you’ll check it out!</p>
-              <a href=”https://www.amazon.com/dp/B07YMHHSYJ?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Anthony de Mello</p>
+            </div>
+            <h2 class="book-card__title">Awareness</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is one of my favorites in the recent past. De Mello's wisdom was genuinely life-changing for me. Also, I highly recommend the audiobook version— he's hilarious, and reading the words doesn't do it justice. (I often randomly put it on while walking because it's so funny and full of wisdom that it never gets old.) I hope you'll check it out!</p>
+            <a href="https://www.amazon.com/dp/B07YMHHSYJ?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Richard Rohr</p>
-              </div>
-              <h2 class=”book-card__title”>Falling Upward</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is one of my all-time favorites. It’s not about breathing or meditation per se, but full of wisdom for living a mindful and fulfilling life. Can’t recommend this one enough.</p>
-              <a href=”https://www.amazon.com/dp/0470907754?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Richard Rohr</p>
+            </div>
+            <h2 class="book-card__title">Falling Upward</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is one of my all-time favorites. It's not about breathing or meditation per se, but full of wisdom for living a mindful and fulfilling life. Can't recommend this one enough.</p>
+            <a href="https://www.amazon.com/dp/0470907754?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Eknath Easwaran</p>
-              </div>
-              <h2 class=”book-card__title”>Take Your Time: The Wisdom of Slowing Down</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Easwaran’s short book on pace and peace makes a practical case that when you slow your body and your breathing, you slow your mind — and that changes everything downstream. His observation that worry and hurry almost always travel together is obvious once you hear it, but it took reading this book for me to actually feel it.</p>
-              <a href=”https://www.amazon.com/dp/1586380958?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Eknath Easwaran</p>
+            </div>
+            <h2 class="book-card__title">Take Your Time: The Wisdom of Slowing Down</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Easwaran's short book on pace and peace makes a practical case that when you slow your body and your breathing, you slow your mind — and that changes everything downstream. His observation that worry and hurry almost always travel together is obvious once you hear it, but it took reading this book for me to actually feel it.</p>
+            <a href="https://www.amazon.com/dp/1586380958?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
 
-          </div>
         </div>
 
-        <!-- ── The Full Reading List (ungrouped) ───────── -->
-        <div class=”book-group”>
-          <div class=”book-group__header”>
-            <span class=”book-group__label”>All Books</span>
-            <h2 class=”book-group__title”>The Full Reading List</h2>
-            <hr class=”book-group__rule”>
-          </div>
-          <div class=”books-grid”>
-
-            <!-- A -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Daniel Goleman &amp; Richard Davidson</p>
-              </div>
-              <h2 class=”book-card__title”>Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Goleman and Davidson cut through the meditation noise and focus on what the research actually shows: consistent practice doesn’t just make you feel better in the moment — it literally rewires your brain and biology over time. One finding that stayed with me: long-term meditators breathe 1.6 breaths per minute slower at rest, which adds up to over 800,000 fewer breaths per year, and that difference matters for your nervous system and your health.</p>
-              <a href=”https://www.amazon.com/dp/0399184384?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- B -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Inna Khazan, Ph.D</p>
-              </div>
-              <h2 class=”book-card__title”>Biofeedback and Mindfulness in Everyday Life</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Although I’m not a huge fan of biofeedback personally, this is an excellent book on breathing, mindfulness, and their application in everyday life. It also has a great basic physiology section, written in an accessible way. Definitely worth the read if you want to nerd out a little.</p>
-              <a href=”https://www.amazon.com/dp/0393712931?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Wallace J Nichols</p>
-              </div>
-              <h2 class=”book-card__title”>Blue Mind</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>While this one isn’t about breathing or meditation per se, it’s an excellent book on the power of water (and nature more broadly) to help us naturally cultivate mindfulness. As a surfer and someone who loves the ocean, it’s one of my all-time favorites.</p>
-              <a href=”https://www.amazon.com/dp/0316252115?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Larry Rosenberg</p>
-              </div>
-              <h2 class=”book-card__title”>Breath by Breath</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Even if you’re not into meditation, this book is worth the read for all the great quotes, stories, and analogies about the breath. It’s one of the first “non-breathwork” breathing books I read many years ago that opened my eyes to the power of the breath as an analogy for life.</p>
-              <a href=”https://www.amazon.com/dp/1590301366?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Micheal J Stephen, MD</p>
-              </div>
-              <h2 class=”book-card__title”>Breath Taking</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I loved this book because it’s not about “breathwork” but about “the breath.” I’ve joked that Dr. Stephen is the Feynman of the lungs, weaving poetic quotes into rigorous and fascinating scientific discussion. My favorite chapters were the Prologue, 1–4, and 12. It’s a great read for anyone interested in breathing.</p>
-              <a href=”https://www.amazon.com/dp/0802149316?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>James Nestor</p>
-              </div>
-              <h2 class=”book-card__title”>Breath: The New Science of a Lost Art</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Nestor takes you on a wide-ranging journey through the science and history of breathing, and the most striking piece is his self-experiment: ten days of deliberate mouth breathing tanked his blood pressure and crushed his HRV, then ten days of nose breathing brought everything back. The core message is simple and backed by the research — breathe through your nose, breathe slow, and breathe less.</p>
-              <a href=”https://www.amazon.com/dp/0735213616?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Patrick McKeown</p>
-              </div>
-              <h2 class=”book-card__title”>The Breathing Cure</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is a massive tome on all things breathing. You can read it start-to-finish, or use it as a reference whenever you’re interested in a specific topic. There’s even a section on diabetes featuring yours truly 😊</p>
-              <a href=”https://www.amazon.com/dp/1630061972?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Andrew Weil, MD</p>
-              </div>
-              <h2 class=”book-card__title”>Breathing: The Master Key to Self Healing</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This audiotape, released more than 20 years ago, is one of my top 5 recommendations for anyone beginning with breathing. It’s less than 2 hours and has almost everything we need to start a breath practice. Check it out if you haven’t already.</p>
-              <a href=”https://www.amazon.com/dp/156455726X?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Gurucharan Singh Khalsa, Ph.D., and Yogi Bhajan, Ph.D</p>
-              </div>
-              <h2 class=”book-card__title”>Breathwalk</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Breathwalk is an all-in-one practice combining breathing, meditation, and physical movement. The book includes many specific routines you can try immediately, along with the philosophy and science behind why they work. Definitely worth the read.</p>
-              <a href=”https://www.amazon.com/dp/0767904931?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- C -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Jon Gordon and Damon West</p>
-              </div>
-              <h2 class=”book-card__title”>The Coffee Bean</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I read this book this past Friday afternoon. It’s so good. Given that coffee is more important to me than oxygen 😂, I’m not sure how it took me this long to hear about it. It’s super short, so I won’t spoil it—just do yourself a favor and pick it up.</p>
-              <a href=”https://www.amazon.com/dp/1119430275?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Matt Fitzgerald</p>
-              </div>
-              <h2 class=”book-card__title”>The Comeback Quotient: A Get-Real Guide to Building Mental Fitness in Sport and Life</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Fitzgerald profiles elite athletes who staged major comebacks and distills their psychology into three steps: accept the situation as it is, embrace it fully, then address it with everything you have. What makes it land is that this isn’t sports psychology dressed up as life advice — the framework genuinely works for anyone dealing with a setback, including the ones that come with chronic illness or anxiety.</p>
-              <a href=”https://www.amazon.com/dp/1948007169?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Rick Rubin</p>
-              </div>
-              <h2 class=”book-card__title”>The Creative Act: A Way of Being</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Rubin makes the unusual but convincing argument that creativity isn’t a talent — it’s a state of awareness, and mindfulness is the primary way to access it. What struck me is that his description of creative presence reads almost exactly like a description of what a good breathing practice cultivates: open attention, reduced reactivity, and the ability to actually be with what’s there.</p>
-              <a href=”https://www.amazon.com/dp/0593652886?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- D -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Dr. Dana Sinclair</p>
-              </div>
-              <h2 class=”book-card__title”>Dialed In</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>My good friend and mentor Paul Hunt (whose MBSR course I occasionally share) recommended this one to me. It’s fantastic: Super practical and filled with many gems on the power of breathing.</p>
-              <a href=”https://www.amazon.com/dp/1982181877?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Joseph Nguyen</p>
-              </div>
-              <h2 class=”book-card__title”>Don’t Believe Everything You Think</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>James Clear had this book on his list of three books he’d recommend to new graduates. And now I know why…it’s so good. It’s short, easy to read, and full of wisdom. It’s a perfect introduction to the world of contemplative practices.</p>
-              <a href=”https://www.amazon.com/dp/B09WPP7R6S?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- E -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Satish Kumar</p>
-              </div>
-              <h2 class=”book-card__title”>Elegant Simplicity</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Kumar once walked 8,000 miles with no money in his pocket for a cause he believed in…crazy. That ‘be the change’ pilgrimage spirit carries through to this book. He lays out how to simplify your life—not just materially, but also mentally and spiritually, too.</p>
-              <a href=”https://www.amazon.com/dp/0865719101?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- F -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Fabiana González Aristizabal &amp; José Paulino G.</p>
-              </div>
-              <h2 class=”book-card__title”>Fabi The Heart Warrior</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This children’s book about a little girl born with a heart condition who discovered breathing, prayer, and meditation as her three superpowers is one of the most moving things I’ve reviewed. It’s a quiet reminder that the tools we talk about on this channel aren’t just for adults trying to optimize their nervous systems — they’re for anyone who needs to find steadiness in the middle of something hard.</p>
-              <a href=”https://www.amazon.com/dp/B0DG522P4P?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Jon Kabat-Zinn, Ph.D.</p>
-              </div>
-              <h2 class=”book-card__title”>Full Catastrophe Living: Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Kabat-Zinn’s MBSR classic is a deep dive into using mindfulness — anchored in the breath — to face the full weight of stress, pain, and illness without being destroyed by it. The title sounds grim, but his whole point is that the breath gives you a stable place to stand when life gets overwhelming, and the science keeps confirming it.</p>
-              <a href=”https://www.amazon.com/dp/0345536932?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- H -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Andy Fraser (ed.)</p>
-              </div>
-              <h2 class=”book-card__title”>The Healing Power of Meditation: Leading Experts on Buddhism, Psychology, and Medicine</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This edited volume brings together researchers and clinicians from Buddhist, psychological, and medical traditions, and the convergence across those perspectives is striking. The finding that stayed with me: meditation increases telomerase activity — the enzyme that repairs chromosome ends — which is about as direct a biological marker of healthy aging as we have.</p>
-              <a href=”https://www.amazon.com/dp/1611800595?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Jon Kabat-Zinn, Ph.D</p>
-              </div>
-              <h2 class=”book-card__title”>The Healing Power of Mindfulness</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is another excellent mindfulness book from Kabat-Zinn. I’d still recommend Full Catastrophe Living first, but this is a great follow-up, grounded in both science and practicality.</p>
-              <a href=”https://www.amazon.com/dp/0316411760?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Richard Brown, MD, and Patricia Gerbarg, MD</p>
-              </div>
-              <h2 class=”book-card__title”>The Healing Power of the Breath</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is one of my all-time favorite books on breathing. It blends the essential science of breath with clear, practical instructions (and is just a joy to read). Brown and Gerbarg are truly a gift to the world of breathing and psychiatry.</p>
-              <a href=”https://www.amazon.com/dp/1590309022?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Leah Lagos, Psy.D</p>
-              </div>
-              <h2 class=”book-card__title”>Heart Breath Mind</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is an excellent read on the power of slow breathing to train our hearts for better performance and less stress. If you’re into optimal performance—or just love applied breath science—definitely check it out.</p>
-              <a href=”https://www.amazon.com/dp/1328604403?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Jetsunma Tenzin Palmo</p>
-              </div>
-              <h2 class=”book-card__title”>The Heroic Heart</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I got this book solely because it had the best title ever, lol, and I ended up absolutely loving it. This quote sums up its core message perfectly: “The important thing is not to worry about what is going to happen to us but to create inner strength to deal with whatever does happen.”</p>
-              <a href=”https://www.amazon.com/dp/1645470555?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Adam Grant</p>
-              </div>
-              <h2 class=”book-card__title”>Hidden Potential</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>My good friend Mary Hunt recommended this one to me ( check out her coaching here ). I’ve taken a break from these types of books lately to mainly read about meditation and breathing, but this one was amazing. It’s a joy to read, full of studies, stories, and practical wisdom that you can immediately start applying.</p>
-              <a href=”https://www.amazon.com/dp/0593653149?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Matt Fitzgerald</p>
-              </div>
-              <h2 class=”book-card__title”>How Bad Do You Want It?: Mastering the Psychology of Mind over Muscle</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Fitzgerald builds a strong case that endurance performance is governed more by perceived effort and the conscious brain than by raw physiology — and that insight applies just as much to managing anxiety as it does to running a race. His chapter on coping mechanisms landed hard: they’re deeply personal, built over time, and mastering them is what actually determines how far you can go.</p>
-              <a href=”https://www.amazon.com/dp/1937715418?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Andrew Newberg, MD, and Mark Waldman</p>
-              </div>
-              <h2 class=”book-card__title”>How God Changes Your Brain</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Don’t let the title (or New Age-y cover) distract you. This book is actually more like “The Neuroscience of Meditation and Breathing.” A good portion of it focuses on contemplative practices and breathing exercises. It’s a fun and interesting read.</p>
-              <a href=”https://www.amazon.com/dp/0345503414?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Pat Flynn</p>
-              </div>
-              <h2 class=”book-card__title”>How To Be Better At (Almost) Everything</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Does this have a cheesy title? Yes. But is it still one of my favorites of all time? Definitely. I read it about 6 years ago, and it had a huge impact on my life. If you love learning, make sure you check this one out 👏</p>
-              <a href=”https://www.amazon.com/dp/194688541X?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- I -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Paul Brunton</p>
-              </div>
-              <h2 class=”book-card__title”>Instructions for Spiritual Living</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I was surprised how much I liked this book. Despite its rather terrible name, Brunton avoids cookie-cutter advice and instead offers genuine wisdom and practical advice on using contemplative practices to lead a better life.</p>
-              <a href=”https://www.amazon.com/dp/1620558041?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- J -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Chade-Meng Tan</p>
-              </div>
-              <h2 class=”book-card__title”>Joy On Demand: The Art of Discovering the Happiness Within</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Chade-Meng Tan argues that joy isn’t a distant emotional destination — it’s accessible in a single mindful breath, if you train the skill. His observation that slow breathing is to mindfulness what smiling is to happiness isn’t just a nice metaphor; it’s a practical entry point that anyone can use right now.</p>
-              <a href=”https://www.amazon.com/dp/0062378856?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- L -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Barbara Fredrickson, Ph.D.</p>
-              </div>
-              <h2 class=”book-card__title”>Love 2.0: How Our Supreme Emotion Affects Everything We Feel, Think, Do, and Become</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Fredrickson redefines love not as a feeling reserved for close relationships, but as micro-moments of positivity resonance that your nervous system can generate with nearly anyone. The surprising connection she draws is this: your vagal tone — shaped in part by your breathing practice — determines your capacity for those moments, which means breathwork is literally training your ability to connect.</p>
-              <a href=”https://www.amazon.com/dp/0142180475?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- M -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Oliver Burkeman</p>
-              </div>
-              <h2 class=”book-card__title”>Meditations for Mortals</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I can’t recommend this one enough. Reading the introduction was my favorite part, as it felt like Burkeman was expressing thoughts I’ve had but never known how to articulate. I’ve never felt so much resonance with a book. Check it out if it sounds interesting to you!</p>
-              <a href=”https://www.amazon.com/dp/0374611998?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- N -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Dean Sluyter</p>
-              </div>
-              <h2 class=”book-card__title”>Natural Meditation</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>I just finished this one and loved it. Simple, natural techniques alongside deep (yet super relatable) wisdom. It’s meditation for regular people.</p>
-              <a href=”https://www.amazon.com/dp/039917141X?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Steven Laureys, MD</p>
-              </div>
-              <h2 class=”book-card__title”>The No-Nonsense Meditation Book</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is a great book on the science of meditation (along with many fun anecdotes and practical suggestions). There’s even a whole chapter on breathing 😊</p>
-              <a href=”https://www.amazon.com/dp/1472980492?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- O -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Eknath Easwaran</p>
-              </div>
-              <h2 class=”book-card__title”>Original Goodness: A Commentary on the Beatitudes</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Easwaran’s commentary on the Beatitudes is less about religion than it is about the practical work of training the mind toward its better nature — and the framework holds up regardless of your beliefs. He makes a quiet but powerful point about breathing and life span that modern research keeps circling back to: how you breathe shapes how long and how well you live.</p>
-              <a href=”https://www.amazon.com/dp/0915132915?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Patrick McKeown</p>
-              </div>
-              <h2 class=”book-card__title”>The Oxygen Advantage: Breathing Techniques for a Healthier, Slimmer, Faster, and Fitter You</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>McKeown builds a compelling case that most of us overbreathe chronically, and that learning to breathe less — through the nose, slowly, with a higher CO₂ tolerance — is one of the most powerful health and performance interventions available. The BOLT score is a simple self-assessment that will tell you in about 40 seconds whether your breathing is working for you or against you.</p>
-              <a href=”https://www.amazon.com/dp/0062349473?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- P -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Eknath Easwaran</p>
-              </div>
-              <h2 class=”book-card__title”>Passage Meditation: A Complete Spiritual Practice</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Easwaran describes a complete eight-point practice with passage meditation at its center, and his reasoning for why it works is grounded in a deep understanding of how the mind changes through repetition. One thing that landed hard: he treats regular movement not as optional self-care but as a physiological imperative — because a calm, available body is the foundation everything else rests on.</p>
-              <a href=”https://www.amazon.com/dp/1586381164?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Thich Nhat Hanh</p>
-              </div>
-              <h2 class=”book-card__title”>Peace Is Every Breath: A Practice for Our Busy Lives</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Thich Nhat Hanh writes with a gentleness that disarms you, and his central teaching is that each breath is a complete moment of peace — not a means to get somewhere else. His instruction for dealing with anger, returning to the belly breath and letting the storm pass like treetops in the wind, is the most usable piece of emotional regulation advice I’ve ever found in a book this short.</p>
-              <a href=”https://www.amazon.com/dp/0062005820?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Amishi P. Jha, Ph.D.</p>
-              </div>
-              <h2 class=”book-card__title”>Peak Mind: Find Your Focus, Own Your Attention, Invest 12 Minutes a Day</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Jha’s research on attention is some of the most directly practical neuroscience I’ve read: your attention is the most important cognitive resource you have, it’s under constant assault, and 12 minutes of daily mindfulness training is enough to meaningfully protect it. The finding that stopped me: even during high-stress deployments, people who kept up their practice maintained attentional capacity — those who stopped saw it decline.</p>
-              <a href=”https://www.amazon.com/dp/0062992147?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- R -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Herbert Benson, MD</p>
-              </div>
-              <h2 class=”book-card__title”>Relaxation Revolution</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>A foundational book in the mind–body world, providing the science and stories on how the relaxation response heals.</p>
-              <a href=”https://www.amazon.com/dp/143914866X?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- S -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Swami Rama, Rudolph Ballentine MD, Alan Hymes MD</p>
-              </div>
-              <h2 class=”book-card__title”>Science of Breath: A Practical Guide</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This classic from the yoga tradition translates ancient breathing wisdom into surprisingly modern physiological terms, making the case that optimal breathing is diaphragmatic, nasal, and slow. The cylinder metaphor for breath mechanics is the most useful technical concept I’ve encountered — once you see it, it immediately changes how you breathe.</p>
-              <a href=”https://www.amazon.com/dp/0893891517?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Shinzen Young</p>
-              </div>
-              <h2 class=”book-card__title”>The Science of Enlightenment</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>The title made me hesitant for a long time, but it surprised me how good this book was. It’s one I suspect I’ll revisit every few years to understand it even more deeply.</p>
-              <a href=”https://www.amazon.com/dp/1591794609?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Emma Seppälä, Ph.D</p>
-              </div>
-              <h2 class=”book-card__title”>Sovereign</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is a great book filled with wisdom on taking control of and shaping our lives. It’s also got a ton of good information on the transformational power of breathing (and especially on the science of SKY breathing). Definitely a valuable read.</p>
-              <a href=”https://www.amazon.com/dp/1401975062?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Yogani</p>
-              </div>
-              <h2 class=”book-card__title”>Spinal Breathing Pranayama: Journey to Inner Space</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Yogani’s quiet, anonymous guide treats breathing not just as a physiological tool but as a doorway to a different quality of inner experience entirely. The method is simple — a slow, rhythmic breath traced along the spine — but done consistently, it creates a stillness that’s genuinely hard to access any other way.</p>
-              <a href=”https://www.amazon.com/dp/1938594584?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Johann Hari</p>
-              </div>
-              <h2 class=”book-card__title”>Stolen Focus</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>An awesome look at why we can’t concentrate. Hari combines research, interviews, and a 3-month phone-free experiment to show how we can begin to reclaim our focus.</p>
-              <a href=”https://www.amazon.com/dp/0593138511?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Alan Watts</p>
-              </div>
-              <h2 class=”book-card__title”>Still the Mind: An Introduction to Meditation</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Watts brings his characteristic wit and clarity to meditation, and his observation that breathing sits uniquely at the intersection of the voluntary and involuntary nervous systems is one of the clearest explanations I’ve found for why it’s such a powerful tool. His core message — that you don’t need to fix yourself to meditate, you just need to observe — is the kind of permission a lot of anxious people actually need to hear.</p>
-              <a href=”https://www.amazon.com/dp/1577312147?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Elissa Epel, Ph.D.</p>
-              </div>
-              <h2 class=”book-card__title”>The Stress Prescription: Seven Days to More Joy and Ease</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Epel, a leading stress researcher, makes a distinction that matters: not all stress is harmful, and learning to tell the difference between toxic chronic stress and healthy acute stress changes how you respond to both. Her morning breathing protocol, grounded in vagal tone research, and her case that how you start the day sets your nervous system’s baseline for everything that follows — that one genuinely changed my routine.</p>
-              <a href=”https://www.amazon.com/dp/014313664X?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- T -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Haemin Sunim</p>
-              </div>
-              <h2 class=”book-card__title”>The Things You Can See Only When You Slow Down: How to Be Calm in a Busy World</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Korean Zen teacher Haemin Sunim writes with an ease that mirrors his message: when you slow down, you begin to see things that were always there but invisible at full speed. His point about practicing breathwork not just in solitude but in ordinary life — on the bus, in a meeting, waiting in line — is where the real benefit actually lives.</p>
-              <a href=”https://www.amazon.com/dp/0143130773?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Larry Rosenberg with Laura Zimmerman</p>
-              </div>
-              <h2 class=”book-card__title”>Three Steps to Awakening: A Practice for Bringing Mindfulness to Life</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Rosenberg’s quiet, unhurried guide to breath awareness is rooted in the Theravada tradition but requires no religious belief — just a willingness to stay with the breath and see what happens. His emphasis that life itself is the real practice isn’t a cliché in his hands; it’s a description of how continuous breath awareness gradually dissolves the gap between formal practice and how you actually live.</p>
-              <a href=”https://www.amazon.com/dp/1590305167?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Anyen Rinpoche &amp; Allison Choying Zangmo</p>
-              </div>
-              <h2 class=”book-card__title”>The Tibetan Yoga of Breath: Breathing Practices for Healing the Body and Cultivating Wisdom</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>Anyen Rinpoche draws on the ancient Tibetan understanding of rlung — the breath-mind connection — to explain why the breath is the most direct path to both healing and mental clarity. The practical takeaway is one that modern research entirely supports: breathe nasally, breathe from the abdomen, and use the breath as your primary vehicle for bringing the mind home.</p>
-              <a href=”https://www.amazon.com/dp/1611800889?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>BJ Fogg, Ph.D</p>
-              </div>
-              <h2 class=”book-card__title”>Tiny Habits</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>This is my favorite book on habits. It truly changed my life about 4 years ago. When it comes to breathing, meditation, or anything else that makes us better, the practices are usually straightforward. The hardest part is consistency. This book makes that part easy.</p>
-              <a href=”https://www.amazon.com/dp/0358003326?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-            <!-- W -->
-            <article class=”book-card”>
-              <div class=”book-card__meta”>
-                <p class=”book-card__author”>Gladys McGarey, MD</p>
-              </div>
-              <h2 class=”book-card__title”>The Well-Lived Life: A 102-Year-Old Doctor’s Six Secrets to Health and Happiness at Every Age</h2>
-              <div class=”book-card__divider”></div>
-              <p class=”book-card__blurb”>McGarey practiced medicine for over 75 years before writing this book at 102, and the clarity she brings to what actually matters is hard-won and completely unforced. Her central claim — that the point of medicine is to allow the soul to fulfill its purpose, and that love is the most powerful medicine we have — lands very differently coming from someone who has spent a century watching both work and fail.</p>
-              <a href=”https://www.amazon.com/dp/1668014483?tag=thebreathin0e-20” class=”btn btn-outline” target=”_blank” rel=”noopener noreferrer”>Get the Book</a>
-            </article>
-
-          </div>
+        <!-- ── Full Reading List ──────────────────────── -->
+        <div class="book-group-header">
+          <span class="book-group-header__label">All Books</span>
+          <h2>The Full Reading List</h2>
         </div>
+        <div class="books-grid">
 
+          <!-- 1 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Daniel Goleman &amp; Richard Davidson</p>
+            </div>
+            <h2 class="book-card__title">Altered Traits: Science Reveals How Meditation Changes Your Mind, Brain, and Body</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Goleman and Davidson cut through the meditation noise and focus on what the research actually shows: consistent practice doesn't just make you feel better in the moment — it literally rewires your brain and biology over time. One finding that stayed with me: long-term meditators breathe 1.6 breaths per minute slower at rest, which adds up to over 800,000 fewer breaths per year, and that difference matters for your nervous system and your health.</p>
+            <a href="https://www.amazon.com/dp/0399184384?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 2 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">James Nestor</p>
+            </div>
+            <h2 class="book-card__title">Breath: The New Science of a Lost Art</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Nestor takes you on a wide-ranging journey through the science and history of breathing, and the most striking piece is his self-experiment: ten days of deliberate mouth breathing tanked his blood pressure and crushed his HRV, then ten days of nose breathing brought everything back. The core message is simple and backed by the research — breathe through your nose, breathe slow, and breathe less.</p>
+            <a href="https://www.amazon.com/dp/0735213616?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 3 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Fabiana González Aristizabal &amp; José Paulino G.</p>
+            </div>
+            <h2 class="book-card__title">Fabi The Heart Warrior</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This children's book about a little girl born with a heart condition who discovered breathing, prayer, and meditation as her three superpowers is one of the most moving things I've reviewed. It's a quiet reminder that the tools we talk about on this channel aren't just for adults trying to optimize their nervous systems — they're for anyone who needs to find steadiness in the middle of something hard.</p>
+            <a href="https://www.amazon.com/dp/B0DG522P4P?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 4 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Jon Kabat-Zinn, Ph.D.</p>
+            </div>
+            <h2 class="book-card__title">Full Catastrophe Living: Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Kabat-Zinn's MBSR classic is a deep dive into using mindfulness — anchored in the breath — to face the full weight of stress, pain, and illness without being destroyed by it. The title sounds grim, but his whole point is that the breath gives you a stable place to stand when life gets overwhelming, and the science keeps confirming it.</p>
+            <a href="https://www.amazon.com/dp/0345536932?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 6 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Matt Fitzgerald</p>
+            </div>
+            <h2 class="book-card__title">How Bad Do You Want It?: Mastering the Psychology of Mind over Muscle</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Fitzgerald builds a strong case that endurance performance is governed more by perceived effort and the conscious brain than by raw physiology — and that insight applies just as much to managing anxiety as it does to running a race. His chapter on coping mechanisms landed hard: they're deeply personal, built over time, and mastering them is what actually determines how far you can go.</p>
+            <a href="https://www.amazon.com/dp/1937715418?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 7 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Chade-Meng Tan</p>
+            </div>
+            <h2 class="book-card__title">Joy On Demand: The Art of Discovering the Happiness Within</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Chade-Meng Tan argues that joy isn't a distant emotional destination — it's accessible in a single mindful breath, if you train the skill. His observation that slow breathing is to mindfulness what smiling is to happiness isn't just a nice metaphor; it's a practical entry point that anyone can use right now.</p>
+            <a href="https://www.amazon.com/dp/0062378856?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 8 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Barbara Fredrickson, Ph.D.</p>
+            </div>
+            <h2 class="book-card__title">Love 2.0: How Our Supreme Emotion Affects Everything We Feel, Think, Do, and Become</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Fredrickson redefines love not as a feeling reserved for close relationships, but as micro-moments of positivity resonance that your nervous system can generate with nearly anyone. The surprising connection she draws is this: your vagal tone — shaped in part by your breathing practice — determines your capacity for those moments, which means breathwork is literally training your ability to connect.</p>
+            <a href="https://www.amazon.com/dp/0142180475?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 11 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Eknath Easwaran</p>
+            </div>
+            <h2 class="book-card__title">Original Goodness: A Commentary on the Beatitudes</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Easwaran's commentary on the Beatitudes is less about religion than it is about the practical work of training the mind toward its better nature — and the framework holds up regardless of your beliefs. He makes a quiet but powerful point about breathing and life span that modern research keeps circling back to: how you breathe shapes how long and how well you live.</p>
+            <a href="https://www.amazon.com/dp/0915132915?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 12 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Eknath Easwaran</p>
+            </div>
+            <h2 class="book-card__title">Passage Meditation: A Complete Spiritual Practice</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Easwaran describes a complete eight-point practice with passage meditation at its center, and his reasoning for why it works is grounded in a deep understanding of how the mind changes through repetition. One thing that landed hard: he treats regular movement not as optional self-care but as a physiological imperative — because a calm, available body is the foundation everything else rests on.</p>
+            <a href="https://www.amazon.com/dp/1586381164?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 13 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Thich Nhat Hanh</p>
+            </div>
+            <h2 class="book-card__title">Peace Is Every Breath: A Practice for Our Busy Lives</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Thich Nhat Hanh writes with a gentleness that disarms you, and his central teaching is that each breath is a complete moment of peace — not a means to get somewhere else. His instruction for dealing with anger, returning to the belly breath and letting the storm pass like treetops in the wind, is the most usable piece of emotional regulation advice I've ever found in a book this short.</p>
+            <a href="https://www.amazon.com/dp/0062005820?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 14 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Amishi P. Jha, Ph.D.</p>
+            </div>
+            <h2 class="book-card__title">Peak Mind: Find Your Focus, Own Your Attention, Invest 12 Minutes a Day</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Jha's research on attention is some of the most directly practical neuroscience I've read: your attention is the most important cognitive resource you have, it's under constant assault, and 12 minutes of daily mindfulness training is enough to meaningfully protect it. The finding that stopped me: even during high-stress deployments, people who kept up their practice maintained attentional capacity — those who stopped saw it decline.</p>
+            <a href="https://www.amazon.com/dp/0062992147?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 15 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Swami Rama, Rudolph Ballentine MD, Alan Hymes MD</p>
+            </div>
+            <h2 class="book-card__title">Science of Breath: A Practical Guide</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This classic from the yoga tradition translates ancient breathing wisdom into surprisingly modern physiological terms, making the case that optimal breathing is diaphragmatic, nasal, and slow. The cylinder metaphor for breath mechanics is the most useful technical concept I've encountered — once you see it, it immediately changes how you breathe.</p>
+            <a href="https://www.amazon.com/dp/0893891517?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 16 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Yogani</p>
+            </div>
+            <h2 class="book-card__title">Spinal Breathing Pranayama: Journey to Inner Space</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Yogani's quiet, anonymous guide treats breathing not just as a physiological tool but as a doorway to a different quality of inner experience entirely. The method is simple — a slow, rhythmic breath traced along the spine — but done consistently, it creates a stillness that's genuinely hard to access any other way.</p>
+            <a href="https://www.amazon.com/dp/1938594584?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 17 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Alan Watts</p>
+            </div>
+            <h2 class="book-card__title">Still the Mind: An Introduction to Meditation</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Watts brings his characteristic wit and clarity to meditation, and his observation that breathing sits uniquely at the intersection of the voluntary and involuntary nervous systems is one of the clearest explanations I've found for why it's such a powerful tool. His core message — that you don't need to fix yourself to meditate, you just need to observe — is the kind of permission a lot of anxious people actually need to hear.</p>
+            <a href="https://www.amazon.com/dp/1577312147?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 19 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Matt Fitzgerald</p>
+            </div>
+            <h2 class="book-card__title">The Comeback Quotient: A Get-Real Guide to Building Mental Fitness in Sport and Life</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Fitzgerald profiles elite athletes who staged major comebacks and distills their psychology into three steps: accept the situation as it is, embrace it fully, then address it with everything you have. What makes it land is that this isn't sports psychology dressed up as life advice — the framework genuinely works for anyone dealing with a setback, including the ones that come with chronic illness or anxiety.</p>
+            <a href="https://www.amazon.com/dp/1948007169?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 20 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Rick Rubin</p>
+            </div>
+            <h2 class="book-card__title">The Creative Act: A Way of Being</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Rubin makes the unusual but convincing argument that creativity isn't a talent — it's a state of awareness, and mindfulness is the primary way to access it. What struck me is that his description of creative presence reads almost exactly like a description of what a good breathing practice cultivates: open attention, reduced reactivity, and the ability to actually be with what's there.</p>
+            <a href="https://www.amazon.com/dp/0593652886?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 21 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Andy Fraser (ed.)</p>
+            </div>
+            <h2 class="book-card__title">The Healing Power of Meditation: Leading Experts on Buddhism, Psychology, and Medicine</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This edited volume brings together researchers and clinicians from Buddhist, psychological, and medical traditions, and the convergence across those perspectives is striking. The finding that stayed with me: meditation increases telomerase activity — the enzyme that repairs chromosome ends — which is about as direct a biological marker of healthy aging as we have.</p>
+            <a href="https://www.amazon.com/dp/1611800595?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 24 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Patrick McKeown</p>
+            </div>
+            <h2 class="book-card__title">The Oxygen Advantage: Breathing Techniques for a Healthier, Slimmer, Faster, and Fitter You</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">McKeown builds a compelling case that most of us overbreathe chronically, and that learning to breathe less — through the nose, slowly, with a higher CO₂ tolerance — is one of the most powerful health and performance interventions available. The BOLT score is a simple self-assessment that will tell you in about 40 seconds whether your breathing is working for you or against you.</p>
+            <a href="https://www.amazon.com/dp/0062349473?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 25 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Elissa Epel, Ph.D.</p>
+            </div>
+            <h2 class="book-card__title">The Stress Prescription: Seven Days to More Joy and Ease</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Epel, a leading stress researcher, makes a distinction that matters: not all stress is harmful, and learning to tell the difference between toxic chronic stress and healthy acute stress changes how you respond to both. Her morning breathing protocol, grounded in vagal tone research, and her case that how you start the day sets your nervous system's baseline for everything that follows — that one genuinely changed my routine.</p>
+            <a href="https://www.amazon.com/dp/014313664X?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 26 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Haemin Sunim</p>
+            </div>
+            <h2 class="book-card__title">The Things You Can See Only When You Slow Down: How to Be Calm in a Busy World</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Korean Zen teacher Haemin Sunim writes with an ease that mirrors his message: when you slow down, you begin to see things that were always there but invisible at full speed. His point about practicing breathwork not just in solitude but in ordinary life — on the bus, in a meeting, waiting in line — is where the real benefit actually lives.</p>
+            <a href="https://www.amazon.com/dp/0143130773?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 27 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Anyen Rinpoche &amp; Allison Choying Zangmo</p>
+            </div>
+            <h2 class="book-card__title">The Tibetan Yoga of Breath: Breathing Practices for Healing the Body and Cultivating Wisdom</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Anyen Rinpoche draws on the ancient Tibetan understanding of rlung — the breath-mind connection — to explain why the breath is the most direct path to both healing and mental clarity. The practical takeaway is one that modern research entirely supports: breathe nasally, breathe from the abdomen, and use the breath as your primary vehicle for bringing the mind home.</p>
+            <a href="https://www.amazon.com/dp/1611800889?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 28 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Gladys McGarey, MD</p>
+            </div>
+            <h2 class="book-card__title">The Well-Lived Life: A 102-Year-Old Doctor's Six Secrets to Health and Happiness at Every Age</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">McGarey practiced medicine for over 75 years before writing this book at 102, and the clarity she brings to what actually matters is hard-won and completely unforced. Her central claim — that the point of medicine is to allow the soul to fulfill its purpose, and that love is the most powerful medicine we have — lands very differently coming from someone who has spent a century watching both work and fail.</p>
+            <a href="https://www.amazon.com/dp/1668014483?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 29 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Larry Rosenberg with Laura Zimmerman</p>
+            </div>
+            <h2 class="book-card__title">Three Steps to Awakening: A Practice for Bringing Mindfulness to Life</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Rosenberg's quiet, unhurried guide to breath awareness is rooted in the Theravada tradition but requires no religious belief — just a willingness to stay with the breath and see what happens. His emphasis that life itself is the real practice isn't a cliché in his hands; it's a description of how continuous breath awareness gradually dissolves the gap between formal practice and how you actually live.</p>
+            <a href="https://www.amazon.com/dp/1590305167?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+        
+
+          <!-- 30 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Patrick McKeown</p>
+            </div>
+            <h2 class="book-card__title">The Breathing Cure</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is a massive tome on all things breathing. You can read it start-to-finish, or use it as a reference whenever you’re interested in a specific topic. There’s even a section on diabetes featuring yours truly 😊</p>
+            <a href="https://www.amazon.com/dp/1630061972?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 31 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Shinzen Young</p>
+            </div>
+            <h2 class="book-card__title">The Science of Enlightenment</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">The title made me hesitant for a long time, but it surprised me how good this book was. It’s one I suspect I’ll revisit every few years to understand it even more deeply.</p>
+            <a href="https://www.amazon.com/dp/1591794609?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 32 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Johann Hari</p>
+            </div>
+            <h2 class="book-card__title">Stolen Focus</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">An awesome look at why we can’t concentrate. Hari combines research, interviews, and a 3-month phone-free experiment to show how we can begin to reclaim our focus.</p>
+            <a href="https://www.amazon.com/dp/0593138511?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 33 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Herbert Benson, MD</p>
+            </div>
+            <h2 class="book-card__title">Relaxation Revolution</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">A foundational book in the mind–body world, providing the science and stories on how the relaxation response heals.</p>
+            <a href="https://www.amazon.com/dp/143914866X?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 34 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Inna Khazan, Ph.D</p>
+            </div>
+            <h2 class="book-card__title">Biofeedback and Mindfulness in Everyday Life</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Although I’m not a huge fan of biofeedback personally, this is an excellent book on breathing, mindfulness, and their application in everyday life. It also has a great basic physiology section, written in an accessible way. Definitely worth the read if you want to nerd out a little.</p>
+            <a href="https://www.amazon.com/dp/0393712931?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 35 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Pat Flynn</p>
+            </div>
+            <h2 class="book-card__title">How To Be Better At (Almost) Everything</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Does this have a cheesy title? Yes. But is it still one of my favorites of all time? Definitely. I read it about 6 years ago, and it had a huge impact on my life. If you love learning, make sure you check this one out 👏</p>
+            <a href="https://www.amazon.com/dp/194688541X?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 36 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Steven Laureys, MD</p>
+            </div>
+            <h2 class="book-card__title">The No-Nonsense Meditation Book</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is a great book on the science of meditation (along with many fun anecdotes and practical suggestions). There’s even a whole chapter on breathing 😊</p>
+            <a href="https://www.amazon.com/dp/1472980492?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 37 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Jon Kabat-Zinn, Ph.D</p>
+            </div>
+            <h2 class="book-card__title">The Healing Power of Mindfulness</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is another excellent mindfulness book from Kabat-Zinn. I’d still recommend Full Catastrophe Living first, but this is a great follow-up, grounded in both science and practicality.</p>
+            <a href="https://www.amazon.com/dp/0316411760?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 38 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Wallace J Nichols</p>
+            </div>
+            <h2 class="book-card__title">Blue Mind</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">While this one isn’t about breathing or meditation per se , it’s an excellent book on the power of water (and nature more broadly) to help us naturally cultivate mindfulness. As a surfer and someone who loves the ocean, it’s one of my all-time favorites.</p>
+            <a href="https://www.amazon.com/dp/0316252115?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 39 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Satish Kumar</p>
+            </div>
+            <h2 class="book-card__title">Elegant Simplicity</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Kumar once walked 8,000 miles with no money in his pocket for a cause he believed in…crazy. That ‘be the change’ pilgrimage spirit carries through to this book. He lays out how to simplify your life—not just materially, but also mentally and spiritually, too.</p>
+            <a href="https://www.amazon.com/dp/0865719101?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 40 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Gurucharan Singh Khalsa, Ph.D., and Yogi Bhajan, Ph.D</p>
+            </div>
+            <h2 class="book-card__title">Breathwalk</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Breathwalk is an all-in-one practice combining breathing, meditation, and physical movement. The book includes many specific routines you can try immediately, along with the philosophy and science behind why they work. Definitely worth the read.</p>
+            <a href="https://www.amazon.com/dp/0767904931?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 41 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Emma Seppälä, Ph.D</p>
+            </div>
+            <h2 class="book-card__title">Sovereign</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is a great book filled with wisdom on taking control of and shaping our lives. It’s also got a ton of good information on the transformational power of breathing (and especially on the science of SKY breathing). Definitely a valuable read.</p>
+            <a href="https://www.amazon.com/dp/1401975062?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 42 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Leah Lagos, Psy.D</p>
+            </div>
+            <h2 class="book-card__title">Heart Breath Mind</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is an excellent read on the power of slow breathing to train our hearts for better performance and less stress. If you’re into optimal performance—or just love applied breath science—definitely check it out.</p>
+            <a href="https://www.amazon.com/dp/1328604403?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 44 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Andrew Newberg, MD, and Mark Waldman</p>
+            </div>
+            <h2 class="book-card__title">How God Changes Your Brain</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Don't let the title (or New Age-y cover) distract you. This book is actually more like “The Neuroscience of Meditation and Breathing.” A good portion of it focuses on contemplative practices and breathing exercises. It’s a fun and interesting read.</p>
+            <a href="https://www.amazon.com/dp/0345503414?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 46 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Dean Sluyter</p>
+            </div>
+            <h2 class="book-card__title">Natural Meditation</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I just finished this one and loved it. Simple, natural techniques alongside deep (yet super relatable) wisdom. It’s meditation for regular people.</p>
+            <a href="https://www.amazon.com/dp/039917141X?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 47 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Andrew Weil, MD</p>
+            </div>
+            <h2 class="book-card__title">Breathing: The Master Key to Self Healing</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This audiotape, released more than 20 years ago, is one of my top 5 recommendations for anyone beginning with breathing. It’s less than 2 hours and has almost everything we need to start a breath practice. Check it out if you haven’t already.</p>
+            <a href="https://www.amazon.com/dp/156455726X?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 48 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Dr. Dana Sinclair</p>
+            </div>
+            <h2 class="book-card__title">Dialed In</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">My good friend and mentor Paul Hunt (whose MBSR course I occasionally share) recommended this one to me. It’s fantastic: Super practical and filled with many gems on the power of breathing.</p>
+            <a href="https://www.amazon.com/dp/1982181877?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 49 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Jon Gordon and Damon West</p>
+            </div>
+            <h2 class="book-card__title">The Coffee Bean</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I read this book this past Friday afternoon. It’s so good . Given that coffee is more important to me than oxygen 😂, I’m not sure how it took me this long to hear about it. It’s super short, so I won’t spoil it—just do yourself a favor and pick it up.</p>
+            <a href="https://www.amazon.com/dp/1119430275?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 50 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">BJ Fogg, Ph.D</p>
+            </div>
+            <h2 class="book-card__title">Tiny Habits</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is my favorite book on habits. It truly changed my life about 4 years ago. When it comes to breathing, meditation, or anything else that makes us better, the practices are usually straightforward. The hardest part is consistency. This book makes that part easy.</p>
+            <a href="https://www.amazon.com/dp/0358003326?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 51 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Joseph Nguyen</p>
+            </div>
+            <h2 class="book-card__title">Don’t Believe Everything You Think</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">James Clear had this book on his list of three books he’d recommend to new graduates. And now I know why…it’s so good. It’s short, easy to read, and full of wisdom. It’s a perfect introduction to the world of contemplative practices.</p>
+            <a href="https://www.amazon.com/dp/B09WPP7R6S?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 52 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Adam Grant</p>
+            </div>
+            <h2 class="book-card__title">Hidden Potential</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">My good friend Mary Hunt recommended this one to me ( check out her coaching here ). I’ve taken a break from these types of books lately to mainly read about meditation and breathing, but this one was amazing. It’s a joy to read, full of studies, stories, and practical wisdom that you can immediately start applying.</p>
+            <a href="https://www.amazon.com/dp/0593653149?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 53 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Paul Brunton</p>
+            </div>
+            <h2 class="book-card__title">Instructions for Spiritual Living</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I was surprised how much I liked this book. Despite its rather terrible name, Brunton avoids cookie-cutter advice and instead offers genuine wisdom and practical advice on using contemplative practices to lead a better life.</p>
+            <a href="https://www.amazon.com/dp/1620558041?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 54 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Micheal J Stephen, MD</p>
+            </div>
+            <h2 class="book-card__title">Breath Taking</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I loved this book because it’s not about “breathwork” but about “the breath.” I’ve joked that Dr. Stephen is the Feynman of the lungs, weaving poetic quotes into rigorous and fascinating scientific discussion. My favorite chapters were the Prologue, 1–4, and 12. It’s a great read for anyone interested in breathing.</p>
+            <a href="https://www.amazon.com/dp/0802149316?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 55 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Richard Brown, MD, and Patricia Gerbarg, MD</p>
+            </div>
+            <h2 class="book-card__title">The Healing Power of the Breath</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">This is one of my all-time favorite books on breathing. It blends the essential science of breath with clear, practical instructions (and is just a joy to read). Brown and Gerbarg are truly a gift to the world of breathing and psychiatry.</p>
+            <a href="https://www.amazon.com/dp/1590309022?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 56 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Jetsunma Tenzin Palmo</p>
+            </div>
+            <h2 class="book-card__title">The Heroic Heart</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I got this book solely because it had the best title ever, lol, and I ended up absolutely loving it. This quote sums up its core message perfectly: “The important thing is not to worry about what is going to happen to us but to create inner strength to deal with whatever does happen.”</p>
+            <a href="https://www.amazon.com/dp/1645470555?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 59 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Oliver Burkeman</p>
+            </div>
+            <h2 class="book-card__title">Meditations for Mortals</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">I can’t recommend this one enough . Reading the introduction was my favorite part, as it felt like Burkeman was expressing thoughts I’ve had but never known how to articulate. I’ve never felt so much resonance with a book. Check it out if it sounds interesting to you!</p>
+            <a href="https://www.amazon.com/dp/0374611998?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+
+          <!-- 60 -->
+          <article class="book-card">
+            <div class="book-card__meta">
+              <p class="book-card__author">Larry Rosenberg</p>
+            </div>
+            <h2 class="book-card__title">Breath by Breath</h2>
+            <div class="book-card__divider"></div>
+            <p class="book-card__blurb">Even if you’re not into meditation, this book is worth the read for all the great quotes, stories, and analogies about the breath. It’s one of the first “non-breathwork” breathing books I read many years ago that opened my eyes to the power of the breath as an analogy for life.</p>
+            <a href="https://www.amazon.com/dp/1590301366?tag=thebreathin0e-20" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          </article>
+</div>
       </div>
     </section>
 
