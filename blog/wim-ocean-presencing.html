@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <p ><br><br></p><h2 ><strong>1. A Borrowed Rule from Nutrition that Applies to Breathing</strong></h2><blockquote><p ><em>What you remove is far more valuable than what you add.</em></p></blockquote><p >When you remove habitual mouth breathing, it’s like removing ultra-processed foods.  You’ll feel amazing, and everyone will agree it was a good call.</p><p >From there, it becomes like a diet.  All breathing methods work in some capacity, and each has its own unique benefits (and group of zealots 😊).</p><p ><strong>But the key is to find—in a <em>safe</em> and enjoyable way—which one works best for you at this moment in your life.</strong></p><h2 ><strong>2. Breathing for Presencing</strong></h2><blockquote><p >“<em>Otto Scharmer…suggests that identifying and letting go of our restricting inner voices can help us become more open and present, and thus more creative and collaborative. Scharmer uses the term ‘presencing’—combining ‘present’ with ‘sensing’—to describe the process of coming into the moment and activating full, uninhibited awareness.</em>”</p><p style="text-align:right;" >Laurie J Cameron, <a href="https://www.amazon.com/The-Mindful-Day-Laurie-J-Cameron-audiobook/dp/B07MGZ1PX8/?utm_source=TheBreathing411" target="_blank"><em>The Mindful Day</em></a></p></blockquote><p >Presencing.  I love that word.  And what better way to be ‘present’ and ‘sensing’ than with mindful breathing?  It’s literally the definition of presencing.</p><p >So here’s to tuning into our breath to activate full, uninhibited awareness a little more this week 🙏</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> The ultimate benefit of presencing: <a href="https://www.thebreathingdiabetic.com/blog/live-longer-point-a" target="_blank">You live longer.</a></p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/equanimity-8-breaths.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Effective Non-Breathing Tool, Equanimity, and an 8 Breath Protocol</span>
+  </a>
+  <a href="/blog/wim-1-min-soup.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">One Minute Stress Relief, Taste the Soup, and Positive Feelings</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <p ><br><br></p><h2 ><strong>1. Warm Up Your Mind &amp; Spirit with the Wim Hof Wisdom Bundle</strong></h2><blockquote><p ><strong>“There’s nothing mystical or abstract about it. It’s physical. Your breath is your life-force, right here, right now. It could not be any simpler. Just breathe and reclaim your soul.”</strong></p><p style="text-align:right;" >- Wim Hof, <a href="https://www.amazon.com/Wim-Hof-Method-Activate-Potential/dp/B08KS7MS3F/" target="_blank"><em>The Wim Hof Method</em></a></p></blockquote><p >If you enjoy Wim’s philosophy (like me) or practicing his method, check out <a href="https://www.thebreathingdiabetic.com/learning-center/wim-hof-wisdom-bundle" target="_blank">the wisdom bundle</a> I just added to the Learning Center.  </p><p >You get all the science and inspiring quotes condensed into 62 minutes of podcast audio and 22 PDF pages. </p><p >Here’s to a happier, healthier, and stronger new year 🙏 ❄️ 🧊</p><h2 ><strong>2. 23 One-Sentence Breathing Ideas for 2023</strong></h2><p >A few of my favorites this year:</p><blockquote><p ><strong>#1. You don’t have to meditate; breathing meditates you.</strong></p><p ><strong>#12. Our breath moves spirit around like our hearts move blood around.</strong></p><p ><strong>#13. Breath is to body what Brandy is to wine.</strong></p><p ><strong>#22. Breathe hearter, not smarter.</strong></p></blockquote><p ><a href="https://www.thebreathingdiabetic.com/blog/23-one-sentence-2023" target="_blank">Read them all here.</a></p><h2 ><strong>3. A 30-Second Thought Experiment That is Bound to Improve Your Life</strong></h2><h3 ><strong>(it genuinely changed mine in 2022)</strong></h3><p ><strong>(1)</strong> Bring to mind someone you would die for—no hesitation, no questions asked.</p><p ><strong>(2)</strong> Now ask yourself: <strong>Would you </strong><strong>live</strong><strong> for this person?</strong>  Would you start that one thing you know you should be doing? (<em>Yes, that one</em>.)  Would you give up that one thing you know you shouldn’t be doing? (<em>Only</em> <em>you know which one.</em>)</p><p ><strong>It’s easy to say you’d die for someone.</strong>  What’s harder is <em>really living</em> for them instead.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> This was inspired by a beautiful book titled <a href="https://www.amazon.com/Gift-Lessons-Save-Your-Life/dp/B084HLHJDL/" target="_blank"><em>The Gift</em></a> by Dr. Edith Eger, a Holocaust survivor with an incredibly tragic yet deeply humbling and inspiring story.  </p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/goggins-healing-power.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">3 Breaths Changed David Goggins’ Life (+ a free gift)</span>
+  </a>
+  <a href="/blog/loving-potential-cold-mind.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">More Loving Potential, Cold Showers, and the Healing Power of Mind</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

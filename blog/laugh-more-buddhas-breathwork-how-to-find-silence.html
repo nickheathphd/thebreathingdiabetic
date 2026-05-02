@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -561,6 +609,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 THOUGHTS</div>
 <h2 ><strong>1. Laugh More: Laughing Reduces Cortisol by More than 30%</strong></h2><blockquote><p ><strong>“These analyses demonstrated the potential therapeutic role of laughter-inducing interventions as a complementary strategy to improve everyone’s well-being and highlight the need for further research aiming to improve our collective sense of humor.”</strong></p><p style="text-align:right;" >– <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0286260" target="_blank">Kramer and Leitao (2023)</a></p></blockquote><p >How’s that for the best quote ever published in a science article?</p><p >This recent meta-analysis analyzed 8 studies and found that <strong>spontaneous laughter reduced cortisol by 31.9%</strong>, making it a potentially powerful tool for improving wellness.</p><p >It certainly corroborates <a href="https://www.thebreathingdiabetic.com/blog/mouth-breathing-parable">our saying:</a> The best and most therapeutic form of mouth breathing is laughter 😊</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> Sign up at <a href="https://breathlearning.com" target="_blank">BreathLearning.com</a> to get my 4-page and 12 min 39 sec podcast summary of this one, which includes three ways to incorporate more laughter into your day using Spotify, funny videos, and Instagram.</p><h2 ><strong>2. Did the Buddha Do Breathwork?</strong></h2><p >Yes he did, apparently.  But then he gave it up:</p><p ><strong>“After his enlightenment, the Buddha described how he had previously practiced extreme self-discipline by manipulating his breath in arcane and special ways. But he discovered that he could not get rid of impurities by holding his breath or altering his breathing. So he gave up breath-control exercises and followed his own middle way.” </strong>- <a href="https://www.amazon.com/Four-Foundations-Mindfulness-Plain-English/dp/B01E7S1SJW/" target="_blank">Bhante Gunaratana</a></p><p >And what was that middle way?  Mindfulness of breathing.  It’s what ultimately led the Buddha to enlightenment.</p><p >It gives me hope that one day I’ll give up breathing exercises and reach enlightenment, too 😂 😂 😂</p><h2 ><strong>3. How to Find Your Inner Silence</strong></h2><blockquote><p ><strong>“I believe it’s possible for everyone to discover this silence within themselves. It is there all the time, even when we are surrounded by constant noise. Deep down in the ocean, below the waves and ripples, you can find your internal silence.”</strong></p><p style="text-align:right;" >– Erling Kagge, <a href="https://www.amazon.com/Silence-audiobook/dp/B077BP8P73/" target="_blank"><em>Silence in the Age of Noise</em></a></p></blockquote><p >One way to find that silence is to breathe deep down into your belly, below the restlessness of your noisy mind.  There, you’ll discover your ever-present and always accessible internal silence.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> Thanks to Dr. M. for recommending this incredible book 🙏</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/smile-perfect-on-methods-happy-until-this-moment.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">A Smile, Perfect Advice on Methods, and I Was Happy Until this Moment</span>
+  </a>
+  <a href="/blog/mindful-vs-slow-how-to-know-nature-of-all-beings.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Mindful vs. Slow Breathing, and How to Know the Nature of All Beings</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

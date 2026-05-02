@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -561,6 +609,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 THOUGHTS</div>
 <h2 ><strong>1. The Key to Breath-Linked Mind Control</strong></h2><blockquote><p >“Research where people consciously change their breathing rates has shown that different ways of breathing can encourage particular frequencies to dominate across the brain, which can take us to a more alert and focused state or to a more relaxed and drowsy one. There’s only one catch…<strong>breath-linked mind control only works if you breathe through your nose.</strong>” </p><p style="text-align:right;" >- Caroline Williams, <a href="https://amzn.to/3OBpSUQ" target="_blank"><em>Move</em></a></p></blockquote><p >Nothing to add to this one 😊</p><h2 ><strong>2. The Breath-&gt;Body-&gt;Mind Pathway</strong></h2><blockquote><p >“If mind and body are one, we can do more than change the body by changing the mind; we can change the mind by changing the body.”</p><p style="text-align:right;" >- Ellen Langer, Ph.D., <a href="https://amzn.to/4kNZ67F" target="_blank"><em>The Mindful Body</em></a></p></blockquote><p >Although Dr. Langer wasn’t referring to breathing, this principle has been demonstrated perfectly in breath research.</p><p ><a href="https://www.tandfonline.com/doi/abs/10.1080/02699930143000392" target="_blank">A 2002 study</a> found that emotional states produce similar breathing patterns across people. Remarkably, the opposite was also true: breathing in specific patterns can induce specific emotions.</p><p >In other words, we can influence how we feel by changing how we breathe…we can <strong>“change the mind by changing the body.”</strong></p><h2 ><strong>3. What if Anxiety is Partially Just Over Breathing?</strong></h2><p >Anxiety isn’t just in your your. It may also be worsened overbreathing.</p><p >Here’s how it works:</p><ol data-rte-list="default"><li><p >When we breathe too much, CO₂ drops.</p></li><li><p >When CO₂ drops, cerebral blood flow drops.</p></li><li><p >When cerebral blood flow drops, anxiety gets worse.</p></li></ol><p >Slow breathing—<em>when done correctly</em>—helps interrupt that loop.</p><p >If you’d like the blueprint and reference sheets on how to do it right, check out <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_click'})" >The Anxious Person’s Breath Manual.</a></p><p ><strong>P.S.</strong> Physiology is always more complex than a single sentence. But the CO₂–brain blood flow relationship is so robust that <a href="https://emedicine.medscape.com/article/807277-clinical" target="_blank">researchers even quantify it</a>: For every 1 mmHg decrease in arterial CO₂, cerebral blood flow reduces roughly 2%. Pretty crazy.</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/how-to-accomplish-more-gaining-control-doing-brooklyn-yoga.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">How to Accomplish More, Gaining Control, and Doing Brooklyn Yoga</span>
+  </a>
+  <a href="/blog/stolen-focus-3-ingredients-a-fascinating-aspect-of-slow-breathing.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Stolen Focus, 3 Ingredients, and a Fascinating Aspect of Slow Breathing</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

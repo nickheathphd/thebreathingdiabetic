@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. Breathing Exercises Lower Inflammation and Change Gene Expression</strong></h2><blockquote><p >“<em>In those who practice breathing exercises, levels of inflammatory proteins in the blood are significantly lower, especially under certain types of stress.&nbsp;Mobilizing the power of the breath has also been shown to turn on anti-inflammatory genes and turn off&nbsp;pro-inflammatory ones, including genes that regulate energy metabolism, insulin secretion, and even the part of our DNA that controls longevity.</em>”</p><p style="text-align:right;" >- Michael J Stephen, MD, <a href="https://www.amazon.com/Breath-Taking-Fragility-Future-Extraordinary/dp/0802149316/ref=sr_1_1?crid=3350LMNFIX9B2&amp;keywords=breath%20taking&amp;qid=1647513938&amp;sprefix=breath%20taking%2Caps%2C99&amp;sr=8-1" target="_blank"><em>Breath Taking</em></a></p></blockquote><p >I have nothing useful to add here, except, of course, one of these: 🤯</p><h2 ><strong>2. These Two Simple Rules Will Improve Your Breathing Forever</strong></h2><p >If I could give anyone any advice for everyday breathing, it’d be this:</p><ol data-rte-list="default"><li><p >Breathe through your nose, especially during sleep.</p></li><li><p >Make your breathing quiet.</p></li></ol><p >You’ll get massive benefits with minimal effort using these two simple rules.</p><h2 ><strong>3. Timeless Healing: Slow Breathing + The Relaxation Response</strong></h2><blockquote><p >“<em>To evoke the relaxation response, you need to follow only two basic steps. You need to repeat a word, sound, prayer, phrase, or muscular activity, and when common everyday thoughts intrude on your focus, you need to passively disregard them and return to your repetition.</em>”*</p><p style="text-align:right;" >- Herbert Benson, MD, <a href="https://www.amazon.com/Timeless-Healing-Herbert-Benson-audiobook/dp/B0039OZFPO/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1647600630&amp;sr=8-1" target="_blank"><em>Timeless Healing: The Power and Biology of Belief</em></a></p></blockquote><p >It’s that simple.  And the word or phrase?  Dr. Benson says, “<em>The choice of a focused repetition is up to the individual. If you’re a religious person, you can choose a prayer. If you’re a non-religious person, choose a secular focus.</em>”*</p><p >I’ve been using it this week in my slow breathing practice.  I inhale and then repeat “<em>be the change</em>” in my head while exhaling at a 5 breaths/min pace.</p><p >I’ve never been a big fan of mantras (and I’m still testing different ones), but I’ve genuinely enjoyed this.  It’s straightforward and highly effective.  </p><p >Give it a shot and see how you feel.</p><h2 ><strong>4. My Fake Words, and Breathing as the Anti-Harley-Davidson</strong></h2><blockquote><p >“<em>Orfield Laboratories, run by Steven Orfield, is a small Twin Cities business that leverages the power of perception to help companies build better products. Harley-Davidson, for example, once hired Orfield to calculate the exact engine tone and decibel level that would give riders the impression that its motorcycles are powerful.</em>”*</p><p style="text-align:right;" >- Michael Easter, <a href="https://www.amazon.com/Comfort-Crisis-Embrace-Discomfort-Reclaim/dp/B08LDX3TZ2/ref=sr_1_1?crid=1EQ6KFB531QAG&amp;keywords=the%20comfort%20crisis&amp;qid=1647514005&amp;s=audible&amp;sprefix=the%20comfort%20crisis%2Caudible%2C94&amp;sr=1-1" target="_blank"><em>The Comfort Crisis</em></a></p></blockquote><p >How crazy is that!?  Harley-Davidson actually hired a company to ensure their engines gave “<em>riders the impression that its motorcycles are powerful.</em>”</p><p >I think breathing is the anti-Harley-Davidson.  You just relax and breathe.  If it’s powerful, it’s powerful.  If it’s not, it’s not.  No fake impressions needed.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> Although I take pride in this newsletter, sometimes I feel like Orfield Labs trying to make breathing sound perfect.  <strong>It’s not.</strong>  <em>But it is truly powerful</em>.  So, don’t just read my words, try it out and feel its strength for yourself.</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/posture-lean-into-practice.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Sit Up Straight, a Language of Energy, and Two Hours instead of One?</span>
+  </a>
+  <a href="/blog/long-term-6-hr-bh.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">More Time, Long-Term Benefits, and How to Hold Your Breath for 6 Hours</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

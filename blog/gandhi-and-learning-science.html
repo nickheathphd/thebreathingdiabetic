@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. Why Your Breathing Gains Get More Boring With Time</strong></h2><blockquote><p >“<em>Gaining the first $100 at the track feels much better than winning the second $100, which feels better than winning the third $100, and so on. Eventually, if things get good enough, there is almost no psychological benefit when they get even better. This relationship reflects what economists call diminishing marginal utility.</em>”</p><p style="text-align:right;" >- Barry Schwartz, <a href="https://www.amazon.com/The-Paradox-of-Choice-audiobook/dp/B00429IOPI/ref=sr_1_1?dchild=1&amp;keywords=the%20paradox%20of%20choice&amp;qid=1623237469&amp;sr=8-1" target="_blank">The Paradox of Choice</a></p></blockquote><p >Building off <a href="https://www.thebreathingdiabetic.com/blog/treadmills-and-metronomes" target="_blank">last week’s</a> “<em>Satisfaction Treadmill</em>,” let’s not forget this passage when our breathing, or anything else we’re working on, starts feeling boring. </p><p ><strong>We’re still making gains.</strong>  They just might not <em>feel</em> as dramatic, because we already feel so good.</p><p style="text-align:center;" >***</p><p ><strong>Related:</strong> <a href="https://youtu.be/PybcxH-0bJQ?t=363" target="_blank">James Clear’s Plateau of Latent Potential</a><br></p><h2 ><strong>2. Applying Gandhi’s Wisdom and Scientific Research to Appreciate Your Favorite Breathing Practice</strong></h2><blockquote><p >“<em>Humans do not give greater credence to an objective record of a past event than to their subjective remembering of it.</em>”</p><p style="text-align:right;" >- <a href="https://www.amazon.com/Make-It-Stick-Peter-C-Brown-audiobook/dp/B00M1Z2THY/ref=sr_1_1?dchild=1&amp;keywords=make%20it%20stick&amp;qid=1623237494&amp;s=audible&amp;sr=1-1" target="_blank">Make It Stick: The Science of Successful Learning</a></p></blockquote><p >Translation: <strong>What you experience holds more weight than what you learn.</strong></p><p >As the <em>Make it Stick</em> authors also tell us, research shows it’s “<em>nearly impossible to avoid basing one's judgments on subjective experience.</em>”  </p><p >Some might say this is a flaw of being human—we base things on emotions instead of facts.  I say it’s amazing, at least when it comes to breathing : )</p><p >Because with breathing, this means that whatever you experience is what’s true for you.  Your practice is yours; no science or statistics needed.</p><p >Practically, it means that if your experience with Wim Hof was terrific, then you should keep doing it.  Or, if slow breathing was life-changing, do that.</p><p >As Gandhi tells us, “<em>As long as you derive inner help and comfort from anything, keep it.</em>”  This applies perfectly to breathing.  And science agrees.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong>  If you like mouth breathing 24/7, I’m sorry, that doesn’t count here 😂</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/treadmills-and-metronomes.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Treadmills, Metronomes, and Breathing Graffiti on 28 Famous Quotes &amp;amp;amp; Idioms</span>
+  </a>
+  <a href="/blog/phil-jackson-nature-trick.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Phil Jackson on Focused Breathing, Nature’s CO2 Trick, and Wisdom of Yoga</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. The 5 Exhales of Slow Breathing</strong></h2><p >Here are 5 different exhales you can try during your slow breathing practice.  Give them a shot and see which one brings you the most relaxation.</p><ol data-rte-list="default"><li><p >Nasal exhale</p></li><li><p >Audible pursed-lips (like blowing out birthday candles)</p></li><li><p >Barely audible pursed-lips (like blowing on hot soup)</p></li><li><p >Ujjayi</p></li><li><p >Humming</p></li></ol><p >I do a mix of these depending on how I’m feeling, but my defaults are 1 and 3.</p><h2 ><strong>2. How Changing One Word Makes Breath Holds Easier</strong></h2><p >Instead of saying “hold” your breath, use (or think) the word “pause.”</p><p >Holding implies tension and effort.  Pausing is natural and effortless.  </p><p >It’s a subtle change, but it can make a significant difference.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> This idea was inspired by <a href="https://eddiestern.com/pranayama-week-replays-october-2021/" target="">Edd</a><a href="https://eddiestern.com/pranayama-week-replays-october-2021/" target="_blank">ie </a><a href="https://eddiestern.com/pranayama-week-replays-october-2021/" target="">Stern’s Pranayama Week.</a>  He used the word “pause” instead of hold several times, and I found it brilliant. </p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/mindless-breathing-boost.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Why Mindless Breathing is Good, and a 5-10 sec Boost to Any Breathwork</span>
+  </a>
+  <a href="/blog/start-by-starting-6040.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Light and Calm, Start by Starting, and the 60/40 Rule of Slow Breathing</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

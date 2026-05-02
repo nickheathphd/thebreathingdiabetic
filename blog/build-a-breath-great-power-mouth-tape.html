@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 THOUGHTS</div>
 <h2 ><strong>1. Build-a-Breath: Breath Stages and the Nervous System</strong></h2><blockquote><p ><strong>“Vagal activity is enhanced during the postinspiratory period and inhibited during the postexpiratory period.” </strong>- <a href="https://journals.lww.com/psychosomaticmedicine/Abstract/2018/07000/Vagal_Mediation_of_Low_Frequency_Heart_Rate.11.aspx" target="_blank">Kromenacker et al. (2018)</a></p></blockquote><p >&nbsp;</p><p >When I read this somewhat unassuming sentence, it actually led to a pretty big “aha moment” for me.  It means:&nbsp;</p><ul data-rte-list="default"><li><p >Inhalations: Sympathetic</p></li><li><p ><strong>Inhale-Pauses: <em>Parasympathetic</em></strong></p></li><li><p >Exhalations: Parasympathetic&nbsp;</p></li><li><p ><strong>Exhale-Pauses: <em>Sympathetic</em></strong> (I had never actually thought about this one and just assumed it was parasympathetic.)</p></li></ul><p >Let’s apply this to a real-world example: the popular 4-7-8 breath. Using the above relationships, we see that 4 seconds are spent in sympathetic and 15 parasympathetic—<strong>no wonder it’s so relaxing.</strong></p><p >With this information, you can now assemble and tailor a breath to meet your needs using a simple app like Breathe:  &amp; <a href="https://play.google.com/store/apps/details?id=com.achimsapps.breathe" target="_blank">Android</a>.</p><p >The power is yours…have fun with it 🙏</p><p >&nbsp;</p><h2 ><strong>2. One Way to Stop Overbreathing: Mouth Tape at Night</strong></h2><blockquote><p ><strong>“Taping the mouth at night ensures the benefits of good breathing during sleep, allowing you to fall asleep more quickly, stay asleep longer, and wake feeling energized.”</strong></p><p style="text-align:right;" >– Patrick McKeown,&nbsp;<a href="https://www.amazon.com/The-Oxygen-Advantage-audiobook/dp/B01BLV3T9A/?utm_source=TheBreathing411" target="_blank"><em>The Oxygen Advantage</em></a></p></blockquote><p >And if that’s not enough, it’s also one way (among many changes we need to make) to train our bodies to breathe less in general.</p><p >As Patrick says, <strong>“Spending a guaranteed eight hours breathing through your nose while you sleep is an opportune way to reeducate your respiratory center to adjust to a more normal breathing volume.” 👏 👏 👏</strong></p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> If you want more amazing wisdom from <em>The Oxygen Advantage</em>, I just released a Book 411 summary on it in the <a href="https://www.thebreathingdiabetic.com/breath-is-life-learning-center" target="_blank">Learning Center.</a> </p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/breath-control-airways-engaging-fully.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Why Breath Control Matters, -148°F, and Engaging Fully in Life</span>
+  </a>
+  <a href="/blog/letting-go-better-emotions-loving-life.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">How to Let Go, Breathing for Better Emotions, and Loving Life</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

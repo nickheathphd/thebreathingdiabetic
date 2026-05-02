@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 THOUGHTS</div>
 <p ><strong>1.  A Breakthrough in Respiratory Physiology</strong></p><blockquote><p >"<em>We noted that the inhalation of NO led to a significant increase in nitrite and SNO-Hb. Nitrite peaked at 5 minutes and SNO-Hb peaked beyond 15 minutes, of discontinuing the NO inhalation.</em>" - <a href="https://www.thebreathingdiabetic.com/science-library/tonelli-et-al-2019" target="_blank">Tonelli et al. (2019), PLOS ONE</a></p></blockquote><p >Two weeks ago, <a href="https://www.thebreathingdiabetic.com/science-library/cannon-et-al-2001" target="_blank">we learned</a> that inhaled NO is transported throughout the entire body.  I promised to follow-up with newer research, and here it is.  </p><p >This 2019 study, led by researchers at the Cleveland Clinic, found that<strong> inhaled NO increases circulating<em> </em>levels of SNO-Hb and nitrite</strong>.  This matters because <a href="https://www.thebreathingdiabetic.com/zhang-et-al-2015" target="">SNO-Hb is crucial to </a><a href="https://www.thebreathingdiabetic.com/zhang-et-al-2015" target="_blank">whole-body oxygenation</a><a href="https://www.thebreathingdiabetic.com/zhang-et-al-2015" target="">. </a> </p><p >The levels of inhaled NO studied here were much higher than what is produced in the nose.  However, it seems likely that the NO we inhale during nasal breathing acts through this same pathway, assisting with oxygen delivery throughout the entire body.  We’ll have to see what future studies show…</p><p >In the meantime, if you geek out on breathing, this represents a paradigm shift in respiratory physiology.  <a href="https://www.thebreathingdiabetic.com/science-library/tonelli-et-al-2019" target="_blank">Learn more in the full summary.</a>  </p><p >Here’s to another year of nasal breathing and continuous learning.</p><p ><strong>2.  How to Begin Something New this Year</strong>  </p><blockquote><p >"<em>If there’s one concept from my book I hope you embrace, it’s this: People change best by feeling good, not by feeling bad.</em>" – BJ Fogg, <a href="https://www.amazon.com/Tiny-Habits-Changes-Change-Everything/dp/0358003326/ref=sr_1_1?dchild=1&amp;keywords=Tiny%20Habits&amp;qid=1608723927&amp;sr=8-1" target="">Tiny<em> </em></a><a href="https://www.amazon.com/Tiny-Habits-Changes-Change-Everything/dp/0358003326/ref=sr_1_1?dchild=1&amp;keywords=Tiny%20Habits&amp;qid=1608723927&amp;sr=8-1" target="_blank">Habits</a><em>&nbsp;</em> </p></blockquote><p >Let’s remember BJ’s advice as we embark on any change in 2021.  Specifically for breathing, we should remember that our practice should be natural, not burdensome.  It should make us feel good, not be another source of worry.   </p><p >More broadly, let’s not feel "obligated" to change, but instead, do it because it makes us feel good and improves our health.  This just seems like common sense, but sometimes it takes a really smart person like BJ Fogg to state the obvious.</p><p ><strong>P.S.</strong>  Do you remember BJ’s <a href="https://www.thebreathingdiabetic.com/blog/2020/8/10/slow-or-controlled-7rx33" target="_blank">number one tip</a> for feeling good?  <em>Celebrate</em>.  <em>A lot</em>. </p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/skill-of-breath.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">The Skill of Breath and Pillars of Health</span>
+  </a>
+  <a href="/blog/one-sentence-and-identity.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">One-Sentence Ideas and Your Breathing Identity</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 THOUGHTS</div>
 <h2 ><strong>1. A Remarkable Fact About the Upper Airways (-148°F)</strong></h2><blockquote><p ><strong>“…the upper respiratory tract is able to warm and saturate inspired air so that in climates as cold as minus 100°C [-148°F] air entering the alveoli has attained body temperature and is saturated with water vapor.”</strong>&nbsp;</p><p style="text-align:right;" >- <a href="https://pubmed.ncbi.nlm.nih.gov/13782729/" target="_blank">Walker and Wells (1961)</a></p></blockquote><p >My brain can’t fully grasp how remarkable that is over such a short distance…</p><p ><em>Our airways are incredible.</em></p><h2 ><strong>2. Oral Posture and Nasal Breathing</strong></h2><blockquote><p ><strong>“Try it for yourself: Open your mouth and place your tongue on your upper palate. Now try to breathe through your mouth. While it is possible to draw a wisp of air into the lungs, it will not feel right. It follows therefore that the tongue of a mouth breather will tend to rest on the floor of the mouth or suspended midway.”</strong></p><p style="text-align:right;" >– Patrick McKeown,&nbsp;<a href="https://mgcp02.engage.squarespace-mail.com/r?m=63f33936bea9fa7b67950c76&amp;u=https%3A%2F%2Fwww.amazon.com%2FThe-Oxygen-Advantage-audiobook%2Fdp%2FB01BLV3T9A%2F&amp;w=5bdda91e9f8770a1118550da&amp;c=b_63f1ee72ac26827f66d51309&amp;l=en-US&amp;s=DyY79MbHUXEt4PxrYGlVQzNlYwY%3D" target="_blank"><em>The Oxygen Advantage</em></a></p></blockquote><p >Patrick’s explanation here is perhaps the most commonsense reason for maintaining <a href="https://www.thebreathingdiabetic.com/blog/5-day-yoga-breathing-heart" target="_blank">optimal oral posture</a>: It promotes nasal breathing simply because breathing through your mouth is awkward when the tongue is against the roof of the mouth. 👏</p><h2 ><strong>3. Why Voluntary Breath Control Matters</strong></h2><blockquote><p ><strong>“We can hold our breath, or breathe faster, or breathe slower, at any time, by choice. Why does this control matter? </strong><strong>It matters because breathing is the link between our inner and outer experiences</strong><strong> … It is also the link between the physical and emotional reactions we have to those experiences. </strong><strong>In other words, what is happening within our bodies and minds is channeled through our breathing</strong><strong>.”</strong></p><p style="text-align:right;" >- Anyen Rinpoche &amp; Allison Choying Zangmo, <a href="https://www.amazon.com/Tibetan-Yoga-Breath-Breathing-Cultivating/dp/B00NT5Q7P0/?utm_source=TheBreathing411" target="_blank"><em>The Tibetan Yoga of Breath</em></a></p></blockquote><p >I have nothing to add except a few of these 🤯 🤯 🤯</p><h2 ><strong>4. A Neat Study on Slow Yogic Breathing and Vagal Stimulation</strong></h2><blockquote><p ><strong>“These findings raise the possibility that mind-body techniques that use slow breathing at rest exert their breathing-related relaxation effects through vagal mechanisms.”</strong></p><p style="text-align:right;" >- <a href="https://journals.lww.com/psychosomaticmedicine/Abstract/2018/07000/Vagal_Mediation_of_Low_Frequency_Heart_Rate.11.aspx" target="_blank">Vagal Mediation of Low-Frequency Heart Rate Variability During Slow Yogic Breathing</a></p></blockquote><p >This ingenious study <strong>separately blocked the parasympathetic and sympathetic nervous systems and then measured HRV during slow yogic breathing.</strong>  By doing this, they conclusively found that increases in HRV were primarily due to increased vagal activity.</p><p >In other words, slow breathing is vagus nerve stimulation 👏</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> You get the full Science 411 on this paper when you sign up for the <a href="https://www.thebreathingdiabetic.com/breath-is-life-learning-center">Breath is Life Learning Center.</a></p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/good-stress-self-love-wisdom.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Good Stress, Self Love, and Breathing for Happiness and Wisdom</span>
+  </a>
+  <a href="/blog/build-a-breath-great-power-mouth-tape.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Build-a-Breath, How to Work with Emotions, and Carrying Great Power</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

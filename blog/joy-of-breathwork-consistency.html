@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. The Joy of Breathwork is _________</strong></h2><p >If you’ve read any books on breathwork, or heard any podcasts, or taken any classes, you’ve inevitably heard some incredible stories of healing.</p><p >People use different breathing methods to help various health conditions under different settings.  They all seem to work, and there’s no one-size-fits-all.</p><p >It highlights a simple yet profound truth: <em>The joy of breathwork is </em><em>breathing</em>.</p><p style="text-align:center;" >***</p><p ><strong>Quote that inspired this thought:</strong> “<em>I realized: These were tears of joy, and the joy of movement is moving.</em>” - Kelly McGonigal, PhD, <a href="https://www.amazon.com/Joy-Movement-exercise-happiness-connection/dp/0525534121/ref=tmm_pap_swatch_0?_encoding=UTF8&amp;qid=1634638832&amp;sr=8-1" target=""><em>The Joy of </em>Movem</a><a href="https://www.amazon.com/Joy-Movement-exercise-happiness-connection/dp/0525534121/ref=tmm_pap_swatch_0?_encoding=UTF8&amp;qid=1634638832&amp;sr=8-1" target="_blank">ent</a></p><h2 ><strong>2. The 3 Best Ways to be Consistent with Your Breathing Practice</strong></h2><blockquote><p >“<em>A small daily task, if it be really daily, will beat the labours of a spasmodic Hercules.</em>”</p><p style="text-align:right;" > – <a href="https://gretchenrubin.com#newsletter" target="">Anthon</a><a href="https://gretchenrubin.com#newsletter" target="_blank">y Trol</a><a href="https://gretchenrubin.com#newsletter" target="">lope</a></p></blockquote><p ><strong>1. Start very tiny.</strong>  Even if it's 1 breath or 30 seconds. Just pick something so small you can't fail.</p><p ><strong>2. Do it at the same time every day</strong>.  Pick a consistent cue (e.g., brushing your teeth, etc.) that will trigger your tiny practice.</p><p ><strong>3. Celebrate.</strong> This is most important. Do something silly that you find rewarding (fist bump, etc.). Celebration releases dopamine, which will trick your brain into looking forward to your practice.</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> Here’s my celebration: “<em>That’s like me to do another breathing session!</em>”</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/fast-haiku-wim.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Fast Breathing, Positive Emotions, and the 3 Stages of Wim Hof</span>
+  </a>
+  <a href="/blog/mindless-breathing-boost.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Why Mindless Breathing is Good, and a 5-10 sec Boost to Any Breathwork</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

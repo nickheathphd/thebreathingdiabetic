@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. Breathing Gives Us What Babies Want</strong></h2><p >In the <a href="https://www.amazon.com/The-Paradox-of-Choice-audiobook/dp/B00429IOPI/ref=sr_1_1?dchild=1&amp;keywords=the%20paradox%20of%20choice&amp;qid=1620899649&amp;sr=8-1" target="_blank">Paradox of Choice</a>, Barry Schwartz discusses a fascinating study:  </p><ul data-rte-list="default"><li><p ><strong>Group 1:</strong> Infants were able to control some dancing toys by turning their heads in their cribs.  It made them really happy to see the toys.</p></li><li><p ><strong>Group 2:</strong> Got “a free ride.”  They saw the same toys, but theirs just randomly appeared when the <em>Group 1</em> babies made them turn on.</p></li></ul><p >The <em>Group 2</em> babies still found this very entertaining, at least at first.  But they eventually lost interest, whereas <em>Group 1</em> didn’t:</p><blockquote><p >“<em>The different reactions of the two groups caused researchers to conclude that it is not dancing toy animals that are an endless source of delight for infants, </em><strong><em>but rather having control.</em></strong><em>  Infants kept smiling and cooing at the display because they seem to know that they made it happen.</em>”</p></blockquote><p >I think this study demonstrates why breathing (especially Wim Hof) is so impactful.  It taps into a desire that’s in us since birth—the desire for control.</p><p >Breathing gives it to us, immediately.  We can instantly change our state, <strong>and we know we made it happen</strong>, not some external force.  We become <em>Group 1</em>.</p><p >It’s like what Barry Schwartz says when interpreting those babies’ reactions:</p><blockquote><p >“<em>I did this, isn’t it great?  And I can do it again whenever I want.</em>” </p></blockquote><h2 ><strong>2. The Upside of Diabetes</strong></h2><blockquote><p >“<em>When I was eleven years old, I was diagnosed with Type 1 diabetes. This taught me a lot of responsibility at a young age…I have to incorporate a lot of “thinking ahead” and problem solving into my daily routine…Furthermore, it has taught me to always be positive and to be grateful for every opportunity I have…Although I do not enjoy having diabetes, it has definitely had a positive impact on my life.</em>”</p></blockquote><p >I wrote that 10 years ago when I was applying for graduate school.  </p><p >Fast forward to today, and it’s often depressing researching about breathing and diabetes.  As excited as I get about breathing, I’m also continuously reminded of all the ways diabetes is ruining my health.  Thanks, science. </p><p >But in reality, I’ve always felt that diabetes is the best thing to ever happen to me.  And I still 100% agree with everything I said 10 years ago.</p><p ><strong>I’m not saying diabetes doesn’t suck.</strong>  But, I try not to forget that it could be a lot worse and that it has had many positive impacts on my life.</p><p >So here’s to keeping a positive outlook, while simultaneously being realistic, knowing that we need to take extra good care of our bodies and health.</p><p style="text-align:center;" >… </p><p ><strong>P.S.</strong> This was inspired by my recent re-reading of <a href="https://www.amazon.com/The-Upside-of-Stress-audiobook/dp/B00UVUDCKE/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1620901109&amp;sr=8-1" target="_blank">The Upside of Stress</a>.</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/breathing-helps-everything.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Slow Breathing Really Does Help Everything, According to a 2020 Study</span>
+  </a>
+  <a href="/blog/the-4-best-ways.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">A Mystical Organ, and The 4 Best Ways to Keep Your Breathing Interesting</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

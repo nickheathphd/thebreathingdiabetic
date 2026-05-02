@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h3 ><strong>1. The Lungs Lead, Heart and Mind Follow</strong></h3><blockquote><p >“<em>This knowledge is spreading back to the West through disciplines such as yoga and mindfulness, but also through techniques aimed at improving endurance, and even intimacy.  </em><strong><em>These practices demonstrate that the mind and the heart follow the lungs, not the other way around</em></strong><em>.</em>”</p><p style="text-align:right;" >- Michael J. Stephenson, MD from <a href="https://www.amazon.com/Breath-Taking-Fragility-Future-Extraordinary/dp/B08S45HQF3/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=1617360797&amp;sr=8-2" target="_blank"><em>Breath Taking</em></a></p></blockquote><p >Study after study has shown that breathing gives you access and control over your heart and mind, in ways such as <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2021.624254/full" target="_blank">increasing heart rate variability</a> and <a href="https://www.thebreathingdiabetic.com/zelano-et-al-2016" target="_blank">synchronizing brain waves</a>.  <em>That is, the lungs lead, the heart and mind follow.</em></p><p >But even with all this research, sometimes it takes an eloquent quote from a respected pulmonologist to make it seem so obvious.</p><p ><strong>Related:</strong> <a href="https://hbr.org/2020/09/research-why-breathing-is-so-effective-at-reducing-stress" target="_blank">HBR: Why Breathing Is So Effective at Reducing Stress</a></p><p ><strong>Related Quote:</strong> “<em>The obvious is that which is never seen until someone expresses it simply.” </em>-Kahlil Gibran</p><h3 ><strong>2. Why Slow Nasal Breathing Could Be More Important in Type-2 Diabetes</strong></h3><p >Both type-1 and type-2 diabetes benefit from slow nasal breathing.</p><p >However, it could be more beneficial in type-2 diabetes since the primary issues there are reduced insulin production and reduced insulin sensitivity.  </p><p >And it just so happens that slow breathing <a href="https://www.thebreathingdiabetic.com/martarelli-et-al-2011b" target="_blank">increases insulin production</a> and <a href="https://www.thebreathingdiabetic.com/wilson-et-al-2017" target="_blank">improves insulin sensitivity</a>.  But maybe most importantly, nasal breathing helps you sleep better, which will indirectly <a href="https://pubmed.ncbi.nlm.nih.gov/20371664/" target="_blank">boost insulin sensitivity</a>.</p><p >Obviously, slow breathing isn’t going to cure you of type-2.  But it’s safe, effective, and super practical.  It seems like a no-brainer.</p><p ><strong>P.S.</strong>  For T1Ds like me, all these things are still very helpful.  We just won’t get the added benefit of increased insulin production…stupid pancreas…</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/breathing-possible.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">How Breathing Makes Everything Possible</span>
+  </a>
+  <a href="/blog/straight-a-student.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">How To Be a Straight-A Breathing Student, and Why Diabetics “Get It”</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

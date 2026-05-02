@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h2 ><strong>1. A First Goal of Pranayama is This</strong></h2><blockquote><p >“<em>Hence, through pranayama, one attempts to do away with the effort of respiration; rhythmic breathing must become something so automatic that the yogin can forget it.</em>”</p><p style="text-align:right;" >- <strong>Mircea Eliade</strong>, <a href="https://www.amazon.com/Yoga-Immortality-Princeton-Bollingen-Mythology/dp/0691142033/" target="_blank"><em>Yoga: Immortality and Freedom</em></a></p></blockquote><p >An excellent reminder that we train our breathing, consistently and deliberately, so we can <a href="https://www.thebreathingdiabetic.com/blog/mindless-breathing-boost" target="_blank">forget about it.</a>  <em>Effort leads to effortlessness</em>.  Ancient yogis agree.</p><h2 ><strong>2. Slow Breathing Offers “Promising Prospects in Chronic Diseases Management”</strong></h2><p >A 2021 review of heart rate variability biofeedback (HRVB; aka slow breathing) for chronic illness examined 29 studies with over 1100 patients, concluding:</p><blockquote><p >“<em>Given the reported positive effects of HRVB on psychophysiological outcomes in various patient profiles, it is clear that HRVB offers promising prospects in chronic diseases management.</em>”</p><p style="text-align:right;" >- <a href="https://www.sciencedirect.com/science/article/pii/S0965229921000911" target="_blank">Heart rate variability biofeedback in chronic disease management: A systematic review</a>&nbsp;</p></blockquote><p >It looks like, <a href="https://www.thebreathingdiabetic.com/blog/breathing-helps-everything" target="_blank">once again</a>, I’m not as crazy as I sometimes feel with this breathing stuff (and neither were those slow, rhythmic-breathing ancient yogis 😁).</p><p style="text-align:center;" >***</p><p ><strong>P.S.</strong> <a href="https://www.thebreathingdiabetic.com/hrvb-vs-slow-breathing" target="_blank">A quick rant on HRVB vs. slow breathing for the nerds like me</a> 🤓</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/breath-spirit-overbreathing.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">Breath as Spirit, Body and Mind, and 2 Opposing Views on Overbreathing</span>
+  </a>
+  <a href="/blog/use-heart-22-one.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">An Unexpected Truth, 22 One-Sentence Ideas, and the Best Part of Breathing</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>

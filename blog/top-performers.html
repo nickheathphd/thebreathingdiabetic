@@ -484,6 +484,54 @@
       .compare-table th,
       .compare-table td { padding: 0.625rem 0.75rem; }
     }
+
+    /* ── Edition nav ──────────────────────────────────── */
+    .edition-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 3rem 0 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .edition-nav__btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 1rem 1.25rem;
+      background: var(--cream-deep);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .edition-nav__btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: inherit;
+    }
+    .edition-nav__btn--prev { align-items: flex-start; }
+    .edition-nav__btn--next { align-items: flex-end; text-align: right; }
+    .edition-nav__label {
+      font-family: var(--ff-body);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .edition-nav__title {
+      font-family: var(--ff-display);
+      font-size: 0.9375rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--forest);
+    }
+    @media (max-width: 600px) {
+      .edition-nav { flex-direction: column; }
+      .edition-nav__btn--next { align-items: flex-start; text-align: left; }
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -559,6 +607,19 @@
       <div class="container"><div class="article-body">
 <div class="nl-section-header">4 Thoughts</div>
 <h3 ><strong>1. Why We Should Practice Coherent Breathing, in just Two Sentences</strong></h3><blockquote><p >“<em>When oscillations of two or more systems are synchronised it increases physiological efficiency by enabling the functions of these systems to be coordinated. This prevents energy being wasted on non productive functions</em>.”</p><p style="text-align:right;" >- <a href="https://www.sciencedirect.com/science/article/abs/pii/S1746068909000455" target="_blank">The Functions of Breathing and its Dysfunctions and Their Relationship to Breathing Therapy</a></p></blockquote><p >Coherent (or resonant) breathing synchronizes different body systems, and I thought those two sentences perfectly summarized why it’s so important: </p><p ><strong>It improves efficiency and conserves energy.</strong></p><p >To experience this yourself, you might think finding your particular resonant breathing rate requires special biofeedback equipment…and you’d be right.&nbsp; </p><p >Fortunately, however, <a href="https://www.thebreathingdiabetic.com/vaschillo-et-al-2006" target="_blank">a 2006 study</a> found that we get most of the benefits by simply breathing at 5-6 breaths per minute.  Meaning you can get started right now without any fancy gear.  It’s as simple as using a phone app.</p><p >Here’s to synchronizing our breathing for optimal efficiency today.</p><p ><strong>Related Quote:</strong> “<em>Did it matter if we breathed at a rate of six or five seconds, or were a half second off?  It did not, as long as the breaths were in the range of 5.5.</em>” - James Nestor, <a href="https://www.amazon.com/Breath-New-Science-Lost-Art/dp/0735213615/ref=sr_1_1?dchild=1&amp;keywords=breath&amp;qid=1619607215&amp;sr=8-1" target="_blank">Breath</a></p><p ><strong>P.S.</strong> The two apps I recommend are iBreathe and BreathWrk.</p>
+
+<!-- edition-nav -->
+<div class="edition-nav">
+  <a href="/blog/breathing-buffet.html" class="edition-nav__btn edition-nav__btn--prev">
+    <span class="edition-nav__label">&#8592; Previous Edition</span>
+    <span class="edition-nav__title">A Buffet of 13 Interesting Breathing Articles</span>
+  </a>
+  <a href="/blog/breathing-helps-everything.html" class="edition-nav__btn edition-nav__btn--next">
+    <span class="edition-nav__label">Next Edition &#8594;</span>
+    <span class="edition-nav__title">Slow Breathing Really Does Help Everything, According to a 2020 Study</span>
+  </a>
+</div>
+<!-- /edition-nav -->
         <div class="cta-box">
           <p class="cta-box__eyebrow">The Anxious Person&rsquo;s Breath Manual</p>
           <p>Want a complete research-based breathing system for anxiety? The Anxious Person&rsquo;s Breath Manual synthesizes 454 studies into one practical guide.</p>
