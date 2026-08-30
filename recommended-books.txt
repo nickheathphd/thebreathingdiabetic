@@ -1,70 +1,233 @@
-:q!
-BOOKS RECOMMENDED IN "1 GOOD BOOK" SECTION — BREATHING 411 NEWSLETTER
-Generated: 2026-05-30
-Total: 59 books
-=======================================================================
+BOOKS RECOMMENDED IN THE "1 GOOD BOOK" SECTION — THE BREATHING 411
+Generated: 2026-08-30  |  Source: newsletter/index.html + blog/*.html
+Editions in archive: 310  |  Editions with a '1 Good Book' pick: 73
+========================================================================
 
-1.  52 Ways to Walk — Annabel Streets
-2.  Altered Traits — Daniel Goleman, Ph.D. & Richard Davidson, Ph.D.
-3.  Awareness — Anthony de Mello
-4.  Become What You Are — Alan Watts
-5.  Biofeedback and Mindfulness in Everyday Life — Inna Khazan, Ph.D.
-6.  Blue Mind — Wallace J Nichols
-7.  Breath by Breath — Larry Rosenberg
-8.  Breath Taking — Michael J. Stephen, MD
-9.  Breathing: The Master Key to Self Healing — Andrew Weil, MD
-10. Breathwalk — Gurucharan Singh Khalsa, Ph.D. & Yogi Bhajan, Ph.D.
-11. Dialed In — Dr. Dana Sinclair
-12. Don't Believe Everything You Think — Joseph Nguyen
-13. Elegant Simplicity — Satish Kumar
-14. Falling Upward — Richard Rohr
-15. Four Thousand Weeks — Oliver Burkeman
-16. Full Catastrophe Living — Jon Kabat-Zinn, Ph.D.
-17. Healing Through Breathing — Eddie Stern
-18. Heart Breath Mind — Leah Lagos, Psy.D.
-19. Hidden Potential — Adam Grant
-20. How Bad Do You Want It? — Matt Fitzgerald
-21. How God Changes Your Brain — Andrew Newberg, MD & Mark Waldman
-22. How To Be Better At (Almost) Everything — Pat Flynn
-23. In Awe — John O'Leary
-24. Instructions for Spiritual Living — Paul Brunton
-25. Meditations for Mortals — Oliver Burkeman
-26. Mindfulness in Plain English — Bhante Gunaratana
-27. Move — Caroline Williams
-28. Natural Meditation — Dean Sluyter
-29. Original Goodness: A Commentary on the Beatitudes — Eknath Easwaran
-30. Passage Meditation — Eknath Easwaran
-31. Peace is Every Breath — Thich Nhat Hanh
-32. Peak Mind — Amishi Jha, Ph.D.
-33. Silence in the Age of Noise — Erling Kagge
-34. Sovereign — Emma Seppälä, Ph.D.
-35. Spinal Breathing Pranayama — Yogani
-36. Still the Mind: An Introduction to Meditation — Alan Watts
-37. Stolen Focus — Johann Hari
-38. Take Your Time — Eknath Easwaran
-39. The Art of Impossible — Steven Kotler
-40. The Breathing Cure — Patrick McKeown
-41. The Coffee Bean — Jon Gordon & Damon West
-42. The Comeback Quotient — Matt Fitzgerald
-43. The Confident Mind — Dr. Nate Zinsser
-44. The Creative Act — Rick Rubin
-45. The Healing Power of Meditation — (multiple contributors/editors)
-46. The Healing Power of Mindfulness — Jon Kabat-Zinn, Ph.D.
-47. The Healing Power of the Breath — Richard Brown, MD & Patricia Gerbarg, MD
-48. The Heroic Heart — Jetsunma Tenzin Palmo
-49. The Mind Illuminated — John Yates, Ph.D., Matthew Immergut, Ph.D. & Jeremy Graves
-50. The Mindfulness Solution: Everyday Practices for Everyday Problems — Ronald Siegel, PsyD
-51. The No-Nonsense Meditation Book — Steven Laureys, MD
-52. The Oxygen Advantage — Patrick McKeown
-53. The Science of Enlightenment — Shinzen Young
-54. The Stress Prescription — Elissa Epel, Ph.D.
-55. The Things You Can See Only When You Slow Down — Haemin Sunim
-56. The Tibetan Yoga of Breath — Anyen Rinpoche & Allison Choying Zangmo
-57. The Well-Lived Life — Gladys McGarey, MD
-58. Three Steps to Awakening — Larry Rosenberg
-59. Tiny Habits — BJ Fogg, Ph.D.
+CHRONOLOGICAL (oldest first)
+------------------------------------------------------------------------
+  1. March 24, 2025       [Children's book about Fabi, a 7-year-old heart-surgery patient — title not named in the edition]
+     /blog/i-had-no-idea-14-more-endurance-and-breathing-to-help-yourself.html
+  2. March 31, 2025       Breath by Breath — Larry Rosenberg
+     /blog/mbsr-course-reducing-anxiety-a-funny-quote-about-negative-feelings.html
+  3. April 07, 2025       Peak Mind — Amishi Jha, Ph.D
+     /blog/your-quiet-center-being-better-and-the-great-secret-of-long-life.html
+  4. April 14, 2025       Passage Meditation — Eknath Easwaran
+     /blog/art-of-being-wise-not-most-people-and-deep-psycho-physical-changes.html
+  5. April 21, 2025       Healing Through Breathing — Eddie Stern
+     /blog/healing-through-breathing-breath-and-e-motions-and-how-to-go-east.html
+  6. April 28, 2025       Meditations for Mortals — Oliver Burkeman
+     /blog/breathing-101-feel-good-hormones-and-a-book-i-really-loved.html
+  7. May 05, 2025         Move — Caroline Williams
+     /blog/co2-breath-regulation-a-fulfilling-life-and-a-great-book-on-movement.html
+  8. May 12, 2025         The Well-Lived Life — Gladys McGarey, MD
+     /blog/brain-blood-flow-humming-bee-breathing-and-an-unhurried-life.html
+  9. May 19, 2025         Awareness — Anthony de Mello
+     /blog/nose-vs-vagus-meditation-for-a-meaningful-life-and-trust-brings-calm.html
+ 10. June 02, 2025        The Heroic Heart — Jetsunma Tenzin Palmo
+     /blog/breath-body-brain-easily-plant-trees-and-the-heroic-heart.html
+ 11. June 09, 2025        The Mind Illuminated — John Yates, Ph.D., Matthew Immergut, Ph.D., and Jeremy Graves
+     /blog/brain-syncing-study-mind-rhythms-and-being-inspired-by-spirit.html
+ 12. June 16, 2025        The Healing Power of the Breath — Richard Brown, MD, and Patricia Gerbarg, MD
+     /blog/how-to-measure-progress-cognitive-regulator-and-awareness-awareness.html
+ 13. June 23, 2025        Breath Taking — Micheal J Stephen, MD
+     /blog/how-to-dissolve-problems-breathing-for-anxiety-and-as-i-breathe-i-hope.html
+ 14. June 30, 2025        How Bad Do You Want It? — Matt Fitzgerald
+     /blog/helping-the-mind-body-system-give-yourself-a-break-share-what-you-learn.html
+ 15. July 07, 2025        Instructions for Spiritual Living — Paul Brunton
+     /blog/3-great-science-quotes-slowing-down-and-finding-beauty-in-imperfection.html
+ 16. July 14, 2025        Hidden Potential — Adam Grant
+     /blog/conscious-breathing-for-body-mind-truth-and-how-to-save-your-own-life.html
+ 17. July 21, 2025        Don't Believe Everything You Think — Joseph Nguyen
+     /blog/the-1-most-important-skill-activation-ritual-and-vitality-and-resilience.html
+ 18. July 28, 2025        Still the Mind: An Introduction to Meditation — Alan Watts
+     /blog/the-power-of-proper-breathing-the-1st-step-and-a-huge-morale-booster.html
+ 19. August 04, 2025      Tiny Habits — BJ Fogg, Ph.D
+     /blog/you-can-do-this-today-a-new-2025-study-and-positive-reinforcement.html
+ 20. August 11, 2025      The Coffee Bean — Jon Gordon and Damon West
+     /blog/breathwalking-coffee-beans-and-the-positive-impact-of-celebration.html
+ 21. August 18, 2025      Dialed In — Dr. Dana Sinclair
+     /blog/new-breath-paper-how-to-live-well-and-positive-forces-of-the-mind.html
+ 22. August 25, 2025      Breathing: The Master Key to Self Healing — Andrew Weil, MD
+     /blog/how-to-concentrate-better-meditation-brain-and-this-is-never-selfish.html
+ 23. September 01, 2025   Take Your Time — Eknath Easwaran
+     /blog/how-to-get-the-most-benefits-slow-breathing-and-joy-is-our-gravity.html
+ 24. September 08, 2025   The Stress Prescription — Elissa Epel, Ph.D
+     /blog/feeling-better-thoughts-and-the-most-reliable-rhythm-in-our-lives.html
+ 25. September 15, 2025   Natural Meditation — Dean Sluyter
+     /blog/the-science-is-in-why-breathing-is-first-and-a-better-metric-of-success.html
+ 26. September 22, 2025   Falling Upward — Richard Rohr
+     /blog/rest-your-brain-deal-with-problems-less-is-more.html
+ 27. September 29, 2025   How God Changes Your Brain — Andrew Newberg, MD, and Mark Waldman
+     /blog/the-surprising-benefits-of-yawning.html
+ 28. October 06, 2025     52 Ways to Walk — Annabel Streets
+     /blog/10-zen-seconds-breathe-it-out-and-the-power-of-recreation.html
+ 29. October 13, 2025     Heart Breath Mind — Leah Lagos, Psy.D
+     /blog/this-is-astonishing-heart-brain-and-your-mind-can-change-your-life.html
+ 30. October 20, 2025     Sovereign — Emma Seppälä, Ph.D
+     /blog/two-influential-studies-235-hours-and-my-favorite-story.html
+ 31. October 27, 2025     Breathwalk — Gurucharan Singh Khalsa, Ph.D., and Yogi Bhajan, Ph.D
+     /blog/life-energy-laughter-4-elements-of-an-effective-breath-practice.html
+ 32. November 03, 2025    Peace is Every Breath — Thich Nhat Hanh
+     /blog/how-to-deal-with-emotions-1-thing-to-avoid-and-good-intoxication.html
+ 33. November 10, 2025    Spinal Breathing Pranayama — Yogani
+     /blog/grow-the-good-speech-2-ways-to-practice-slow-breathing.html
+ 34. November 17, 2025    Mindfulness in Plain English — Bhante Gunaratana
+     /blog/how-to-signal-calm-nirvana-increasing-your-odds-of-happiness.html
+ 35. November 24, 2025    Elegant Simplicity — Satish Kumar
+     /blog/brain-mind-simplicity-how-to-improve-everyones-wellness.html
+ 36. December 01, 2025    Altered Traits — Daniel Goleman, Ph.D. & Richard Davidson, Ph.D
+     /blog/better-decisions-health-happiness-why-we-train-the-mind.html
+ 37. December 08, 2025    Full Catastrophe Living — Jon Kabat-Zinn, Ph.D
+     /blog/free-app-better-aging-how-meditation-affects-the-breath.html
+ 38. December 15, 2025    The Healing Power of Mediation — (multi-author anthology; title spelled 'Mediation' in the original edition)
+     /blog/invisible-benefits-achieving-goals-how-to-improve-problem-solving.html
+ 39. December 22, 2025    Three Steps to Awakening — Larry Rosenberg
+     /blog/humming-making-life-2-3x-better-our-unique-self-regulation-powers.html
+ 40. December 29, 2025    Blue Mind — Wallace J Nichols
+     /blog/hum-for-stress-less-negative-emotions-find-your-life-flow.html
+ 41. January 05, 2026     The Healing Power of Mindfulness — Jon Kabat-Zinn, Ph.D
+     /blog/why-we-want-high-hrv-monk-brains-how-to-make-decisions.html
+ 42. January 12, 2026     The No-Nonsense Meditation Book — Steven Laureys, MD
+     /blog/universal-stress-reduction-feeling-at-ease-no-need-to-worry.html
+ 43. January 19, 2026     The Oxygen Advantage — Patrick McKeown
+     /blog/glimmers-over-triggers-more-from-your-mind-a-celebration-of-life.html
+ 44. January 26, 2026     The Tibetan Yoga of Breath — Anyen Rinpoche & Allison Choying Zangmo
+     /blog/a-better-life-30-second-science-tibetan-yoga-of-breath.html
+ 45. February 02, 2026    How To Be Better At (Almost) Everything — Pat Flynn
+     /blog/a-trained-mind-created-by-the-breath-how-to-be-better-at-anything.html
+ 46. February 09, 2026    Biofeedback and Mindfulness in Everyday Life — Inna Khazan, Ph.D
+     /blog/dissolve-your-problems-slow-breathings-healing-the-joy-of-meditation.html
+ 47. February 16, 2026    The Things You Can See Only When You Slow Down — Haemin Sunim
+     /blog/how-to-accomplish-more-gaining-control-doing-brooklyn-yoga.html
+ 48. March 02, 2026       Stolen Focus — Johann Hari
+     /blog/stolen-focus-3-ingredients-a-fascinating-aspect-of-slow-breathing.html
+ 49. March 09, 2026       The Science of Enlightenment — Shinzen Young
+     /blog/new-breath-brain-study-coffee-jokes-how-to-induce-creativity.html
+ 50. March 16, 2026       The Breathing Cure — Patrick McKeown
+     /blog/exciting-announcement-all-systems-relax-the-2nd-best-practice.html
+ 51. March 23, 2026       Silence in the Age of Noise — Erling Kagge
+     /blog/3-rules-of-optimal-breathing-10-minutes-of-laughter-and-enlightenment.html
+ 52. March 30, 2026       The Creative Act — Rick Rubin
+     /blog/nasal-breathing-brain-relaxed-creative-act.html
+ 53. April 6, 2026        The Art of Impossible — Steven Kotler
+     /blog/3-lessons-5-regrets-favorite-breathing-exercise.html
+ 54. April 13, 2026       The Mindfulness Solution: Everyday Practices for Everyday Problems — Ronald Siegel, PsyD
+     /blog/breath-to-brain-how-to-never-fail-and-putting-others-at-ease.html
+ 55. April 20, 2026       Original Goodness: A Commentary on the Beatitudes — Eknath Easwaran
+     /blog/humming-benefits-safe-in-the-storm-only-practice-that-matters.html
+ 56. April 27, 2026       In Awe — John O'Leary
+     /blog/nose-controls-brain-awe-real-power-of-breathing.html
+ 57. May 4, 2026          The Comeback Quotient — Matt Fitzgerald
+     /blog/yogic-breathing-brain-comebacks-using-mind-energy-for-good.html
+ 58. May 11, 2026         The Confident Mind — Dr. Nate Zinsser
+     /blog/get-your-best-performance-exact-formula-heart-of-life.html
+ 59. May 18, 2026         Four Thousand Weeks — Oliver Burkeman
+     /blog/four-thousand-weeks-one-way-to-be-free-our-highest-love.html
+ 60. May 25, 2026         Become What You Are — Alan Watts
+     /blog/proper-breathing-emotional-control-best-time-management.html
+ 61. June 1, 2026         Neurodharma — Rick Hanson, Ph.D
+     /blog/the-quickest-path-to-rest-quickest-path-to-peace-and-neurodharma.html
+ 62. June 8, 2026         Buddha's Brain — Rick Hanson, Ph.D
+     /blog/one-second-time-and-how-to-increase-your-brain-power.html
+ 63. June 15, 2026        Falling Upward — Richard Rohr
+     /blog/two-ways-falling-upward-and-a-great-alternative-to-breath-and-meditation.html
+ 64. June 22, 2026        Do Walk — Libby DeLana
+     /blog/do-walk-blue-mind-and-a-power-which-can-move-the-world.html
+ 65. June 29, 2026        Jonathan Livingston Seagull — Richard Bach
+     /blog/inward-reality-how-we-grow-and-a-simple-practice-i-do-every-day.html
+ 66. July 6, 2026         Siddhartha — Hermann Hesse
+     /blog/get-more-a-humorous-practice-and-3-quotes-on-breath-and-brain.html
+ 67. July 13, 2026        Walking: One Step at a Time — Erling Kagge
+     /blog/i-am-two-the-1st-meditation-and-how-to-remember-more-positive-things.html
+ 68. July 20, 2026        The Primordial Breath, Volume 1 — Jane Huang and Michael Wurmbrand
+     /blog/rhythm-of-breath-laughing-freely-and-a-ladder-from-earth-to-heaven.html
+ 69. July 27, 2026        Walking in Wonder — John O'Donohue
+     /blog/on-solitude-books-as-inspiration-and-the-best-gift-we-can-give-to-others.html
+ 70. August 3, 2026       Deep Survival — Laurence Gonzales
+     /blog/one-size-fits-all-closer-to-light-and-how-to-master-the-art-of-living.html
+ 71. August 10, 2026      Dialed In — Dr. Dana Sinclair
+     /blog/four-reminders-alternate-nostril-and-tapping-into-the-life-force.html
+ 72. August 17, 2026      The Explorer's Gene — Alex Hutchinson
+     /blog/overcoming-challenges-nasal-strips-and-small-habits-with-big-impacts.html
+ 73. August 24, 2026      The Expectation Effect — David Robson
+     /blog/how-to-get-better-performance-neighbors-medicine-and-the-joke-is-oneself.html
 
-=======================================================================
-NOTE: One post (i-had-no-idea-14-more-endurance-and-breathing-to-help-yourself.html)
-recommended an unnamed children's book about a girl named Fabi who used breathing
-through heart surgery — no title was included in the post text.
+ALPHABETICAL BY TITLE
+------------------------------------------------------------------------
+  52 Ways to Walk — Annabel Streets  [October 06, 2025]
+  [Children's book about Fabi, a 7-year-old heart-surgery patient — title not named in the edition]  [March 24, 2025]
+  Altered Traits — Daniel Goleman, Ph.D. & Richard Davidson, Ph.D  [December 01, 2025]
+  The Art of Impossible — Steven Kotler  [April 6, 2026]
+  Awareness — Anthony de Mello  [May 19, 2025]
+  Become What You Are — Alan Watts  [May 25, 2026]
+  Biofeedback and Mindfulness in Everyday Life — Inna Khazan, Ph.D  [February 09, 2026]
+  Blue Mind — Wallace J Nichols  [December 29, 2025]
+  Breath by Breath — Larry Rosenberg  [March 31, 2025]
+  Breath Taking — Micheal J Stephen, MD  [June 23, 2025]
+  The Breathing Cure — Patrick McKeown  [March 16, 2026]
+  Breathing: The Master Key to Self Healing — Andrew Weil, MD  [August 25, 2025]
+  Breathwalk — Gurucharan Singh Khalsa, Ph.D., and Yogi Bhajan, Ph.D  [October 27, 2025]
+  Buddha's Brain — Rick Hanson, Ph.D  [June 8, 2026]
+  The Coffee Bean — Jon Gordon and Damon West  [August 11, 2025]
+  The Comeback Quotient — Matt Fitzgerald  [May 4, 2026]
+  The Confident Mind — Dr. Nate Zinsser  [May 11, 2026]
+  The Creative Act — Rick Rubin  [March 30, 2026]
+  Deep Survival — Laurence Gonzales  [August 3, 2026]
+  Dialed In — Dr. Dana Sinclair  [August 18, 2025, August 10, 2026] (recommended twice)
+  Do Walk — Libby DeLana  [June 22, 2026]
+  Don't Believe Everything You Think — Joseph Nguyen  [July 21, 2025]
+  Elegant Simplicity — Satish Kumar  [November 24, 2025]
+  The Expectation Effect — David Robson  [August 24, 2026]
+  The Explorer's Gene — Alex Hutchinson  [August 17, 2026]
+  Falling Upward — Richard Rohr  [September 22, 2025, June 15, 2026] (recommended twice)
+  Four Thousand Weeks — Oliver Burkeman  [May 18, 2026]
+  Full Catastrophe Living — Jon Kabat-Zinn, Ph.D  [December 08, 2025]
+  The Healing Power of Mediation — (multi-author anthology; title spelled 'Mediation' in the original edition)  [December 15, 2025]
+  The Healing Power of Mindfulness — Jon Kabat-Zinn, Ph.D  [January 05, 2026]
+  The Healing Power of the Breath — Richard Brown, MD, and Patricia Gerbarg, MD  [June 16, 2025]
+  Healing Through Breathing — Eddie Stern  [April 21, 2025]
+  Heart Breath Mind — Leah Lagos, Psy.D  [October 13, 2025]
+  The Heroic Heart — Jetsunma Tenzin Palmo  [June 02, 2025]
+  Hidden Potential — Adam Grant  [July 14, 2025]
+  How Bad Do You Want It? — Matt Fitzgerald  [June 30, 2025]
+  How God Changes Your Brain — Andrew Newberg, MD, and Mark Waldman  [September 29, 2025]
+  How To Be Better At (Almost) Everything — Pat Flynn  [February 02, 2026]
+  In Awe — John O'Leary  [April 27, 2026]
+  Instructions for Spiritual Living — Paul Brunton  [July 07, 2025]
+  Jonathan Livingston Seagull — Richard Bach  [June 29, 2026]
+  Meditations for Mortals — Oliver Burkeman  [April 28, 2025]
+  The Mind Illuminated — John Yates, Ph.D., Matthew Immergut, Ph.D., and Jeremy Graves  [June 09, 2025]
+  Mindfulness in Plain English — Bhante Gunaratana  [November 17, 2025]
+  The Mindfulness Solution: Everyday Practices for Everyday Problems — Ronald Siegel, PsyD  [April 13, 2026]
+  Move — Caroline Williams  [May 05, 2025]
+  Natural Meditation — Dean Sluyter  [September 15, 2025]
+  Neurodharma — Rick Hanson, Ph.D  [June 1, 2026]
+  The No-Nonsense Meditation Book — Steven Laureys, MD  [January 12, 2026]
+  Original Goodness: A Commentary on the Beatitudes — Eknath Easwaran  [April 20, 2026]
+  The Oxygen Advantage — Patrick McKeown  [January 19, 2026]
+  Passage Meditation — Eknath Easwaran  [April 14, 2025]
+  Peace is Every Breath — Thich Nhat Hanh  [November 03, 2025]
+  Peak Mind — Amishi Jha, Ph.D  [April 07, 2025]
+  The Primordial Breath, Volume 1 — Jane Huang and Michael Wurmbrand  [July 20, 2026]
+  The Science of Enlightenment — Shinzen Young  [March 09, 2026]
+  Siddhartha — Hermann Hesse  [July 6, 2026]
+  Silence in the Age of Noise — Erling Kagge  [March 23, 2026]
+  Sovereign — Emma Seppälä, Ph.D  [October 20, 2025]
+  Spinal Breathing Pranayama — Yogani  [November 10, 2025]
+  Still the Mind: An Introduction to Meditation — Alan Watts  [July 28, 2025]
+  Stolen Focus — Johann Hari  [March 02, 2026]
+  The Stress Prescription — Elissa Epel, Ph.D  [September 08, 2025]
+  Take Your Time — Eknath Easwaran  [September 01, 2025]
+  The Things You Can See Only When You Slow Down — Haemin Sunim  [February 16, 2026]
+  Three Steps to Awakening — Larry Rosenberg  [December 22, 2025]
+  The Tibetan Yoga of Breath — Anyen Rinpoche & Allison Choying Zangmo  [January 26, 2026]
+  Tiny Habits — BJ Fogg, Ph.D  [August 04, 2025]
+  Walking in Wonder — John O'Donohue  [July 27, 2026]
+  Walking: One Step at a Time — Erling Kagge  [July 13, 2026]
+  The Well-Lived Life — Gladys McGarey, MD  [May 12, 2025]
+
+MATT FITZGERALD
+------------------------------------------------------------------------
+  How Bad Do You Want It? — June 30, 2025 — /blog/helping-the-mind-body-system-give-yourself-a-break-share-what-you-learn.html
+  The Comeback Quotient — May 4, 2026 — /blog/yogic-breathing-brain-comebacks-using-mind-energy-for-good.html
+  (Also quoted in '4 Thoughts' — see notes.)
