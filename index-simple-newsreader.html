@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://thebreathingdiabetic.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thebreathingdiabetic.com/" />
+  <meta property="og:title" content="The Breathing Diabetic — Science-Based Breathing for Anxious Minds" />
+  <meta property="og:description" content="You've tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <meta property="og:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Breathing Diabetic — Science-Based Breathing for Anxious Minds" />
+  <meta name="twitter:description" content="You've tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <meta name="twitter:image" content="https://thebreathingdiabetic.com/images/ebook-banner.webp" />
+  <meta name="description" content="You've tried everything for anxiety. But your body still feels wired. Learn why, and what science-based breathing actually does differently. By Nick Heath, Ph.D." />
+  <title>The Breathing Diabetic — Science-Based Breathing for Anxious Minds</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Tokens ─────────────────────────────────────────── */
+    :root {
+      --paper:   #F7F8F6;
+      --mist:    #EDF2EF;
+      --white:   #FFFFFF;
+      --ink:     #1E2925;
+      --muted:   #5B6863;
+      --accent:  #2E6A55;
+      --accent-dark: #23533F;
+      --line:    #E2E7E4;
+
+      --font: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Newsreader', Georgia, serif;
+
+      --wrap: 1080px;
+      --gutter: clamp(1.25rem, 4vw, 2.5rem);
+      --space: clamp(4.5rem, 10vw, 8rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* ─── Type ───────────────────────────────────────────── */
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; color: var(--ink); }
+    h1 {
+      font-size: clamp(2.75rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      max-width: 13ch;
+    }
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-size: 1.375rem;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    p { max-width: 62ch; color: var(--muted); }
+    p + p { margin-top: 1.1em; }
+    strong { font-weight: 600; color: var(--ink); }
+
+    /* ─── Layout ─────────────────────────────────────────── */
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .section { padding: var(--space) 0; border-top: 1px solid var(--line); }
+    .section--mist { background: var(--mist); border-top: 0; }
+    .section--mist + .section { border-top: 0; }
+
+    /* Heading in a narrow left column, content on the right */
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: 2.5rem 4rem;
+    }
+
+    /* ─── Buttons ────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font: 500 1rem/1 var(--font);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color .2s ease, color .2s ease;
+    }
+    .btn--primary { background: var(--accent); color: var(--white); }
+    .btn--primary:hover { background: var(--accent-dark); }
+    .link {
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .link:hover { color: var(--accent-dark); text-decoration-thickness: 2px; }
+
+    /* ─── Header ─────────────────────────────────────────── */
+    .header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247, 248, 246, .92);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header__inner { display: flex; align-items: center; gap: 2rem; height: 68px; }
+    .logo { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.01em; text-decoration: none; }
+    .nav { display: flex; gap: 1.75rem; list-style: none; margin-left: auto; }
+    .nav a { font-size: .9375rem; color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--ink); }
+    .header .btn { padding: .7rem 1.1rem; font-size: .9375rem; }
+
+    .burger {
+      display: none; margin-left: auto;
+      background: none; border: 0; cursor: pointer;
+      font: 500 .9375rem var(--font); color: var(--ink);
+      padding: .5rem 0;
+    }
+    .drawer { display: none; border-top: 1px solid var(--line); padding: .5rem 0 1.25rem; }
+    .drawer.open { display: block; }
+    .drawer a {
+      display: block; padding: .85rem 0;
+      font-size: 1.125rem; text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .drawer a:last-child { border-bottom: 0; color: var(--accent); font-weight: 500; }
+
+    /* ─── Hero ───────────────────────────────────────────── */
+    .hero { padding: clamp(5rem, 14vw, 10rem) 0 var(--space); }
+    .hero__sub {
+      margin-top: 2rem;
+      font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+      line-height: 1.6;
+      max-width: 44ch;
+    }
+    .hero__actions {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 1rem 2rem; margin-top: 2.75rem;
+    }
+    .hero__byline { margin-top: 4rem; font-size: .9375rem; }
+
+    /* ─── For you ────────────────────────────────────────── */
+    .fits { list-style: none; }
+    .fits li {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.1875rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+    .fits li:first-child { padding-top: 0; }
+    .fits li:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    /* ─── About ──────────────────────────────────────────── */
+    .about { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    .about img { width: 180px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+    .about .link { display: inline-block; margin-top: 1.75rem; }
+
+    /* ─── Manual ─────────────────────────────────────────── */
+    .manual__cover { border-radius: 6px; margin-bottom: 2.5rem; }
+    .points { list-style: none; margin: 2rem 0 2.5rem; }
+    .points li {
+      position: relative;
+      padding-left: 1.75rem;
+      color: var(--ink);
+    }
+    .points li + li { margin-top: .85rem; }
+    .points li::before {
+      content: '';
+      position: absolute; left: 0; top: .72em;
+      width: .75rem; height: 1px; background: var(--accent);
+    }
+    .manual__note { margin-top: 1rem; font-size: .9375rem; }
+
+    /* ─── Read & watch ───────────────────────────────────── */
+    .read { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .article { text-decoration: none; display: block; }
+    .article h3 { margin-bottom: .85rem; }
+    .article:hover h3 { color: var(--accent); }
+    .article p { font-size: 1rem; }
+    .article .meta { margin-top: 1.25rem; font-size: .875rem; }
+    .video { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: var(--line); }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { margin-top: 1rem; font-size: .9375rem; }
+    .read-more { margin-top: 3rem; }
+
+    /* ─── Newsletter ─────────────────────────────────────── */
+    .newsletter__embed { margin: 2rem 0 1.5rem; max-width: 520px; }
+    .newsletter__alt { font-size: .9375rem; }
+    /* Bring the Kit embed in line with the page (Kit sets inline styles) */
+    .newsletter__embed .formkit-form { padding: 0 !important; background: none !important; border: 0 !important; }
+    .newsletter__embed .formkit-form [data-style="clean"] { padding: 0 !important; }
+    .newsletter__embed .formkit-input {
+      font-family: var(--font) !important; border-color: var(--line) !important;
+      border-radius: 8px !important; background: var(--white) !important;
+    }
+    .newsletter__embed .formkit-submit {
+      font-family: var(--font) !important; font-weight: 500 !important;
+      background-color: var(--accent) !important; border-radius: 8px !important;
+    }
+    .newsletter__embed .formkit-submit:hover { background-color: var(--accent-dark) !important; }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    .footer { border-top: 1px solid var(--line); padding: 2.5rem 0 3rem; font-size: .875rem; color: var(--muted); }
+    .footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+    .footer ul { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; list-style: none; }
+    .footer a { text-decoration: none; }
+    .footer a:hover { color: var(--ink); }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav, .header .btn { display: none; }
+      .burger { display: block; }
+      .split, .read { grid-template-columns: 1fr; }
+      .split { gap: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .about { grid-template-columns: 1fr; gap: 1.75rem; }
+      .about img { width: 120px; }
+      .hero__actions .btn { width: 100%; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+    /* Serif headings sit better slightly looser */
+    h1 { letter-spacing: -0.02em; line-height: 1.05; }
+    h2 { letter-spacing: -0.01em; }
+    h3 { font-weight: 400; font-size: 1.5rem; }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKKJYEET06');
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <div class="header__inner">
+        <a href="/" class="logo">The Breathing Diabetic</a>
+        <ul class="nav">
+          <li><a href="/blog/index.html">Blog</a></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Videos</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+        <a href="https://nickheathphd.gumroad.com/l/breathmanual" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Get the Manual</a>
+        <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer">Menu</button>
+      </div>
+      <nav class="drawer" id="drawer" aria-label="Main">
+        <a href="/blog/index.html">Blog</a>
+        <a href="/books.html">Books</a>
+        <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Videos</a>
+        <a href="/about.html">About</a>
+        <a href="https://nickheathphd.gumroad.com/l/breathmanual" target="_blank" rel="noopener noreferrer">Get the Breath Manual ($27)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap">
+        <h1>Breathing is the fastest path from anxious to calm.</h1>
+        <p class="hero__sub">Science-based breathing for anxious minds. It starts working in 60 seconds, and five minutes a day changes your baseline.</p>
+        <div class="hero__actions">
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual"
+             class="btn btn--primary"
+             target="_blank" rel="noopener noreferrer"
+             onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_hero', 'page_location': window.location.href});">
+            Get the Breath Manual ($27)
+          </a>
+          <a href="https://breathlearning.kit.com/7-day-breath-reset" class="link" target="_blank" rel="noopener noreferrer">Start the free 7-day reset</a>
+        </div>
+        <p class="hero__byline">By Nick Heath, Ph.D., breathing researcher</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fits-title">
+      <div class="wrap split">
+        <h2 id="fits-title">This is for you if</h2>
+        <ul class="fits">
+          <li>Your body feels wired even when your mind knows there's nothing to worry about.</li>
+          <li>You wake at 3am with your mind already running the next day's problems.</li>
+          <li>Breathing "should" help, but you've never found an approach that sticks.</li>
+          <li>You want a science-based explanation, not just "take a few deep breaths."</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="wrap split">
+        <h2 id="about-title">Hi, I'm Nick</h2>
+        <div class="about">
+          <img src="images/nick-headshot.webp" alt="Nick Heath, Ph.D." width="180" height="180" loading="lazy">
+          <div>
+            <p>I became interested in breathing because I have Type 1 diabetes, which brings a lot of stress and anxiety with it. For eight years I've read the peer-reviewed research on how breathing affects the brain, the nervous system and stress: 454 studies so far.</p>
+            <p>My Ph.D. is in atmospheric science, so I was trained to read research closely, not just cite it. I filter out the noise and turn what holds up into plain English you can use. No wellness jargon, no big claims.</p>
+            <a href="/about.html" class="link">More about me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--mist" aria-labelledby="manual-title">
+      <div class="wrap split">
+        <div>
+          <h2 id="manual-title">The Anxious Person's Breath Manual</h2>
+        </div>
+        <div>
+          <img
+            src="images/ebook-banner.webp"
+            srcset="images/ebook-banner-400.webp 400w, images/ebook-banner-800.webp 800w, images/ebook-banner.webp 1536w"
+            sizes="(max-width: 900px) 100vw, 680px"
+            alt="The Anxious Person's Breath Manual"
+            class="manual__cover"
+            width="1536" height="1024"
+            loading="lazy">
+          <p>Everything the research says works for anxiety, and nothing that doesn't. One structured system built from 454 peer-reviewed studies.</p>
+          <ul class="points">
+            <li>The breath rates and patterns that work best for anxiety</li>
+            <li>Why nasal breathing changes your brain state in ways mouth breathing can't</li>
+            <li>A 5-minute daily practice that shifts your baseline, not just one-off relief</li>
+            <li>The 30-second pre-stress technique from a 2025 <em>Nature Mental Health</em> study</li>
+            <li>The physiology behind every recommendation, so you understand why it works</li>
+          </ul>
+          <a href="https://nickheathphd.gumroad.com/l/breathmanual"
+             class="btn btn--primary"
+             target="_blank" rel="noopener noreferrer"
+             onclick="gtag('event', 'purchase_intent', {'event_category': 'conversion', 'event_label': 'breath_manual_product', 'page_location': window.location.href});">
+            Get the Breath Manual ($27)
+          </a>
+          <p class="manual__note">One-time payment. Instant PDF download.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="read-title">
+      <div class="wrap split">
+        <h2 id="read-title">Read and watch</h2>
+        <div>
+          <div class="read">
+            <a href="blog/nasal-breathing-science.html" class="article">
+              <h3>The science of nasal breathing: what research says about your brain and anxiety</h3>
+              <p>Nasal breathing produces measurably different brain states than mouth breathing: less anxiety, and a relaxed but fully aware state of mind. Here's what 12 studies say, and what to do about it.</p>
+              <p class="meta">12 peer-reviewed studies</p>
+            </a>
+            <div>
+              <div class="video">
+                <iframe
+                  src="https://www.youtube.com/embed/_j9E9fIkscU?rel=0"
+                  title="30 Seconds of Slow Breathing Before Stress Changes Your Brain Response"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+              </div>
+              <p class="video-caption">30 seconds of slow breathing before stress changes how your brain responds.</p>
+            </div>
+          </div>
+          <p class="read-more">
+            <a href="blog/index.html" class="link">All articles</a>
+            &emsp;
+            <a href="https://www.youtube.com/@TheBreathingDiabetic" class="link" target="_blank" rel="noopener noreferrer">All videos</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start" aria-labelledby="news-title">
+      <div class="wrap split">
+        <h2 id="news-title">The Breathing 411</h2>
+        <div>
+          <p>A short email every Monday at 6:30am. Breathing science, a little philosophy, and one thing to try that week.</p>
+          <div class="newsletter__embed">
+            <script async data-uid="b0db7b731a" src="https://breathlearning.kit.com/b0db7b731a/index.js"></script>
+          </div>
+          <p class="newsletter__alt">Prefer a guided start? <a href="https://breathlearning.kit.com/7-day-breath-reset" class="link" target="_blank" rel="noopener noreferrer">Take the free 7-day calm reset</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>&copy; 2026 The Breathing Diabetic, Nick Heath, Ph.D.</span>
+      <ul>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/books.html">Books</a></li>
+        <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Videos</a></li>
+        <li><a href="/shop.html">Shop</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    burger.addEventListener('click', () => {
+      const open = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      burger.textContent = open ? 'Close' : 'Menu';
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) burger.click();
+    });
+  </script>
+</body>
+</html>
