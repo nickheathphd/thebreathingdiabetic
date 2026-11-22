@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Unlisted page: shared by direct link only. Keep out of sitemap.xml and nav. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Recording of Nick Heath's live workshop, How to Get Started with Breathwork: A Practical Guide." />
+  <title>How to Get Started with Breathwork — Workshop Recording</title>
+
+  <style>
+    .container    { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .content-wrap { max-width: 880px;  margin: 0 auto; }
+
+    h1 { font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: var(--forest); }
+    p  { font-size: 1.0625rem; line-height: 1.8; color: var(--forest-mid); }
+
+    .label {
+      display: block; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 1.5rem;
+    }
+    .page-hero {
+      padding: 4rem 0 3.5rem; text-align: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 { margin-bottom: 1rem; }
+    .page-hero .subtitle { font-size: 1.125rem; color: var(--forest-mid); line-height: 1.65; max-width: 560px; margin: 0 auto; }
+
+    .part-jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
+    .part-jump a {
+      font-size: 0.875rem; font-weight: 500; color: var(--forest); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 999px; padding: 0.4rem 1rem; background: var(--white);
+    }
+    .part-jump a:hover { border-color: var(--sage); }
+
+    .page-body { padding: 3.5rem 0 5rem; }
+    .intro { margin-bottom: 2.5rem; }
+
+    .video-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem;
+      scroll-margin-top: 90px;
+    }
+    .video-card__label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 0.5rem;
+    }
+    .video-card__title { font-size: 1.0625rem; font-weight: 600; color: var(--forest); margin-bottom: 1rem; line-height: 1.4; }
+    .video-card video { display: block; width: 100%; aspect-ratio: 1280 / 654; background: #000; border-radius: 6px; }
+
+    @media (max-width: 700px) {
+      .page-hero  { padding: 3rem 0 2.5rem; }
+      .page-body  { padding: 2.5rem 0 4rem; }
+      .video-card { padding: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 1rem; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css">
+
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKKJYEET06"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKKJYEET06');
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../../index.html" class="nav__logo">The Breathing <em>Diabetic</em></a>
+        <ul class="nav__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Science Videos</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../books.html">Books</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../shop.html">Shop</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav__drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+    <a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()">Science Videos</a>
+    <a href="../../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../../books.html" onclick="closeDrawer()">Books</a>
+    <a href="../../blog/index.html" onclick="closeDrawer()">Blog</a>
+    <a href="../../about.html" onclick="closeDrawer()">About</a>
+    <a href="../../shop.html" onclick="closeDrawer()">Shop</a>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <span class="label">Workshop Recording</span>
+        <h1>How to Get Started with Breathwork</h1>
+        <p class="subtitle">A practical guide to building a breathwork practice. Recorded live with Nick Heath, Ph.D.</p>
+        <nav class="part-jump" aria-label="Jump to part">
+          <a href="#part-1">Part 1</a><a href="#part-2">Part 2</a><a href="#part-3">Part 3</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="container">
+        <div class="content-wrap">
+          <div class="intro">
+            <p>The workshop is split into three parts, about 90 minutes in total. Watch them in order. Part 3 includes a guided breathing practice, so find a comfortable seat before you start it.</p>
+          </div>
+
+          <section class="video-card" id="part-1">
+            <div class="video-card__label">Part 1 &bull; 30 min</div>
+            <h2 class="video-card__title">Why breathwork, its benefits, the three main types of breathing, and nasal breathing.</h2>
+            <video controls preload="metadata" playsinline poster="/video/how-to-get-started-with-breathwork/part-1-poster.jpg">
+              <source src="/video/how-to-get-started-with-breathwork/part-1.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="/video/how-to-get-started-with-breathwork/part-1.mp4">Download Part 1</a>.
+            </video>
+          </section>
+          <section class="video-card" id="part-2">
+            <div class="video-card__label">Part 2 &bull; 30 min</div>
+            <h2 class="video-card__title">Diaphragmatic breathing, safety, a 2-minute slow breathing reset, and choosing classes and apps.</h2>
+            <video controls preload="metadata" playsinline poster="/video/how-to-get-started-with-breathwork/part-2-poster.jpg">
+              <source src="/video/how-to-get-started-with-breathwork/part-2.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="/video/how-to-get-started-with-breathwork/part-2.mp4">Download Part 2</a>.
+            </video>
+          </section>
+          <section class="video-card" id="part-3">
+            <div class="video-card__label">Part 3 &bull; 28 min</div>
+            <h2 class="video-card__title">How long and when to practice, building a daily habit, and a guided 12-minute breath scan.</h2>
+            <video controls preload="metadata" playsinline poster="/video/how-to-get-started-with-breathwork/part-3-poster.jpg">
+              <source src="/video/how-to-get-started-with-breathwork/part-3.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="/video/how-to-get-started-with-breathwork/part-3.mp4">Download Part 3</a>.
+            </video>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Breathing Diabetic&ensp;&bull;&ensp;Nick Heath, Ph.D.</p>
+        <ul class="footer__links">
+          <li><a href="https://www.youtube.com/@TheBreathingDiabetic" target="_blank" rel="noopener noreferrer">Science Videos</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../../books.html">Books</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="https://breathlearning.kit.com/7-day-breath-reset" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../../shop.html">Shop</a></li>
+          <li><span class="sep" aria-hidden="true">|</span></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  <p style="text-align:center;font-size:.8125rem;color:#718096;padding:1.25rem 2rem 0;line-height:1.6;">This content is for informational purposes only and does not constitute medical advice. Always consult your healthcare provider before making changes to your health or wellness routine.</p>
+  </footer>
+
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+
+    burger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      burger.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+  </script>
+
+</body>
+</html>

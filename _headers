@@ -6,3 +6,11 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Unlisted workshop recordings: shared by direct link only
+/workshops/*
+  X-Robots-Tag: noindex, nofollow
+
+/video/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=604800
